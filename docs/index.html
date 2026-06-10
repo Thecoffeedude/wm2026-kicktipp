@@ -2,34 +2,86 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WM 2026 – Kicktipp Prädikator</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- PWA / iOS installability -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Tipps">
+
+  <!-- theme-color: light / dark -->
+  <meta name="theme-color" content="#EAF0F7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0A0C12" media="(prefers-color-scheme: dark)">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="./icons/icon-512.png">
+
+  <link rel="manifest" href="./manifest.json">
+
+  <title>WM 2026 · Kicktipp-Prädikator</title>
+  <meta name="description" content="EV-optimale Kicktipp-Tipps für die WM 2026 — basierend auf uanalyse-Prognosen und Buchmacher-Quoten.">
+
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-header__inner">
-      <h1>WM 2026 <span class="site-header__sub">Kicktipp-Prädikator</span></h1>
-      <div class="site-header__meta" id="meta"></div>
-      <div class="sort-controls">
-        <span class="sort-label">Sortierung:</span>
-        <button class="sort-btn sort-btn--active" id="sort-time" onclick="setSortMode('time')">Anstoßzeit</button>
-        <button class="sort-btn" id="sort-div" onclick="setSortMode('divergence')">Höchste Divergenz</button>
+  <header>
+    <div class="wrap">
+      <div class="head glass">
+        <h1>WM 2026 <span class="sub">Tipps</span></h1>
+        <div id="meta" class="sync"></div>
       </div>
     </div>
   </header>
 
-  <main class="container" id="app">
+  <main class="wrap" id="app">
     <div class="loading">Lade Tipps…</div>
   </main>
 
+  <!-- iOS install banner (injected by app.js only on iOS Safari, non-standalone) -->
+  <div id="install-banner" class="install-banner" hidden aria-live="polite">
+    <span class="install-banner__text">
+      <svg class="install-banner__share" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M8 5H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M16 5l-4-4-4 4M12 1v14"/>
+      </svg>
+      Zum Home-Bildschirm hinzufügen
+    </span>
+    <button class="install-banner__close" aria-label="Schließen" onclick="dismissInstallBanner()">✕</button>
+  </div>
+
+  <nav aria-label="Hauptnavigation">
+    <div class="tabs glass" role="tablist">
+      <button class="tab active" id="tab-heute" role="tab" aria-selected="true"
+              onclick="setTab('heute')">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>
+        Heute
+      </button>
+      <button class="tab" id="tab-alle" role="tab" aria-selected="false"
+              onclick="setTab('alle')">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+        Spiele
+      </button>
+      <button class="tab" id="tab-diverg" role="tab" aria-selected="false"
+              onclick="setTab('diverg')">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="15" r="3"/></svg>
+        Divergenz
+      </button>
+      <button class="tab" id="tab-modell" role="tab" aria-selected="false"
+              onclick="setTab('modell')">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9m5 10V5m5 14v-7m5 7v-11"/></svg>
+        Modell
+      </button>
+    </div>
+  </nav>
+
   <footer class="site-footer">
-    Forecast-Daten:
-    <a href="https://github.com/uanalyse/world-cup-2026-predictions" target="_blank" rel="noopener">uanalyse/world-cup-2026-predictions</a>,
+    Forecast: <a href="https://github.com/uanalyse/world-cup-2026-predictions" target="_blank" rel="noopener">uanalyse</a>,
     <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>
     · Quoten: <a href="https://the-odds-api.com" target="_blank" rel="noopener">The Odds API</a>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
