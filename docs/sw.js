@@ -1,7 +1,7 @@
 // Cache version — bump to bust old caches when shell changes
-const CACHE_VERSION = 'wm26-v2';
-const DATA_CACHE    = 'wm26-data-v2';
-const FLAG_CACHE    = 'wm26-flags-v2';
+const CACHE_VERSION = 'wm26-v3';
+const DATA_CACHE    = 'wm26-data-v3';
+const FLAG_CACHE    = 'wm26-flags-v3';
 
 // App shell: all files needed for offline render
 const SHELL = [

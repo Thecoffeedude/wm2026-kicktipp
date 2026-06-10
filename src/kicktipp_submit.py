@@ -26,6 +26,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from dotenv import load_dotenv
+from src.teams import resolve as _resolve_team, canonical_en as _canonical_en
 
 # ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -43,29 +44,31 @@ logging.basicConfig(
 # ─── Pure matching logic (no browser — fully unit-testable) ───────────────────
 
 
-def canonicalize(name: str, aliases: dict[str, str]) -> str:
-    """Apply alias map; return canonical team name (uanalyse spelling)."""
-    return aliases.get(name, name)
+def canonicalize(name: str, aliases: dict[str, str] = {}) -> str:
+    """Return canonical English team name via team registry. aliases param kept for compat."""
+    return _canonical_en(_resolve_team(name))
 
 
 def build_prediction_index(
-    matches: list[dict], aliases: dict[str, str]
+    matches: list[dict], aliases: dict[str, str] = {}
 ) -> dict[tuple[str, str], dict]:
-    """Return (canonical_home, canonical_away) → match dict."""
-    return {
-        (canonicalize(m["home_team"], aliases), canonicalize(m["away_team"], aliases)): m
-        for m in matches
-    }
+    """Return (home_code, away_code) → match dict. Deduplication by FIFA code."""
+    result: dict[tuple[str, str], dict] = {}
+    for m in matches:
+        home_code = m.get("home_code") or _resolve_team(m["home_team"])
+        away_code = m.get("away_code") or _resolve_team(m["away_team"])
+        result[(home_code, away_code)] = m
+    return result
 
 
 def match_row(
     kicktipp_home: str,
     kicktipp_away: str,
     index: dict[tuple[str, str], dict],
-    aliases: dict[str, str],
+    aliases: dict[str, str] = {},
 ) -> dict | None:
-    """Find prediction for a kicktipp row; return match dict or None."""
-    key = (canonicalize(kicktipp_home, aliases), canonicalize(kicktipp_away, aliases))
+    """Find prediction for a kicktipp row by resolving team names to FIFA codes."""
+    key = (_resolve_team(kicktipp_home), _resolve_team(kicktipp_away))
     return index.get(key)
 
 
@@ -345,10 +348,10 @@ def _classify_question(question: str) -> tuple[str, str]:
 
 
 def _find_option(
-    canonical_name: str, options: list[dict], aliases: dict[str, str]
+    canonical_name: str, options: list[dict], aliases: dict[str, str] = {}
 ) -> dict | None:
     """
-    Find the <option> whose text canonicalizes to canonical_name.
+    Find the <option> whose text resolves (via teams registry) to canonical_name.
     Falls back to case-insensitive substring match.
     """
     if not canonical_name:
@@ -358,7 +361,7 @@ def _find_option(
         text = opt["text"].strip()
         if not text or opt["value"] == "":
             continue
-        canon = aliases.get(text, text).lower()
+        canon = _canonical_en(_resolve_team(text)).lower()
         if canon == target:
             return opt
     # fallback: case-insensitive text match
@@ -381,7 +384,7 @@ def _find_option(
 def plan_sonderfragen(
     sf_rows: list[dict],
     tournament: dict,
-    aliases: dict[str, str],
+    aliases: dict[str, str] = {},
     overwrite: bool = False,
 ) -> list[dict]:
     """
@@ -438,7 +441,7 @@ def plan_sonderfragen(
                 text = opt["text"].strip()
                 if not text or "nicht getippt" in text.lower():
                     continue
-                canon = aliases.get(text, text)
+                canon = _canonical_en(_resolve_team(text))
                 xp = team_strength.get(canon, 0.0)
                 if xp > best_xp:
                     best_xp = xp
@@ -582,8 +585,6 @@ async def run(args) -> int:
         logging.error("playwright not installed — run: pip install playwright && playwright install chromium")
         return 1
 
-    import config
-
     SCREENSHOT_DIR.mkdir(exist_ok=True)
 
     async with async_playwright() as pw:
@@ -598,7 +599,6 @@ async def run(args) -> int:
             actions = plan_submissions(
                 rows=rows,
                 matches=matches,
-                aliases=config.TEAM_ALIASES,
                 overwrite=overwrite,
                 now=now,
                 buffer_h=args.deadline_buffer,
@@ -606,7 +606,6 @@ async def run(args) -> int:
             sf_actions = plan_sonderfragen(
                 sf_rows=sf_rows,
                 tournament=tournament,
-                aliases=config.TEAM_ALIASES,
                 overwrite=overwrite,
             )
 

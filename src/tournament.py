@@ -3,25 +3,29 @@ Tournament predictions derived from group-stage match data.
 
 All predictions use uanalyse win probabilities as source of truth.
 No bracket structure is hard-coded — groups are inferred from the match schedule.
+Teams are identified by FIFA code (home_code/away_code) throughout.
 """
 
 from __future__ import annotations
 
 from collections import defaultdict
 
+from src.teams import canonical_en
+
 
 # ── Group reconstruction ───────────────────────────────────────────────────────
 
 def _build_groups(matches: list[dict]) -> dict[str, list[str]]:
     """
-    Infer group membership from group-stage match schedule.
+    Infer group membership from group-stage match schedule using FIFA codes.
     Teams that play each other are in the same group (4-clique).
-    Returns {'A': ['Argentina', ...], 'B': [...], ...} sorted alphabetically.
+    Returns {'A': ['ARG', ...], 'B': [...], ...} sorted alphabetically by group.
     """
     adj: dict[str, set[str]] = defaultdict(set)
     for m in matches:
         if m.get("stage", "").lower().startswith("group"):
-            h, a = m["home_team"], m["away_team"]
+            h = m.get("home_code") or m["home_team"]
+            a = m.get("away_code") or m["away_team"]
             adj[h].add(a)
             adj[a].add(h)
 
@@ -40,31 +44,33 @@ def _build_groups(matches: list[dict]) -> dict[str, list[str]]:
 
 # ── Per-team expected points in group stage ────────────────────────────────────
 
-def _team_expected_points(
-    team: str, matches: list[dict]
-) -> float:
-    """3·p_win + 1·p_draw across all group stage games for this team."""
+def _team_expected_points(code: str, matches: list[dict]) -> float:
+    """3·p_win + 1·p_draw across all group stage games for this team (by code)."""
     pts = 0.0
     for m in matches:
         if m.get("stage", "").lower().startswith("group"):
             ua = m.get("sources", {}).get("uanalyse", {})
             p = ua.get("p", {})
-            if m["home_team"] == team:
+            h = m.get("home_code") or m["home_team"]
+            a = m.get("away_code") or m["away_team"]
+            if h == code:
                 pts += 3 * p.get("home", 0) + p.get("draw", 0)
-            elif m["away_team"] == team:
+            elif a == code:
                 pts += 3 * p.get("away", 0) + p.get("draw", 0)
     return pts
 
 
-def _team_expected_goals(team: str, matches: list[dict]) -> float:
+def _team_expected_goals(code: str, matches: list[dict]) -> float:
     """Total expected goals scored across all group stage games."""
     xg = 0.0
     for m in matches:
         if m.get("stage", "").lower().startswith("group"):
             eg = m.get("expected_goals", {})
-            if m["home_team"] == team:
+            h = m.get("home_code") or m["home_team"]
+            a = m.get("away_code") or m["away_team"]
+            if h == code:
                 xg += eg.get("home", 0)
-            elif m["away_team"] == team:
+            elif a == code:
                 xg += eg.get("away", 0)
     return xg
 
@@ -73,64 +79,64 @@ def _team_expected_goals(team: str, matches: list[dict]) -> float:
 
 def predict_group_winners(matches: list[dict]) -> dict[str, str]:
     """
-    Returns {'A': 'Brazil', 'B': 'France', ...} — one predicted winner per group.
+    Returns {'A': 'ARG', 'B': 'BRA', ...} — one predicted winner (code) per group.
     Winner = team with highest expected points in group stage.
     """
     groups = _build_groups(matches)
     winners: dict[str, str] = {}
-    for label, teams in groups.items():
-        best = max(teams, key=lambda t: _team_expected_points(t, matches))
+    for label, codes in groups.items():
+        best = max(codes, key=lambda c: _team_expected_points(c, matches))
         winners[label] = best
     return winners
 
 
 def predict_champion(matches: list[dict]) -> str:
-    """
-    Predicted WM champion = team with highest expected points overall.
-    Simple proxy without full bracket simulation.
-    """
+    """Predicted WM champion (FIFA code) = team with highest expected points overall."""
     groups = _build_groups(matches)
-    all_teams = [t for g in groups.values() for t in g]
-    return max(all_teams, key=lambda t: _team_expected_points(t, matches))
+    all_codes = [c for g in groups.values() for c in g]
+    if not all_codes:
+        return ""
+    return max(all_codes, key=lambda c: _team_expected_points(c, matches))
 
 
 def predict_semifinalists(matches: list[dict]) -> list[str]:
-    """
-    Predicted 4 semifinalists = top 4 teams by expected points, sorted descending.
-    """
+    """Top 4 teams (FIFA codes) by expected points, sorted descending."""
     groups = _build_groups(matches)
-    all_teams = [t for g in groups.values() for t in g]
-    ranked = sorted(all_teams, key=lambda t: _team_expected_points(t, matches), reverse=True)
+    all_codes = [c for g in groups.values() for c in g]
+    ranked = sorted(all_codes, key=lambda c: _team_expected_points(c, matches), reverse=True)
     return ranked[:4]
 
 
 def predict_top_scorer_team(matches: list[dict]) -> str:
-    """
-    Team most likely to provide the top scorer = highest total expected goals.
-    """
+    """Team (FIFA code) most likely to provide the top scorer = highest total xG."""
     groups = _build_groups(matches)
-    all_teams = [t for g in groups.values() for t in g]
-    return max(all_teams, key=lambda t: _team_expected_goals(t, matches))
+    all_codes = [c for g in groups.values() for c in g]
+    if not all_codes:
+        return ""
+    return max(all_codes, key=lambda c: _team_expected_goals(c, matches))
 
 
 def build_team_strength(matches: list[dict]) -> dict[str, float]:
     """
-    Returns {canonical_team: expected_group_stage_points} for all 48 teams.
-    Used by kicktipp_submit to pick the strongest team from any dropdown.
+    Returns {canonical_en_name: expected_group_stage_points} for all 48 teams.
+    Keyed by canonical_en so kicktipp_submit can look up by dropdown option text.
     """
     groups = _build_groups(matches)
-    all_teams = [t for g in groups.values() for t in g]
-    return {t: _team_expected_points(t, matches) for t in all_teams}
+    all_codes = [c for g in groups.values() for c in g]
+    return {canonical_en(c): _team_expected_points(c, matches) for c in all_codes}
 
 
 def build_tournament_predictions(matches: list[dict]) -> dict:
-    """
-    Builds the full tournament prediction block for data.json.
-    """
+    """Builds the full tournament prediction block for data.json."""
+    group_winner_codes = predict_group_winners(matches)
+    champion_code      = predict_champion(matches)
+    semifinalist_codes = predict_semifinalists(matches)
+    top_scorer_code    = predict_top_scorer_team(matches)
+
     return {
-        "group_winners": predict_group_winners(matches),
-        "champion": predict_champion(matches),
-        "semifinalists": predict_semifinalists(matches),
-        "top_scorer_team": predict_top_scorer_team(matches),
-        "team_strength": build_team_strength(matches),
+        "group_winners":   {g: canonical_en(c) for g, c in group_winner_codes.items()},
+        "champion":        canonical_en(champion_code) if champion_code else "",
+        "semifinalists":   [canonical_en(c) for c in semifinalist_codes],
+        "top_scorer_team": canonical_en(top_scorer_code) if top_scorer_code else "",
+        "team_strength":   build_team_strength(matches),
     }

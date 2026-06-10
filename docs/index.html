@@ -63,6 +63,16 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
         Spiele
       </button>
+      <button class="tab" id="tab-gruppen" role="tab" aria-selected="false"
+              onclick="setTab('gruppen')">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>
+        Gruppen
+      </button>
+      <button class="tab" id="tab-baum" role="tab" aria-selected="false"
+              onclick="setTab('baum')">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
+        Turnier
+      </button>
       <button class="tab" id="tab-diverg" role="tab" aria-selected="false"
               onclick="setTab('diverg')">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="15" r="3"/></svg>
@@ -71,7 +81,7 @@
       <button class="tab" id="tab-modell" role="tab" aria-selected="false"
               onclick="setTab('modell')">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9m5 10V5m5 14v-7m5 7v-11"/></svg>
-        Modell
+        Info
       </button>
     </div>
   </nav>

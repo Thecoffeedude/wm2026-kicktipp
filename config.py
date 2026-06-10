@@ -62,70 +62,12 @@ UANALYSE_CSV_URL = (
     "/main/data/latest/match_predictions.csv"
 )
 
-# Canonical team names follow the uanalyse spelling (primary source).
-# Map any variant (Odds API, other feeds) → canonical here.
-# Add entries whenever a live API call returns an unrecognised name.
-TEAM_ALIASES: dict[str, str] = {
-    # Odds API variants → uanalyse canonical
-    "Turkey":                          "Türkiye",
-    "Bosnia and Herzegovina":          "Bosnia-Herzegovina",
-    "Czech Republic":                  "Czechia",
-    "DR Congo":                        "Congo DR",
-    "Democratic Republic of Congo":    "Congo DR",
-    "Republic of Ireland":             "Ireland",
-    "Curacao":                         "Curaçao",
-    "USA":                             "United States",
-    "Korea Republic":                  "South Korea",
-    "Republic of Korea":               "South Korea",
-    "DPR Korea":                       "North Korea",
-    "Ivory Coast":                     "Ivory Coast",  # same — listed for visibility
-    "Cote d'Ivoire":                   "Ivory Coast",
+UANALYSE_TOURNAMENT_URL = (
+    "https://raw.githubusercontent.com/uanalyse/world-cup-2026-predictions"
+    "/main/data/latest/tournament_probabilities.csv"
+)
 
-    # Kicktipp German team names → uanalyse canonical
-    "Mexiko":                          "Mexico",
-    "Südkorea":                        "South Korea",
-    "Tschechien":                      "Czechia",
-    "Kanada":                          "Canada",
-    "Bosnien-Herzegowina":             "Bosnia-Herzegovina",
-    "Bosnien und Herzegowina":         "Bosnia-Herzegovina",
-    "Katar":                           "Qatar",
-    "Brasilien":                       "Brazil",
-    "Marokko":                         "Morocco",
-    "Schottland":                      "Scotland",
-    "Australien":                      "Australia",
-    "Türkei":                          "Türkiye",
-    "Argentinien":                     "Argentina",
-    "Deutschland":                     "Germany",
-    "Frankreich":                      "France",
-    "Spanien":                         "Spain",
-    "Niederlande":                     "Netherlands",
-    "Belgien":                         "Belgium",
-    "Schweiz":                         "Switzerland",
-    "Österreich":                      "Austria",
-    "Polen":                           "Poland",
-    "Kroatien":                        "Croatia",
-    "Serbien":                         "Serbia",
-    "Ungarn":                          "Hungary",
-    "Dänemark":                        "Denmark",
-    "Schweden":                        "Sweden",
-    "Norwegen":                        "Norway",
-    "Finnland":                        "Finland",
-    "Nordmazedonien":                  "North Macedonia",
-    "Saudi-Arabien":                   "Saudi Arabia",
-    "Südafrika":                       "South Africa",
-    "Elfenbeinküste":                  "Ivory Coast",
-    "Kamerun":                         "Cameroon",
-    "Ägypten":                         "Egypt",
-    "Tunesien":                        "Tunisia",
-    "Algerien":                        "Algeria",
-    "Kolumbien":                       "Colombia",
-    "Neuseeland":                      "New Zealand",
-    "Jamaika":                         "Jamaica",
-    "Ruanda":                          "Rwanda",
-    "Demokratische Republik Kongo":    "Congo DR",
-    "Kongo":                           "Congo",
-    "Nordkorea":                       "North Korea",
-    "Vereinigte Arabische Emirate":    "United Arab Emirates",
-    "Irak":                            "Iraq",
-    "Vereinigte Staaten":              "United States",
-}
+# Team name resolution is handled by src/teams.py (canonical registry).
+# Use teams.resolve(name) → FIFA code, teams.canonical_en(code) → English name.
+# TEAM_ALIASES is kept as empty dict for any remaining backward-compat references.
+TEAM_ALIASES: dict[str, str] = {}

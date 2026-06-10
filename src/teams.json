@@ -1,0 +1,251 @@
+[
+  {
+    "code": "ALG", "iso2": "dz", "group": "J",
+    "canonical_en": "Algeria", "canonical_de": "Algerien",
+    "aliases": ["Algeria", "Algerien", "Algérie"]
+  },
+  {
+    "code": "ARG", "iso2": "ar", "group": "J",
+    "canonical_en": "Argentina", "canonical_de": "Argentinien",
+    "aliases": ["Argentina", "Argentinien"]
+  },
+  {
+    "code": "AUS", "iso2": "au", "group": "D",
+    "canonical_en": "Australia", "canonical_de": "Australien",
+    "aliases": ["Australia", "Australien"]
+  },
+  {
+    "code": "AUT", "iso2": "at", "group": "J",
+    "canonical_en": "Austria", "canonical_de": "Österreich",
+    "aliases": ["Austria", "Österreich", "Oesterreich"]
+  },
+  {
+    "code": "BEL", "iso2": "be", "group": "G",
+    "canonical_en": "Belgium", "canonical_de": "Belgien",
+    "aliases": ["Belgium", "Belgien", "Belgique"]
+  },
+  {
+    "code": "BIH", "iso2": "ba", "group": "B",
+    "canonical_en": "Bosnia-Herzegovina", "canonical_de": "Bosnien-Herzegowina",
+    "aliases": [
+      "Bosnia-Herzegovina", "Bosnia & Herzegovina", "Bosnia and Herzegovina",
+      "Bosnia & Herzegowina", "Bosnia-Herzegowina",
+      "Bosnien-Herzegowina", "Bosnien und Herzegowina", "Bosnien & Herzegowina",
+      "Bosnia Herzegovina"
+    ]
+  },
+  {
+    "code": "BRA", "iso2": "br", "group": "C",
+    "canonical_en": "Brazil", "canonical_de": "Brasilien",
+    "aliases": ["Brazil", "Brasil", "Brasilien"]
+  },
+  {
+    "code": "CAN", "iso2": "ca", "group": "B",
+    "canonical_en": "Canada", "canonical_de": "Kanada",
+    "aliases": ["Canada", "Kanada"]
+  },
+  {
+    "code": "CPV", "iso2": "cv", "group": "H",
+    "canonical_en": "Cape Verde", "canonical_de": "Kap Verde",
+    "aliases": ["Cape Verde", "Kap Verde", "Cabo Verde", "Cape Verde Islands"]
+  },
+  {
+    "code": "COL", "iso2": "co", "group": "K",
+    "canonical_en": "Colombia", "canonical_de": "Kolumbien",
+    "aliases": ["Colombia", "Kolumbien"]
+  },
+  {
+    "code": "COD", "iso2": "cd", "group": "K",
+    "canonical_en": "Congo DR", "canonical_de": "Demokratische Republik Kongo",
+    "aliases": [
+      "Congo DR", "DR Congo", "DRC", "Demokratische Republik Kongo",
+      "Democratic Republic of Congo", "Democratic Republic of the Congo",
+      "Congo (DR)", "Kongo DR", "DR Kongo"
+    ]
+  },
+  {
+    "code": "CRO", "iso2": "hr", "group": "L",
+    "canonical_en": "Croatia", "canonical_de": "Kroatien",
+    "aliases": ["Croatia", "Kroatien", "Hrvatska"]
+  },
+  {
+    "code": "CUW", "iso2": "cw", "group": "E",
+    "canonical_en": "Curaçao", "canonical_de": "Curaçao",
+    "aliases": ["Curaçao", "Curacao", "Curaçao"]
+  },
+  {
+    "code": "CZE", "iso2": "cz", "group": "A",
+    "canonical_en": "Czechia", "canonical_de": "Tschechien",
+    "aliases": ["Czechia", "Czech Republic", "Tschechien", "Tschechische Republik", "Česko"]
+  },
+  {
+    "code": "ECU", "iso2": "ec", "group": "E",
+    "canonical_en": "Ecuador", "canonical_de": "Ecuador",
+    "aliases": ["Ecuador"]
+  },
+  {
+    "code": "EGY", "iso2": "eg", "group": "G",
+    "canonical_en": "Egypt", "canonical_de": "Ägypten",
+    "aliases": ["Egypt", "Ägypten", "Aegypten"]
+  },
+  {
+    "code": "ENG", "iso2": "gb-eng", "group": "L",
+    "canonical_en": "England", "canonical_de": "England",
+    "aliases": ["England"]
+  },
+  {
+    "code": "FRA", "iso2": "fr", "group": "I",
+    "canonical_en": "France", "canonical_de": "Frankreich",
+    "aliases": ["France", "Frankreich"]
+  },
+  {
+    "code": "GER", "iso2": "de", "group": "E",
+    "canonical_en": "Germany", "canonical_de": "Deutschland",
+    "aliases": ["Germany", "Deutschland", "Federal Republic of Germany"]
+  },
+  {
+    "code": "GHA", "iso2": "gh", "group": "L",
+    "canonical_en": "Ghana", "canonical_de": "Ghana",
+    "aliases": ["Ghana"]
+  },
+  {
+    "code": "HAI", "iso2": "ht", "group": "C",
+    "canonical_en": "Haiti", "canonical_de": "Haiti",
+    "aliases": ["Haiti"]
+  },
+  {
+    "code": "IRN", "iso2": "ir", "group": "G",
+    "canonical_en": "Iran", "canonical_de": "Iran",
+    "aliases": ["Iran", "Iran (Islamic Republic of)", "Islamic Republic of Iran"]
+  },
+  {
+    "code": "IRQ", "iso2": "iq", "group": "I",
+    "canonical_en": "Iraq", "canonical_de": "Irak",
+    "aliases": ["Iraq", "Irak"]
+  },
+  {
+    "code": "CIV", "iso2": "ci", "group": "E",
+    "canonical_en": "Ivory Coast", "canonical_de": "Elfenbeinküste",
+    "aliases": ["Ivory Coast", "Elfenbeinküste", "Elfenbeinkueste", "Cote d'Ivoire", "Côte d'Ivoire", "Côte d'Ivoire"]
+  },
+  {
+    "code": "JPN", "iso2": "jp", "group": "F",
+    "canonical_en": "Japan", "canonical_de": "Japan",
+    "aliases": ["Japan"]
+  },
+  {
+    "code": "JOR", "iso2": "jo", "group": "J",
+    "canonical_en": "Jordan", "canonical_de": "Jordanien",
+    "aliases": ["Jordan", "Jordanien", "Hashemite Kingdom of Jordan"]
+  },
+  {
+    "code": "MEX", "iso2": "mx", "group": "A",
+    "canonical_en": "Mexico", "canonical_de": "Mexiko",
+    "aliases": ["Mexico", "Mexiko", "México"]
+  },
+  {
+    "code": "MAR", "iso2": "ma", "group": "C",
+    "canonical_en": "Morocco", "canonical_de": "Marokko",
+    "aliases": ["Morocco", "Marokko", "Maroc"]
+  },
+  {
+    "code": "NED", "iso2": "nl", "group": "F",
+    "canonical_en": "Netherlands", "canonical_de": "Niederlande",
+    "aliases": ["Netherlands", "Niederlande", "Holland", "The Netherlands"]
+  },
+  {
+    "code": "NZL", "iso2": "nz", "group": "G",
+    "canonical_en": "New Zealand", "canonical_de": "Neuseeland",
+    "aliases": ["New Zealand", "Neuseeland", "New Zealand (Aotearoa)"]
+  },
+  {
+    "code": "NOR", "iso2": "no", "group": "I",
+    "canonical_en": "Norway", "canonical_de": "Norwegen",
+    "aliases": ["Norway", "Norwegen", "Norge"]
+  },
+  {
+    "code": "PAN", "iso2": "pa", "group": "L",
+    "canonical_en": "Panama", "canonical_de": "Panama",
+    "aliases": ["Panama"]
+  },
+  {
+    "code": "PAR", "iso2": "py", "group": "D",
+    "canonical_en": "Paraguay", "canonical_de": "Paraguay",
+    "aliases": ["Paraguay"]
+  },
+  {
+    "code": "POR", "iso2": "pt", "group": "K",
+    "canonical_en": "Portugal", "canonical_de": "Portugal",
+    "aliases": ["Portugal"]
+  },
+  {
+    "code": "QAT", "iso2": "qa", "group": "B",
+    "canonical_en": "Qatar", "canonical_de": "Katar",
+    "aliases": ["Qatar", "Katar"]
+  },
+  {
+    "code": "KSA", "iso2": "sa", "group": "H",
+    "canonical_en": "Saudi Arabia", "canonical_de": "Saudi-Arabien",
+    "aliases": ["Saudi Arabia", "Saudi-Arabien", "Saudi Arabien", "KSA"]
+  },
+  {
+    "code": "SCO", "iso2": "gb-sct", "group": "C",
+    "canonical_en": "Scotland", "canonical_de": "Schottland",
+    "aliases": ["Scotland", "Schottland"]
+  },
+  {
+    "code": "SEN", "iso2": "sn", "group": "I",
+    "canonical_en": "Senegal", "canonical_de": "Senegal",
+    "aliases": ["Senegal"]
+  },
+  {
+    "code": "RSA", "iso2": "za", "group": "A",
+    "canonical_en": "South Africa", "canonical_de": "Südafrika",
+    "aliases": ["South Africa", "Südafrika", "Suedafrika", "South Africa (Republic)"]
+  },
+  {
+    "code": "KOR", "iso2": "kr", "group": "A",
+    "canonical_en": "South Korea", "canonical_de": "Südkorea",
+    "aliases": ["South Korea", "Südkorea", "Suedkorea", "Korea Republic", "Republic of Korea", "Korea (Republic)"]
+  },
+  {
+    "code": "ESP", "iso2": "es", "group": "H",
+    "canonical_en": "Spain", "canonical_de": "Spanien",
+    "aliases": ["Spain", "Spanien", "España"]
+  },
+  {
+    "code": "SWE", "iso2": "se", "group": "F",
+    "canonical_en": "Sweden", "canonical_de": "Schweden",
+    "aliases": ["Sweden", "Schweden", "Sverige"]
+  },
+  {
+    "code": "SUI", "iso2": "ch", "group": "B",
+    "canonical_en": "Switzerland", "canonical_de": "Schweiz",
+    "aliases": ["Switzerland", "Schweiz", "Suisse", "Svizzera"]
+  },
+  {
+    "code": "TUN", "iso2": "tn", "group": "F",
+    "canonical_en": "Tunisia", "canonical_de": "Tunesien",
+    "aliases": ["Tunisia", "Tunesien", "Tunisie"]
+  },
+  {
+    "code": "TUR", "iso2": "tr", "group": "D",
+    "canonical_en": "Türkiye", "canonical_de": "Türkei",
+    "aliases": ["Türkiye", "Türkei", "Turkey", "Turkiye"]
+  },
+  {
+    "code": "USA", "iso2": "us", "group": "D",
+    "canonical_en": "United States", "canonical_de": "Vereinigte Staaten",
+    "aliases": ["United States", "Vereinigte Staaten", "USA", "United States of America", "US", "U.S.A.", "U.S."]
+  },
+  {
+    "code": "URU", "iso2": "uy", "group": "H",
+    "canonical_en": "Uruguay", "canonical_de": "Uruguay",
+    "aliases": ["Uruguay"]
+  },
+  {
+    "code": "UZB", "iso2": "uz", "group": "K",
+    "canonical_en": "Uzbekistan", "canonical_de": "Usbekistan",
+    "aliases": ["Uzbekistan", "Usbekistan", "Oʻzbekiston"]
+  }
+]
