@@ -53,3 +53,65 @@ wurde. Dieser Abschnitt dokumentiert die aktuell implementierten Datenquellen.
 
 - `--mock`-Flag nutzt `data/mock_uanalyse.csv` und `data/mock_response.json`.
 - **Nie echte API-Calls beim Entwickeln** (Quota schonen).
+
+---
+
+## Phase 3 — Kicktipp Auto-Submit
+
+### Modul: `src/kicktipp_submit.py`
+
+- **Liest** `docs/data.json` (bereits vorhanden), berechnet **nichts neu**.
+- **Standard-Modus: `--dry-run`** — Login + Scraping, kein Eintragen, kein Absenden.
+- **Echter Eintrag: `--submit`** — erst nach ausdrücklichem OK aktivieren.
+- `--headed` für Debug-Session mit sichtbarem Browser.
+- `--deadline-buffer HOURS` (default: 2h) — Spiele innerhalb des Puffers werden übersprungen.
+
+### Env-Variablen (secrets)
+
+| Variable | Pflicht | Bedeutung |
+|---|---|---|
+| `KICKTIPP_EMAIL` | Ja | Login-E-Mail |
+| `KICKTIPP_PASSWORD` | Ja | Passwort (nie geloggt) |
+| `KICKTIPP_COMPETITION` | Ja | Wettbewerbs-Slug (URL-Segment) |
+| `OVERWRITE` | Nein | `true` = bereits getippte Spiele überschreiben (default: false) |
+| `NTFY_TOPIC` | Nein | ntfy.sh-Topic für Push-Benachrichtigung nach Submit |
+
+### Login-/Submit-Flow (aus antonengelhardt/kicktipp-bot + schwalle/kicktipp-betbot abgeleitet)
+
+| Schritt | Selektor |
+|---|---|
+| Login-URL | `https://www.kicktipp.de/info/profil/login` |
+| E-Mail | `#kennung` |
+| Passwort | `#passwort` |
+| Submit | `[name="submitbutton"]` |
+| Tippseite | `/{competition}/tippabgabe` |
+| Spieltabelle | `#tippabgabeSpiele tbody tr.datarow` |
+| Heim-Input | `input[name*="heimTipp"]` |
+| Gast-Input | `input[name*="gastTipp"]` |
+| Bereits getippt | Input-Value nicht leer → überspringen |
+
+### Reine Matching-Logik (kein Browser, unit-testbar)
+
+`src/kicktipp_submit.py` exportiert browserfreie Funktionen:
+- `canonicalize(name, aliases)` — Team-Alias-Auflösung
+- `build_prediction_index(matches, aliases)` — Lookup-Dict
+- `match_row(home, away, index, aliases)` — Tipp zu Zeile suchen
+- `decide_action(home_val, away_val, prediction, overwrite, now, buffer_h)` → `(action, reason)`
+- `plan_submissions(rows, matches, aliases, ...)` → Liste von Action-Dicts
+
+Tests: `tests/test_kicktipp_matching.py` (24 Tests, kein Browser).
+
+### Workflow-Schritt (predict.yml)
+
+- Läuft **nach** `build_data.py`, nur wenn `KICKTIPP_EMAIL` gesetzt ist.
+- **Aktuell: `--dry-run`** (kein `--submit`-Flag).
+- ⚠️ **Vor Aktivierung von `--submit`**: dry-run-Log prüfen, dann explizites OK geben.
+- Screenshots bei Fehler werden als GitHub-Artifact hochgeladen.
+
+### GitHub-Actions-Versionen (verifiziert 2026-06-10)
+
+| Action | Version |
+|---|---|
+| `actions/checkout` | `v6` |
+| `actions/setup-python` | `v6` |
+| `actions/upload-artifact` | `v7` |

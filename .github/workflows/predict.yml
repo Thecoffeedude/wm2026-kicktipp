@@ -12,12 +12,17 @@ jobs:
     permissions:
       contents: write   # nötig für git push am Ende
 
+    # KICKTIPP_EMAIL wird hier gesetzt, damit Folge-Schritte darauf prüfen können
+    # ob die Kicktipp-Secrets konfiguriert sind (leerer String = nicht gesetzt).
+    env:
+      KICKTIPP_EMAIL: ${{ secrets.KICKTIPP_EMAIL }}
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Python einrichten
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
           cache: 'pip'
@@ -40,3 +45,31 @@ jobs:
           git diff --staged --quiet && echo "Keine Änderungen." || \
             git commit -m "chore: Vorhersagen $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
+
+      # ── Kicktipp Auto-Submit ──────────────────────────────────────────────
+      # Läuft nur, wenn KICKTIPP_EMAIL/PASSWORD/COMPETITION gesetzt sind.
+      # ⚠️  Aktuell: --dry-run (kein echtes Eintragen).
+      #     Nach explizitem OK: "--dry-run" durch "--submit" ersetzen.
+
+      - name: Playwright (Chromium) installieren
+        if: env.KICKTIPP_EMAIL != ''
+        run: |
+          pip install playwright
+          playwright install chromium --with-deps
+
+      - name: Kicktipp-Tipps eintragen (dry-run)
+        if: env.KICKTIPP_EMAIL != ''
+        run: python3 src/kicktipp_submit.py
+        env:
+          KICKTIPP_EMAIL: ${{ secrets.KICKTIPP_EMAIL }}
+          KICKTIPP_PASSWORD: ${{ secrets.KICKTIPP_PASSWORD }}
+          KICKTIPP_COMPETITION: ${{ secrets.KICKTIPP_COMPETITION }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+
+      - name: Screenshots hochladen (bei Fehler)
+        if: failure() && env.KICKTIPP_EMAIL != ''
+        uses: actions/upload-artifact@v7
+        with:
+          name: kicktipp-screenshots-${{ github.run_id }}
+          path: screenshots/
+          if-no-files-found: ignore
