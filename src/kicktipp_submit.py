@@ -398,7 +398,14 @@ def plan_sonderfragen(
     actions = []
 
     for row in sf_rows:
-        already = bool(row.get("currentValue", "").strip())
+        current_val = row.get("currentValue", "").strip()
+        # Treat as unanswered if value maps to the "not tipped" placeholder option
+        placeholder_values: set[str] = {
+            opt["value"]
+            for opt in row.get("options", [])
+            if not opt["value"] or "nicht getippt" in opt["text"].lower() or opt["text"].strip() == ""
+        }
+        already = bool(current_val) and current_val not in placeholder_values
         if already and not overwrite:
             actions.append({
                 **row,
