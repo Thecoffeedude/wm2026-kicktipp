@@ -275,7 +275,7 @@ function renderHeuteStats(app, todayMatches) {
     <div class="stat-widget glass">
       <div class="sw-label">xG-Leader</div>
       <div class="sw-main">${xgTeam ? flagImg(xgTeam, xgTeam) : '–'}</div>
-      <div class="sw-sub">${xgMax > 0 ? xgMax.toFixed(2) + ' xG' : '–'}</div>
+      <div class="sw-sub">${xgMax > 0 ? xgMax.toFixed(1) + ' xG' : '–'}</div>
     </div>
     <div class="stat-widget glass">
       <div class="sw-label">Klarster Favorit</div>
@@ -592,12 +592,12 @@ function buildDrawer(match, ua, oddsC) {
       <div class="xg-row-d">
         <span class="l">${hAbbr}</span>
         <div class="xg-track"><div class="xg-fill" style="--xw:${hW}%;background:var(--home)"></div></div>
-        <span class="v">${lambda.home.toFixed(2)}</span>
+        <span class="v">${lambda.home.toFixed(1)}</span>
       </div>
       <div class="xg-row-d">
         <span class="l">${aAbbr}</span>
         <div class="xg-track"><div class="xg-fill" style="--xw:${aW}%;background:var(--away)"></div></div>
-        <span class="v">${lambda.away.toFixed(2)}</span>
+        <span class="v">${lambda.away.toFixed(1)}</span>
       </div>`;
   }
 
@@ -874,7 +874,7 @@ function animateBars() {
 }
 
 // ── Utilities ─────────────────────────────────────────────────────────────
-function pct(p) { return `${(p * 100).toFixed(1)}%`; }
+function pct(p) { return `${Math.round(p * 100)}%`; }
 function esc(s) {
   return String(s ?? '')
     .replace(/&/g, '&amp;').replace(/</g, '&lt;')
