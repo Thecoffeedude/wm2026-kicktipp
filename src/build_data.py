@@ -18,6 +18,7 @@ from src.fetch_odds import fetch_odds
 from src.fetch_uanalyse import fetch_uanalyse
 from src.probabilities import process_match
 from src.scoreline import ev_optimize, poisson_matrix, derive_xg
+from src.tournament import build_tournament_predictions
 
 logger = logging.getLogger(__name__)
 
@@ -208,6 +209,8 @@ def build(mock: bool = False) -> dict:
     # Sort chronologically
     matches_out.sort(key=lambda m: m["commence_time"])
 
+    tournament = build_tournament_predictions(matches_out)
+
     output = {
         "metadata": {
             "generated_at":        datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -223,6 +226,7 @@ def build(mock: bool = False) -> dict:
             "odds_count":          len(odds_raw),
         },
         "matches": matches_out,
+        "tournament": tournament,
     }
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
