@@ -48,8 +48,6 @@ jobs:
 
       # ── Kicktipp Auto-Submit ──────────────────────────────────────────────
       # Läuft nur, wenn KICKTIPP_EMAIL/PASSWORD/COMPETITION gesetzt sind.
-      # ⚠️  Aktuell: --dry-run (kein echtes Eintragen).
-      #     Nach explizitem OK: "--dry-run" durch "--submit" ersetzen.
 
       - name: Playwright (Chromium) installieren
         if: env.KICKTIPP_EMAIL != ''
@@ -57,9 +55,9 @@ jobs:
           pip install playwright
           playwright install chromium --with-deps
 
-      - name: Kicktipp-Tipps eintragen (dry-run)
+      - name: Kicktipp-Tipps eintragen
         if: env.KICKTIPP_EMAIL != ''
-        run: python3 src/kicktipp_submit.py
+        run: python3 src/kicktipp_submit.py --submit
         env:
           KICKTIPP_EMAIL: ${{ secrets.KICKTIPP_EMAIL }}
           KICKTIPP_PASSWORD: ${{ secrets.KICKTIPP_PASSWORD }}
