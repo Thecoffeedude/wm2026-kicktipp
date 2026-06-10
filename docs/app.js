@@ -738,18 +738,20 @@ function renderBaum(app) {
     { key: 'prob_champion',          label: 'Weltmeister',  abbr: '🏆' },
   ];
 
+  // Sticky header lives OUTSIDE the panel so overflow:hidden on the panel
+  // can clip scrolling rows at the rounded top corners without breaking sticky.
+  const stickyHdr = document.createElement('div');
+  stickyHdr.className = 'baum-header';
+  stickyHdr.innerHTML = `
+    <div class="baum-team-col"></div>
+    ${stages.map(s => `<div class="baum-stage-col" title="${esc(s.label)}">${esc(s.abbr)}</div>`).join('')}
+  `;
+  app.appendChild(stickyHdr);
+
+  // Panel contains only rows — overflow:hidden now clips at border-radius correctly.
   const panel = document.createElement('div');
   panel.className = 'baum-panel';
 
-  // Header row
-  panel.innerHTML = `
-    <div class="baum-header">
-      <div class="baum-team-col"></div>
-      ${stages.map(s => `<div class="baum-stage-col" title="${esc(s.label)}">${esc(s.abbr)}</div>`).join('')}
-    </div>
-  `;
-
-  // Team rows
   sorted.forEach((t, i) => {
     const row = document.createElement('div');
     row.className = 'baum-row' + (i % 2 === 0 ? '' : ' baum-alt');

@@ -980,7 +980,8 @@ header { padding-top: calc(10px + env(safe-area-inset-top)); }
   top: calc(68px + env(safe-area-inset-top));
   z-index: 10;
   display: block;
-  width: fit-content;
+  width: 100%;
+  box-sizing: border-box;
   margin: 14px 0 6px;
   padding: 5px 12px;
   border-radius: 20px;
@@ -1280,23 +1281,26 @@ header { padding-top: calc(10px + env(safe-area-inset-top)); }
 }
 
 /* ── Baum / Tournament path ──────────────────────────────────────────────── */
-.baum-panel {
-  background: var(--solid);
-  border-radius: var(--r-card);
-  overflow: clip; /* clip trims visuals but doesn't break position:sticky */
-  margin-bottom: 16px;
-  box-shadow: 0 1px 0 var(--hair) inset;
-}
 .baum-header {
   display: grid;
   grid-template-columns: 140px repeat(5, 1fr);
   align-items: center;
   padding: 10px 12px;
   background: color-mix(in srgb, var(--muted) 8%, var(--solid));
-  border-bottom: 1px solid var(--hair);
+  border: 1px solid var(--hair);
+  border-bottom: none;
+  border-radius: var(--r-card) var(--r-card) 0 0; /* top corners only */
   position: sticky;
-  top: calc(68px + env(safe-area-inset-top)); /* below fixed app header */
+  top: calc(68px + env(safe-area-inset-top));
   z-index: 5;
+}
+.baum-panel {
+  background: var(--solid);
+  border-radius: 0 0 var(--r-card) var(--r-card); /* bottom corners only */
+  border: 1px solid var(--hair);
+  border-top: none; /* header provides top border */
+  overflow: hidden; /* clips rows at bottom rounded corners on scroll */
+  margin-bottom: 16px;
 }
 .baum-stage-col {
   font-size: 9px;
