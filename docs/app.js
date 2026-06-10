@@ -160,6 +160,7 @@ function renderTab() {
   if (currentTab === 'modell')  { renderModel(app);   return; }
   if (currentTab === 'gruppen') { renderGruppen(app); return; }
   if (currentTab === 'baum')    { renderBaum(app);    return; }
+  if (currentTab === 'verlauf') { renderVerlauf(app); return; }
 
   let matches = [...allMatches];
 
@@ -168,22 +169,6 @@ function renderTab() {
     matches.sort((a, b) => (parseKickoff(a.commence_time) || 0) - (parseKickoff(b.commence_time) || 0));
   } else if (currentTab === 'alle') {
     matches.sort((a, b) => (parseKickoff(a.commence_time) || 0) - (parseKickoff(b.commence_time) || 0));
-  } else if (currentTab === 'diverg') {
-    matches.sort((a, b) => maxDivergence(b) - maxDivergence(a));
-  }
-
-  // Apply search/filter for 'alle' and 'diverg' tabs
-  if (currentTab === 'alle' || currentTab === 'diverg') {
-    const q = searchQuery.trim().toLowerCase();
-    const ft = filterTeam.toLowerCase();
-    if (q || ft) {
-      matches = matches.filter(m => {
-        const h = m.home_team.toLowerCase(), a = m.away_team.toLowerCase();
-        if (ft && h !== ft && a !== ft) return false;
-        if (q && !h.includes(q) && !a.includes(q)) return false;
-        return true;
-      });
-    }
   }
 
   app.innerHTML = '';
@@ -207,21 +192,13 @@ function renderTab() {
 
   if (currentTab === 'alle') {
     renderSearchFilter(app);
-    renderCalendar(app, matches);
+    const calContainer = document.createElement('div');
+    calContainer.id = 'cal-container';
+    app.appendChild(calContainer);
+    renderCalendar(calContainer);
     animateBars();
     return;
   }
-
-  const label = currentTab === 'diverg'
-    ? `Nach Divergenz · ${matches.length} Spiele`
-    : `Alle Spiele · ${matches.length} Spiele`;
-
-  const eyebrow = document.createElement('div');
-  eyebrow.className = 'eyebrow';
-  eyebrow.textContent = label;
-  app.appendChild(eyebrow);
-  matches.forEach((m, i) => app.appendChild(buildCard(m, i)));
-  animateBars();
 }
 
 // ── Heute: stat widgets ───────────────────────────────────────────────────
@@ -267,26 +244,26 @@ function renderHeuteStats(app, todayMatches) {
   const row = document.createElement('div');
   row.className = 'stat-widgets';
   row.innerHTML = `
-    <div class="stat-widget glass">
-      <div class="sw-label">Tendenz</div>
+    <div class="stat-widget glass" title="Heimsieg / Unentschieden / Auswärtssieg — gemittelt über alle heutigen Spiele">
+      <div class="sw-label">Tendenz heute</div>
       <div class="sw-donut" style="--h:${(tH*360).toFixed(0)}deg;--d:${((tH+tD)*360).toFixed(0)}deg"></div>
       <div class="sw-sub">${pct(tH)} / ${pct(tD)} / ${pct(tA)}</div>
     </div>
-    <div class="stat-widget glass">
-      <div class="sw-label">xG-Leader</div>
+    <div class="stat-widget glass" title="Expected Goals: Erwartete Tore laut Modell">
+      <div class="sw-label">Offensivstes Team</div>
       <div class="sw-main">${xgTeam ? flagImg(xgTeam, xgTeam) : '–'}</div>
-      <div class="sw-sub">${xgMax > 0 ? xgMax.toFixed(1) + ' xG' : '–'}</div>
+      <div class="sw-sub">${xgMax > 0 ? xgMax.toFixed(1) + ' erw. Tore' : '–'}</div>
     </div>
-    <div class="stat-widget glass">
-      <div class="sw-label">Klarster Favorit</div>
+    <div class="stat-widget glass" title="Team mit der höchsten Siegwahrscheinlichkeit heute">
+      <div class="sw-label">Klarer Favorit</div>
       <div class="sw-main">${favTeam ? flagImg(favTeam, favTeam) : '–'}</div>
       <div class="sw-sub">${maxFav > 0 ? pct(maxFav) : '–'}</div>
     </div>
     ${agreeRate !== null ? `
-    <div class="stat-widget glass">
-      <div class="sw-label">Quellen einig</div>
+    <div class="stat-widget glass" title="Wie oft stimmen Modell und Buchmacher in der Tendenz überein">
+      <div class="sw-label">Modell-Konsens</div>
       <div class="sw-gauge" style="--g:${(agreeRate*180).toFixed(0)}deg"></div>
-      <div class="sw-sub">${pct(agreeRate)}</div>
+      <div class="sw-sub">${pct(agreeRate)} Deckung</div>
     </div>` : ''}
   `;
   app.appendChild(row);
@@ -301,14 +278,20 @@ function renderHeuteStats(app, todayMatches) {
 function renderSearchFilter(app) {
   const teams = [...new Set(allMatches.flatMap(m => [m.home_team, m.away_team]))].sort();
 
+  // Pin active team chip to the front; "Alle" always first
+  const activeName = teams.find(t => t.toLowerCase() === filterTeam) || null;
+  const otherTeams = teams.filter(t => t.toLowerCase() !== filterTeam);
+  const orderedTeams = activeName ? [activeName, ...otherTeams] : teams;
+
   const wrap = document.createElement('div');
   wrap.className = 'search-bar';
   wrap.innerHTML = `
-    <input class="search-input glass" type="search" placeholder="Team oder Datum suchen…"
-      value="${esc(searchQuery)}" oninput="onSearch(this.value)" aria-label="Suchen">
+    <input class="search-input glass" type="search" placeholder="Team suchen…"
+      value="${esc(searchQuery)}" oninput="onSearch(this.value)" aria-label="Team suchen"
+      autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
     <div class="filter-chips" id="filter-chips">
       <button class="chip ${!filterTeam ? 'active' : ''}" onclick="setFilter('')">Alle</button>
-      ${teams.map(t => `
+      ${orderedTeams.map(t => `
         <button class="chip ${filterTeam === t.toLowerCase() ? 'active' : ''}"
           onclick="setFilter('${esc(t.toLowerCase())}')"
           title="${esc(t)}">
@@ -322,18 +305,24 @@ function renderSearchFilter(app) {
 
 window.onSearch = function(val) {
   searchQuery = val;
-  renderTab();
+  const calContainer = document.getElementById('cal-container');
+  if (calContainer) {
+    renderCalendar(calContainer);
+    animateBars();
+  } else {
+    renderTab();
+  }
 };
 window.setFilter = function(team) {
-  filterTeam = team;
+  // Toggle: tapping the active filter deselects it
+  filterTeam = (filterTeam === team) ? '' : team;
   searchQuery = '';
-  const inp = document.querySelector('.search-input');
-  if (inp) inp.value = '';
   renderTab();
 };
 
 // ── Kalender-Ansicht (Spiele grouped by date) ─────────────────────────────
-function renderCalendar(app, matches) {
+function renderCalendar(container) {
+  container.innerHTML = '';
   const q = searchQuery.trim().toLowerCase();
   const ft = filterTeam.toLowerCase();
   let filtered = [...allMatches].sort((a, b) =>
@@ -352,9 +341,10 @@ function renderCalendar(app, matches) {
     const el = document.createElement('div');
     el.className = 'eyebrow';
     el.textContent = 'Keine Spiele gefunden.';
-    app.appendChild(el);
+    container.appendChild(el);
     return;
   }
+  const app = container;
 
   // Group by date
   const byDate = {};
@@ -621,9 +611,16 @@ function buildDrawer(match, ua, oddsC) {
     }
   }
 
-  // Bookmakers
+  // Bookmakers (collapsible)
   if (match.bookmakers?.length > 0) {
-    html += `<div class="dt" style="margin-top:18px">Buchmacher (${match.bookmakers.length})</div>`;
+    const bkId = `bk-${match.id || Math.random().toString(36).slice(2)}`;
+    html += `
+      <button class="bk-toggle" aria-expanded="false" aria-controls="${bkId}"
+        onclick="toggleBookmakers(this)">
+        <span>Buchmacher-Quoten (${match.bookmakers.length})</span>
+        <svg class="bk-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="${bkId}" class="bk-list" hidden>`;
     match.bookmakers.forEach(bk => {
       const p = bk.probabilities;
       html += `<div class="book-row">
@@ -636,6 +633,7 @@ function buildDrawer(match, ua, oddsC) {
         <span class="book-margin">Marge ${pct(bk.overround)}</span>
       </div>`;
     });
+    html += `</div>`;
   }
 
   html += '</div>';
@@ -782,6 +780,98 @@ function renderBaum(app) {
   }));
 }
 
+// ── Verlauf tab (match timeline with live status) ─────────────────────────
+function renderVerlauf(app) {
+  app.innerHTML = '';
+  const now = Date.now();
+
+  function matchStatus(ct) {
+    const ko = parseKickoff(ct);
+    if (!ko) return 'upcoming';
+    const ms = now - ko.getTime();
+    if (ms < 0) return 'upcoming';
+    if (ms < 115 * 60 * 1000) return 'live';
+    return 'done';
+  }
+
+  const sorted = [...allMatches].sort((a, b) =>
+    (parseKickoff(a.commence_time) || 0) - (parseKickoff(b.commence_time) || 0));
+
+  // Group by date
+  const byDate = {};
+  sorted.forEach(m => {
+    const d = m.commence_time.slice(0, 10);
+    if (!byDate[d]) byDate[d] = [];
+    byDate[d].push(m);
+  });
+
+  const todayStr = new Date().toLocaleDateString('de-DE', { timeZone: 'Europe/Berlin' });
+  const tomorrowStr = new Date(Date.now() + 86400000).toLocaleDateString('de-DE', { timeZone: 'Europe/Berlin' });
+
+  function dayLabel(dateStr) {
+    const d = parseKickoff(dateStr);
+    if (!d) return dateStr;
+    const ds = d.toLocaleDateString('de-DE', { timeZone: 'Europe/Berlin' });
+    const dm = d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', timeZone: 'Europe/Berlin' });
+    if (ds === todayStr) return `⚽ Heute · ${dm}`;
+    if (ds === tomorrowStr) return `Morgen · ${dm}`;
+    return `${d.toLocaleDateString('de-DE', { weekday: 'long', timeZone: 'Europe/Berlin' })} · ${dm}`;
+  }
+
+  const liveMatches = sorted.filter(m => matchStatus(m.commence_time) === 'live');
+  if (liveMatches.length) {
+    const liveSection = document.createElement('div');
+    liveSection.className = 'verlauf-live-section';
+    liveSection.innerHTML = `<div class="verlauf-live-badge"><span class="live-dot"></span>Live – ${liveMatches.length} Spiel${liveMatches.length !== 1 ? 'e' : ''} läuft gerade</div>`;
+    app.appendChild(liveSection);
+  }
+
+  Object.keys(byDate).sort().forEach(dateStr => {
+    const matches = byDate[dateStr];
+    const d = parseKickoff(dateStr);
+    const isToday = d && d.toLocaleDateString('de-DE', { timeZone: 'Europe/Berlin' }) === todayStr;
+
+    const header = document.createElement('div');
+    header.className = 'verlauf-day-header' + (isToday ? ' verlauf-today' : '');
+    header.textContent = dayLabel(dateStr);
+    app.appendChild(header);
+
+    matches.forEach(m => {
+      const status = matchStatus(m.commence_time);
+      const tip = m.recommended_tip;
+      const ko = parseKickoff(m.commence_time);
+      const timeStr = m.commence_time.includes('T')
+        ? ko.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Berlin' })
+        : '–:––';
+      const p = m.sources?.uanalyse?.p ?? m.sources?.odds_consensus?.p;
+      const favPct = p ? Math.round(Math.max(p.home, p.draw, p.away) * 100) : null;
+      const favLabel = p
+        ? (p.home >= p.draw && p.home >= p.away ? m.home_team
+          : p.away > p.home && p.away >= p.draw ? m.away_team : 'Unentschieden')
+        : null;
+
+      const card = document.createElement('div');
+      card.className = `verlauf-card${status === 'live' ? ' verlauf-live' : status === 'done' ? ' verlauf-done' : ''}`;
+      card.innerHTML = `
+        <div class="verlauf-status">
+          <span class="vstatus vstatus-${status}">${status === 'live' ? 'Live' : status === 'done' ? 'Beendet' : timeStr}</span>
+        </div>
+        <div class="verlauf-teams">
+          <div class="verlauf-team">${flagImg(m.home_team, m.home_team)}<span>${esc(m.home_team)}</span></div>
+          <div class="verlauf-score">${tip ? `${tip.home}:${tip.away}` : '–:–'}</div>
+          <div class="verlauf-team verlauf-team-away">${flagImg(m.away_team, m.away_team)}<span>${esc(m.away_team)}</span></div>
+        </div>
+        <div class="verlauf-meta">
+          <span class="verlauf-tip-label">Tipp</span>
+          ${favLabel && favPct !== null ? `<span class="verlauf-fav">${esc(favLabel)} ${favPct}%</span>` : ''}
+          ${m.stage ? `<span class="verlauf-stage">${esc(m.stage)}</span>` : ''}
+        </div>
+      `;
+      app.appendChild(card);
+    });
+  });
+}
+
 // ── Model tab ─────────────────────────────────────────────────────────────
 function renderModel(app) {
   const meta = metadata;
@@ -858,6 +948,17 @@ function toggleCard(btn) {
 }
 window.toggleCard = toggleCard;
 
+function toggleBookmakers(btn) {
+  const listId = btn.getAttribute('aria-controls');
+  const list = document.getElementById(listId);
+  if (!list) return;
+  const open = list.hidden;
+  list.hidden = !open;
+  btn.setAttribute('aria-expanded', String(open));
+  btn.querySelector('.bk-chevron')?.classList.toggle('bk-chevron-open', open);
+}
+window.toggleBookmakers = toggleBookmakers;
+
 // ── Bar animation trigger ─────────────────────────────────────────────────
 function animateBars() {
   requestAnimationFrame(() => requestAnimationFrame(() => {
@@ -881,16 +982,61 @@ function esc(s) {
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-// ── PWA: iOS install banner ───────────────────────────────────────────────
+// ── PWA: platform-aware install prompt ───────────────────────────────────
+let _deferredInstallPrompt = null;
+
+// Capture Chrome/Android install prompt before it auto-fires
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  _deferredInstallPrompt = e;
+  _showInstallBanner('chromium');
+});
+
 function maybeShowInstallBanner() {
-  const isIOS = /iP(hone|ad|od)/.test(navigator.userAgent);
-  const isStandalone = window.navigator.standalone === true ||
-    window.matchMedia('(display-mode: standalone)').matches;
-  if (!isIOS || isStandalone) return;
-  const dismissed = sessionStorage.getItem('install-dismissed');
-  if (dismissed) return;
+  // Already running as installed PWA → nothing to do
+  const isInstalled = window.matchMedia('(display-mode: standalone)').matches
+    || navigator.standalone === true;
+  if (isInstalled) return;
+
+  if (sessionStorage.getItem('install-dismissed')) return;
+
+  // Chrome/Android: deferred prompt may already be captured
+  if (_deferredInstallPrompt) { _showInstallBanner('chromium'); return; }
+
+  // iOS: feature-detect via navigator.standalone (only exists on iOS WebKit)
+  if (typeof navigator.standalone !== 'boolean') return;
+
+  const ua = navigator.userAgent;
+  const isSafari = /Safari/.test(ua) && !/CriOS|FxiOS|EdgiOS|OPiOS/.test(ua);
+  _showInstallBanner(isSafari ? 'ios-safari' : 'ios-other');
+}
+
+function _showInstallBanner(mode) {
   const banner = document.getElementById('install-banner');
-  if (banner) banner.hidden = false;
+  const label  = document.getElementById('install-banner-text');
+  if (!banner) return;
+
+  if (mode === 'chromium') {
+    if (label) label.textContent = 'App installieren';
+    banner.onclick = async () => {
+      if (!_deferredInstallPrompt) return;
+      _deferredInstallPrompt.prompt();
+      await _deferredInstallPrompt.userChoice;
+      _deferredInstallPrompt = null;
+      banner.hidden = true;
+    };
+    banner.hidden = false;
+  } else if (mode === 'ios-safari') {
+    if (label) label.textContent = 'App installieren';
+    banner.onclick = (e) => {
+      if (e.target.closest('.install-banner__close')) return;
+      openIOSSheet();
+    };
+    banner.hidden = false;
+  } else if (mode === 'ios-other') {
+    if (label) label.textContent = 'In Safari öffnen, um zu installieren';
+    banner.hidden = false;
+  }
 }
 
 function dismissInstallBanner() {
@@ -899,6 +1045,19 @@ function dismissInstallBanner() {
   sessionStorage.setItem('install-dismissed', '1');
 }
 window.dismissInstallBanner = dismissInstallBanner;
+
+function openIOSSheet() {
+  const sheet = document.getElementById('ios-install-sheet');
+  if (sheet) { sheet.hidden = false; requestAnimationFrame(() => sheet.classList.add('open')); }
+}
+function closeIOSSheet() {
+  const sheet = document.getElementById('ios-install-sheet');
+  if (!sheet) return;
+  sheet.classList.remove('open');
+  sheet.addEventListener('transitionend', () => { sheet.hidden = true; }, { once: true });
+}
+window.openIOSSheet = openIOSSheet;
+window.closeIOSSheet = closeIOSSheet;
 
 // ── PWA: Service Worker + "New version" signal ────────────────────────────
 function registerSW() {
@@ -977,33 +1136,8 @@ document.addEventListener('click', e => {
   }, { passive: true });
 })();
 
-// ── Swipe between tabs (horizontal) ──────────────────────────────────────
-(function initSwipe() {
-  const TAB_ORDER = ['heute', 'alle', 'gruppen', 'baum', 'diverg', 'modell'];
-  let touchStartX = 0, touchStartY = 0;
-  const app = document.getElementById('app');
-  if (!app) return;
-
-  document.addEventListener('touchstart', e => {
-    touchStartX = e.touches[0].clientX;
-    touchStartY = e.touches[0].clientY;
-  }, { passive: true });
-
-  document.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].clientX - touchStartX;
-    const dy = e.changedTouches[0].clientY - touchStartY;
-    if (Math.abs(dx) < 50 || Math.abs(dy) > Math.abs(dx) * 0.8) return;
-    // Only swipe in the content area, not on nav/header
-    const target = e.changedTouches[0].target;
-    if (target.closest('nav') || target.closest('header')) return;
-    const idx = TAB_ORDER.indexOf(currentTab);
-    if (dx < 0 && idx < TAB_ORDER.length - 1) setTab(TAB_ORDER[idx + 1]);
-    else if (dx > 0 && idx > 0) setTab(TAB_ORDER[idx - 1]);
-  }, { passive: true });
-})();
-
 // ── setTab with View Transitions ──────────────────────────────────────────
-const _tabOrder = ['heute', 'alle', 'gruppen', 'baum', 'diverg', 'modell'];
+const _tabOrder = ['heute', 'alle', 'gruppen', 'baum', 'verlauf', 'modell'];
 const _origSetTab = setTab;
 window.setTab = function(tab) {
   const prevIdx = _tabOrder.indexOf(currentTab);

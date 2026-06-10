@@ -41,15 +41,38 @@
     <div class="loading">Lade Tipps…</div>
   </main>
 
-  <!-- iOS install banner (injected by app.js only on iOS Safari, non-standalone) -->
+  <!-- Install banner: shown by app.js based on platform detection -->
   <div id="install-banner" class="install-banner" hidden aria-live="polite">
-    <span class="install-banner__text">
-      <svg class="install-banner__share" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M8 5H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M16 5l-4-4-4 4M12 1v14"/>
-      </svg>
-      Zum Home-Bildschirm hinzufügen
-    </span>
+    <span class="install-banner__text" id="install-banner-text">App installieren</span>
     <button class="install-banner__close" aria-label="Schließen" onclick="dismissInstallBanner()">✕</button>
+  </div>
+
+  <!-- iOS Safari install sheet (slides up on tap) -->
+  <div id="ios-install-sheet" class="ios-sheet" hidden aria-modal="true" role="dialog" aria-label="App installieren">
+    <div class="ios-sheet__backdrop" onclick="closeIOSSheet()"></div>
+    <div class="ios-sheet__body">
+      <div class="ios-sheet__handle"></div>
+      <h2 class="ios-sheet__title">App installieren</h2>
+      <div class="ios-sheet__steps">
+        <div class="ios-sheet__step">
+          <span class="ios-sheet__num">1</span>
+          <span>Tippe auf das <strong>Teilen-Symbol</strong>
+            <svg class="ios-sheet__share-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 5H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M16 5l-4-4-4 4M12 1v14"/>
+            </svg>
+            in der Safari-Leiste</span>
+        </div>
+        <div class="ios-sheet__step">
+          <span class="ios-sheet__num">2</span>
+          <span>Wähle <strong>„Zum Home-Bildschirm"</strong></span>
+        </div>
+        <div class="ios-sheet__step">
+          <span class="ios-sheet__num">3</span>
+          <span>Tippe oben rechts auf <strong>„Hinzufügen"</strong></span>
+        </div>
+      </div>
+      <button class="ios-sheet__close" onclick="closeIOSSheet()">Schließen</button>
+    </div>
   </div>
 
   <nav aria-label="Hauptnavigation">
@@ -74,10 +97,10 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
         Turnier
       </button>
-      <button class="tab" id="tab-diverg" role="tab" aria-selected="false"
-              onclick="setTab('diverg')">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="15" r="3"/></svg>
-        Divergenz
+      <button class="tab" id="tab-verlauf" role="tab" aria-selected="false"
+              onclick="setTab('verlauf')">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+        Verlauf
       </button>
       <button class="tab" id="tab-modell" role="tab" aria-selected="false"
               onclick="setTab('modell')">
