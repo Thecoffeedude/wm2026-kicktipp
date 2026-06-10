@@ -22,6 +22,9 @@ import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+# Allow `import config` from repo root — same pattern as build_data.py / scoreline.py
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 from dotenv import load_dotenv
 
 # ─── Constants ────────────────────────────────────────────────────────────────
