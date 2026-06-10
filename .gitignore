@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+# Legacy: output was moved to docs/data.json (committed by CI)
+data/data.json
+# Legacy: frontend/ is superseded by docs/ (GitHub Pages source)
+frontend/

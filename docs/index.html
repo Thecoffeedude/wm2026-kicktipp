@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WM 2026 – Kicktipp Prädikator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <h1>WM 2026 <span class="site-header__sub">Kicktipp-Prädikator</span></h1>
+      <div class="site-header__meta" id="meta"></div>
+      <div class="sort-controls">
+        <span class="sort-label">Sortierung:</span>
+        <button class="sort-btn sort-btn--active" id="sort-time" onclick="setSortMode('time')">Anstoßzeit</button>
+        <button class="sort-btn" id="sort-div" onclick="setSortMode('divergence')">Höchste Divergenz</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="app">
+    <div class="loading">Lade Tipps…</div>
+  </main>
+
+  <footer class="site-footer">
+    Forecast-Daten:
+    <a href="https://github.com/uanalyse/world-cup-2026-predictions" target="_blank" rel="noopener">uanalyse/world-cup-2026-predictions</a>,
+    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>
+    · Quoten: <a href="https://the-odds-api.com" target="_blank" rel="noopener">The Odds API</a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

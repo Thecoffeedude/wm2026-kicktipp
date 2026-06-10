@@ -1,0 +1,42 @@
+name: WM 2026 – Vorhersagen aktualisieren
+
+on:
+  schedule:
+    # Täglich 06:00 UTC — Puffer vor Kickoff-Deadlines (i.d.R. 17:00–21:00 MESZ)
+    - cron: '0 6 * * *'
+  workflow_dispatch:  # Manueller Trigger (jederzeit per UI oder gh CLI)
+
+jobs:
+  predict:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # nötig für git push am Ende
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Abhängigkeiten installieren
+        run: pip install -r requirements.txt
+
+      - name: Vorhersagen generieren → docs/data.json
+        # uanalyse wird per HTTP gezogen (kein Secret nötig).
+        # ODDS_API_KEY ist optional — ohne Key läuft die Pipeline ohne Wettbüro-Quoten.
+        run: python3 src/build_data.py
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+
+      - name: docs/data.json committen
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/data.json
+          git diff --staged --quiet && echo "Keine Änderungen." || \
+            git commit -m "chore: Vorhersagen $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push

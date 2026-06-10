@@ -1,0 +1,248 @@
+[
+  {
+    "id": "32ec06abda2398ac41501c86eb9aa376",
+    "sport_key": "soccer_fifa_world_cup",
+    "sport_title": "FIFA World Cup 2026",
+    "commence_time": "2026-06-14T20:00:00Z",
+    "home_team": "Netherlands",
+    "away_team": "Japan",
+    "bookmakers": [
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2026-06-14T18:00:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2026-06-14T18:00:00Z",
+            "outcomes": [
+              {"name": "Netherlands", "price": 1.97},
+              {"name": "Japan",       "price": 3.60},
+              {"name": "Draw",        "price": 3.60}
+            ]
+          },
+          {
+            "key": "totals",
+            "last_update": "2026-06-14T18:00:00Z",
+            "outcomes": [
+              {"name": "Over",  "price": 1.88, "point": 2.5},
+              {"name": "Under", "price": 1.93, "point": 2.5}
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betfair_ex_eu",
+        "title": "Betfair Exchange (EU)",
+        "last_update": "2026-06-14T18:05:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2026-06-14T18:05:00Z",
+            "outcomes": [
+              {"name": "Netherlands", "price": 1.95},
+              {"name": "Japan",       "price": 3.70},
+              {"name": "Draw",        "price": 3.55}
+            ]
+          },
+          {
+            "key": "totals",
+            "last_update": "2026-06-14T18:05:00Z",
+            "outcomes": [
+              {"name": "Over",  "price": 1.85, "point": 2.5},
+              {"name": "Under", "price": 1.96, "point": 2.5}
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet_eu",
+        "title": "Unibet",
+        "last_update": "2026-06-14T17:45:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2026-06-14T17:45:00Z",
+            "outcomes": [
+              {"name": "Netherlands", "price": 1.90},
+              {"name": "Japan",       "price": 3.80},
+              {"name": "Draw",        "price": 3.40}
+            ]
+          },
+          {
+            "key": "totals",
+            "last_update": "2026-06-14T17:45:00Z",
+            "outcomes": [
+              {"name": "Over",  "price": 1.80, "point": 2.5},
+              {"name": "Under", "price": 2.00, "point": 2.5}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "a1b2c3d4e5f6789012345678abcdef01",
+    "sport_key": "soccer_fifa_world_cup",
+    "sport_title": "FIFA World Cup 2026",
+    "commence_time": "2026-06-15T17:00:00Z",
+    "home_team": "Brazil",
+    "away_team": "Mexico",
+    "bookmakers": [
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2026-06-15T15:00:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2026-06-15T15:00:00Z",
+            "outcomes": [
+              {"name": "Brazil", "price": 1.65},
+              {"name": "Mexico", "price": 5.00},
+              {"name": "Draw",   "price": 3.50}
+            ]
+          },
+          {
+            "key": "totals",
+            "last_update": "2026-06-15T15:00:00Z",
+            "outcomes": [
+              {"name": "Over",  "price": 1.82, "point": 2.5},
+              {"name": "Under", "price": 2.00, "point": 2.5}
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betfair_ex_eu",
+        "title": "Betfair Exchange (EU)",
+        "last_update": "2026-06-15T15:10:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2026-06-15T15:10:00Z",
+            "outcomes": [
+              {"name": "Brazil", "price": 1.63},
+              {"name": "Mexico", "price": 5.20},
+              {"name": "Draw",   "price": 3.45}
+            ]
+          },
+          {
+            "key": "totals",
+            "last_update": "2026-06-15T15:10:00Z",
+            "outcomes": [
+              {"name": "Over",  "price": 1.84, "point": 2.5},
+              {"name": "Under", "price": 1.97, "point": 2.5}
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet_eu",
+        "title": "Unibet",
+        "last_update": "2026-06-15T14:30:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2026-06-15T14:30:00Z",
+            "outcomes": [
+              {"name": "Brazil", "price": 1.60},
+              {"name": "Mexico", "price": 5.50},
+              {"name": "Draw",   "price": 3.30}
+            ]
+          },
+          {
+            "key": "totals",
+            "last_update": "2026-06-15T14:30:00Z",
+            "outcomes": [
+              {"name": "Over",  "price": 1.75, "point": 2.5},
+              {"name": "Under", "price": 2.05, "point": 2.5}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fedcba9876543210abcdef1234567890",
+    "sport_key": "soccer_fifa_world_cup",
+    "sport_title": "FIFA World Cup 2026",
+    "commence_time": "2026-06-15T20:00:00Z",
+    "home_team": "Germany",
+    "away_team": "Spain",
+    "bookmakers": [
+      {
+        "key": "pinnacle",
+        "title": "Pinnacle",
+        "last_update": "2026-06-15T18:00:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2026-06-15T18:00:00Z",
+            "outcomes": [
+              {"name": "Germany", "price": 2.60},
+              {"name": "Spain",   "price": 2.55},
+              {"name": "Draw",    "price": 3.10}
+            ]
+          },
+          {
+            "key": "totals",
+            "last_update": "2026-06-15T18:00:00Z",
+            "outcomes": [
+              {"name": "Over",  "price": 1.85, "point": 2.5},
+              {"name": "Under", "price": 1.95, "point": 2.5}
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betfair_ex_eu",
+        "title": "Betfair Exchange (EU)",
+        "last_update": "2026-06-15T18:05:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2026-06-15T18:05:00Z",
+            "outcomes": [
+              {"name": "Germany", "price": 2.70},
+              {"name": "Spain",   "price": 2.50},
+              {"name": "Draw",    "price": 3.15}
+            ]
+          },
+          {
+            "key": "totals",
+            "last_update": "2026-06-15T18:05:00Z",
+            "outcomes": [
+              {"name": "Over",  "price": 1.88, "point": 2.5},
+              {"name": "Under", "price": 1.93, "point": 2.5}
+            ]
+          }
+        ]
+      },
+      {
+        "key": "sport888",
+        "title": "888sport",
+        "last_update": "2026-06-15T17:00:00Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2026-06-15T17:00:00Z",
+            "outcomes": [
+              {"name": "Germany", "price": 2.50},
+              {"name": "Spain",   "price": 2.70},
+              {"name": "Draw",    "price": 3.00}
+            ]
+          },
+          {
+            "key": "totals",
+            "last_update": "2026-06-15T17:00:00Z",
+            "outcomes": [
+              {"name": "Over",  "price": 1.80, "point": 2.5},
+              {"name": "Under", "price": 2.00, "point": 2.5}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,4 @@
+snapshot_date,kickoff_date,stage,fixture_type,home_team,away_team,prob_meeting,prob_home_win,prob_draw,prob_away_win,exp_home_goals,exp_away_goals
+2026-06-09,2026-06-14,Group stage,group,Netherlands,Japan,1.0,0.3236,0.2878,0.3886,1.204,1.241
+2026-06-09,2026-06-13,Group stage,group,Brazil,Morocco,1.0,0.474,0.2739,0.2521,1.408,1.243
+2026-06-09,2026-06-14,Group stage,group,Germany,Curaçao,1.0,0.7623,0.1679,0.0697,3.019,0.819

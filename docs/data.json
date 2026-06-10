@@ -1,0 +1,423 @@
+{
+  "metadata": {
+    "generated_at": "2026-06-10T09:13:23Z",
+    "source_primary": "uanalyse/world-cup-2026-predictions (CC BY 4.0)",
+    "source_secondary": "the-odds-api",
+    "mock": true,
+    "sport": "soccer_fifa_world_cup",
+    "normalization_method": "multiplicative",
+    "weights": {
+      "pinnacle": 3.0,
+      "betfair_ex_eu": 2.5,
+      "betfair_ex_uk": 2.5,
+      "sport888": 1.5,
+      "unibet_eu": 1.2
+    },
+    "kicktipp_rules": {
+      "win": {
+        "tendency": 2,
+        "goal_diff": 3,
+        "exact": 4
+      },
+      "draw": {
+        "tendency": 2,
+        "exact": 4
+      }
+    },
+    "match_count": 5,
+    "uanalyse_count": 3,
+    "odds_count": 3
+  },
+  "matches": [
+    {
+      "id": "ua_Brazil_Morocco_2026-06-13",
+      "commence_time": "2026-06-13",
+      "home_team": "Brazil",
+      "away_team": "Morocco",
+      "stage": "Group stage",
+      "sources": {
+        "uanalyse": {
+          "lambda": {
+            "home": 1.408,
+            "away": 1.243
+          },
+          "p": {
+            "home": 0.474,
+            "draw": 0.2739,
+            "away": 0.2521
+          }
+        }
+      },
+      "agreement": {
+        "same_tendency": null,
+        "note": "no odds data"
+      },
+      "bookmakers": [],
+      "divergence": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "totals_line": null,
+      "totals_over_prob": null,
+      "expected_goals": {
+        "home": 1.408,
+        "away": 1.243
+      },
+      "recommended_tip": {
+        "home": 1,
+        "away": 0,
+        "expected_points": 1.1316,
+        "based_on": "uanalyse"
+      },
+      "modal_scoreline": {
+        "home": 1,
+        "away": 1,
+        "probability": 0.1235
+      }
+    },
+    {
+      "id": "ua_Germany_Curaçao_2026-06-14",
+      "commence_time": "2026-06-14",
+      "home_team": "Germany",
+      "away_team": "Curaçao",
+      "stage": "Group stage",
+      "sources": {
+        "uanalyse": {
+          "lambda": {
+            "home": 3.019,
+            "away": 0.819
+          },
+          "p": {
+            "home": 0.7623,
+            "draw": 0.1679,
+            "away": 0.0697
+          }
+        }
+      },
+      "agreement": {
+        "same_tendency": null,
+        "note": "no odds data"
+      },
+      "bookmakers": [],
+      "divergence": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "totals_line": null,
+      "totals_over_prob": null,
+      "expected_goals": {
+        "home": 3.019,
+        "away": 0.819
+      },
+      "recommended_tip": {
+        "home": 2,
+        "away": 0,
+        "expected_points": 1.9052,
+        "based_on": "uanalyse"
+      },
+      "modal_scoreline": {
+        "home": 3,
+        "away": 0,
+        "probability": 0.0988
+      }
+    },
+    {
+      "id": "ua_Netherlands_Japan_2026-06-14",
+      "commence_time": "2026-06-14T20:00:00Z",
+      "home_team": "Netherlands",
+      "away_team": "Japan",
+      "stage": "Group stage",
+      "sources": {
+        "uanalyse": {
+          "lambda": {
+            "home": 1.204,
+            "away": 1.241
+          },
+          "p": {
+            "home": 0.3236,
+            "draw": 0.2878,
+            "away": 0.3886
+          }
+        },
+        "odds_consensus": {
+          "p": {
+            "home": 0.4805,
+            "draw": 0.2643,
+            "away": 0.2552
+          }
+        }
+      },
+      "agreement": {
+        "same_tendency": false,
+        "note": "uanalyse: away, odds: home"
+      },
+      "bookmakers": [
+        {
+          "key": "pinnacle",
+          "title": "Pinnacle",
+          "last_update": "2026-06-14T18:00:00Z",
+          "weight": 3.0,
+          "raw_odds": {
+            "home": 1.97,
+            "away": 3.6,
+            "draw": 3.6
+          },
+          "overround": 0.0632,
+          "probabilities": {
+            "home": 0.4775,
+            "away": 0.2613,
+            "draw": 0.2613
+          }
+        },
+        {
+          "key": "betfair_ex_eu",
+          "title": "Betfair Exchange (EU)",
+          "last_update": "2026-06-14T18:05:00Z",
+          "weight": 2.5,
+          "raw_odds": {
+            "home": 1.95,
+            "away": 3.7,
+            "draw": 3.55
+          },
+          "overround": 0.0648,
+          "probabilities": {
+            "home": 0.4816,
+            "away": 0.2538,
+            "draw": 0.2646
+          }
+        },
+        {
+          "key": "unibet_eu",
+          "title": "Unibet",
+          "last_update": "2026-06-14T17:45:00Z",
+          "weight": 1.2,
+          "raw_odds": {
+            "home": 1.9,
+            "away": 3.8,
+            "draw": 3.4
+          },
+          "overround": 0.0836,
+          "probabilities": {
+            "home": 0.4857,
+            "away": 0.2429,
+            "draw": 0.2714
+          }
+        }
+      ],
+      "divergence": {
+        "home": 0.0033,
+        "draw": 0.0042,
+        "away": 0.0076
+      },
+      "totals_line": 2.5,
+      "totals_over_prob": 0.5427,
+      "expected_goals": {
+        "home": 1.204,
+        "away": 1.241
+      },
+      "recommended_tip": {
+        "home": 0,
+        "away": 1,
+        "expected_points": 1.0625,
+        "based_on": "uanalyse"
+      },
+      "modal_scoreline": {
+        "home": 1,
+        "away": 1,
+        "probability": 0.1296
+      }
+    },
+    {
+      "id": "a1b2c3d4e5f6789012345678abcdef01",
+      "commence_time": "2026-06-15T17:00:00Z",
+      "home_team": "Brazil",
+      "away_team": "Mexico",
+      "stage": "",
+      "sources": {
+        "odds_consensus": {
+          "p": {
+            "home": 0.5583,
+            "draw": 0.2648,
+            "away": 0.1769
+          }
+        }
+      },
+      "agreement": {
+        "same_tendency": null,
+        "note": "no uanalyse data"
+      },
+      "bookmakers": [
+        {
+          "key": "pinnacle",
+          "title": "Pinnacle",
+          "last_update": "2026-06-15T15:00:00Z",
+          "weight": 3.0,
+          "raw_odds": {
+            "home": 1.65,
+            "away": 5.0,
+            "draw": 3.5
+          },
+          "overround": 0.0918,
+          "probabilities": {
+            "home": 0.5551,
+            "away": 0.1832,
+            "draw": 0.2617
+          }
+        },
+        {
+          "key": "betfair_ex_eu",
+          "title": "Betfair Exchange (EU)",
+          "last_update": "2026-06-15T15:10:00Z",
+          "weight": 2.5,
+          "raw_odds": {
+            "home": 1.63,
+            "away": 5.2,
+            "draw": 3.45
+          },
+          "overround": 0.0957,
+          "probabilities": {
+            "home": 0.5599,
+            "away": 0.1755,
+            "draw": 0.2645
+          }
+        },
+        {
+          "key": "unibet_eu",
+          "title": "Unibet",
+          "last_update": "2026-06-15T14:30:00Z",
+          "weight": 1.2,
+          "raw_odds": {
+            "home": 1.6,
+            "away": 5.5,
+            "draw": 3.3
+          },
+          "overround": 0.1098,
+          "probabilities": {
+            "home": 0.5631,
+            "away": 0.1638,
+            "draw": 0.273
+          }
+        }
+      ],
+      "divergence": {
+        "home": 0.0033,
+        "draw": 0.0048,
+        "away": 0.008
+      },
+      "totals_line": 2.5,
+      "totals_over_prob": 0.5548,
+      "expected_goals": {
+        "home": 2.2047,
+        "away": 0.6986
+      },
+      "recommended_tip": {
+        "home": 1,
+        "away": 0,
+        "expected_points": 1.7952,
+        "based_on": "odds_derived"
+      },
+      "modal_scoreline": {
+        "home": 2,
+        "away": 0,
+        "probability": 0.1333
+      }
+    },
+    {
+      "id": "fedcba9876543210abcdef1234567890",
+      "commence_time": "2026-06-15T20:00:00Z",
+      "home_team": "Germany",
+      "away_team": "Spain",
+      "stage": "",
+      "sources": {
+        "odds_consensus": {
+          "p": {
+            "home": 0.3492,
+            "draw": 0.2947,
+            "away": 0.3561
+          }
+        }
+      },
+      "agreement": {
+        "same_tendency": null,
+        "note": "no uanalyse data"
+      },
+      "bookmakers": [
+        {
+          "key": "pinnacle",
+          "title": "Pinnacle",
+          "last_update": "2026-06-15T18:00:00Z",
+          "weight": 3.0,
+          "raw_odds": {
+            "home": 2.6,
+            "away": 2.55,
+            "draw": 3.1
+          },
+          "overround": 0.0994,
+          "probabilities": {
+            "home": 0.3499,
+            "away": 0.3567,
+            "draw": 0.2934
+          }
+        },
+        {
+          "key": "betfair_ex_eu",
+          "title": "Betfair Exchange (EU)",
+          "last_update": "2026-06-15T18:05:00Z",
+          "weight": 2.5,
+          "raw_odds": {
+            "home": 2.7,
+            "away": 2.5,
+            "draw": 3.15
+          },
+          "overround": 0.0878,
+          "probabilities": {
+            "home": 0.3405,
+            "away": 0.3677,
+            "draw": 0.2918
+          }
+        },
+        {
+          "key": "sport888",
+          "title": "888sport",
+          "last_update": "2026-06-15T17:00:00Z",
+          "weight": 1.5,
+          "raw_odds": {
+            "home": 2.5,
+            "away": 2.7,
+            "draw": 3.0
+          },
+          "overround": 0.1037,
+          "probabilities": {
+            "home": 0.3624,
+            "away": 0.3356,
+            "draw": 0.302
+          }
+        }
+      ],
+      "divergence": {
+        "home": 0.009,
+        "draw": 0.0045,
+        "away": 0.0133
+      },
+      "totals_line": 2.5,
+      "totals_over_prob": 0.5427,
+      "expected_goals": {
+        "home": 1.4117,
+        "away": 1.4397
+      },
+      "recommended_tip": {
+        "home": 1,
+        "away": 2,
+        "expected_points": 1.0484,
+        "based_on": "odds_derived"
+      },
+      "modal_scoreline": {
+        "home": 1,
+        "away": 1,
+        "probability": 0.1174
+      }
+    }
+  ]
+}
