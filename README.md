@@ -80,13 +80,15 @@ src/
   build_data.py        # Einstiegspunkt — aggregiert alle Quellen → docs/data.json
   fetch_uanalyse.py    # Spielprognosen + Turnier-Wahrscheinlichkeiten von uanalyse
   fetch_odds.py        # Buchmacher-Quoten via The Odds API
+  fetch_live.py        # Live-Spielstände von football-data.org
+  live_update.py       # Leichtgewichtiger Live-Patcher (nur "live"-Key in data.json)
   scoreline.py         # Poisson-Optimierer → recommended_tip
   tournament.py        # Gruppensieger, Halbfinalisten, Titelkandidat
   kicktipp_submit.py   # Playwright Auto-Submit
   teams.py / teams.json  # Kanonisches Team-Registry (FIFA-Codes, Aliases, Flaggen)
 docs/
   index.html / app.js / style.css  # PWA-Frontend
-  data.json            # Generierte Vorhersagen (täglich per CI aktualisiert)
+  data.json            # Vorhersagen + Live-Ergebnisse (täglich + alle 5 min live)
   sw.js                # Service Worker (Offline-Support)
 data/
   mock_uanalyse.csv    # Mock-Daten für lokale Entwicklung
@@ -97,29 +99,38 @@ data/
 
 ## GitHub Actions
 
-Der Workflow `.github/workflows/predict.yml` läuft täglich um 06:00 UTC:
-
+**`predict.yml`** — täglich 06:00 UTC:
 1. Zieht Prognosen von uanalyse (kein Key nötig)
 2. Holt Quoten von The Odds API (falls `ODDS_API_KEY` gesetzt)
-3. Commitet `docs/data.json` → GitHub Pages aktualisiert sich automatisch
-4. Trägt Tipps in Kicktipp ein (falls `KICKTIPP_EMAIL` gesetzt)
+3. Holt Live-Spielstände (falls `FOOTBALL_DATA_API_KEY` gesetzt)
+4. Commitet `docs/data.json` → GitHub Pages aktualisiert sich automatisch
+5. Trägt Tipps in Kicktipp ein (falls `KICKTIPP_EMAIL` gesetzt)
 
-**Benötigte GitHub Secrets:**
+**`live.yml`** — alle 5 Minuten:
+- Patcht nur den `"live"`-Key in `data.json` mit aktuellen Spielständen
+- Commitet nur wenn Änderungen vorhanden (kein unnötiger Commit-Spam)
+- Benötigt `FOOTBALL_DATA_API_KEY`
+
+**GitHub Secrets:**
 
 | Secret | Pflicht | Bedeutung |
 |---|---|---|
+| `FOOTBALL_DATA_API_KEY` | Für Live-Scores | football-data.org — kostenlos registrieren |
 | `ODDS_API_KEY` | Nein | The Odds API — ohne Key keine Buchmacher-Quoten |
 | `KICKTIPP_EMAIL` | Nein | Aktiviert Auto-Submit |
 | `KICKTIPP_PASSWORD` | Wenn EMAIL gesetzt | Kicktipp-Passwort |
 | `KICKTIPP_COMPETITION` | Wenn EMAIL gesetzt | Liga-Slug aus der Kicktipp-URL |
 | `NTFY_TOPIC` | Nein | Push-Benachrichtigung nach Submit via ntfy.sh |
 
-Manueller Trigger: **Actions → "WM 2026 – Vorhersagen aktualisieren" → Run workflow**
+**`FOOTBALL_DATA_API_KEY` holen:** Kostenlos unter [football-data.org](https://www.football-data.org/client/register) registrieren → API-Key per E-Mail → als GitHub Secret hinzufügen.
+
+Manueller Trigger: **Actions → Workflow auswählen → Run workflow**
 
 ---
 
 ## Datenquellen & Lizenz
 
 - **Spielprognosen:** [uanalyse/world-cup-2026-predictions](https://github.com/uanalyse/world-cup-2026-predictions) — [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- **Live-Spielstände:** [football-data.org](https://www.football-data.org) — kostenloser Tier
 - **Buchmacher-Quoten:** [The Odds API](https://the-odds-api.com)
 - **Flaggen:** [flagcdn.com](https://flagcdn.com)

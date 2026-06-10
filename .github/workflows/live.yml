@@ -1,0 +1,44 @@
+name: WM 2026 – Live-Spielstände
+
+on:
+  schedule:
+    # Alle 5 Minuten während der Turnierzeit (Juni–Juli 2026)
+    # GitHub-Minimum: */5 * * * *
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  live-update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    # Nur ausführen wenn der API-Key gesetzt ist
+    env:
+      FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Python einrichten
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Abhängigkeiten installieren
+        run: pip install -r requirements.txt
+
+      - name: Live-Spielstände abrufen → docs/data.json patchen
+        # Bricht nicht ab wenn kein API-Key gesetzt (fetch_live gibt [] zurück)
+        run: python3 src/live_update.py
+
+      - name: data.json committen (nur bei tatsächlichen Änderungen)
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/data.json
+          git diff --staged --quiet && echo "Keine Änderungen." || \
+            git commit -m "chore: Live $(date -u +'%H:%M UTC')"
+          git pull --rebase && git push

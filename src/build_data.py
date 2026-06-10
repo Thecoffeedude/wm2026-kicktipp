@@ -15,6 +15,7 @@ import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import config
+from src.fetch_live import fetch_live_scores
 from src.fetch_odds import fetch_odds
 from src.fetch_uanalyse import fetch_uanalyse, fetch_tournament_probabilities
 from src.probabilities import process_match
@@ -232,11 +233,21 @@ def build(mock: bool = False) -> dict:
         logger.warning("Could not fetch tournament probabilities: %s", exc)
         tournament_probs = {}
 
+    # ── 6. Live scores (today's actual match results) ─────────────────────────
+    try:
+        live_scores = fetch_live_scores(mock=mock)
+    except Exception as exc:
+        logger.warning("Could not fetch live scores: %s", exc)
+        live_scores = []
+
+    now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     output = {
         "metadata": {
-            "generated_at":         datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "generated_at":         now_utc,
+            "live_updated_at":      now_utc,
             "source_primary":       "uanalyse/world-cup-2026-predictions (CC BY 4.0)",
             "source_secondary":     "the-odds-api",
+            "source_live":          "football-data.org (CC BY)",
             "mock":                 mock,
             "sport":                config.SPORT_KEY,
             "normalization_method": "multiplicative",
@@ -249,6 +260,7 @@ def build(mock: bool = False) -> dict:
         "matches":     matches_out,
         "tournament":  tournament_match,
         "tournament_probabilities": tournament_probs,
+        "live":        live_scores,
     }
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)

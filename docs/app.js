@@ -9,9 +9,54 @@ let allMatches = [];
 let metadata = {};
 let tournament = {};
 let tournamentProbs = {};   // FIFA_code → {team, group, prob_win_group, ..., prob_champion}
+let liveScores   = [];      // today's live/finished match scores from football-data.org
+let liveByKey    = {};      // lookup: "HOME_CODE:AWAY_CODE" → live entry
 let currentTab = 'heute';
 let searchQuery = '';
 let filterTeam = '';
+let _liveRefreshTimer = null;
+
+// ── Live data helpers ─────────────────────────────────────────────────────
+function _applyLiveData(raw) {
+  liveScores = raw || [];
+  liveByKey  = {};
+  liveScores.forEach(e => {
+    liveByKey[`${e.home_code}:${e.away_code}`] = e;
+  });
+}
+
+function _liveEntry(match) {
+  const hc = match.home_code || '';
+  const ac = match.away_code || '';
+  return liveByKey[`${hc}:${ac}`] || null;
+}
+
+function _hasLive() {
+  return liveScores.some(e => e.is_live || e.is_halftime);
+}
+
+async function _refreshLiveData() {
+  try {
+    const res  = await fetch(DATA_URL + '?_=' + Date.now());
+    if (!res.ok) return;
+    const data = await res.json();
+    _applyLiveData(data.live || []);
+    // Re-render current tab to show updated scores
+    if (currentTab === 'heute' || currentTab === 'verlauf') renderTab();
+    renderMeta();
+  } catch {}
+}
+
+function _scheduleLiveRefresh() {
+  if (_liveRefreshTimer) clearInterval(_liveRefreshTimer);
+  // Poll every 60 s if any live match; every 5 min otherwise
+  const interval = _hasLive() ? 60_000 : 300_000;
+  _liveRefreshTimer = setInterval(async () => {
+    await _refreshLiveData();
+    // Re-check interval after refresh (live match may have started/ended)
+    _scheduleLiveRefresh();
+  }, interval);
+}
 
 // ── Team → ISO 3166-1 alpha-2 map (all 48 WM 2026 teams + extras) ──────────
 const TEAM_ISO = {
@@ -114,12 +159,14 @@ async function init() { // returns promise
     const res = await fetch(DATA_URL);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
-    allMatches = data.matches;
-    metadata = data.metadata;
-    tournament = data.tournament || {};
+    allMatches  = data.matches;
+    metadata    = data.metadata;
+    tournament  = data.tournament || {};
     tournamentProbs = data.tournament_probabilities || {};
+    _applyLiveData(data.live || []);
     renderMeta();
     renderTab();
+    _scheduleLiveRefresh();
     registerSW();
     maybeShowInstallBanner();
     // Wake Lock in standalone / matchday tab
@@ -174,6 +221,7 @@ function renderTab() {
   app.innerHTML = '';
 
   if (currentTab === 'heute') {
+    renderLiveSection(app);
     renderHeuteStats(app, matches);
     if (matches.length === 0) {
       const upcoming = [...allMatches]
@@ -199,6 +247,65 @@ function renderTab() {
     animateBars();
     return;
   }
+}
+
+// ── Live score section (Heute tab) ────────────────────────────────────────
+function renderLiveSection(app) {
+  const relevant = liveScores.filter(e => e.is_live || e.is_halftime || e.is_done);
+  if (!relevant.length) return;
+
+  const section = document.createElement('div');
+  section.className = 'live-section';
+  section.id = 'live-section';
+
+  relevant.forEach(e => {
+    const isLive = e.is_live;
+    const isHT   = e.is_halftime;
+    const isDone = e.is_done;
+
+    const sh = e.score_home ?? '–';
+    const sa = e.score_away ?? '–';
+    const hth = e.halftime_home;
+    const hta = e.halftime_away;
+
+    let statusHtml;
+    if (isLive) {
+      statusHtml = `<span class="ls-badge ls-live"><span class="live-dot"></span>${e.minute ? e.minute + '\'' : 'Live'}</span>`;
+    } else if (isHT) {
+      statusHtml = `<span class="ls-badge ls-halftime">⏸ Halbzeit</span>`;
+    } else {
+      statusHtml = `<span class="ls-badge ls-done">✓ Beendet</span>`;
+    }
+
+    const htLine = (hth !== null && hth !== undefined && hta !== null && hta !== undefined)
+      ? `<div class="ls-ht">HZ ${hth}:${hta}</div>` : '';
+
+    const card = document.createElement('div');
+    card.className = `live-card${isLive ? ' live-card--live' : isHT ? ' live-card--ht' : ' live-card--done'}`;
+    card.innerHTML = `
+      <div class="ls-header">
+        ${statusHtml}
+        ${e.stage ? `<span class="ls-stage">${esc(e.stage)}</span>` : ''}
+      </div>
+      <div class="ls-fixture">
+        <div class="ls-team">
+          ${flagImg(e.home_team, e.home_team)}
+          <span class="ls-name">${esc(e.home_team)}</span>
+        </div>
+        <div class="ls-score">
+          <div class="ls-score-line"><span class="ls-goals">${sh}</span><span class="ls-sep">:</span><span class="ls-goals">${sa}</span></div>
+          ${htLine}
+        </div>
+        <div class="ls-team ls-team-away">
+          ${flagImg(e.away_team, e.away_team)}
+          <span class="ls-name">${esc(e.away_team)}</span>
+        </div>
+      </div>
+    `;
+    section.appendChild(card);
+  });
+
+  app.appendChild(section);
 }
 
 // ── Heute: stat widgets ───────────────────────────────────────────────────
@@ -852,20 +959,49 @@ function renderVerlauf(app) {
           : p.away > p.home && p.away >= p.draw ? m.away_team : 'Unentschieden')
         : null;
 
+      // Real score if available from live data
+      const live = _liveEntry(m);
+      const hasScore = live && (live.score_home !== null && live.score_home !== undefined);
+      const sh = hasScore ? live.score_home : null;
+      const sa = hasScore ? live.score_away : null;
+
+      let statusBadge;
+      if (live?.is_live) {
+        statusBadge = `<span class="vstatus vstatus-live"><span class="live-dot"></span>${live.minute ? live.minute + '\'' : 'Live'}</span>`;
+      } else if (live?.is_halftime) {
+        statusBadge = `<span class="vstatus vstatus-live">⏸ HZ</span>`;
+      } else if (live?.is_done) {
+        statusBadge = `<span class="vstatus vstatus-done">✓</span>`;
+      } else if (status === 'done') {
+        statusBadge = `<span class="vstatus vstatus-done">Beendet</span>`;
+      } else {
+        statusBadge = `<span class="vstatus vstatus-upcoming">${timeStr}</span>`;
+      }
+
+      const scoreDisplay = hasScore
+        ? `<div class="verlauf-score verlauf-score-real">${sh}:${sa}</div>`
+        : tip
+          ? `<div class="verlauf-score">${tip.home}:${tip.away}</div>`
+          : `<div class="verlauf-score">–:–</div>`;
+
+      const htLine = (live?.halftime_home !== null && live?.halftime_home !== undefined && live?.is_done)
+        ? `<div class="verlauf-ht">HZ ${live.halftime_home}:${live.halftime_away}</div>` : '';
+
       const card = document.createElement('div');
-      card.className = `verlauf-card${status === 'live' ? ' verlauf-live' : status === 'done' ? ' verlauf-done' : ''}`;
+      card.className = `verlauf-card${(live?.is_live || live?.is_halftime) ? ' verlauf-live' : live?.is_done ? ' verlauf-done' : status === 'done' ? ' verlauf-done' : ''}`;
       card.innerHTML = `
         <div class="verlauf-status">
-          <span class="vstatus vstatus-${status}">${status === 'live' ? 'Live' : status === 'done' ? 'Beendet' : timeStr}</span>
+          ${statusBadge}
         </div>
         <div class="verlauf-teams">
           <div class="verlauf-team">${flagImg(m.home_team, m.home_team)}<span>${esc(m.home_team)}</span></div>
-          <div class="verlauf-score">${tip ? `${tip.home}:${tip.away}` : '–:–'}</div>
+          ${scoreDisplay}
           <div class="verlauf-team verlauf-team-away">${flagImg(m.away_team, m.away_team)}<span>${esc(m.away_team)}</span></div>
         </div>
         <div class="verlauf-meta">
-          <span class="verlauf-tip-label">Tipp</span>
-          ${favLabel && favPct !== null ? `<span class="verlauf-fav">${esc(favLabel)} ${favPct}%</span>` : ''}
+          ${hasScore ? '' : `<span class="verlauf-tip-label">Tipp</span>`}
+          ${htLine}
+          ${!hasScore && favLabel && favPct !== null ? `<span class="verlauf-fav">${esc(favLabel)} ${favPct}%</span>` : ''}
           ${m.stage ? `<span class="verlauf-stage">${esc(m.stage)}</span>` : ''}
         </div>
       `;
