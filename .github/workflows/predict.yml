@@ -44,7 +44,7 @@ jobs:
           git add docs/data.json
           git diff --staged --quiet && echo "Keine Änderungen." || \
             git commit -m "chore: Vorhersagen $(date -u +'%Y-%m-%d %H:%M UTC')"
-          git push
+          git pull --rebase && git push
 
       # ── Kicktipp Auto-Submit ──────────────────────────────────────────────
       # Läuft nur, wenn KICKTIPP_EMAIL/PASSWORD/COMPETITION gesetzt sind.
