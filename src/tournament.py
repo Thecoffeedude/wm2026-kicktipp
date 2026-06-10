@@ -113,6 +113,16 @@ def predict_top_scorer_team(matches: list[dict]) -> str:
     return max(all_teams, key=lambda t: _team_expected_goals(t, matches))
 
 
+def build_team_strength(matches: list[dict]) -> dict[str, float]:
+    """
+    Returns {canonical_team: expected_group_stage_points} for all 48 teams.
+    Used by kicktipp_submit to pick the strongest team from any dropdown.
+    """
+    groups = _build_groups(matches)
+    all_teams = [t for g in groups.values() for t in g]
+    return {t: _team_expected_points(t, matches) for t in all_teams}
+
+
 def build_tournament_predictions(matches: list[dict]) -> dict:
     """
     Builds the full tournament prediction block for data.json.
@@ -122,4 +132,5 @@ def build_tournament_predictions(matches: list[dict]) -> dict:
         "champion": predict_champion(matches),
         "semifinalists": predict_semifinalists(matches),
         "top_scorer_team": predict_top_scorer_team(matches),
+        "team_strength": build_team_strength(matches),
     }

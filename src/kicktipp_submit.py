@@ -428,8 +428,32 @@ def plan_sonderfragen(
                 semifinalist_idx += 1
             else:
                 canonical = ""
-        elif qtype == "group_winner" and letter:
-            canonical = group_winners.get(letter, "")
+        elif qtype == "group_winner":
+            # Pick the strongest team among the actual dropdown options
+            # (avoids depending on FIFA vs. algorithmic group label order)
+            team_strength = tournament.get("team_strength", {})
+            best_opt = None
+            best_xp = -1.0
+            for opt in row["options"]:
+                text = opt["text"].strip()
+                if not text or "nicht getippt" in text.lower():
+                    continue
+                canon = aliases.get(text, text)
+                xp = team_strength.get(canon, 0.0)
+                if xp > best_xp:
+                    best_xp = xp
+                    best_opt = opt
+                    canonical = canon
+            if best_opt:
+                actions.append({
+                    **row,
+                    "canonical": canonical,
+                    "option": best_opt,
+                    "action": "answer",
+                    "reason": f"strongest in group (xP={best_xp:.3f})",
+                })
+                continue
+            canonical = ""
         else:
             canonical = ""
 
