@@ -1,5 +1,5 @@
 // Cache version — bump to bust old caches when shell changes
-const CACHE_VERSION = 'wm26-v4';
+const CACHE_VERSION = 'wm26-v5';
 const DATA_CACHE    = 'wm26-data-v4';
 const FLAG_CACHE    = 'wm26-flags-v4';
 
