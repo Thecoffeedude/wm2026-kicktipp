@@ -236,6 +236,16 @@ h1 {
   box-shadow: 0 6px 16px rgba(10,20,40,.18);
   background: var(--solid);   /* fallback while loading */
 }
+/* Team badge (TheSportsDB) — crest shape, not circle-cropped */
+.flag--badge {
+  border-radius: 8px;
+  object-fit: contain;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  filter: drop-shadow(0 4px 10px rgba(10,20,40,.22));
+}
+
 .flag-placeholder {
   width: 50px;
   height: 50px;

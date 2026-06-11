@@ -107,6 +107,7 @@ async function refreshAllData() {
       metadata = data.metadata;
       tournament = data.tournament || {};
       tournamentProbs = data.tournament_probabilities || {};
+    _applyTeamAssets(data);
     }
     if (l.status === 'fulfilled' && l.value.ok) _applyLiveData((await l.value.json()).live || []);
     if (r.status === 'fulfilled' && r.value.ok) _applyResults((await r.value.json()).results || []);
@@ -189,10 +190,32 @@ const TEAM_ISO = {
   'Uzbekistan': 'uz', 'Venezuela': 've', 'Wales': 'gb-wls',
 };
 
+// Team badges (TheSportsDB, via data.team_assets) — flagcdn is the fallback
+let teamBadges = {};   // team name → badge URL
+
+function _applyTeamAssets(data) {
+  const assets = data.team_assets || {};
+  teamBadges = {};
+  (data.matches || []).forEach(m => {
+    const h = assets[m.home_code], a = assets[m.away_code];
+    if (h) teamBadges[m.home_team] = h.badge_small || h.badge;
+    if (a) teamBadges[m.away_team] = a.badge_small || a.badge;
+  });
+}
+
 function flagImg(team, altText) {
   const iso = TEAM_ISO[team];
+  const flagUrl = iso ? `${FLAG_BASE}${iso}.png` : '';
+  const badge = teamBadges[team];
+  if (badge) {
+    // Badge preferred; on load error swap to the flag (or hide if none)
+    const onerr = flagUrl
+      ? `this.onerror=null;this.classList.remove('flag--badge');this.src='${flagUrl}'`
+      : `this.style.display='none'`;
+    return `<img class="flag flag--badge" src="${badge}" alt="${esc(altText || team)}" loading="lazy" width="50" height="50" onerror="${onerr}">`;
+  }
   if (!iso) return `<div class="flag-placeholder" aria-hidden="true">⚽</div>`;
-  return `<img class="flag" src="${FLAG_BASE}${iso}.png" alt="${esc(altText || team)}" loading="lazy" width="50" height="50">`;
+  return `<img class="flag" src="${flagUrl}" alt="${esc(altText || team)}" loading="lazy" width="50" height="50">`;
 }
 
 // ── Poisson helpers ───────────────────────────────────────────────────────
@@ -401,6 +424,7 @@ async function init() { // returns promise
     metadata    = data.metadata;
     tournament  = data.tournament || {};
     tournamentProbs = data.tournament_probabilities || {};
+    _applyTeamAssets(data);
 
     // results.json: persistent results history (optional, may 404 on old deploys)
     if (resultsRes.status === 'fulfilled' && resultsRes.value.ok) {

@@ -376,6 +376,19 @@ def build(mock: bool = False) -> dict:
     total_results = update_results(finished)
     logger.info("results.json: %d finished matches stored", total_results)
 
+    # ── 6b. Team artwork (TheSportsDB badges, cached forever) ─────────────
+    team_assets: dict[str, dict] = {}
+    artwork_path = Path(__file__).parent.parent / "data" / "team_artwork.json"
+    if artwork_path.exists():
+        try:
+            raw_art = json.loads(artwork_path.read_text(encoding="utf-8"))
+            team_assets = {
+                code: {"badge": a.get("badge", ""), "badge_small": a.get("badge_small", "")}
+                for code, a in raw_art.items() if a.get("badge")
+            }
+        except json.JSONDecodeError:
+            logger.warning("team_artwork.json unlesbar — ohne Wappen weiter")
+
     now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     output = {
         "metadata": {
@@ -406,6 +419,7 @@ def build(mock: bool = False) -> dict:
         "matches":     matches_out,
         "tournament":  tournament_match,
         "tournament_probabilities": tournament_probs,
+        "team_assets": team_assets,
         "live":        live_scores,
     }
 

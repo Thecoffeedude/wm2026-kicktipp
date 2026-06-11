@@ -31,6 +31,14 @@ jobs:
       - name: Abhängigkeiten installieren
         run: pip install -r requirements.txt
 
+      - name: Team-Wappen aktualisieren (nur fehlende — Cache für immer)
+        # TheSportsDB: no-op, sobald alle 48 Teams in data/team_artwork.json sind.
+        # TSDB_KEY optional (Fallback: öffentlicher Doku-Test-Key).
+        run: python3 src/fetch_artwork.py
+        env:
+          TSDB_KEY: ${{ secrets.TSDB_KEY }}
+        continue-on-error: true
+
       - name: Vorhersagen generieren → docs/data.json
         # uanalyse wird per HTTP gezogen (kein Secret nötig).
         # Markt-Quoten kommen aus docs/odds_latest.json (vom Capture-Workflow) —
@@ -44,7 +52,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/data.json docs/live.json docs/results.json
+          git add docs/data.json docs/live.json docs/results.json data/team_artwork.json
           git diff --staged --quiet && echo "Keine Änderungen." || \
             git commit -m "chore: Vorhersagen $(date -u +'%Y-%m-%d %H:%M UTC')"
           git pull --rebase && git push

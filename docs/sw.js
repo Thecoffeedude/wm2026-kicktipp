@@ -1,5 +1,5 @@
 // Cache version — bump to bust old caches when shell changes
-const CACHE_VERSION = 'wm26-v11';
+const CACHE_VERSION = 'wm26-v12';
 const DATA_CACHE    = 'wm26-data-v4';
 const FLAG_CACHE    = 'wm26-flags-v4';
 
@@ -48,7 +48,8 @@ self.addEventListener('fetch', event => {
 
   // Only handle GET requests for our own origin + flagcdn
   if (request.method !== 'GET') return;
-  if (url.origin !== self.location.origin && url.hostname !== 'flagcdn.com') return;
+  const isImageCDN = url.hostname === 'flagcdn.com' || url.hostname === 'r2.thesportsdb.com';
+  if (url.origin !== self.location.origin && !isImageCDN) return;
 
   if (DATA_FILES.some(f => url.pathname.endsWith(f))) {
     // JSON data: network-first → fresh predictions online, cached offline
@@ -56,8 +57,8 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  if (url.hostname === 'flagcdn.com') {
-    // Flags: stale-while-revalidate — serve cached, refresh in background
+  if (isImageCDN) {
+    // Flags/Wappen: stale-while-revalidate — serve cached, refresh in background
     event.respondWith(staleWhileRevalidate(request, FLAG_CACHE));
     return;
   }
