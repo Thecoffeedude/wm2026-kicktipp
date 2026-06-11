@@ -12,20 +12,23 @@ from src.fetch_highlightly import (
 
 # Shapes taken from the live CI discovery (run 27375034525)
 
+# displayNames as observed in the real FT payload (diagnose 2026-06-11)
 _RAW_STATS = [
     {"team": {"id": 14400, "name": "Mexico"},
      "statistics": [
-         {"value": "56%", "displayName": "Ball Possession"},
-         {"value": 11, "displayName": "Total Shots"},
-         {"value": 4, "displayName": "Shots On Target"},
+         {"value": "56%", "displayName": "Possession"},
+         {"value": 4, "displayName": "Shots on target"},
+         {"value": 5, "displayName": "Shots off target"},
+         {"value": 2, "displayName": "Blocked shots"},
          {"value": 0.89, "displayName": "Expected Goals"},
          {"value": 55, "displayName": "Attacks"},          # not mapped → dropped
      ]},
     {"team": {"id": 1303665, "name": "South Africa"},
      "statistics": [
-         {"value": "44%", "displayName": "Ball Possession"},
-         {"value": 6, "displayName": "Total Shots"},
-         {"value": 1, "displayName": "Shots On Target"},
+         {"value": "44%", "displayName": "Possession"},
+         {"value": 1, "displayName": "Shots on target"},
+         {"value": 4, "displayName": "Shots off target"},
+         {"value": 1, "displayName": "Blocked shots"},
      ]},
 ]
 
@@ -76,16 +79,18 @@ def test_stats_sides_and_keys():
     out = normalize_statistics(_RAW_STATS, home_code="MEX")
     assert out["home"]["possession"] == 56
     assert out["away"]["possession"] == 44
-    assert out["home"]["shots"] == 11
+    assert out["home"]["shots"] == 4 + 5 + 2      # on + off + blocked
+    assert out["away"]["shots"] == 1 + 4 + 1
     assert out["away"]["shots_on_target"] == 1
     assert out["home"]["xg"] == 0.89
     assert "Attacks" not in str(out)   # unmapped stats dropped
+    assert "_shots_off" not in str(out)  # internal keys removed
 
 def test_stats_rounding_not_forced_to_100():
     # 56 + 44 = 100 here, but the normalizer must not force it
     raw = [dict(_RAW_STATS[0]), dict(_RAW_STATS[1])]
-    raw[0]["statistics"] = [{"value": "57%", "displayName": "Ball Possession"}]
-    raw[1]["statistics"] = [{"value": "44%", "displayName": "Ball Possession"}]
+    raw[0]["statistics"] = [{"value": "57%", "displayName": "Possession"}]
+    raw[1]["statistics"] = [{"value": "44%", "displayName": "Possession"}]
     out = normalize_statistics(raw, "MEX")
     assert out["home"]["possession"] + out["away"]["possession"] == 101
 

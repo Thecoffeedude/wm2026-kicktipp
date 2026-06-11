@@ -51,15 +51,19 @@ DATA_PATH        = Path(__file__).parent.parent / "docs" / "data.json"
 MIN_BUDGET_FULL = 25   # below this: statistics only (skip events/lineups)
 MIN_BUDGET_STOP = 8    # below this: stop fetching entirely
 
-# Frontend-relevant statistics, keyed by Highlightly displayName
+# Frontend-relevant statistics, keyed by Highlightly displayName.
+# Names verified against the real FT payload (diagnose run 2026-06-11):
+# 'Possession', 'Shots on target', 'Shots off target', 'Blocked shots', …
 _STAT_KEYS = {
-    "Ball Possession":  "possession",
-    "Total Shots":      "shots",
-    "Shots On Target":  "shots_on_target",
-    "Expected Goals":   "xg",
-    "Corners":          "corners",
-    "Fouls":            "fouls",
-    "Passes":           "passes",
+    "Possession":        "possession",
+    "Shots on target":   "shots_on_target",
+    "Shots off target":  "_shots_off",
+    "Blocked shots":     "_shots_blocked",
+    "Expected Goals":    "xg",
+    "Corners":           "corners",
+    "Fouls":             "fouls",
+    "Total passes":      "passes",
+    "Goalkeeper saves":  "saves",
 }
 
 
@@ -111,6 +115,10 @@ def normalize_statistics(raw: list, home_code: str) -> dict | None:
                 continue
             v = stat.get("value")
             out[key] = _pct_to_int(v) if key == "possession" else v
+        # Total shots = on target + off target + blocked (no direct total field)
+        parts = [out.pop("_shots_off", None), out.pop("_shots_blocked", None)]
+        if out.get("shots_on_target") is not None and any(p is not None for p in parts):
+            out["shots"] = (out["shots_on_target"] or 0) + sum(p or 0 for p in parts)
         sides[side] = out
     if set(sides) != {"home", "away"}:
         logger.warning("Statistik-Seiten nicht zuordenbar (home_code=%s)", home_code)
