@@ -115,7 +115,7 @@ def decide_action(
 def plan_submissions(
     rows: list[dict],
     matches: list[dict],
-    aliases: dict[str, str],
+    aliases: dict[str, str] = {},
     overwrite: bool = False,
     now: datetime | None = None,
     buffer_h: float = DEFAULT_DEADLINE_BUFFER_HOURS,
