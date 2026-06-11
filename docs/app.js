@@ -138,6 +138,71 @@ function topScoredlines(lH, lA, n = 5) {
   return probs.slice(0, n);
 }
 
+// Probability grid P(home=h, away=a) for h,a in 0..max (independent Poisson).
+function poissonGrid(lH, lA, max = 6) {
+  const homeP = [], awayP = [];
+  for (let i = 0; i <= max; i++) { homeP.push(poissonPMF(i, lH)); awayP.push(poissonPMF(i, lA)); }
+  const grid = [];
+  for (let h = 0; h <= max; h++) {
+    const row = [];
+    for (let a = 0; a <= max; a++) row.push(homeP[h] * awayP[a]);
+    grid.push(row);
+  }
+  return grid;
+}
+
+// Expected Kicktipp points for tip (h,a), integrated over real outcomes 0..realMax.
+// Mirrors scoreline.ev_optimize (real range 0..7 like config.MAX_GOALS).
+function evPointsGrid(lH, lA, tipMax = 6, realMax = 7) {
+  const homeP = [], awayP = [];
+  for (let i = 0; i <= realMax; i++) { homeP.push(poissonPMF(i, lH)); awayP.push(poissonPMF(i, lA)); }
+  const grid = [];
+  for (let th = 0; th <= tipMax; th++) {
+    const row = [];
+    for (let ta = 0; ta <= tipMax; ta++) {
+      let ev = 0;
+      for (let rh = 0; rh <= realMax; rh++) {
+        for (let ra = 0; ra <= realMax; ra++) {
+          const p = homeP[rh] * awayP[ra];
+          if (p < 1e-12) continue;
+          ev += p * kicktippPoints(th, ta, rh, ra);
+        }
+      }
+      row.push(ev);
+    }
+    grid.push(row);
+  }
+  return grid;
+}
+
+// Normalized Shannon entropy of the 1X2 distribution → 0 (certain) … 1 (coin-flip).
+function outcomeEntropy(p) {
+  const vals = [p.home, p.draw, p.away].filter(v => v > 0);
+  const H = -vals.reduce((s, v) => s + v * Math.log(v), 0);
+  return H / Math.log(3);
+}
+
+// ── Flag primary colors (header tint) ─────────────────────────────────────
+const TEAM_COLOR = {
+  'Algeria': '#006233', 'Argentina': '#6CACE4', 'Australia': '#00843D',
+  'Austria': '#ED2939', 'Belgium': '#FDDA24', 'Bosnia-Herzegovina': '#002395',
+  'Brazil': '#009C3B', 'Canada': '#FF0000', 'Cape Verde': '#003893',
+  'Colombia': '#FCD116', 'Congo DR': '#007FFF', 'Croatia': '#FF0000',
+  'Curaçao': '#002B7F', 'Czechia': '#11457E', 'Ecuador': '#FFD100',
+  'Egypt': '#CE1126', 'England': '#CE1124', 'France': '#0055A4',
+  'Germany': '#DD0000', 'Ghana': '#006B3F', 'Haiti': '#00209F',
+  'Iran': '#239F40', 'Iraq': '#CE1126', 'Ivory Coast': '#FF8200',
+  'Japan': '#BC002D', 'Jordan': '#007A3D', 'Mexico': '#006847',
+  'Morocco': '#C1272D', 'Netherlands': '#FF6200', 'New Zealand': '#00247D',
+  'Norway': '#BA0C2F', 'Panama': '#005293', 'Paraguay': '#D52B1E',
+  'Portugal': '#006600', 'Qatar': '#8A1538', 'Saudi Arabia': '#006C35',
+  'Scotland': '#005EB8', 'Senegal': '#00853F', 'South Africa': '#007749',
+  'South Korea': '#003478', 'Spain': '#C60B1E', 'Sweden': '#006AA7',
+  'Switzerland': '#D52B1E', 'Tunisia': '#E70013', 'Türkiye': '#E30A17',
+  'United States': '#3C3B6E', 'Uruguay': '#0038A8', 'Uzbekistan': '#0099B5',
+};
+function teamColor(team) { return TEAM_COLOR[team] || '#6B7180'; }
+
 // ── Kicktipp scoring (mirrors config.kicktipp_points, rules from metadata) ─
 function kicktippPoints(tipH, tipA, realH, realA) {
   const rules = metadata.kicktipp_rules
@@ -669,8 +734,7 @@ function buildCard(match, index) {
     }
   }
 
-  // Build drawer content
-  const drawerContent = buildDrawer(match, ua, oddsC);
+  // Drawer content is built lazily on first expand (heavy: heatmap + curves).
 
   article.innerHTML = `
     <div class="ctop">
@@ -712,7 +776,7 @@ function buildCard(match, index) {
 
     ${badges.join('')}
 
-    <div class="drawer"><div>${drawerContent}</div></div>
+    <div class="drawer"><div class="drawer-inner" data-built="0"></div></div>
     <button class="expand" onclick="toggleCard(this)" aria-expanded="false">
       Details <span class="chev" aria-hidden="true">⌄</span>
     </button>
@@ -757,55 +821,41 @@ function renderOddsCompare(p) {
 }
 
 function buildDrawer(match, ua, oddsC) {
-  const tip = match.recommended_tip;
+  const lambda = ua?.lambda ?? match.expected_goals;
   let html = '<div class="data" style="margin:0 12px 12px">';
 
-  // Source comparison (if both available)
-  if (ua && oddsC) {
-    html += `<div class="dt">Quellenvergleich</div>`;
-    html += `<div class="srcrow"><span class="srclab">uanalyse</span>${renderMiniBar(ua.p)}</div>`;
-    html += `<div class="srcrow"><span class="srclab">Wettbüros</span>${renderMiniBar(oddsC.p)}</div>`;
+  // 6 · Flag-tinted hero + entropy indicator
+  html += buildDetailHero(match);
+
+  // 1+2 · Result heatmap (probability ↔ expected points) and 3 · Poisson curves
+  if (lambda?.home != null) {
+    html += buildHeatmap(match, lambda);
+    html += buildPoissonCurves(match, lambda);
   }
 
-  // xG bars
-  const lambda = ua?.lambda ?? match.expected_goals;
+  // 4 · Source detail (uanalyse vs odds + divergence)
+  html += buildSourceDetail(match, ua, oddsC);
+
+  // 5 · What's at stake (tournament probabilities)
+  html += buildStakes(match);
+
+  // Compact numeric xG (anchors the curves above)
   if (lambda?.home != null) {
-    html += `<div class="dt">Erwartete Tore (xG)</div>`;
     const hW = Math.min(lambda.home / XG_MAX * 100, 100).toFixed(1);
     const aW = Math.min(lambda.away / XG_MAX * 100, 100).toFixed(1);
     const hAbbr = match.home_team.slice(0, 3).toUpperCase();
     const aAbbr = match.away_team.slice(0, 3).toUpperCase();
-    html += `
+    html += `<div class="dt">Erwartete Tore (λ)</div>
       <div class="xg-row-d">
         <span class="l">${hAbbr}</span>
         <div class="xg-track"><div class="xg-fill" style="--xw:${hW}%;background:var(--home)"></div></div>
-        <span class="v">${lambda.home.toFixed(1)}</span>
+        <span class="v">${lambda.home.toFixed(2)}</span>
       </div>
       <div class="xg-row-d">
         <span class="l">${aAbbr}</span>
         <div class="xg-track"><div class="xg-fill" style="--xw:${aW}%;background:var(--away)"></div></div>
-        <span class="v">${lambda.away.toFixed(1)}</span>
+        <span class="v">${lambda.away.toFixed(2)}</span>
       </div>`;
-  }
-
-  // Top scorelines (computed from Poisson if lambda available)
-  if (lambda?.home != null) {
-    const top = topScoredlines(lambda.home, lambda.away, 5);
-    html += `<div class="dt">Wahrscheinlichste Ergebnisse</div><div class="scl">`;
-    top.forEach((sc, i) => {
-      const isEVtip = tip && sc.h === tip.home && sc.a === tip.away;
-      const isTop = i === 0;
-      const cls = isEVtip ? 'scl-chip tip-match' : isTop ? 'scl-chip top' : 'scl-chip';
-      const label = isEVtip ? `${sc.s} ★` : sc.s;
-      html += `<div class="${cls}"><b>${esc(label)}</b><span class="sp">${pct(sc.p)}</span></div>`;
-    });
-    html += `</div>`;
-    if (tip && !top.some(s => s.h === tip.home && s.a === tip.away)) {
-      html += `<p style="font-size:11px;color:var(--muted);margin-top:8px">
-        ★ Empfohlener Tipp ${tip.home}:${tip.away} (${pct(poissonPMF(tip.home, lambda.home) * poissonPMF(tip.away, lambda.away))})
-        ist EV-optimal, aber nicht in Top-5 nach Wahrscheinlichkeit.
-      </p>`;
-    }
   }
 
   // Bookmakers (collapsible)
@@ -835,6 +885,223 @@ function buildDrawer(match, ua, oddsC) {
 
   html += '</div>';
   return html;
+}
+
+// ── 6 · Flag-tinted hero + entropy ("Münzwurf → klarer Favorit") ───────────
+function buildDetailHero(match) {
+  const p = match.sources?.uanalyse?.p ?? match.sources?.odds_consensus?.p;
+  const cH = teamColor(match.home_team), cA = teamColor(match.away_team);
+  let entropyHtml = '';
+  if (p) {
+    const ent = outcomeEntropy(p);          // 1 = coin-flip, 0 = certain
+    const markX = ((1 - ent) * 100).toFixed(1);   // left = Münzwurf, right = klarer Favorit
+    const verdict = ent > 0.92 ? 'Münzwurf'
+      : ent > 0.7 ? 'offenes Spiel'
+      : ent > 0.45 ? 'leichter Favorit'
+      : 'klarer Favorit';
+    entropyHtml = `
+      <div class="entro">
+        <div class="entro-track"><div class="entro-marker" style="left:${markX}%"></div></div>
+        <div class="entro-labels">
+          <span>Münzwurf</span>
+          <span class="entro-verdict">${verdict}</span>
+          <span>klarer Favorit</span>
+        </div>
+      </div>`;
+  }
+  return `
+    <div class="detail-hero" style="--cH:${cH};--cA:${cA}">
+      <div class="dh-teams">
+        <span class="dh-team"><span class="dh-dot" style="background:${cH}"></span>${esc(match.home_team)}</span>
+        <span class="dh-vs">gegen</span>
+        <span class="dh-team away">${esc(match.away_team)}<span class="dh-dot" style="background:${cA}"></span></span>
+      </div>
+      ${entropyHtml}
+    </div>`;
+}
+
+// ── 1+2 · Result heatmap (probability ↔ expected Kicktipp points) ──────────
+function hmCellBg(region, t, mode) {
+  t = Math.max(0, Math.min(1, t));
+  const a = (0.06 + 0.84 * Math.pow(t, 0.85)).toFixed(3);
+  if (mode === 'pts') return `rgba(52,199,89,${a})`;                  // --good ramp
+  const rgb = region === 'home' ? '0,122,255'                        // --home
+    : region === 'away' ? '255,149,0'                                 // --away
+    : '142,142,147';                                                  // --draw
+  return `rgba(${rgb},${a})`;
+}
+
+function heatmapReadout(h, a, prob, pts, flags) {
+  const tags = [];
+  if (flags.ev) tags.push('<span class="hm-tag ev">★ EV-optimal</span>');
+  if (flags.modal) tags.push('<span class="hm-tag modal">◆ wahrscheinlichstes</span>');
+  return `
+    <span class="hm-ro-score">${h}:${a}</span>
+    <span class="hm-ro-stats">
+      <b>${(prob * 100).toFixed(1)}%</b> Wahrscheinlichkeit ·
+      <b>${pts.toFixed(2)}</b> Ø Punkte
+    </span>
+    ${tags.length ? `<span class="hm-ro-tags">${tags.join('')}</span>` : ''}`;
+}
+
+function buildHeatmap(match, lambda) {
+  const MAXG = 6;
+  const probGrid = poissonGrid(lambda.home, lambda.away, MAXG);
+  const ptsGrid  = evPointsGrid(lambda.home, lambda.away, MAXG, 7);
+  let maxProb = 0, maxPts = 0;
+  for (let h = 0; h <= MAXG; h++) for (let a = 0; a <= MAXG; a++) {
+    if (probGrid[h][a] > maxProb) maxProb = probGrid[h][a];
+    if (ptsGrid[h][a] > maxPts) maxPts = ptsGrid[h][a];
+  }
+  const tip = match.recommended_tip, modal = match.modal_scoreline;
+  const tipIsModal = tip && modal && tip.home === modal.home && tip.away === modal.away;
+
+  let cells = `<div class="hm-corner" aria-hidden="true"><i>Heim ↓</i><i>Gast →</i></div>`;
+  for (let a = 0; a <= MAXG; a++) cells += `<div class="hm-axis top">${a}</div>`;
+  for (let h = 0; h <= MAXG; h++) {
+    cells += `<div class="hm-axis left">${h}</div>`;
+    for (let a = 0; a <= MAXG; a++) {
+      const prob = probGrid[h][a], pts = ptsGrid[h][a];
+      const region = h > a ? 'home' : h < a ? 'away' : 'draw';
+      const isEV = tip && h === tip.home && a === tip.away;
+      const isModal = modal && h === modal.home && a === modal.away;
+      const cls = ['hm-cell', region];
+      if (isEV) cls.push('ev', 'sel');
+      if (isModal) cls.push('modal');
+      const mark = isEV ? '★' : isModal ? '◆' : '';
+      cells += `<button type="button" class="${cls.join(' ')}"
+        style="--bgp:${hmCellBg(region, prob / maxProb, 'prob')};--bgpts:${hmCellBg(region, pts / maxPts, 'pts')}"
+        data-h="${h}" data-a="${a}" data-prob="${prob.toFixed(5)}" data-pts="${pts.toFixed(3)}"
+        onclick="selectHmCell(this)"
+        aria-label="Tipp ${h} zu ${a}: ${(prob * 100).toFixed(1)} Prozent, ${pts.toFixed(2)} erwartete Punkte">${mark ? `<span class="hm-mk">${mark}</span>` : ''}</button>`;
+    }
+  }
+
+  const evH = tip ? Math.min(tip.home, MAXG) : 0;
+  const evA = tip ? Math.min(tip.away, MAXG) : 0;
+  const caption = !tip ? ''
+    : tipIsModal
+      ? `<p class="hm-caption">Der EV-optimale Tipp <b>${tip.home}:${tip.away}</b> ist zugleich das wahrscheinlichste Ergebnis.</p>`
+      : `<p class="hm-caption">★ Der EV-optimale Tipp <b>${tip.home}:${tip.away}</b> schlägt das wahrscheinlichste Ergebnis ◆ <b>${modal.home}:${modal.away}</b> — über <em>alle</em> Ausgänge gemittelt bringt er mehr Kicktipp-Punkte.</p>`;
+
+  return `
+    <div class="dt">Ergebnis-Matrix — warum dieser Tipp?</div>
+    <div class="hm-modes" role="tablist">
+      <button type="button" class="hm-mode active" data-mode="prob" role="tab" aria-selected="true" onclick="setHeatmapMode(this)">Wahrscheinlichkeit</button>
+      <button type="button" class="hm-mode" data-mode="pts" role="tab" aria-selected="false" onclick="setHeatmapMode(this)">Ø Punkte</button>
+    </div>
+    <div class="heatmap mode-prob">
+      <div class="hm-grid">${cells}</div>
+      <div class="hm-readout">${heatmapReadout(evH, evA, probGrid[evH][evA], ptsGrid[evH][evA], { ev: true, modal: tipIsModal })}</div>
+      <div class="hm-legend">
+        <span><i class="hm-lg-h"></i>Heimsieg</span>
+        <span><i class="hm-lg-d"></i>Remis</span>
+        <span><i class="hm-lg-a"></i>Auswärtssieg</span>
+      </div>
+      ${caption}
+    </div>`;
+}
+
+// ── 3 · Two overlaid Poisson curves (home-λ vs away-λ) ─────────────────────
+function buildPoissonCurves(match, lambda) {
+  const N = 7, W = 300, H = 116, padL = 8, padR = 8, padT = 8, padB = 18;
+  const hP = [], aP = [];
+  for (let k = 0; k <= N; k++) { hP.push(poissonPMF(k, lambda.home)); aP.push(poissonPMF(k, lambda.away)); }
+  const yMax = Math.max(...hP, ...aP) * 1.12 || 1;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+  const X = k => padL + (k / N) * plotW;
+  const Y = v => padT + plotH - (v / yMax) * plotH;
+  const line = P => P.map((v, k) => `${k === 0 ? 'M' : 'L'}${X(k).toFixed(1)},${Y(v).toFixed(1)}`).join(' ');
+  const area = P => `${line(P)} L${X(N).toFixed(1)},${(padT + plotH).toFixed(1)} L${X(0).toFixed(1)},${(padT + plotH).toFixed(1)} Z`;
+  const cH = teamColor(match.home_team), cA = teamColor(match.away_team);
+  let axis = '';
+  for (let k = 0; k <= N; k++) axis += `<text class="pc-axt" x="${X(k).toFixed(1)}" y="${H - 5}" text-anchor="middle">${k}</text>`;
+
+  return `
+    <div class="dt">Torverteilung (Poisson)</div>
+    <svg class="pcurve" viewBox="0 0 ${W} ${H}" role="img" aria-label="Poisson-Torverteilung ${esc(match.home_team)} gegen ${esc(match.away_team)}">
+      <path d="${area(hP)}" fill="${cH}" opacity=".13"/>
+      <path d="${area(aP)}" fill="${cA}" opacity=".13"/>
+      <path d="${line(hP)}" fill="none" stroke="${cH}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="${line(aP)}" fill="none" stroke="${cA}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      ${hP.map((v, k) => `<circle cx="${X(k).toFixed(1)}" cy="${Y(v).toFixed(1)}" r="2.1" fill="${cH}"/>`).join('')}
+      ${aP.map((v, k) => `<circle cx="${X(k).toFixed(1)}" cy="${Y(v).toFixed(1)}" r="2.1" fill="${cA}"/>`).join('')}
+      ${axis}
+    </svg>
+    <div class="pc-legend">
+      <span><i class="pc-sw" style="background:${cH}"></i>${esc(match.home_team)} · λ ${lambda.home.toFixed(2)}</span>
+      <span><i class="pc-sw" style="background:${cA}"></i>${esc(match.away_team)} · λ ${lambda.away.toFixed(2)}</span>
+    </div>`;
+}
+
+// ── 4 · Source detail (uanalyse vs odds consensus + divergence) ────────────
+function buildSourceDetail(match, ua, oddsC) {
+  if (!ua && !oddsC) return '';
+  const row = (lab, p) => p
+    ? `<div class="srcrow"><span class="srclab">${lab}</span>${renderMiniBar(p)}<span class="src-nums">${pct(p.home)} / ${pct(p.draw)} / ${pct(p.away)}</span></div>`
+    : '';
+  let html = `<div class="dt">Quellen im Detail</div>`;
+  if (ua) html += row('uanalyse', ua.p);
+  if (oddsC) html += row('Wettbüros', oddsC.p);
+
+  const div = match.divergence;
+  if (ua && oddsC && div && div.home != null) {
+    const maxD = Math.max(div.home, div.draw, div.away);
+    const agree = match.agreement?.same_tendency;
+    html += `
+      <div class="src-div">
+        <span class="src-div-lab">Divergenz |uanalyse − Wettbüros|</span>
+        <div class="src-div-grid">
+          <div><i>Heim</i><b>${pct(div.home)}</b></div>
+          <div><i>Remis</i><b>${pct(div.draw)}</b></div>
+          <div><i>Gast</i><b>${pct(div.away)}</b></div>
+        </div>
+        <div class="src-verdict ${agree === false ? 'disagree' : 'agree'}">
+          ${agree === false ? '⚡ Tendenz weicht ab' : '✓ Tendenz übereinstimmend'} · max Δ ${pct(maxD)}
+        </div>
+      </div>`;
+  }
+  return html;
+}
+
+// ── 5 · What's at stake (tournament probabilities per team) ────────────────
+function buildStakes(match) {
+  const tH = tournamentProbs[match.home_code], tA = tournamentProbs[match.away_code];
+  if (!tH && !tA) return '';
+  const cH = teamColor(match.home_team), cA = teamColor(match.away_team);
+  const miles = [
+    ['Gruppensieg', 'prob_win_group'],
+    ['Achtelfinale', 'prob_reach_round_of_32'],
+    ['Viertelfinale', 'prob_reach_quarterfinals'],
+    ['Halbfinale', 'prob_reach_semifinals'],
+    ['Finale', 'prob_reach_final'],
+    ['Titel', 'prob_champion'],
+  ];
+  let rows = '';
+  miles.forEach(([lab, key]) => {
+    const vH = tH?.[key], vA = tA?.[key];
+    if (vH == null && vA == null) return;
+    rows += `
+      <div class="stake-row">
+        <div class="stake-side h">
+          <span class="stake-val">${vH != null ? pct(vH) : '–'}</span>
+          <div class="stake-bar mir"><div class="stake-fill" style="width:${vH != null ? (vH * 100).toFixed(1) : 0}%;background:${cH}"></div></div>
+        </div>
+        <span class="stake-lab">${lab}</span>
+        <div class="stake-side a">
+          <div class="stake-bar"><div class="stake-fill" style="width:${vA != null ? (vA * 100).toFixed(1) : 0}%;background:${cA}"></div></div>
+          <span class="stake-val">${vA != null ? pct(vA) : '–'}</span>
+        </div>
+      </div>`;
+  });
+  if (!rows) return '';
+  return `
+    <div class="dt">Was steht auf dem Spiel</div>
+    <div class="stake-head">
+      <span style="color:${cH}">${esc(match.home_team)}</span>
+      <span style="color:${cA}">${esc(match.away_team)}</span>
+    </div>
+    <div class="stakes">${rows}</div>`;
 }
 
 // ── Group standings from real results ─────────────────────────────────────
@@ -1287,6 +1554,17 @@ function renderModel(app) {
 // ── Interactions ──────────────────────────────────────────────────────────
 function toggleCard(btn) {
   const card = btn.closest('.card');
+
+  // Lazy-build the (heavy) drawer content on first open
+  const inner = card.querySelector('.drawer-inner');
+  if (inner && inner.dataset.built === '0') {
+    const match = allMatches.find(m => m.id === card.dataset.id);
+    if (match) {
+      inner.innerHTML = buildDrawer(match, match.sources?.uanalyse, match.sources?.odds_consensus);
+      inner.dataset.built = '1';
+    }
+  }
+
   const open = card.classList.toggle('open');
   btn.setAttribute('aria-expanded', String(open));
   // Animate xG fills on open (scaleX)
@@ -1310,6 +1588,37 @@ function toggleBookmakers(btn) {
   btn.querySelector('.bk-chevron')?.classList.toggle('bk-chevron-open', open);
 }
 window.toggleBookmakers = toggleBookmakers;
+
+// ── Heatmap: probability ↔ expected-points mode + cell selection ───────────
+function setHeatmapMode(btn) {
+  const mode = btn.dataset.mode;                       // 'prob' | 'pts'
+  const modes = btn.parentElement;                     // .hm-modes
+  const hm = modes.nextElementSibling;                 // .heatmap
+  if (!hm || !hm.classList.contains('heatmap')) return;
+  hm.classList.toggle('mode-prob', mode === 'prob');
+  hm.classList.toggle('mode-pts', mode === 'pts');
+  modes.querySelectorAll('.hm-mode').forEach(b => {
+    const active = b === btn;
+    b.classList.toggle('active', active);
+    b.setAttribute('aria-selected', String(active));
+  });
+}
+window.setHeatmapMode = setHeatmapMode;
+
+function selectHmCell(cell) {
+  const hm = cell.closest('.heatmap');
+  if (!hm) return;
+  hm.querySelectorAll('.hm-cell.sel').forEach(c => c.classList.remove('sel'));
+  cell.classList.add('sel');
+  const h = +cell.dataset.h, a = +cell.dataset.a;
+  const prob = parseFloat(cell.dataset.prob), pts = parseFloat(cell.dataset.pts);
+  const ro = hm.querySelector('.hm-readout');
+  if (ro) ro.innerHTML = heatmapReadout(h, a, prob, pts, {
+    ev: cell.classList.contains('ev'),
+    modal: cell.classList.contains('modal'),
+  });
+}
+window.selectHmCell = selectHmCell;
 
 // ── Bar animation trigger ─────────────────────────────────────────────────
 function animateBars() {
