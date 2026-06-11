@@ -19,7 +19,13 @@ import requests
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
-BASE = "https://soccer.highlightly.net"
+# Variants: direct Highlightly API and the RapidAPI-distributed edition
+_VARIANTS = [
+    ("direct", "https://soccer.highlightly.net", lambda k: {"x-api-key": k}),
+    ("direct-bearer", "https://soccer.highlightly.net", lambda k: {"Authorization": f"Bearer {k}"}),
+    ("rapidapi", "https://sport-highlights-api.p.rapidapi.com/football",
+     lambda k: {"x-rapidapi-key": k, "x-rapidapi-host": "sport-highlights-api.p.rapidapi.com"}),
+]
 
 
 def _trunc(obj, n=700) -> str:
@@ -27,18 +33,24 @@ def _trunc(obj, n=700) -> str:
     return s[:n] + ("…" if len(s) > n else "")
 
 
+_working_variant: int | None = None
+
+
 def probe(path: str, key: str, params: dict | None = None) -> dict | list | None:
-    """Try both common auth header variants; return parsed JSON or None."""
-    for headers in ({"x-api-key": key}, {"Authorization": f"Bearer {key}"}):
-        hdr_name = list(headers)[0]
+    """Try auth/base variants (sticky once one works); return parsed JSON or None."""
+    global _working_variant
+    order = [_working_variant] if _working_variant is not None else range(len(_VARIANTS))
+    for idx in order:
+        name, base, mk_headers = _VARIANTS[idx]
         try:
-            r = requests.get(f"{BASE}{path}", headers=headers, params=params or {}, timeout=15)
+            r = requests.get(f"{base}{path}", headers=mk_headers(key), params=params or {}, timeout=15)
         except Exception as exc:
-            logger.warning("%s [%s] → Netzwerkfehler %s", path, hdr_name, exc)
+            logger.warning("%s [%s] → Netzwerkfehler %s", path, name, exc)
             continue
         quota = {k: v for k, v in r.headers.items() if "limit" in k.lower() or "remaining" in k.lower()}
-        logger.info("%s [%s] → HTTP %s, Quota-Header: %s", path, hdr_name, r.status_code, quota or "-")
+        logger.info("%s [%s] → HTTP %s, Quota-Header: %s", path, name, r.status_code, quota or "-")
         if r.status_code == 200:
+            _working_variant = idx
             try:
                 data = r.json()
             except ValueError:
@@ -48,11 +60,7 @@ def probe(path: str, key: str, params: dict | None = None) -> dict | list | None
                 logger.info("  Top-Level-Keys: %s", list(data.keys()))
             logger.info("  Sample: %s", _trunc(data))
             return data
-        if r.status_code in (401, 403):
-            logger.info("  Auth abgelehnt mit %s — probiere nächste Variante", hdr_name)
-            continue
-        logger.warning("  Body: %r", r.text[:300])
-        return None
+        logger.info("  Body: %r", r.text[:200])
     return None
 
 
