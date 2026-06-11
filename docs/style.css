@@ -236,15 +236,45 @@ h1 {
   box-shadow: 0 6px 16px rgba(10,20,40,.18);
   background: var(--solid);   /* fallback while loading */
 }
-/* Team badge (TheSportsDB) — crest shape, not circle-cropped */
-.flag--badge {
-  border-radius: 8px;
-  object-fit: contain;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  filter: drop-shadow(0 4px 10px rgba(10,20,40,.22));
+/* Combined emblem: round badge + small flag overlay bottom-right */
+.emblem {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  flex-shrink: 0;
 }
+.emblem-badge {
+  /* round chip around the (non-square) crest — Liquid-Glass surface */
+  object-fit: contain;
+  padding: 5px;
+  background: var(--solid);
+}
+.emblem-badge--flag {
+  /* badge failed to load → behaves like a plain flag again */
+  object-fit: cover;
+  padding: 0;
+}
+.emblem-flag {
+  position: absolute;
+  right: -3px;
+  bottom: -1px;
+  width: 42%;
+  height: 42%;
+  min-width: 14px;
+  min-height: 14px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--solid);   /* surface border separates flag from badge */
+  box-shadow: 0 2px 6px rgba(10,20,40,.25);
+}
+
+/* Detail hero: smaller emblem, ring color = team chart color */
+.dh-team .emblem .flag {
+  width: 34px !important;
+  height: 34px !important;
+  border-width: 2px;
+}
+.dh-team .emblem { margin: 0 2px; }
 
 .flag-placeholder {
   width: 50px;

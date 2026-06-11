@@ -207,19 +207,30 @@ function _applyTeamAssets(data) {
   });
 }
 
+// Plain country flag (flagcdn) — used in tight list/calendar rows where a
+// badge would be unreadable.
 function flagImg(team, altText) {
   const iso = TEAM_ISO[team];
-  const flagUrl = iso ? `${FLAG_BASE}${iso}.png` : '';
-  const badge = teamBadges[team];
-  if (badge) {
-    // Badge preferred; on load error swap to the flag (or hide if none)
-    const onerr = flagUrl
-      ? `this.onerror=null;this.classList.remove('flag--badge');this.src='${flagUrl}'`
-      : `this.style.display='none'`;
-    return `<img class="flag flag--badge" src="${badge}" alt="${esc(altText || team)}" loading="lazy" width="50" height="50" onerror="${onerr}">`;
-  }
   if (!iso) return `<div class="flag-placeholder" aria-hidden="true">⚽</div>`;
-  return `<img class="flag" src="${flagUrl}" alt="${esc(altText || team)}" loading="lazy" width="50" height="50">`;
+  return `<img class="flag" src="${FLAG_BASE}${iso}.png" alt="${esc(altText || team)}" loading="lazy" width="50" height="50">`;
+}
+
+// Combined emblem: round badge (TheSportsDB) as the main mark, country flag as
+// a small round overlay bottom-right (decorative). Falls back to the plain
+// flag when no badge is cached. Used in match cards + detail hero.
+function teamEmblem(team, altText, ringColor) {
+  const badge = teamBadges[team];
+  if (!badge) return flagImg(team, altText);
+  const iso = TEAM_ISO[team];
+  const flagUrl = iso ? `${FLAG_BASE}${iso}.png` : '';
+  const ring = ringColor ? ` style="border-color:${ringColor}"` : '';
+  const onerr = flagUrl
+    ? `this.onerror=null;this.src='${flagUrl}';this.classList.add('emblem-badge--flag')`
+    : `this.style.visibility='hidden'`;
+  return `<span class="emblem">
+    <img class="flag emblem-badge"${ring} src="${badge}" alt="${esc(altText || team)}" loading="lazy" width="50" height="50" onerror="${onerr}">
+    ${flagUrl ? `<img class="emblem-flag" src="${flagUrl}" alt="" aria-hidden="true" loading="lazy" width="20" height="20">` : ''}
+  </span>`;
 }
 
 // ── Poisson helpers ───────────────────────────────────────────────────────
@@ -912,14 +923,14 @@ function buildCard(match, index) {
     </div>
     <div class="fixture">
       <div class="team">
-        ${flagImg(match.home_team)}
+        ${teamEmblem(match.home_team)}
         <span class="name">${esc(match.home_team)}</span>
       </div>
       <div class="score glass">
         <b>${tip ? tip.home : '–'}</b><span>:</span><b>${tip ? tip.away : '–'}</b>
       </div>
       <div class="team away">
-        ${flagImg(match.away_team)}
+        ${teamEmblem(match.away_team)}
         <span class="name">${esc(match.away_team)}</span>
       </div>
     </div>
@@ -1084,9 +1095,9 @@ function buildDetailHero(match) {
   return `
     <div class="detail-hero" style="--cH:${cH};--cA:${cA}">
       <div class="dh-teams">
-        <span class="dh-team"><span class="dh-dot" style="background:${cH}"></span>${esc(match.home_team)}</span>
+        <span class="dh-team">${teamEmblem(match.home_team, match.home_team, cH)}${esc(match.home_team)}</span>
         <span class="dh-vs">gegen</span>
-        <span class="dh-team away">${esc(match.away_team)}<span class="dh-dot" style="background:${cA}"></span></span>
+        <span class="dh-team away">${esc(match.away_team)}${teamEmblem(match.away_team, match.away_team, cA)}</span>
       </div>
       ${entropyHtml}
     </div>`;
