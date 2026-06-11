@@ -1,0 +1,92 @@
+name: WM 2026 – Kicktipp Auto-Submit (Zwei-Pass, deadline-anchored)
+
+# Kickoff-/deadline-ankernd statt starrem Tages-Cron — angedockt an dieselbe
+# 30-Min-Kadenz wie der Capture-Workflow. Ein billiges Gate (ohne Browser)
+# entscheidet pro Tick, ob ein Spiel in einem Submit-Fenster liegt; nur dann
+# wird Playwright gestartet. Alle fälligen Spiele eines Fensters laufen in EINEM
+# Browser-Lauf (Cluster).
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+    inputs:
+      force_overwrite:
+        description: 'Bereits getippte Spiele überschreiben (manuell)'
+        type: boolean
+        default: false
+
+concurrency:
+  group: kicktipp-submit
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    env:
+      KICKTIPP_EMAIL: ${{ secrets.KICKTIPP_EMAIL }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Python einrichten
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Abhängigkeiten installieren
+        run: pip install -r requirements.txt
+
+      # ── Billiges Gate: liegt ein Spiel in einem Submit-Fenster? ───────────
+      - name: Submit-Fenster prüfen (ohne Browser)
+        id: gate
+        if: env.KICKTIPP_EMAIL != ''
+        run: python3 src/submit_planner.py
+
+      # ── Nur bei fälligem Fenster: frische Daten + Playwright-Submit ───────
+      - name: Daten auf frische Schlussquoten-Blend aktualisieren
+        # build_data liest docs/odds_latest.json (vom Capture-Workflow nahe
+        # Anpfiff geschrieben) → frischer Blend für den Freshness-Pass.
+        if: steps.gate.outputs.should_run == 'true'
+        run: python3 src/build_data.py
+        env:
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+
+      - name: Playwright (Chromium) installieren
+        if: steps.gate.outputs.should_run == 'true'
+        run: |
+          pip install playwright
+          playwright install chromium --with-deps
+
+      - name: Tipps eintragen (Zwei-Pass je Spiel-Deadline)
+        if: steps.gate.outputs.should_run == 'true'
+        run: >
+          python3 src/kicktipp_submit.py --submit
+          ${{ github.event.inputs.force_overwrite == 'true' && '--force-overwrite' || '' }}
+        env:
+          KICKTIPP_EMAIL: ${{ secrets.KICKTIPP_EMAIL }}
+          KICKTIPP_PASSWORD: ${{ secrets.KICKTIPP_PASSWORD }}
+          KICKTIPP_COMPETITION: ${{ secrets.KICKTIPP_COMPETITION }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+
+      - name: Submit-Status committen
+        if: steps.gate.outputs.should_run == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/submit_state.json
+          git diff --staged --quiet && echo "Kein Status-Update." || \
+            git commit -m "chore: Submit-Status $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git pull --rebase && git push
+
+      - name: Screenshots hochladen (bei Fehler)
+        if: failure() && steps.gate.outputs.should_run == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: kicktipp-screenshots-${{ github.run_id }}
+          path: screenshots/
+          if-no-files-found: ignore

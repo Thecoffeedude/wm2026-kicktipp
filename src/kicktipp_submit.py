@@ -35,6 +35,33 @@ LOGIN_URL = f"{BASE_URL}/info/profil/login"
 DEFAULT_DEADLINE_BUFFER_HOURS = 2.0
 SCREENSHOT_DIR = Path("screenshots")
 
+# ─── Submit-window timing (minutes to the ACTUAL Kicktipp deadline) ───────────
+#
+#   ttd = (deadline − now) in minutes.   Two passes per game, derived from ttd:
+#
+#     ┌─ SAFETY pass ──────────────────────────────────────────────────────────┐
+#     │  Ziel-Fenster: 6–12 h vor Deadline. Jedes OFFENE Spiel wird mit der     │
+#     │  besten verfügbaren Prediction getippt (kein Überschreiben).            │
+#     │  Wirkung: garantiert kein leeres Feld. Greift als Netz auch später,     │
+#     │  solange das Feld leer ist und noch Marge bleibt.                       │
+#     ├─ FRESHNESS pass ───────────────────────────────────────────────────────┤
+#     │  Fenster: 25–75 min vor Deadline (nach den Aufstellungen). Bereits      │
+#     │  getippte Spiele werden mit der frischen Schlussquoten-Blend            │
+#     │  ÜBERSCHRIEBEN — aber nur, wenn sich der Tipp tatsächlich ändert.       │
+#     ├─ FINISH-MARGIN ────────────────────────────────────────────────────────┤
+#     │  Unter 22 min vor Deadline wird NICHT mehr getippt (Cron-/Submit-Verzug │
+#     │  einkalkuliert) → ntfy-Alarm für manuellen Eingriff.                    │
+#     └─────────────────────────────────────────────────────────────────────────┘
+FINISH_MARGIN_MIN = 22       # nie näher als 22 min an die Deadline heran tippen
+SAFETY_MIN_MIN    = 360      # 6 h  — frühestes Ziel des Absicherungs-Passes
+SAFETY_MAX_MIN    = 720      # 12 h — spätestes Ziel des Absicherungs-Passes
+FRESH_MIN_MIN     = 25       # frühestes Ende des Freshness-Fensters
+FRESH_MAX_MIN     = 75       # spätester Beginn des Freshness-Fensters
+
+# Kleiner Zustands-Store, damit der (teure) Playwright-Lauf im langen Safety-
+# Fenster nicht bei jedem 30-Min-Tick erneut startet.
+SUBMIT_STATE_PATH = Path(__file__).parent.parent / "data" / "submit_state.json"
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s %(levelname)-7s %(message)s",
@@ -72,59 +99,163 @@ def match_row(
     return index.get(key)
 
 
-def decide_action(
-    home_value: str,
-    away_value: str,
-    prediction: dict | None,
-    overwrite: bool,
-    now: datetime,
-    buffer_h: float,
-) -> tuple[str, str]:
+def parse_kicktipp_deadline(text: str, now: datetime | None = None) -> datetime | None:
     """
-    Determine what to do for one game row.
+    Parse a Kicktipp deadline cell into a UTC datetime.
 
-    Returns (action, reason) where action ∈ {
-        "tip", "skip_no_match", "skip_tipped", "skip_deadline"
-    }
+    Accepts German formats commonly shown in the tippabgabe time column:
+      "14.06.26 18:00", "14.06.2026 18:00", "14.06. 18:00", "18:00".
+    Kicktipp times are Europe/Berlin local; converted to UTC (DST-aware).
+    Returns None if no time could be extracted.
     """
-    if prediction is None:
-        return "skip_no_match", "no matching prediction in data.json"
+    import re
+    from zoneinfo import ZoneInfo
 
-    already_tipped = bool(home_value.strip() or away_value.strip())
-    if already_tipped and not overwrite:
-        return "skip_tipped", f"already tipped {home_value}:{away_value} (OVERWRITE=false)"
+    if not text:
+        return None
+    berlin = ZoneInfo("Europe/Berlin")
+    now = now or datetime.now(timezone.utc)
+    now_local = now.astimezone(berlin)
 
-    ct = prediction.get("commence_time", "")
+    t = text.strip().replace("\n", " ")
+    m = re.search(r"(\d{1,2})\.(\d{1,2})\.(\d{2,4})?\s*[^\d]*?(\d{1,2}):(\d{2})", t)
+    if m:
+        day, month, year, hh, mm = m.groups()
+        year_i = int(year) if year else now_local.year
+        if year_i < 100:
+            year_i += 2000
+        try:
+            local = datetime(year_i, int(month), int(day), int(hh), int(mm), tzinfo=berlin)
+            return local.astimezone(timezone.utc)
+        except ValueError:
+            return None
+
+    # Time-only ("18:00") → assume today (Berlin); roll to tomorrow if already past
+    m2 = re.search(r"(\d{1,2}):(\d{2})", t)
+    if m2:
+        hh, mm = m2.groups()
+        try:
+            local = now_local.replace(hour=int(hh), minute=int(mm), second=0, microsecond=0)
+        except ValueError:
+            return None
+        if local < now_local - timedelta(minutes=1):
+            local += timedelta(days=1)
+        return local.astimezone(timezone.utc)
+
+    return None
+
+
+def deadline_for(row: dict, prediction: dict | None, now: datetime | None = None) -> datetime | None:
+    """
+    Resolve the authoritative deadline for a row: the scraped Kicktipp deadline
+    if available, else the prediction's kickoff time as a proxy.
+    """
+    scraped = row.get("deadline")
+    if scraped:
+        if isinstance(scraped, datetime):
+            return scraped
+        try:
+            return datetime.fromisoformat(str(scraped).replace("Z", "+00:00"))
+        except ValueError:
+            pass
+    raw = row.get("deadline_text", "")
+    parsed = parse_kicktipp_deadline(raw, now)
+    if parsed:
+        return parsed
+    ct = (prediction or {}).get("commence_time", "")
     if ct:
         try:
             if "T" in ct:
-                kickoff = datetime.fromisoformat(ct.replace("Z", "+00:00"))
-            else:
-                kickoff = datetime.fromisoformat(ct).replace(tzinfo=timezone.utc)
-            if (kickoff - now) < timedelta(hours=buffer_h):
-                return (
-                    "skip_deadline",
-                    f"kickoff {ct} is within {buffer_h}h deadline buffer",
-                )
+                return datetime.fromisoformat(ct.replace("Z", "+00:00"))
+            return datetime.fromisoformat(ct).replace(tzinfo=timezone.utc)
         except ValueError:
-            pass
+            return None
+    return None
 
-    return "tip", ""
+
+def submit_window(ttd_min: float | None) -> str:
+    """
+    Classify a time-to-deadline (minutes) into a submit phase.
+    Returns one of: "too_late", "freshness", "safety", "waiting", "closed".
+    Pure helper used for both the cheap gate and per-row logging.
+    """
+    if ttd_min is None:
+        return "safety"            # unknown deadline → treat conservatively
+    if ttd_min <= 0:
+        return "closed"
+    if ttd_min < FINISH_MARGIN_MIN:
+        return "too_late"
+    if FRESH_MIN_MIN <= ttd_min <= FRESH_MAX_MIN:
+        return "freshness"
+    if SAFETY_MIN_MIN <= ttd_min <= SAFETY_MAX_MIN:
+        return "safety"
+    return "waiting"
+
+
+def decide_action(
+    home_value: str,
+    away_value: str,
+    new_tip: dict | None,
+    ttd_min: float | None,
+    force_overwrite: bool = False,
+) -> tuple[str, str]:
+    """
+    Decide what to do for one game row, given minutes-to-deadline (ttd_min).
+
+    Adaptive two-pass logic (no separate cron passes needed):
+      • empty field + enough margin            → tip   (SAFETY fill, never empty)
+      • already tipped, inside freshness window → tip   (FRESHNESS overwrite) —
+        but only if the fresh tip actually differs (idempotent)
+      • already tipped, outside that window     → skip_tipped
+      • < FINISH_MARGIN before deadline         → skip_too_late  (ntfy alert)
+
+    Returns (action, reason). action ∈ {tip, skip_no_match, skip_tipped,
+    skip_unchanged, skip_too_late, skip_closed}.
+    """
+    if new_tip is None:
+        return "skip_no_match", "no matching prediction in data.json"
+
+    empty = not (home_value.strip() or away_value.strip())
+    same = (str(new_tip["home"]), str(new_tip["away"])) == (home_value.strip(), away_value.strip())
+
+    if ttd_min is not None:
+        if ttd_min <= 0:
+            return "skip_closed", "deadline already passed"
+        if ttd_min < FINISH_MARGIN_MIN:
+            return ("skip_too_late",
+                    f"only {ttd_min:.0f} min to deadline (< {FINISH_MARGIN_MIN} min margin)")
+
+    # Open game → always fill while there is margin (safety net)
+    if empty:
+        ttd_txt = f"{ttd_min:.0f} min" if ttd_min is not None else "unknown"
+        return "tip", f"safety-fill (deadline in {ttd_txt})"
+
+    # Already tipped
+    if force_overwrite and not same:
+        return "tip", "forced overwrite"
+
+    in_freshness = ttd_min is None or (FRESH_MIN_MIN <= ttd_min <= FRESH_MAX_MIN)
+    if in_freshness and not same:
+        return "tip", f"freshness-overwrite (deadline in {ttd_min:.0f} min)" if ttd_min is not None \
+            else "freshness-overwrite"
+    if same:
+        return "skip_unchanged", "tip unchanged — idempotent"
+    return "skip_tipped", "already tipped, outside freshness window"
 
 
 def plan_submissions(
     rows: list[dict],
     matches: list[dict],
     aliases: dict[str, str] = {},
-    overwrite: bool = False,
     now: datetime | None = None,
-    buffer_h: float = DEFAULT_DEADLINE_BUFFER_HOURS,
+    force_overwrite: bool = False,
 ) -> list[dict]:
     """
-    Pure function: map kicktipp rows to actions.
+    Pure function: map kicktipp rows to actions using each row's actual deadline.
 
-    Each row dict: {home, away, home_value, away_value, home_input, away_input}
-    Returns list of action dicts (same keys + action, reason, tip).
+    Each row dict: {home, away, home_value, away_value, home_input, away_input,
+                    deadline | deadline_text (optional)}.
+    Returns action dicts with action, reason, tip, phase, ttd_min.
     """
     if now is None:
         now = datetime.now(timezone.utc)
@@ -134,13 +265,17 @@ def plan_submissions(
 
     for row in rows:
         prediction = match_row(row["home"], row["away"], index, aliases)
+        deadline = deadline_for(row, prediction, now)
+        ttd_min = (deadline - now).total_seconds() / 60.0 if deadline else None
+        phase = submit_window(ttd_min)
+
+        new_tip = prediction.get("recommended_tip") if prediction else None
         action, reason = decide_action(
             row.get("home_value", ""),
             row.get("away_value", ""),
-            prediction,
-            overwrite,
-            now,
-            buffer_h,
+            new_tip,
+            ttd_min,
+            force_overwrite,
         )
         result.append(
             {
@@ -148,13 +283,37 @@ def plan_submissions(
                 "kicktipp_away": row["away"],
                 "home_input": row.get("home_input", ""),
                 "away_input": row.get("away_input", ""),
+                "deadline": deadline.strftime("%Y-%m-%dT%H:%M:%SZ") if deadline else None,
+                "ttd_min": round(ttd_min, 1) if ttd_min is not None else None,
+                "phase": phase,
                 "action": action,
                 "reason": reason,
-                "tip": prediction["recommended_tip"] if prediction and action == "tip" else None,
+                "tip": new_tip if action == "tip" else None,
             }
         )
 
     return result
+
+
+# ─── Submit-state (avoids redundant Playwright spins in the safety window) ───
+
+
+def load_submit_state(path: Path = SUBMIT_STATE_PATH) -> dict:
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
+def save_submit_state(state: dict, path: Path = SUBMIT_STATE_PATH) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(state, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
+def _state_key(home: str, away: str) -> str:
+    return f"{_resolve_team(home)}:{_resolve_team(away)}"
 
 
 # ─── Browser helpers (Playwright) ─────────────────────────────────────────────
@@ -218,6 +377,8 @@ async def scrape_game_rows(page, competition: str) -> list[dict]:
             home_input = tr.locator('input[name*="heimTipp"]')
             away_input = tr.locator('input[name*="gastTipp"]')
 
+            # td[0] carries the match date/time — Kicktipp's tip deadline.
+            deadline_text = (await tr.locator("td").nth(0).inner_text()).strip()
             home_name = (await tr.locator("td").nth(1).inner_text()).strip()
             away_name = (await tr.locator("td").nth(2).inner_text()).strip()
             home_val = await home_input.input_value()
@@ -233,6 +394,7 @@ async def scrape_game_rows(page, competition: str) -> list[dict]:
                     "away_value": away_val,
                     "home_input": home_inp_name,
                     "away_input": away_inp_name,
+                    "deadline_text": deadline_text,
                 }
             )
         except Exception as exc:
@@ -554,7 +716,8 @@ async def run(args) -> int:
     password = os.environ.get("KICKTIPP_PASSWORD", "")
     competition = args.competition or os.environ.get("KICKTIPP_COMPETITION", "")
     ntfy_topic = os.environ.get("NTFY_TOPIC", "")
-    overwrite = os.environ.get("OVERWRITE", "false").lower() == "true"
+    # OVERWRITE=true forces re-tipping changed games regardless of window (manual runs).
+    force_overwrite = args.force_overwrite or os.environ.get("OVERWRITE", "false").lower() == "true"
 
     if not email or not password:
         logging.error("KICKTIPP_EMAIL and KICKTIPP_PASSWORD must be set (env or .env)")
@@ -599,14 +762,13 @@ async def run(args) -> int:
             actions = plan_submissions(
                 rows=rows,
                 matches=matches,
-                overwrite=overwrite,
                 now=now,
-                buffer_h=args.deadline_buffer,
+                force_overwrite=force_overwrite,
             )
             sf_actions = plan_sonderfragen(
                 sf_rows=sf_rows,
                 tournament=tournament,
-                overwrite=overwrite,
+                overwrite=force_overwrite,
             )
 
             tip_counts = await apply_tips(page, competition, actions, dry_run)
@@ -614,6 +776,7 @@ async def run(args) -> int:
 
             tipped = [a for a in actions if a["action"] == "tip"]
             sf_answered = [a for a in sf_actions if a["action"] == "answer"]
+            missed = [a for a in actions if a["action"] in ("skip_too_late", "skip_closed")]
 
             submitted = False
             if not dry_run and (tipped or sf_answered):
@@ -621,20 +784,34 @@ async def run(args) -> int:
                 if not submitted:
                     tip_counts["errors"] += 1
 
+            # Persist which games are now tipped (gate uses this to avoid re-spinning)
+            if not dry_run:
+                state = load_submit_state()
+                for a in actions:
+                    if a["action"] in ("tip", "skip_tipped", "skip_unchanged"):
+                        state[_state_key(a["kicktipp_home"], a["kicktipp_away"])] = {
+                            "tipped": True,
+                            "last_tip": f"{a['tip']['home']}:{a['tip']['away']}" if a.get("tip") else None,
+                            "updated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                        }
+                save_submit_state(state)
+
             mode_label = "DRY-RUN" if dry_run else "SUBMITTED"
             summary = (
-                f"{mode_label}: {len(tipped)} tip(s), "
-                f"{len(sf_answered)} Sonderfrage(n) planned, "
-                f"{tip_counts['skipped']} game-skips, "
-                f"{sf_counts['skipped']} sf-skips, "
+                f"{mode_label}: {len(tipped)} tip(s) "
+                f"({sum(1 for a in tipped if 'freshness' in a['reason'])} freshness-overwrite), "
+                f"{len(sf_answered)} Sonderfrage(n), "
+                f"{tip_counts['skipped']} skips, "
+                f"{len(missed)} too-late, "
                 f"{tip_counts['errors'] + sf_counts['errors']} error(s)"
             )
             logging.info(summary)
 
+            # ── ntfy: tips entered ───────────────────────────────────────────
             if ntfy_topic and not dry_run and (tip_counts["tipped"] > 0 or sf_counts["answered"] > 0):
                 lines = [
-                    f"{a['kicktipp_home']} vs {a['kicktipp_away']}: "
-                    f"{a['tip']['home']}:{a['tip']['away']}"
+                    f"{a['kicktipp_home']} {a['tip']['home']}:{a['tip']['away']} {a['kicktipp_away']}"
+                    f"{'  ⟳' if 'freshness' in a['reason'] else ''}"
                     for a in tipped
                 ]
                 sf_lines = [
@@ -642,8 +819,22 @@ async def run(args) -> int:
                     for a in sf_answered
                 ]
                 send_ntfy(
-                    ntfy_topic, "WM 2026 Kicktipp",
+                    ntfy_topic, "WM 2026 Kicktipp — Tipps gesetzt",
                     summary + "\n" + "\n".join(lines + sf_lines)
+                )
+
+            # ── ntfy ALERT: a game could not be tipped in time → manual action ──
+            if ntfy_topic and (missed or tip_counts["errors"] > 0):
+                alert_lines = [
+                    f"⚠️ {a['kicktipp_home']} vs {a['kicktipp_away']} — {a['reason']}"
+                    for a in missed
+                ]
+                if tip_counts["errors"] > 0:
+                    alert_lines.append(f"⚠️ {tip_counts['errors']} Eintrag-Fehler beim Absenden")
+                send_ntfy(
+                    ntfy_topic, "⚠️ WM 2026 Kicktipp — manuell eingreifen!",
+                    "Folgende Spiele konnten NICHT rechtzeitig getippt werden:\n"
+                    + "\n".join(alert_lines),
                 )
 
         except Exception as exc:
@@ -691,11 +882,17 @@ def main() -> None:
         help="Path to data.json (default: docs/data.json)",
     )
     parser.add_argument(
+        "--force-overwrite",
+        action="store_true",
+        help="Overwrite already-tipped games with the current tip regardless of the "
+             "freshness window (manual runs). Unchanged tips are still skipped.",
+    )
+    parser.add_argument(
         "--deadline-buffer",
         type=float,
         default=DEFAULT_DEADLINE_BUFFER_HOURS,
         metavar="HOURS",
-        help=f"Skip games starting within N hours (default: {DEFAULT_DEADLINE_BUFFER_HOURS})",
+        help="(Deprecated — timing now derives from each game's actual deadline.)",
     )
     args = parser.parse_args()
     sys.exit(asyncio.run(run(args)))

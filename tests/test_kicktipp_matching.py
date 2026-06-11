@@ -27,7 +27,7 @@ ALIASES = {
 
 _TIP = {"home": 2, "away": 1, "expected_points": 2.5, "based_on": "uanalyse"}
 
-def _pred(home: str, away: str, hours_from_now: float = 6.0) -> dict:
+def _pred(home: str, away: str, hours_from_now: float = 8.0) -> dict:
     kickoff = datetime.now(timezone.utc) + timedelta(hours=hours_from_now)
     return {
         "home_team": home,
@@ -86,55 +86,12 @@ def test_match_no_result():
     assert match_row("Foo", "Bar", index, ALIASES) is None
 
 
-# ─── decide_action ───────────────────────────────────────────────────────────
+# ─── plan_submissions (deadline-anchored two-pass) ───────────────────────────
+# decide_action / submit_window / parse_kicktipp_deadline are covered in detail
+# by tests/test_submit_timing.py. Here we check the row→action mapping.
 
 _NOW = datetime.now(timezone.utc)
-_PRED_OPEN = _pred("A", "B", hours_from_now=6)
-_PRED_SOON = _pred("A", "B", hours_from_now=1)  # within default 2h buffer
 
-
-def test_tip_open_game():
-    action, _ = decide_action("", "", _PRED_OPEN, False, _NOW, 2.0)
-    assert action == "tip"
-
-def test_skip_no_prediction():
-    action, reason = decide_action("", "", None, False, _NOW, 2.0)
-    assert action == "skip_no_match"
-    assert "data.json" in reason
-
-def test_skip_already_tipped():
-    action, reason = decide_action("2", "1", _PRED_OPEN, False, _NOW, 2.0)
-    assert action == "skip_tipped"
-    assert "OVERWRITE" in reason
-
-def test_overwrite_true_retips():
-    action, _ = decide_action("2", "1", _PRED_OPEN, True, _NOW, 2.0)
-    assert action == "tip"
-
-def test_skip_deadline():
-    action, reason = decide_action("", "", _PRED_SOON, False, _NOW, 2.0)
-    assert action == "skip_deadline"
-    assert "buffer" in reason
-
-def test_deadline_exactly_at_buffer_skipped():
-    pred = _pred("A", "B", hours_from_now=2.0)
-    action, _ = decide_action("", "", pred, False, _NOW, 2.0)
-    assert action == "skip_deadline"
-
-def test_game_just_outside_buffer_tips():
-    pred = _pred("A", "B", hours_from_now=2.1)
-    action, _ = decide_action("", "", pred, False, _NOW, 2.0)
-    assert action == "tip"
-
-def test_date_only_commence_time():
-    # Some entries have "2026-06-14" without a time component
-    future_date = (datetime.now(timezone.utc) + timedelta(days=3)).strftime("%Y-%m-%d")
-    pred = {**_PRED_OPEN, "commence_time": future_date}
-    action, _ = decide_action("", "", pred, False, _NOW, 2.0)
-    assert action == "tip"
-
-
-# ─── plan_submissions ────────────────────────────────────────────────────────
 
 def _row(home, away, home_val="", away_val=""):
     return {
@@ -148,6 +105,7 @@ def _row(home, away, home_val="", away_val=""):
 
 
 def test_plan_tips_open_games():
+    # MATCHES kick off ~6h out → safety-fill window
     rows = [_row("Germany", "Brazil"), _row("Foo", "Bar")]
     result = plan_submissions(rows, MATCHES, ALIASES, now=_NOW)
     ger_bra = next(r for r in result if r["kicktipp_home"] == "Germany")
@@ -155,14 +113,14 @@ def test_plan_tips_open_games():
     assert ger_bra["action"] == "tip"
     assert foo_bar["action"] == "skip_no_match"
 
-def test_plan_skips_tipped():
+def test_plan_skips_already_tipped_outside_freshness():
     rows = [_row("Germany", "Brazil", home_val="1", away_val="0")]
-    result = plan_submissions(rows, MATCHES, ALIASES, overwrite=False, now=_NOW)
+    result = plan_submissions(rows, MATCHES, ALIASES, now=_NOW)
     assert result[0]["action"] == "skip_tipped"
 
-def test_plan_overwrite_retips():
+def test_plan_force_overwrite_retips():
     rows = [_row("Germany", "Brazil", home_val="1", away_val="0")]
-    result = plan_submissions(rows, MATCHES, ALIASES, overwrite=True, now=_NOW)
+    result = plan_submissions(rows, MATCHES, ALIASES, now=_NOW, force_overwrite=True)
     assert result[0]["action"] == "tip"
 
 def test_plan_tip_includes_correct_tip():
@@ -179,6 +137,12 @@ def test_plan_alias_resolution():
     rows = [_row("Turkey", "Japan")]
     result = plan_submissions(rows, MATCHES, ALIASES, now=_NOW)
     assert result[0]["action"] == "tip"
+
+def test_plan_carries_phase_and_ttd():
+    rows = [_row("Germany", "Brazil")]
+    result = plan_submissions(rows, MATCHES, ALIASES, now=_NOW)
+    assert result[0]["phase"] == "safety"
+    assert result[0]["ttd_min"] is not None
 
 def test_plan_empty_rows():
     assert plan_submissions([], MATCHES, ALIASES) == []

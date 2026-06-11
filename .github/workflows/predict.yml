@@ -53,28 +53,6 @@ jobs:
         if: env.NTFY_TOPIC != ''
         run: python3 src/notify_tips.py
 
-      # ── Kicktipp Auto-Submit ──────────────────────────────────────────────
-      # Läuft nur, wenn KICKTIPP_EMAIL/PASSWORD/COMPETITION gesetzt sind.
-
-      - name: Playwright (Chromium) installieren
-        if: env.KICKTIPP_EMAIL != ''
-        run: |
-          pip install playwright
-          playwright install chromium --with-deps
-
-      - name: Kicktipp-Tipps eintragen
-        if: env.KICKTIPP_EMAIL != ''
-        run: python3 src/kicktipp_submit.py --submit
-        env:
-          KICKTIPP_EMAIL: ${{ secrets.KICKTIPP_EMAIL }}
-          KICKTIPP_PASSWORD: ${{ secrets.KICKTIPP_PASSWORD }}
-          KICKTIPP_COMPETITION: ${{ secrets.KICKTIPP_COMPETITION }}
-          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
-
-      - name: Screenshots hochladen (bei Fehler)
-        if: failure() && env.KICKTIPP_EMAIL != ''
-        uses: actions/upload-artifact@v7
-        with:
-          name: kicktipp-screenshots-${{ github.run_id }}
-          path: screenshots/
-          if-no-files-found: ignore
+      # Der Kicktipp-Auto-Submit ist in einen eigenen, deadline-ankernden
+      # Workflow ausgelagert: .github/workflows/submit.yml (Zwei-Pass).
+      # predict.yml baut nur noch die Daten und sendet die Tages-Übersicht.
