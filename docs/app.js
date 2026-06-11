@@ -413,15 +413,6 @@ function renderHeuteStats(app, todayMatches) {
   const withBoth = src.filter(m => m.agreement?.same_tendency !== null && m.agreement?.same_tendency !== undefined);
   const agreeRate = withBoth.length ? withBoth.filter(m => m.agreement.same_tendency).length / withBoth.length : null;
 
-  // Clearest favorite
-  let maxFav = 0, favTeam = '';
-  src.forEach(m => {
-    const p = m.sources?.uanalyse?.p ?? m.sources?.odds_consensus?.p;
-    if (!p) return;
-    if (p.home > maxFav) { maxFav = p.home; favTeam = m.home_team; }
-    if (p.away > maxFav) { maxFav = p.away; favTeam = m.away_team; }
-  });
-
   const row = document.createElement('div');
   row.className = 'stat-widgets';
   row.innerHTML = `
@@ -435,17 +426,14 @@ function renderHeuteStats(app, todayMatches) {
       <div class="sw-main">${xgTeam ? flagImg(xgTeam, xgTeam) : '–'}</div>
       <div class="sw-sub">${xgMax > 0 ? xgMax.toFixed(1) + ' erw. Tore' : '–'}</div>
     </div>
-    <div class="stat-widget glass" title="Team mit der höchsten Siegwahrscheinlichkeit heute">
-      <div class="sw-label">Klarer Favorit</div>
-      <div class="sw-main">${favTeam ? flagImg(favTeam, favTeam) : '–'}</div>
-      <div class="sw-sub">${maxFav > 0 ? pct(maxFav) : '–'}</div>
-    </div>
-    ${agreeRate !== null ? `
     <div class="stat-widget glass" title="Wie oft stimmen Modell und Buchmacher in der Tendenz überein">
       <div class="sw-label">Modell-Konsens</div>
-      <div class="sw-gauge" style="--g:${(agreeRate*180).toFixed(0)}deg"></div>
-      <div class="sw-sub">${pct(agreeRate)} Deckung</div>
-    </div>` : ''}
+      ${agreeRate !== null
+        ? `<div class="sw-gauge" style="--g:${(agreeRate*180).toFixed(0)}deg"></div>
+           <div class="sw-sub">${pct(agreeRate)} Deckung</div>`
+        : `<div class="sw-gauge" style="--g:0deg"></div>
+           <div class="sw-sub">–</div>`}
+    </div>
   `;
   app.appendChild(row);
 

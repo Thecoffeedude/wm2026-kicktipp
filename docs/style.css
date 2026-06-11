@@ -921,6 +921,10 @@ header { padding-top: calc(10px + env(safe-area-inset-top)); }
   .book-row { grid-template-columns: 80px 1fr 54px; }
   .tab { padding: 7px 8px; font-size: 9px; }
   .tab svg { width: 18px; height: 18px; }
+
+  /* Smaller header on mobile → sticky date/bracket headers need less offset */
+  .cal-header  { top: calc(66px + env(safe-area-inset-top)); }
+  .baum-header { top: calc(66px + env(safe-area-inset-top)); }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -993,7 +997,7 @@ header { padding-top: calc(10px + env(safe-area-inset-top)); }
 /* ── Calendar date headers (sticky) ─────────────────────────────────────── */
 .cal-header {
   position: sticky;
-  top: calc(68px + env(safe-area-inset-top));
+  top: calc(74px + env(safe-area-inset-top));
   z-index: 10;
   display: block;
   width: 100%;
@@ -1166,7 +1170,7 @@ header { padding-top: calc(10px + env(safe-area-inset-top)); }
   mask: radial-gradient(circle, transparent 40%, #000 41%);
 }
 
-/* Gauge for agreement rate */
+/* Gauge for agreement rate — left→right half-circle speedometer */
 .sw-gauge {
   width: 44px;
   height: 22px;
@@ -1177,9 +1181,10 @@ header { padding-top: calc(10px + env(safe-area-inset-top)); }
   content: '';
   position: absolute;
   width: 44px; height: 44px;
-  bottom: 0; left: 0;
+  top: 0; left: 0;
   border-radius: 50%;
-  background: conic-gradient(var(--good) 0deg var(--g), var(--away) var(--g) 180deg, transparent 180deg);
+  /* from 270deg: sweep starts at 9 o'clock (left), ends at 3 o'clock (right) */
+  background: conic-gradient(from 270deg, var(--good) 0deg var(--g), var(--away) var(--g) 180deg, transparent 180deg);
   -webkit-mask: radial-gradient(circle, transparent 38%, #000 39%);
   mask: radial-gradient(circle, transparent 38%, #000 39%);
 }
@@ -1307,7 +1312,7 @@ header { padding-top: calc(10px + env(safe-area-inset-top)); }
   border-bottom: none;
   border-radius: var(--r-card) var(--r-card) 0 0; /* top corners only */
   position: sticky;
-  top: calc(68px + env(safe-area-inset-top));
+  top: calc(74px + env(safe-area-inset-top));
   z-index: 5;
 }
 .baum-panel {
