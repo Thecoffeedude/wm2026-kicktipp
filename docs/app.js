@@ -182,26 +182,72 @@ function outcomeEntropy(p) {
   return H / Math.log(3);
 }
 
-// ── Flag primary colors (header tint) ─────────────────────────────────────
-const TEAM_COLOR = {
-  'Algeria': '#006233', 'Argentina': '#6CACE4', 'Australia': '#00843D',
-  'Austria': '#ED2939', 'Belgium': '#FDDA24', 'Bosnia-Herzegovina': '#002395',
-  'Brazil': '#009C3B', 'Canada': '#FF0000', 'Cape Verde': '#003893',
-  'Colombia': '#FCD116', 'Congo DR': '#007FFF', 'Croatia': '#FF0000',
-  'Curaçao': '#002B7F', 'Czechia': '#11457E', 'Ecuador': '#FFD100',
-  'Egypt': '#CE1126', 'England': '#CE1124', 'France': '#0055A4',
-  'Germany': '#DD0000', 'Ghana': '#006B3F', 'Haiti': '#00209F',
-  'Iran': '#239F40', 'Iraq': '#CE1126', 'Ivory Coast': '#FF8200',
-  'Japan': '#BC002D', 'Jordan': '#007A3D', 'Mexico': '#006847',
-  'Morocco': '#C1272D', 'Netherlands': '#FF6200', 'New Zealand': '#00247D',
-  'Norway': '#BA0C2F', 'Panama': '#005293', 'Paraguay': '#D52B1E',
-  'Portugal': '#006600', 'Qatar': '#8A1538', 'Saudi Arabia': '#006C35',
-  'Scotland': '#005EB8', 'Senegal': '#00853F', 'South Africa': '#007749',
-  'South Korea': '#003478', 'Spain': '#C60B1E', 'Sweden': '#006AA7',
-  'Switzerland': '#D52B1E', 'Tunisia': '#E70013', 'Türkiye': '#E30A17',
-  'United States': '#3C3B6E', 'Uruguay': '#0038A8', 'Uzbekistan': '#0099B5',
+// ── Team kit colors [primary, secondary] ──────────────────────────────────
+// Two colors per country (≈ home vs away kit) so that when two teams share a
+// similar primary (e.g. two reds), matchColors() can fall back to a secondary
+// and keep home/away visually distinct in every chart.
+const TEAM_COLORS = {
+  'Algeria': ['#006233', '#FFFFFF'], 'Argentina': ['#6CACE4', '#0A3161'],
+  'Australia': ['#00843D', '#FFCD00'], 'Austria': ['#ED2939', '#1A1A1A'],
+  'Belgium': ['#E30613', '#0A0A0A'], 'Bosnia-Herzegovina': ['#002F6C', '#FFD100'],
+  'Brazil': ['#009C3B', '#FFDF00'], 'Canada': ['#D52B1E', '#1A1A1A'],
+  'Cape Verde': ['#003893', '#CF142B'], 'Colombia': ['#FCD116', '#003893'],
+  'Congo DR': ['#007FFF', '#CE1021'], 'Croatia': ['#FF0000', '#1565C0'],
+  'Curaçao': ['#002B7F', '#FFD100'], 'Czechia': ['#11457E', '#D7141A'],
+  'Ecuador': ['#FFD100', '#003893'], 'Egypt': ['#CE1126', '#1A1A1A'],
+  'England': ['#1D3A8A', '#CF142B'], 'France': ['#0055A4', '#EF4135'],
+  'Germany': ['#1A1A1A', '#D00000'], 'Ghana': ['#006B3F', '#FCD116'],
+  'Haiti': ['#00209F', '#D21034'], 'Iran': ['#239F40', '#DA0000'],
+  'Iraq': ['#CE1126', '#1A7A3D'], 'Ivory Coast': ['#FF8200', '#009E60'],
+  'Japan': ['#1D2C5B', '#E60012'], 'Jordan': ['#007A3D', '#CE1126'],
+  'Mexico': ['#006847', '#CE1126'], 'Morocco': ['#C1272D', '#006233'],
+  'Netherlands': ['#FF6200', '#1A1A1A'], 'New Zealand': ['#0A0A0A', '#C8102E'],
+  'Norway': ['#BA0C2F', '#00205B'], 'Panama': ['#005293', '#D21034'],
+  'Paraguay': ['#D52B1E', '#0038A8'], 'Portugal': ['#C8102E', '#046A38'],
+  'Qatar': ['#8A1538', '#1A1A1A'], 'Saudi Arabia': ['#006C35', '#1A1A1A'],
+  'Scotland': ['#005EB8', '#1A1A1A'], 'Senegal': ['#00853F', '#E31B23'],
+  'South Africa': ['#007749', '#FFB915'], 'South Korea': ['#C8102E', '#0A3161'],
+  'Spain': ['#C60B1E', '#1A3A8F'], 'Sweden': ['#006AA7', '#FECC00'],
+  'Switzerland': ['#D52B1E', '#1A1A1A'], 'Tunisia': ['#E70013', '#1A1A1A'],
+  'Türkiye': ['#E30A17', '#1A1A1A'], 'United States': ['#0A3161', '#B31942'],
+  'Uruguay': ['#5B9DD5', '#001489'], 'Uzbekistan': ['#0099B5', '#1EB53A'],
 };
-function teamColor(team) { return TEAM_COLOR[team] || '#6B7180'; }
+const FALLBACK_PALETTE = ['#6B7180', '#B0B4BD'];
+
+function teamPalette(team) { return TEAM_COLORS[team] || FALLBACK_PALETTE; }
+function teamColor(team) { return teamPalette(team)[0]; }
+
+function _hexRgb(hex) {
+  const h = hex.replace('#', '');
+  return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)];
+}
+// Perceptual "redmean" distance — good enough to detect clashing kit colors.
+function colorDistance(a, b) {
+  const [r1, g1, b1] = _hexRgb(a), [r2, g2, b2] = _hexRgb(b);
+  const rm = (r1 + r2) / 2, dr = r1 - r2, dg = g1 - g2, db = b1 - b2;
+  return Math.sqrt((2 + rm / 256) * dr * dr + 4 * dg * dg + (2 + (255 - rm) / 256) * db * db);
+}
+function _luminance(hex) {
+  const [r, g, b] = _hexRgb(hex);
+  return (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+}
+// Keep near-white kit colors visible on the light theme.
+function chartSafe(hex) { return _luminance(hex) > 0.82 ? '#5B6472' : hex; }
+
+const COLOR_CLASH = 130;  // below this distance, kits are too similar
+
+// Resolve distinct {home, away} colors for a matchup, swapping to a secondary
+// kit when the two primaries clash (like a real away-kit change).
+function matchColors(homeTeam, awayTeam) {
+  const [hp, hs] = teamPalette(homeTeam);
+  const [ap, as] = teamPalette(awayTeam);
+  let home = hp, away = ap;
+  if (colorDistance(home, away) < COLOR_CLASH) {
+    away = as;                                   // away switches kit
+    if (colorDistance(home, away) < COLOR_CLASH) home = hs;  // both switch
+  }
+  return { home: chartSafe(home), away: chartSafe(away) };
+}
 
 // ── Kicktipp scoring (mirrors config.kicktipp_points, rules from metadata) ─
 function kicktippPoints(tipH, tipA, realH, realA) {
@@ -890,7 +936,7 @@ function buildDrawer(match, ua, oddsC) {
 // ── 6 · Flag-tinted hero + entropy ("Münzwurf → klarer Favorit") ───────────
 function buildDetailHero(match) {
   const p = match.sources?.uanalyse?.p ?? match.sources?.odds_consensus?.p;
-  const cH = teamColor(match.home_team), cA = teamColor(match.away_team);
+  const { home: cH, away: cA } = matchColors(match.home_team, match.away_team);
   let entropyHtml = '';
   if (p) {
     const ent = outcomeEntropy(p);          // 1 = coin-flip, 0 = certain
@@ -1013,7 +1059,7 @@ function buildPoissonCurves(match, lambda) {
   const Y = v => padT + plotH - (v / yMax) * plotH;
   const line = P => P.map((v, k) => `${k === 0 ? 'M' : 'L'}${X(k).toFixed(1)},${Y(v).toFixed(1)}`).join(' ');
   const area = P => `${line(P)} L${X(N).toFixed(1)},${(padT + plotH).toFixed(1)} L${X(0).toFixed(1)},${(padT + plotH).toFixed(1)} Z`;
-  const cH = teamColor(match.home_team), cA = teamColor(match.away_team);
+  const { home: cH, away: cA } = matchColors(match.home_team, match.away_team);
   let axis = '';
   for (let k = 0; k <= N; k++) axis += `<text class="pc-axt" x="${X(k).toFixed(1)}" y="${H - 5}" text-anchor="middle">${k}</text>`;
 
@@ -1068,7 +1114,7 @@ function buildSourceDetail(match, ua, oddsC) {
 function buildStakes(match) {
   const tH = tournamentProbs[match.home_code], tA = tournamentProbs[match.away_code];
   if (!tH && !tA) return '';
-  const cH = teamColor(match.home_team), cA = teamColor(match.away_team);
+  const { home: cH, away: cA } = matchColors(match.home_team, match.away_team);
   const miles = [
     ['Gruppensieg', 'prob_win_group'],
     ['Achtelfinale', 'prob_reach_round_of_32'],
