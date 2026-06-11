@@ -6,7 +6,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.fetch_highlightly import (
-    _pct_to_int, normalize_events, normalize_lineups, normalize_statistics,
+    _pct_to_int, day_results, is_finished_state, normalize_events,
+    normalize_lineups, normalize_statistics, parse_score,
 )
 
 # Shapes taken from the live CI discovery (run 27375034525)
@@ -129,3 +130,41 @@ def test_lineups_nested_rows_flattened():
 
 def test_lineups_empty_none():
     assert normalize_lineups({"homeTeam": {}, "awayTeam": {}}) is None
+
+
+# ── FT confirmation helpers (shape from live discovery: "2 - 0", "Finished") ─
+
+def test_parse_score():
+    assert parse_score("2 - 0") == (2, 0)
+    assert parse_score("1-1") == (1, 1)
+    assert parse_score(None) is None
+    assert parse_score("abgesagt") is None
+
+def test_is_finished_state():
+    assert is_finished_state({"description": "Finished"}) is True
+    assert is_finished_state({"description": "Second half"}) is False
+    assert is_finished_state(None) is False
+
+_HL_DAY = [
+    {"id": 1, "date": "2026-06-11T19:00:00.000Z", "round": "Group Stage - 1",
+     "state": {"clock": 90, "score": {"current": "2 - 0"}, "description": "Finished"},
+     "homeTeam": {"name": "Mexico"}, "awayTeam": {"name": "South Africa"}},
+    {"id": 2, "date": "2026-06-12T02:00:00.000Z", "round": "Group Stage - 1",
+     "state": {"clock": 33, "score": {"current": "0 - 0"}, "description": "First half"},
+     "homeTeam": {"name": "South Korea"}, "awayTeam": {"name": "Czech Republic"}},
+]
+
+def test_day_results_finished_only():
+    out = day_results(_HL_DAY)
+    assert len(out) == 1
+    r = out[0]
+    assert (r["home_code"], r["away_code"]) == ("MEX", "RSA")
+    assert (r["score_home"], r["score_away"]) == (2, 0)
+    assert r["is_done"] is True and r["score_source"] == "highlightly"
+    assert r["utc_date"] == "2026-06-11T19:00:00Z"
+
+def test_day_results_unknown_team_skipped():
+    raw = [{"id": 3, "date": "2026-06-11T19:00:00.000Z",
+            "state": {"score": {"current": "1 - 0"}, "description": "Finished"},
+            "homeTeam": {"name": "Fantasia"}, "awayTeam": {"name": "Mexico"}}]
+    assert day_results(raw) == []

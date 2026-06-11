@@ -838,6 +838,42 @@ function renderCalendar(container) {
 }
 
 // ── Card builder ──────────────────────────────────────────────────────────
+// Goals for a card: live-feed goals preferred, Highlightly events as fallback
+function _goalsFor(match, rEntry) {
+  if (rEntry?.goals?.length) return rEntry.goals;
+  const ev = matchStats[match.id]?.events || [];
+  return ev.filter(e => e.type === 'Goal' || e.type === 'Penalty' || e.type === 'Own Goal')
+    .map(e => ({
+      minute: e.time, scorer: e.player, side: e.side,
+      type: e.type === 'Penalty' ? 'PENALTY' : e.type === 'Own Goal' ? 'OWN' : 'REGULAR',
+    }));
+}
+
+// Compact post-match stats strip on the card (full section lives in the drawer)
+function cardStats(match) {
+  const st = matchStats[match.id]?.stats;
+  if (!st?.home || !st?.away) return '';
+  const { home: cH, away: cA } = matchColors(match.home_team, match.away_team);
+  const ph = st.home.possession, pa = st.away.possession;
+  const line = [];
+  if (st.home.shots != null) line.push(`Schüsse ${st.home.shots}–${st.away.shots}`);
+  if (st.home.shots_on_target != null) line.push(`aufs Tor ${st.home.shots_on_target}–${st.away.shots_on_target}`);
+  if (st.home.xg != null) line.push(`xG ${st.home.xg.toFixed(2)}–${st.away.xg.toFixed(2)}`);
+  return `<div class="card-stats">
+    ${ph != null && pa != null ? `
+    <div class="ms-poss" title="Ballbesitz">
+      <span class="ms-val">${ph}%</span>
+      <div class="ms-track ms-track--poss">
+        <div class="ms-seg" style="width:${ph}%;background:${cH}"></div>
+        <div class="ms-seg" style="width:${100 - ph}%;background:${cA}"></div>
+      </div>
+      <span class="ms-val">${pa}%</span>
+      <span class="ms-lab">Ballbesitz</span>
+    </div>` : ''}
+    ${line.length ? `<div class="cs-line">${line.join(' · ')}</div>` : ''}
+  </div>`;
+}
+
 function buildCard(match, index) {
   const article = document.createElement('article');
   article.className = 'card glass';
@@ -887,9 +923,9 @@ function buildCard(match, index) {
       const cls = pts == null ? '' : pts >= 3 ? 'vp-high' : pts > 0 ? 'vp-mid' : 'vp-zero';
       resultLine = `<div class="result-line">
         <span class="rl-label">✓ Endstand</span>
-        <span class="rl-score">${rEntry.score_home}:${rEntry.score_away}</span>
         ${pts != null ? `<span class="verlauf-pts ${cls}">+${pts} Pkt</span>` : ''}
-      </div>${liveExtras(rEntry)}`;
+        ${tip ? `<span class="rl-note">Tipp war ${tip.home}:${tip.away}</span>` : ''}
+      </div>${liveExtras({ ...rEntry, goals: _goalsFor(match, rEntry) })}`;
     } else if (rEntry.is_live || rEntry.is_halftime) {
       resultLine = `<div class="result-line result-line--live">
         <span class="rl-label"><span class="live-dot"></span><span class="live-clock">${liveClock(rEntry)}</span></span>
@@ -915,6 +951,8 @@ function buildCard(match, index) {
   }
 
   // Drawer content is built lazily on first expand (heavy: heatmap + curves).
+  // fin: match is over -> real score takes the bubble, predictions collapse.
+  const fin = !!(rEntry && rEntry.is_done && rEntry.score_home != null);
 
   article.innerHTML = `
     <div class="ctop">
@@ -926,35 +964,46 @@ function buildCard(match, index) {
         ${teamEmblem(match.home_team)}
         <span class="name">${esc(match.home_team)}</span>
       </div>
-      <div class="score glass">
-        <b>${tip ? tip.home : '–'}</b><span>:</span><b>${tip ? tip.away : '–'}</b>
+      <div class="score glass${fin ? ' score--final' : ''}">
+        <b>${fin ? rEntry.score_home : (tip ? tip.home : '–')}</b><span>:</span><b>${fin ? rEntry.score_away : (tip ? tip.away : '–')}</b>
       </div>
       <div class="team away">
         ${teamEmblem(match.away_team)}
         <span class="name">${esc(match.away_team)}</span>
       </div>
     </div>
-    ${tip ? `
-    <div class="tipmeta">
-      empfohlener Tipp ·
-      <span class="ev">+${tip.expected_points} Pkt</span>
-      <span class="${srcClass}">${esc(srcLabel)}</span>
-      ${modalNote ? `<span style="font-size:11px;color:var(--muted)">${esc(modalNote)}</span>` : ''}
-    </div>` : ''}
     ${resultLine}
+    ${fin ? cardStats(match) : ''}
 
-    ${primaryP ? `
-    <div class="data">
-      ${renderBar(primaryP)}
-      <div class="key">
-        <i class="kh">Heimsieg</i>
-        <i class="kd">Unentschieden</i>
-        <i class="ka">Auswärtssieg</i>
-      </div>
-      ${ua && oddsC ? renderOddsCompare(oddsC.p) : ''}
-    </div>` : ''}
-
-    ${badges.join('')}
+    ${(() => {
+      const predHtml = `
+        ${tip ? `
+        <div class="tipmeta">
+          empfohlener Tipp ·
+          <span class="ev">+${tip.expected_points} Pkt</span>
+          <span class="${srcClass}">${esc(srcLabel)}</span>
+          ${modalNote ? `<span style="font-size:11px;color:var(--muted)">${esc(modalNote)}</span>` : ''}
+        </div>` : ''}
+        ${primaryP ? `
+        <div class="data">
+          ${renderBar(primaryP)}
+          <div class="key">
+            <i class="kh">Heimsieg</i>
+            <i class="kd">Unentschieden</i>
+            <i class="ka">Auswärtssieg</i>
+          </div>
+          ${ua && oddsC ? renderOddsCompare(oddsC.p) : ''}
+        </div>` : ''}`;
+      if (!fin) return predHtml + badges.join('');
+      // finished: prediction stays available, but collapsed by default
+      return `
+        <button class="bk-toggle pred-toggle" aria-expanded="false" aria-controls="pred-${match.id}"
+          onclick="toggleBookmakers(this)">
+          <span>Vorhersage anzeigen</span>
+          <svg class="bk-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="pred-${match.id}" class="pred-collapsed" hidden>${predHtml}</div>`;
+    })()}
 
     <div class="drawer"><div class="drawer-inner" data-built="0"></div></div>
     <button class="expand" onclick="toggleCard(this)" aria-expanded="false">

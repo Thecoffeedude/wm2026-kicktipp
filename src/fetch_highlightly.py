@@ -163,6 +163,116 @@ def normalize_lineups(raw: dict) -> dict | None:
     return {"home": home, "away": away}
 
 
+def parse_score(current: str | None) -> tuple[int, int] | None:
+    """'2 - 0' → (2, 0); tolerant of spacing. None when unparseable."""
+    if not current:
+        return None
+    parts = current.replace("–", "-").split("-")
+    if len(parts) != 2:
+        return None
+    try:
+        return int(parts[0].strip()), int(parts[1].strip())
+    except ValueError:
+        return None
+
+
+def is_finished_state(state: dict | None) -> bool:
+    """Highlightly state.description — observed live: 'Finished'."""
+    desc = ((state or {}).get("description") or "").lower()
+    return desc.startswith("finished") or desc in ("full time", "after penalties", "after extra time")
+
+
+def day_results(hl_matches: list[dict]) -> list[dict]:
+    """
+    Map one /matches day payload to result entries in our results.json schema.
+    Only finished matches with a parseable score are returned; team names are
+    resolved through the registry (unknowns are warned about and skipped).
+    """
+    out = []
+    for hl in hl_matches or []:
+        if not is_finished_state(hl.get("state")):
+            continue
+        score = parse_score(((hl.get("state") or {}).get("score") or {}).get("current"))
+        if score is None:
+            continue
+        h_name = (hl.get("homeTeam") or {}).get("name", "")
+        a_name = (hl.get("awayTeam") or {}).get("name", "")
+        h, a = resolve(h_name), resolve(a_name)
+        if len(h) != 3 or len(a) != 3:
+            logger.warning("Highlightly-Result: Team unbekannt (%r/%r) — übersprungen", h_name, a_name)
+            continue
+        out.append({
+            "home_code": h, "away_code": a,
+            "home_team": h_name, "away_team": a_name,
+            "status": "FINISHED", "status_de": "Beendet",
+            "is_live": False, "is_halftime": False, "is_done": True,
+            "minute": None,
+            "score_home": score[0], "score_away": score[1],
+            "halftime_home": None, "halftime_away": None,
+            "utc_date": (hl.get("date") or "").replace(".000Z", "Z"),
+            "stage": (hl.get("round") or ""),
+            "score_source": "highlightly",
+        })
+    return out
+
+
+def confirm_results(date_cache: dict) -> int:
+    """
+    FT fallback: football-data's free feed sometimes never reports a match as
+    finished (observed at the opener). For matches whose kickoff is >105 min
+    past and that results.json doesn't list as done yet, confirm the final
+    score via ONE Highlightly /matches call per affected date and merge it into
+    docs/results.json. That also unblocks the stats fetch and Brier settlement.
+    Returns the number of results added/updated.
+    """
+    from src.live_update import update_results  # late import: avoids cycle
+
+    if not DATA_PATH.exists():
+        return 0
+    try:
+        matches = json.loads(DATA_PATH.read_text(encoding="utf-8")).get("matches", [])
+    except json.JSONDecodeError:
+        return 0
+    done_pairs = set()
+    if RESULTS_PATH.exists():
+        try:
+            for r in json.loads(RESULTS_PATH.read_text(encoding="utf-8")).get("results", []):
+                if r.get("is_done"):
+                    done_pairs.add((r.get("home_code"), r.get("away_code")))
+        except json.JSONDecodeError:
+            pass
+
+    now = datetime.now(timezone.utc)
+    dates_needed = set()
+    for m in matches:
+        ct = m.get("commence_time", "")
+        if "T" not in ct or (m["home_code"], m["away_code"]) in done_pairs:
+            continue
+        kickoff = datetime.fromisoformat(ct.replace("Z", "+00:00"))
+        if (now - kickoff).total_seconds() > 105 * 60:
+            dates_needed.add(ct[:10])
+
+    confirmed = 0
+    for date in sorted(dates_needed):
+        if date not in date_cache:
+            try:
+                data, remaining = _get("/matches", {"leagueId": WC_LEAGUE_ID, "date": date, "limit": 40})
+                date_cache["_remaining"] = remaining
+                date_cache[date] = (data or {}).get("data", []) if isinstance(data, dict) else []
+            except Exception as exc:
+                logger.warning("Highlightly /matches %s fehlgeschlagen: %s", date, exc)
+                continue
+        fresh = day_results(date_cache[date])
+        fresh = [r for r in fresh if (r["home_code"], r["away_code"]) not in done_pairs]
+        if fresh:
+            total = update_results(fresh)
+            confirmed += len(fresh)
+            logger.info("FT via Highlightly bestätigt: %s — results.json: %d gesamt",
+                        ", ".join(f"{r['home_code']} {r['score_home']}:{r['score_away']} {r['away_code']}"
+                                  for r in fresh), total)
+    return confirmed
+
+
 # ── Cache I/O ──────────────────────────────────────────────────────────────
 
 def load_cache(path: Path = STATS_CACHE_PATH) -> dict:
@@ -233,14 +343,19 @@ def _find_hl_match_id(match: dict, date_cache: dict) -> int | None:
 
 def run() -> dict:
     cache = load_cache()
+    date_cache: dict = {}
+
+    # FT fallback first: confirm finished matches football-data missed.
+    # Shares date_cache with the stats matching below (no double calls).
+    confirmed = confirm_results(date_cache)
+
     todo = [m for m in _finished_matches() if m["id"] not in cache]
-    summary = {"fetched": 0, "skipped_cached": 0, "remaining": None}
+    summary = {"fetched": 0, "confirmed_results": confirmed, "remaining": date_cache.get("_remaining")}
     if not todo:
         logger.info("Highlightly: nichts zu tun (alle FT-Spiele gecacht)")
         return summary
 
-    date_cache: dict = {}
-    remaining: int | None = None
+    remaining: int | None = date_cache.get("_remaining")
 
     for m in sorted(todo, key=lambda x: x.get("commence_time", "")):
         if remaining is not None and remaining < MIN_BUDGET_STOP:
