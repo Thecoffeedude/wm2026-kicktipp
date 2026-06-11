@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-11T19:34:53Z",
+  "updated_at": "2026-06-11T19:35:55Z",
   "live": [
     {
       "fd_id": 537327,
@@ -8,19 +8,18 @@
       "away_code": "RSA",
       "home_team": "Mexico",
       "away_team": "South Africa",
-      "status": "IN_PLAY",
-      "status_de": "Live",
-      "is_live": true,
+      "status": "TIMED",
+      "status_de": "Bald",
+      "is_live": false,
       "is_halftime": false,
       "is_done": false,
       "minute": null,
-      "score_home": 1,
-      "score_away": 0,
+      "score_home": null,
+      "score_away": null,
       "halftime_home": null,
       "halftime_away": null,
       "utc_date": "2026-06-11T19:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     }
   ]
 }
