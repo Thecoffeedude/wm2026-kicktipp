@@ -46,6 +46,47 @@ def merge_results(existing: list[dict], finished: list[dict]) -> list[dict]:
     return sorted(by_key.values(), key=lambda r: r.get("utc_date", ""))
 
 
+# Status progression rank: API sometimes regresses (IN_PLAY → TIMED glitches,
+# observed live 2026-06-11). A lower-ranked update must not clobber what we saw.
+_STATUS_RANK = {"SCHEDULED": 0, "TIMED": 0, "IN_PLAY": 1, "PAUSED": 1,
+                "EXTRA_TIME": 1, "PENALTY_SHOOTOUT": 1,
+                "FINISHED": 2, "FINISHED_AET": 2, "FINISHED_PEN": 2}
+
+
+def merge_live(old: list[dict], new: list[dict]) -> list[dict]:
+    """
+    Merge the fresh API snapshot with the previous live.json state, keeping the
+    previous entry when the API regresses (e.g. a running match suddenly
+    reported as TIMED again with no score). Score changes within the same
+    status rank are taken from the API (covers VAR-disallowed goals).
+    """
+    old_by_key = {_result_key(e): e for e in old}
+    merged = []
+    for e in new:
+        prev = old_by_key.get(_result_key(e))
+        if prev is not None:
+            new_rank = _STATUS_RANK.get(e.get("status", ""), 0)
+            old_rank = _STATUS_RANK.get(prev.get("status", ""), 0)
+            if new_rank < old_rank:
+                logger.warning(
+                    "API-Regression %s-%s: %s → %s — behalte alten Stand",
+                    e.get("home_code"), e.get("away_code"),
+                    prev.get("status"), e.get("status"),
+                )
+                merged.append(prev)
+                continue
+            # Same rank but score vanished (None after a number) → keep old score
+            if new_rank == old_rank and e.get("score_home") is None \
+                    and prev.get("score_home") is not None:
+                merged.append(prev)
+                continue
+            # Preserve enrichment (goals/stats) if the fresh poll lacks it
+            if not e.get("goals") and prev.get("goals"):
+                e = {**e, "goals": prev["goals"]}
+        merged.append(e)
+    return merged
+
+
 def _payload_unchanged(path: Path, payload: dict, content_key: str) -> bool:
     """True if the file already holds the same content (timestamp ignored).
     Avoids no-op commits from the 5-minute live workflow."""
@@ -98,8 +139,21 @@ def _existing_results() -> dict[tuple, dict]:
     return {_result_key(r): r for r in results}
 
 
+def _previous_live() -> list[dict]:
+    if not LIVE_PATH.exists():
+        return []
+    try:
+        return json.loads(LIVE_PATH.read_text(encoding="utf-8")).get("live", [])
+    except (json.JSONDecodeError, AttributeError):
+        return []
+
+
 def run() -> None:
     live = fetch_live_scores()
+
+    # Anti-Regression: flatternde API-Stände (live → wieder "geplant") dürfen
+    # einen bereits gesehenen Spielstand nicht zurücksetzen.
+    live = merge_live(_previous_live(), live)
 
     # Detail-Anreicherung (Torschützen, Minute, ggf. Statistiken):
     # laufende Spiele immer; beendete nur, solange goals noch nicht persistiert

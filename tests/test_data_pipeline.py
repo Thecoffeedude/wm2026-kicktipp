@@ -7,7 +7,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.build_data import enrich_kickoff_times
-from src.live_update import merge_results
+from src.live_update import merge_live, merge_results
 from src.notify_tips import build_message
 
 
@@ -114,3 +114,59 @@ def test_build_message_date_only_kickoff():
     result = build_message(matches, now)
     assert result is not None
     assert "–:––" in result[1]
+
+
+# ── merge_live (anti-regression against flapping API states) ─────────────
+
+def _live(hc, ac, status, sh=None, sa=None, goals=None):
+    rank_live = status in ("IN_PLAY", "PAUSED")
+    done = status.startswith("FINISHED")
+    return {
+        "home_code": hc, "away_code": ac, "utc_date": "2026-06-11T19:00:00Z",
+        "status": status, "is_live": rank_live, "is_halftime": status == "PAUSED",
+        "is_done": done, "score_home": sh, "score_away": sa,
+        "goals": goals or [],
+    }
+
+
+def test_merge_live_keeps_state_on_status_regression():
+    old = [_live("MEX", "RSA", "IN_PLAY", 1, 0)]
+    new = [_live("MEX", "RSA", "TIMED")]          # API glitch: back to scheduled
+    merged = merge_live(old, new)
+    assert merged[0]["status"] == "IN_PLAY"
+    assert merged[0]["score_home"] == 1
+
+
+def test_merge_live_accepts_progression():
+    old = [_live("MEX", "RSA", "IN_PLAY", 1, 0)]
+    new = [_live("MEX", "RSA", "FINISHED", 2, 0)]
+    merged = merge_live(old, new)
+    assert merged[0]["status"] == "FINISHED"
+    assert merged[0]["score_home"] == 2
+
+
+def test_merge_live_keeps_score_when_api_drops_it():
+    old = [_live("MEX", "RSA", "IN_PLAY", 1, 0)]
+    new = [_live("MEX", "RSA", "IN_PLAY")]        # same rank, score vanished
+    merged = merge_live(old, new)
+    assert merged[0]["score_home"] == 1
+
+
+def test_merge_live_allows_var_score_correction():
+    old = [_live("MEX", "RSA", "IN_PLAY", 1, 0)]
+    new = [_live("MEX", "RSA", "IN_PLAY", 0, 0)]  # goal disallowed via VAR
+    merged = merge_live(old, new)
+    assert merged[0]["score_home"] == 0
+
+
+def test_merge_live_preserves_goal_enrichment():
+    goals = [{"minute": 23, "scorer": "R. Jiménez", "side": "home"}]
+    old = [_live("MEX", "RSA", "IN_PLAY", 1, 0, goals=goals)]
+    new = [_live("MEX", "RSA", "IN_PLAY", 1, 0)]  # fresh poll without details
+    merged = merge_live(old, new)
+    assert merged[0]["goals"] == goals
+
+
+def test_merge_live_new_match_passes_through():
+    new = [_live("KOR", "CZE", "TIMED")]
+    assert merge_live([], new) == new
