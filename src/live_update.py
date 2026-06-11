@@ -17,7 +17,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.fetch_live import fetch_live_scores
+from src.fetch_live import enrich_live_details, fetch_live_scores
 
 logger = logging.getLogger(__name__)
 DOCS_DIR     = Path("docs")
@@ -88,8 +88,31 @@ def update_results(finished: list[dict], path: Path = RESULTS_PATH) -> int:
     return len(merged)
 
 
+def _existing_results() -> dict[tuple, dict]:
+    if not RESULTS_PATH.exists():
+        return {}
+    try:
+        results = json.loads(RESULTS_PATH.read_text(encoding="utf-8")).get("results", [])
+    except (json.JSONDecodeError, AttributeError):
+        return {}
+    return {_result_key(r): r for r in results}
+
+
 def run() -> None:
     live = fetch_live_scores()
+
+    # Detail-Anreicherung (Torschützen, Minute, ggf. Statistiken):
+    # laufende Spiele immer; beendete nur, solange goals noch nicht persistiert
+    # sind (spart Detail-Calls bei jedem Loop-Tick).
+    existing = _existing_results()
+    eligible = [
+        e for e in live
+        if (e.get("is_live") or e.get("is_halftime"))
+        or (e.get("is_done") and not existing.get(_result_key(e), {}).get("goals"))
+    ]
+    if eligible:
+        n = enrich_live_details(eligible)
+        logger.info("Detail-Anreicherung: %d Spiel(e)", n)
 
     write_live(live)
     total_results = update_results(live)

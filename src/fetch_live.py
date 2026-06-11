@@ -60,6 +60,8 @@ def _normalize_match(m: dict) -> dict | None:
     status    = m.get("status", "SCHEDULED")
 
     return {
+        "fd_id":          m.get("id"),       # football-data match id (detail endpoint)
+        "fd_home_id":     (m.get("homeTeam") or {}).get("id"),
         "home_code":      home_code,
         "away_code":      away_code,
         "home_team":      canonical_en(home_code),
@@ -77,6 +79,78 @@ def _normalize_match(m: dict) -> dict | None:
         "utc_date":       m.get("utcDate", ""),
         "stage":          (m.get("stage") or "").replace("_", " ").title(),
     }
+
+
+def fetch_match_details(fd_id: int) -> dict | None:
+    """
+    GET /v4/matches/{id} — goal scorers, current minute, and (paid tiers only)
+    match statistics. Returns a partial dict to merge into a live entry, or
+    None when the key is missing / the request fails. Free tier: goals+minute
+    are included for most competitions; statistics usually are not — every
+    field is therefore optional.
+    """
+    api_key = os.getenv("FOOTBALL_DATA_API_KEY", "").strip()
+    if not api_key or not fd_id:
+        return None
+    try:
+        resp = requests.get(
+            f"{FDORG_BASE}/matches/{fd_id}",
+            headers={"X-Auth-Token": api_key},
+            timeout=15,
+        )
+        resp.raise_for_status()
+        raw = resp.json()
+    except Exception as exc:
+        logger.warning("match detail %s failed: %s", fd_id, exc)
+        return None
+
+    m = raw.get("match", raw)  # v4 returns the object directly; be lenient
+    home_id = (m.get("homeTeam") or {}).get("id")
+
+    goals = []
+    for g in m.get("goals") or []:
+        team_id = (g.get("team") or {}).get("id")
+        goals.append({
+            "minute":      g.get("minute"),
+            "injury_time": g.get("injuryTime"),
+            "scorer":      ((g.get("scorer") or {}).get("name")) or "?",
+            "type":        g.get("type", "REGULAR"),
+            "side":        "home" if team_id == home_id else "away",
+        })
+
+    out: dict = {"goals": goals}
+    if m.get("minute") is not None:
+        out["minute"] = m.get("minute")
+    if m.get("injuryTime") is not None:
+        out["injury_time"] = m.get("injuryTime")
+
+    # Statistics (ball possession, shots, …) — only present on paid tiers;
+    # nested under homeTeam/awayTeam in the v4 match detail.
+    stats_home = (m.get("homeTeam") or {}).get("statistics") or {}
+    stats_away = (m.get("awayTeam") or {}).get("statistics") or {}
+    if stats_home:
+        out["stats_home"] = stats_home
+    if stats_away:
+        out["stats_away"] = stats_away
+    return out
+
+
+def enrich_live_details(entries: list[dict]) -> int:
+    """
+    Merge detail data (goals, minute, statistics) into live/halftime/finished
+    entries in place. Returns the number of enriched entries. One request per
+    eligible match — fine for the free-tier limit (10 req/min) since at most a
+    handful of WC games run simultaneously.
+    """
+    enriched = 0
+    for e in entries:
+        if not (e.get("is_live") or e.get("is_halftime") or e.get("is_done")):
+            continue
+        detail = fetch_match_details(e.get("fd_id"))
+        if detail:
+            e.update(detail)
+            enriched += 1
+    return enriched
 
 
 def _fetch_matches(params: dict | None = None) -> list[dict]:

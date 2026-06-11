@@ -90,6 +90,80 @@ function _scheduleLiveRefresh() {
   }, interval);
 }
 
+// Full refresh: data + live + results in parallel. Used by pull-to-refresh and
+// when the (iOS-)PWA returns to the foreground — frozen timers don't fire there.
+let _lastFullRefresh = 0;
+async function refreshAllData() {
+  if (Date.now() - _lastFullRefresh < 8_000) return;   // debounce
+  _lastFullRefresh = Date.now();
+  const bust = '?_=' + Date.now();
+  const [d, l, r] = await Promise.allSettled([
+    fetch(DATA_URL + bust), fetch(LIVE_URL + bust), fetch(RESULTS_URL + bust),
+  ]);
+  try {
+    if (d.status === 'fulfilled' && d.value.ok) {
+      const data = await d.value.json();
+      allMatches = data.matches;
+      metadata = data.metadata;
+      tournament = data.tournament || {};
+      tournamentProbs = data.tournament_probabilities || {};
+    }
+    if (l.status === 'fulfilled' && l.value.ok) _applyLiveData((await l.value.json()).live || []);
+    if (r.status === 'fulfilled' && r.value.ok) _applyResults((await r.value.json()).results || []);
+    renderMeta();
+    renderTab();
+    _scheduleLiveRefresh();   // restart timer (iOS freezes intervals in background)
+  } catch {}
+}
+
+// App returns to foreground (PWA task switch, tab focus) → refresh immediately
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') refreshAllData();
+});
+
+// ── Live extras: match clock, goal scorers, possession ────────────────────
+function liveClock(e) {
+  if (e.is_halftime) return 'Halbzeit';
+  if (e.minute != null && e.minute !== '') {
+    const inj = e.injury_time ? `+${e.injury_time}` : '';
+    return `${e.minute}${inj}′`;
+  }
+  // No API minute → derive from kickoff time (approximation incl. HT break)
+  const ko = parseKickoff(e.utc_date);
+  if (!ko) return 'Live';
+  let el = Math.floor((Date.now() - ko.getTime()) / 60_000);
+  if (el < 1) return '1′';
+  if (el <= 45) return `${el}′`;
+  if (el <= 62) return '45+′';          // first-half stoppage or HT break
+  el -= 17;                              // subtract typical break + stoppage
+  return el > 90 ? '90+′' : `${el}′`;
+}
+
+function liveExtras(e) {
+  let html = '';
+  const goals = e.goals || [];
+  if (goals.length) {
+    const side = s => goals.filter(g => g.side === s).map(g => {
+      const min = g.minute != null ? `${g.minute}${g.injury_time ? '+' + g.injury_time : ''}′ ` : '';
+      const suffix = g.type === 'PENALTY' ? ' (E)' : g.type === 'OWN' ? ' (ET)' : '';
+      return `<span class="goal-item">⚽ ${min}${esc(g.scorer)}${suffix}</span>`;
+    }).join('');
+    html += `<div class="goals-row">
+      <div class="goals-side">${side('home')}</div>
+      <div class="goals-side away">${side('away')}</div>
+    </div>`;
+  }
+  const ph = e.stats_home?.ball_possession, pa = e.stats_away?.ball_possession;
+  if (ph != null && pa != null) {
+    html += `<div class="poss-row" title="Ballbesitz">
+      <span class="poss-val">${ph}%</span>
+      <div class="poss-bar"><div class="poss-fill" style="width:${ph}%"></div></div>
+      <span class="poss-val">${pa}%</span>
+    </div>`;
+  }
+  return html;
+}
+
 // ── Team → ISO 3166-1 alpha-2 map (all 48 WM 2026 teams + extras) ──────────
 const TEAM_ISO = {
   'Algeria': 'dz', 'Argentina': 'ar', 'Australia': 'au', 'Austria': 'at',
@@ -771,12 +845,12 @@ function buildCard(match, index) {
         <span class="rl-label">✓ Endstand</span>
         <span class="rl-score">${rEntry.score_home}:${rEntry.score_away}</span>
         ${pts != null ? `<span class="verlauf-pts ${cls}">+${pts} Pkt</span>` : ''}
-      </div>`;
+      </div>${liveExtras(rEntry)}`;
     } else if (rEntry.is_live || rEntry.is_halftime) {
       resultLine = `<div class="result-line result-line--live">
-        <span class="rl-label"><span class="live-dot"></span>${rEntry.is_halftime ? 'Halbzeit' : (rEntry.minute ? rEntry.minute + '\'' : 'Live')}</span>
+        <span class="rl-label"><span class="live-dot"></span><span class="live-clock">${liveClock(rEntry)}</span></span>
         <span class="rl-score">${rEntry.score_home}:${rEntry.score_away}</span>
-      </div>`;
+      </div>${liveExtras(rEntry)}`;
     }
   }
 
@@ -1970,18 +2044,9 @@ if (appEl) appEl.style.viewTransitionName = 'app-content';
     pulling = false;
     const ind = indicator;
     if (ind?.classList.contains('visible')) {
-      try {
-        const res = await fetch(DATA_URL + '?_=' + Date.now());
-        if (res.ok) {
-          const data = await res.json();
-          allMatches = data.matches;
-          metadata = data.metadata;
-          tournament = data.tournament || {};
-          tournamentProbs = data.tournament_probabilities || {};
-          renderMeta();
-          renderTab();
-        }
-      } catch {}
+      // Full refresh incl. live scores + results (not just data.json)
+      _lastFullRefresh = 0;          // bypass debounce — explicit user intent
+      await refreshAllData();
       ind.classList.remove('visible');
     }
   }, { passive: true });

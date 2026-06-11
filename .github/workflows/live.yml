@@ -1,20 +1,28 @@
 name: WM 2026 – Live-Spielstände
 
+# Polling-LOOP statt 5-Min-Cron: GitHub drosselt häufige Schedules massiv
+# (beobachtet am 11.06.: >3 h ohne Lauf trotz */5). Darum triggert der Cron nur
+# noch halbstündlich; der Job selbst pollt dann ~28 min lang alle 60 s und
+# pusht Änderungen sofort. Echte Live-Updates trotz Cron-Drift.
 on:
   schedule:
-    # Nur während der WM-2026-Spielfenster (Nordamerika): Kickoffs liegen
-    # ca. 16:00–03:00 UTC, mit Nachspielzeit bis ~05:00 UTC.
-    - cron: '*/5 15-23 * * *'
-    - cron: '*/5 0-5 * * *'
+    # Spielfenster (Nordamerika): Kickoffs ca. 16:00–03:00 UTC.
+    - cron: '3,33 15-23 * * *'
+    - cron: '3,33 0-5 * * *'
   workflow_dispatch:
+
+# Überlappende Läufe in eine Warteschlange — nahtlose Abdeckung ohne Parallel-Pushes.
+concurrency:
+  group: live-update
+  cancel-in-progress: false
 
 jobs:
   live-update:
     runs-on: ubuntu-latest
+    timeout-minutes: 32
     permissions:
       contents: write
 
-    # Nur ausführen wenn der API-Key gesetzt ist
     env:
       FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
 
@@ -31,16 +39,45 @@ jobs:
       - name: Abhängigkeiten installieren
         run: pip install -r requirements.txt
 
-      - name: Live-Spielstände abrufen → docs/live.json + docs/results.json
-        # Bricht nicht ab wenn kein API-Key gesetzt (fetch_live gibt [] zurück).
-        # Schreibt bewusst NICHT in docs/data.json — kein Rebase-Konflikt mit predict.yml.
-        run: python3 src/live_update.py
-
-      - name: Live-Daten committen (nur bei tatsächlichen Änderungen)
+      - name: Live-Polling-Loop (28 min, 60-s-Intervall)
+        # Pollt football-data.org, schreibt docs/live.json + docs/results.json
+        # und pusht jede Änderung sofort. Beendet sich früh, wenn weder ein
+        # Spiel läuft noch in den nächsten 30 min eines ansteht.
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/live.json docs/results.json
-          git diff --staged --quiet && echo "Keine Änderungen." || \
-            git commit -m "chore: Live $(date -u +'%H:%M UTC')"
-          git pull --rebase && git push
+          end=$((SECONDS + 1680))
+          while [ $SECONDS -lt $end ]; do
+            python3 src/live_update.py
+            if ! git diff --quiet docs/live.json docs/results.json; then
+              git add docs/live.json docs/results.json
+              git commit -m "chore: Live $(date -u +'%H:%M:%S UTC')"
+              git pull --rebase --autostash && git push || echo "Push fehlgeschlagen — nächster Tick versucht erneut"
+            fi
+            # Früh-Exit: nichts live und kein Kickoff in den nächsten 30 min?
+            python3 - <<'PY' || break
+          import json, sys
+          from datetime import datetime, timezone, timedelta
+          now = datetime.now(timezone.utc)
+          try:
+              live = json.load(open("docs/live.json")).get("live", [])
+          except Exception:
+              live = []
+          if any(e.get("is_live") or e.get("is_halftime") for e in live):
+              sys.exit(0)   # weiter pollen
+          try:
+              matches = json.load(open("docs/data.json")).get("matches", [])
+          except Exception:
+              matches = []
+          for m in matches:
+              ct = m.get("commence_time", "")
+              if "T" not in ct:
+                  continue
+              ko = datetime.fromisoformat(ct.replace("Z", "+00:00"))
+              if timedelta(minutes=-150) < (ko - now) < timedelta(minutes=30):
+                  sys.exit(0)   # Spiel läuft gerade an / Nachspielzeit möglich
+          sys.exit(1)  # idle → Loop beenden
+          PY
+            sleep 60
+          done
+          echo "Loop beendet."

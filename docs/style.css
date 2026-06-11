@@ -1846,6 +1846,51 @@ header { padding-top: calc(10px + env(safe-area-inset-top)); }
   font-size: 14px;
   letter-spacing: -.02em;
 }
+.live-clock { font-variant-numeric: tabular-nums; }
+
+/* Goal scorers under the live/final score */
+.goals-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: -4px 16px 10px;
+}
+.goals-side {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.goals-side.away { align-items: flex-end; text-align: right; }
+.goal-item {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 170px;
+}
+
+/* Ball possession (only rendered when the API provides statistics) */
+.poss-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: -2px 16px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.poss-bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--away) 45%, transparent);
+  overflow: hidden;
+}
+.poss-fill { height: 100%; background: var(--home); border-radius: 3px 0 0 3px; }
 
 /* ── Earned Kicktipp points chips ────────────────────────────────────────── */
 .verlauf-pts {

@@ -7,7 +7,10 @@ name: WM 2026 – Kicktipp Auto-Submit (Zwei-Pass, deadline-anchored)
 # Browser-Lauf (Cluster).
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    # */15: GitHub drosselt Schedules (beobachtet: 20–27 min Verzug). Mit 15-min-
+    # Takt + 55-min-Freshness-Fenster landet sicher mindestens ein Tick darin.
+    # Das Gate (ohne Browser) macht Leerläufe billig.
+    - cron: '*/15 * * * *'
   workflow_dispatch:
     inputs:
       force_overwrite:
@@ -81,6 +84,9 @@ jobs:
           git add data/submit_state.json
           git diff --staged --quiet && echo "Kein Status-Update." || \
             git commit -m "chore: Submit-Status $(date -u +'%Y-%m-%d %H:%M UTC')"
+          # build_data hat docs/* lokal aktualisiert (nur als frische Tipp-Basis) —
+          # verwerfen, sonst verweigert pull --rebase ("unstaged changes").
+          git checkout -- .
           git pull --rebase && git push
 
       - name: Screenshots hochladen (bei Fehler)

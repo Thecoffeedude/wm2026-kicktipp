@@ -56,7 +56,7 @@ FINISH_MARGIN_MIN = 22       # nie näher als 22 min an die Deadline heran tippe
 SAFETY_MIN_MIN    = 360      # 6 h  — frühestes Ziel des Absicherungs-Passes
 SAFETY_MAX_MIN    = 720      # 12 h — spätestes Ziel des Absicherungs-Passes
 FRESH_MIN_MIN     = 25       # frühestes Ende des Freshness-Fensters
-FRESH_MAX_MIN     = 75       # spätester Beginn des Freshness-Fensters
+FRESH_MAX_MIN     = 80       # spätester Beginn (breit, da GitHub-Cron bis ~25 min driftet)
 
 # Kleiner Zustands-Store, damit der (teure) Playwright-Lauf im langen Safety-
 # Fenster nicht bei jedem 30-Min-Tick erneut startet.
@@ -99,23 +99,30 @@ def match_row(
     return index.get(key)
 
 
-def parse_kicktipp_deadline(text: str, now: datetime | None = None) -> datetime | None:
+def parse_kicktipp_deadline(
+    text: str, now: datetime | None = None, tz: str = "Europe/Berlin"
+) -> datetime | None:
     """
-    Parse a Kicktipp deadline cell into a UTC datetime.
+    Parse a Kicktipp deadline cell into a UTC datetime, interpreting the wall
+    time in `tz` ("Europe/Berlin" or "UTC").
 
     Accepts German formats commonly shown in the tippabgabe time column:
       "14.06.26 18:00", "14.06.2026 18:00", "14.06. 18:00", "18:00".
-    Kicktipp times are Europe/Berlin local; converted to UTC (DST-aware).
     Returns None if no time could be extracted.
+
+    NOTE: which timezone Kicktipp renders depends on the account's profile
+    settings (live observation 2026-06-11: the bot account gets UTC). Use
+    deadline_for(), which calibrates the interpretation against the known
+    kickoff time, instead of assuming a fixed zone.
     """
     import re
     from zoneinfo import ZoneInfo
 
     if not text:
         return None
-    berlin = ZoneInfo("Europe/Berlin")
+    zone = timezone.utc if tz == "UTC" else ZoneInfo(tz)
     now = now or datetime.now(timezone.utc)
-    now_local = now.astimezone(berlin)
+    now_local = now.astimezone(zone)
 
     t = text.strip().replace("\n", " ")
     m = re.search(r"(\d{1,2})\.(\d{1,2})\.(\d{2,4})?\s*[^\d]*?(\d{1,2}):(\d{2})", t)
@@ -125,12 +132,12 @@ def parse_kicktipp_deadline(text: str, now: datetime | None = None) -> datetime 
         if year_i < 100:
             year_i += 2000
         try:
-            local = datetime(year_i, int(month), int(day), int(hh), int(mm), tzinfo=berlin)
+            local = datetime(year_i, int(month), int(day), int(hh), int(mm), tzinfo=zone)
             return local.astimezone(timezone.utc)
         except ValueError:
             return None
 
-    # Time-only ("18:00") → assume today (Berlin); roll to tomorrow if already past
+    # Time-only ("18:00") → assume today; roll to tomorrow if already past
     m2 = re.search(r"(\d{1,2}):(\d{2})", t)
     if m2:
         hh, mm = m2.groups()
@@ -145,10 +152,39 @@ def parse_kicktipp_deadline(text: str, now: datetime | None = None) -> datetime 
     return None
 
 
+def _calibrated_deadline(
+    text: str, kickoff: datetime | None, now: datetime | None = None
+) -> datetime | None:
+    """
+    Parse the scraped deadline text under both plausible timezones (UTC and
+    Europe/Berlin) and pick the interpretation that best matches the known
+    kickoff: deadline must not be after kickoff + 10 min, and should lie as
+    close to kickoff as possible (Kicktipp default: deadline == kickoff).
+
+    Live finding 2026-06-11: Kicktipp rendered "19:00" for the 19:00-UTC
+    opener — i.e. UTC, not Berlin. Assuming Berlin made every deadline look
+    2 h earlier, killing the freshness pass. Calibration fixes this without
+    hard-coding the profile timezone.
+    """
+    candidates = []
+    for tz in ("UTC", "Europe/Berlin"):
+        d = parse_kicktipp_deadline(text, now=now, tz=tz)
+        if d is not None:
+            candidates.append(d)
+    if not candidates:
+        return None
+    if kickoff is None:
+        return candidates[-1]  # no anchor → keep legacy Berlin interpretation
+
+    valid = [d for d in candidates if d <= kickoff + timedelta(minutes=10)]
+    pool = valid or candidates
+    return min(pool, key=lambda d: abs((kickoff - d).total_seconds()))
+
+
 def deadline_for(row: dict, prediction: dict | None, now: datetime | None = None) -> datetime | None:
     """
     Resolve the authoritative deadline for a row: the scraped Kicktipp deadline
-    if available, else the prediction's kickoff time as a proxy.
+    (timezone-calibrated against the known kickoff), else the kickoff itself.
     """
     scraped = row.get("deadline")
     if scraped:
@@ -158,19 +194,23 @@ def deadline_for(row: dict, prediction: dict | None, now: datetime | None = None
             return datetime.fromisoformat(str(scraped).replace("Z", "+00:00"))
         except ValueError:
             pass
-    raw = row.get("deadline_text", "")
-    parsed = parse_kicktipp_deadline(raw, now)
-    if parsed:
-        return parsed
+
+    kickoff = None
     ct = (prediction or {}).get("commence_time", "")
     if ct:
         try:
             if "T" in ct:
-                return datetime.fromisoformat(ct.replace("Z", "+00:00"))
-            return datetime.fromisoformat(ct).replace(tzinfo=timezone.utc)
+                kickoff = datetime.fromisoformat(ct.replace("Z", "+00:00"))
+            else:
+                kickoff = datetime.fromisoformat(ct).replace(tzinfo=timezone.utc)
         except ValueError:
-            return None
-    return None
+            kickoff = None
+
+    raw = row.get("deadline_text", "")
+    parsed = _calibrated_deadline(raw, kickoff, now)
+    if parsed:
+        return parsed
+    return kickoff
 
 
 def uncovered_due_matches(

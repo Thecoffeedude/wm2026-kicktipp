@@ -10,8 +10,8 @@ from datetime import timedelta
 
 from kicktipp_submit import (
     FINISH_MARGIN_MIN, FRESH_MAX_MIN, FRESH_MIN_MIN,
-    decide_action, parse_kicktipp_deadline, submit_window,
-    uncovered_due_matches,
+    _calibrated_deadline, decide_action, deadline_for,
+    parse_kicktipp_deadline, submit_window, uncovered_due_matches,
 )
 
 _TIP = {"home": 2, "away": 1}
@@ -150,3 +150,38 @@ def test_uncovered_ignores_far_future_game():
     matches = [_m("CAN", "BIH", 3000, now)]        # ~50h out → waiting, not due
     out = uncovered_due_matches(matches, scraped_keys=set(), tipped_keys=set(), now=now)
     assert out == []
+
+
+# ─── _calibrated_deadline (timezone calibration against kickoff) ─────────────
+# Live finding 2026-06-11: Kicktipp rendered "19:00" for a 19:00-UTC kickoff —
+# the bot account sees UTC. Naive Berlin parsing made deadlines 2 h early.
+
+def test_calibration_picks_utc_when_text_matches_kickoff_utc():
+    kickoff = datetime(2026, 6, 11, 19, 0, tzinfo=timezone.utc)
+    d = _calibrated_deadline("11.06.26 19:00", kickoff, now=_REF)
+    assert d == kickoff                      # UTC interpretation wins
+
+def test_calibration_picks_berlin_when_text_is_berlin():
+    # Kickoff 19:00 UTC shown as 21:00 Berlin → Berlin parse = 19:00 UTC exact
+    kickoff = datetime(2026, 6, 11, 19, 0, tzinfo=timezone.utc)
+    d = _calibrated_deadline("11.06.26 21:00", kickoff, now=_REF)
+    assert d == kickoff
+
+def test_calibration_rejects_post_kickoff_interpretation():
+    # Text "21:00" as UTC would be 2 h AFTER kickoff → must fall back to Berlin
+    kickoff = datetime(2026, 6, 11, 19, 0, tzinfo=timezone.utc)
+    d = _calibrated_deadline("11.06.26 21:00", kickoff, now=_REF)
+    assert d <= kickoff + timedelta(minutes=10)
+
+def test_deadline_for_uses_calibration():
+    kickoff_iso = "2026-06-11T19:00:00Z"
+    row = {"deadline_text": "11.06.26 19:00"}
+    pred = {"commence_time": kickoff_iso}
+    d = deadline_for(row, pred, now=_REF)
+    assert d == datetime(2026, 6, 11, 19, 0, tzinfo=timezone.utc)
+
+def test_deadline_for_falls_back_to_kickoff():
+    row = {"deadline_text": ""}
+    pred = {"commence_time": "2026-06-14T16:00:00Z"}
+    d = deadline_for(row, pred, now=_REF)
+    assert d == datetime(2026, 6, 14, 16, 0, tzinfo=timezone.utc)
