@@ -1,12 +1,18 @@
-name: GATE 0 – API-Football Saison-Check (Diagnose)
+name: Quellen-Diagnose (Gate 0 / Discovery)
 
-# Einmaliger Verfügbarkeits-Check: liefert der Free-Plan echte Fixtures für
-# Saison 2026? Nur manuell auslösbar, ändert nichts am Repo.
+# Read-only Verfügbarkeits-/Struktur-Checks für neue Datenquellen.
+# Nur manuell auslösbar, ändert nichts am Repo.
 on:
   workflow_dispatch:
+    inputs:
+      source:
+        description: 'Welche Quelle prüfen?'
+        type: choice
+        options: [apifootball, highlightly]
+        default: highlightly
 
 jobs:
-  gate0:
+  diagnose:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -14,7 +20,13 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install requests
-      - name: Saison-2026-Check ausführen
+      - name: API-Football Saison-2026-Check
+        if: github.event.inputs.source == 'apifootball'
         run: python3 src/check_apifootball.py
         env:
           APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
+      - name: Highlightly Struktur-Discovery
+        if: github.event.inputs.source == 'highlightly'
+        run: python3 src/check_highlightly.py
+        env:
+          HIGHLIGHTLY_KEY: ${{ secrets.HIGHLIGHTLY_KEY }}
