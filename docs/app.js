@@ -854,6 +854,22 @@ function buildCard(match, index) {
     }
   }
 
+  // Presumed live: kickoff passed but the (free-tier) API hasn't caught up yet —
+  // show the computed match clock so the card isn't silently stale.
+  if (!resultLine && !(rEntry && rEntry.is_done)) {
+    const ko = parseKickoff(match.commence_time);
+    if (ko && match.commence_time.includes('T')) {
+      const elapsedMin = (Date.now() - ko.getTime()) / 60_000;
+      if (elapsedMin > 0 && elapsedMin < 125) {
+        resultLine = `<div class="result-line result-line--live">
+          <span class="rl-label"><span class="live-dot"></span><span class="live-clock">${liveClock({ utc_date: match.commence_time })}</span></span>
+          <span class="rl-score">–:–</span>
+          <span class="rl-note">Live-Daten folgen…</span>
+        </div>`;
+      }
+    }
+  }
+
   // Drawer content is built lazily on first expand (heavy: heatmap + curves).
 
   article.innerHTML = `

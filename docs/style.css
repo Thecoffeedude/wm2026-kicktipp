@@ -1847,6 +1847,7 @@ header { padding-top: calc(10px + env(safe-area-inset-top)); }
   letter-spacing: -.02em;
 }
 .live-clock { font-variant-numeric: tabular-nums; }
+.rl-note { font-size: 10.5px; color: var(--muted); font-weight: 600; }
 
 /* Goal scorers under the live/final score */
 .goals-row {
