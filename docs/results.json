@@ -1,4 +1,24 @@
 {
-  "updated_at": "2026-06-11T08:46:55Z",
-  "results": []
+  "updated_at": "2026-06-11T21:23:33Z",
+  "results": [
+    {
+      "home_code": "MEX",
+      "away_code": "RSA",
+      "home_team": "Mexico",
+      "away_team": "South Africa",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 2,
+      "score_away": 0,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-06-11T19:00:00Z",
+      "stage": "Group Stage - 1",
+      "score_source": "highlightly"
+    }
+  ]
 }
