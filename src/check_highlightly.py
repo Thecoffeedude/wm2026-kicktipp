@@ -13,18 +13,22 @@ import json
 import logging
 import os
 import sys
+import time
 
 import requests
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
-# Variants: direct Highlightly API and the RapidAPI-distributed edition
+# Variants: direct Highlightly API (expects RapidAPI-style headers per their
+# gateway) and the RapidAPI-distributed edition. 2.5 s gap → no 429 bursts.
+_REQUEST_GAP_S = 2.5
 _VARIANTS = [
-    ("direct", "https://soccer.highlightly.net", lambda k: {"x-api-key": k}),
-    ("direct-bearer", "https://soccer.highlightly.net", lambda k: {"Authorization": f"Bearer {k}"}),
+    ("direct-rapidhdr", "https://soccer.highlightly.net",
+     lambda k: {"x-rapidapi-key": k, "x-rapidapi-host": "soccer.highlightly.net"}),
     ("rapidapi", "https://sport-highlights-api.p.rapidapi.com/football",
      lambda k: {"x-rapidapi-key": k, "x-rapidapi-host": "sport-highlights-api.p.rapidapi.com"}),
+    ("direct-xapikey", "https://soccer.highlightly.net", lambda k: {"x-api-key": k}),
 ]
 
 
@@ -42,6 +46,7 @@ def probe(path: str, key: str, params: dict | None = None) -> dict | list | None
     order = [_working_variant] if _working_variant is not None else range(len(_VARIANTS))
     for idx in order:
         name, base, mk_headers = _VARIANTS[idx]
+        time.sleep(_REQUEST_GAP_S)
         try:
             r = requests.get(f"{base}{path}", headers=mk_headers(key), params=params or {}, timeout=15)
         except Exception as exc:
