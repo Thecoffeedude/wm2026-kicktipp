@@ -1,7 +1,9 @@
 {
-  "updated_at": "2026-06-11T21:23:33Z",
+  "updated_at": "2026-06-11T22:00:48Z",
   "results": [
     {
+      "fd_id": 537327,
+      "fd_home_id": 769,
       "home_code": "MEX",
       "away_code": "RSA",
       "home_team": "Mexico",
@@ -12,13 +14,13 @@
       "is_halftime": false,
       "is_done": true,
       "minute": null,
-      "score_home": 2,
-      "score_away": 0,
+      "score_home": null,
+      "score_away": null,
       "halftime_home": null,
       "halftime_away": null,
       "utc_date": "2026-06-11T19:00:00Z",
-      "stage": "Group Stage - 1",
-      "score_source": "highlightly"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
