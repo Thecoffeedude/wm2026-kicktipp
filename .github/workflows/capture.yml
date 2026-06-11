@@ -40,24 +40,25 @@ jobs:
       - name: Abhängigkeiten installieren
         run: pip install -r requirements.txt
 
+      - name: FT-Bestätigung + Detailstatistik (Highlightly, post-match-once)
+        # Läuft VOR dem Odds-Capture: confirm_results schreibt results.json,
+        # damit backfill_results das Brier-Settlement im selben Lauf sieht.
+        # No-op, wenn nichts Neues (0 API-Calls). Budget-Guard im Skript.
+        if: env.HIGHLIGHTLY_KEY != ''
+        run: python3 src/fetch_highlightly.py
+        continue-on-error: true
+
       - name: Quoten-Snapshot erfassen (nur bei fälligem Fenster)
         # Ohne ODDS_API_KEY wird der Schritt übersprungen (kein Capture möglich).
         if: env.ODDS_API_KEY != ''
         run: python3 src/odds_capture.py
-
-      - name: Detailstatistik beendeter Spiele (Highlightly, post-match-once)
-        # No-op, wenn alle FT-Spiele bereits gecacht sind (0 API-Calls).
-        # 100 Req/Tag-Budget-Guard im Skript; nie Live-Polling.
-        if: env.HIGHLIGHTLY_KEY != ''
-        run: python3 src/fetch_highlightly.py
-        continue-on-error: true
 
       - name: Snapshots committen (nur bei Änderungen)
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/snapshots.jsonl data/odds_budget.json docs/odds_latest.json \
-                  data/match_stats.json docs/stats.json
+                  data/match_stats.json docs/stats.json docs/results.json
           git diff --staged --quiet && echo "Keine neuen Snapshots." || \
             git commit -m "chore: Quoten-Snapshot $(date -u +'%Y-%m-%d %H:%M UTC')"
           git pull --rebase --autostash && git push

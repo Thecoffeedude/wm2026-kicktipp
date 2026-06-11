@@ -105,7 +105,11 @@ def main() -> int:
 
     # 3. Statistik + Events für das gefundene Match
     if match_id is not None:
-        probe(f"/statistics/{match_id}", key)
+        stats = probe(f"/statistics/{match_id}", key)
+        if isinstance(stats, list):
+            for block in stats:
+                names = [st.get("displayName") for st in block.get("statistics") or []]
+                logger.info("  displayNames[%s]: %s", (block.get("team") or {}).get("name"), names)
         probe(f"/events/{match_id}", key)
         probe(f"/lineups/{match_id}", key)
     else:
