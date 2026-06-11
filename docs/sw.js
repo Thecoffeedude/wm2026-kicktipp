@@ -1,7 +1,7 @@
 // Cache version — bump to bust old caches when shell changes
-const CACHE_VERSION = 'wm26-v3';
-const DATA_CACHE    = 'wm26-data-v3';
-const FLAG_CACHE    = 'wm26-flags-v3';
+const CACHE_VERSION = 'wm26-v4';
+const DATA_CACHE    = 'wm26-data-v4';
+const FLAG_CACHE    = 'wm26-flags-v4';
 
 // App shell: all files needed for offline render
 const SHELL = [
@@ -10,11 +10,15 @@ const SHELL = [
   './style.css',
   './app.js',
   './manifest.json',
+  './icons/icon.svg',
   './icons/apple-touch-icon.png',
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/icon-512-maskable.png',
 ];
+
+// JSON data files served network-first (fresh online, cached offline)
+const DATA_FILES = ['data.json', 'live.json', 'results.json'];
 
 // ── Install: pre-cache shell ──────────────────────────────────────────────
 self.addEventListener('install', event => {
@@ -46,8 +50,8 @@ self.addEventListener('fetch', event => {
   if (request.method !== 'GET') return;
   if (url.origin !== self.location.origin && url.hostname !== 'flagcdn.com') return;
 
-  if (url.pathname.endsWith('data.json')) {
-    // data.json: network-first → fresh predictions online, cached offline
+  if (DATA_FILES.some(f => url.pathname.endsWith(f))) {
+    // JSON data: network-first → fresh predictions online, cached offline
     event.respondWith(networkFirst(request, DATA_CACHE));
     return;
   }
@@ -65,15 +69,19 @@ self.addEventListener('fetch', event => {
 // ── Strategies ────────────────────────────────────────────────────────────
 
 async function networkFirst(request, cacheName) {
+  // Normalize the cache key: strip query strings (?_=<timestamp> cache
+  // busters) so polling doesn't grow the cache by one entry per request.
+  const url = new URL(request.url);
+  const cacheKey = url.origin + url.pathname;
   try {
     const res = await fetch(request);
     if (res.ok) {
       const cache = await caches.open(cacheName);
-      cache.put(request, res.clone());
+      cache.put(cacheKey, res.clone());
     }
     return res;
   } catch {
-    const cached = await caches.match(request);
+    const cached = await caches.match(cacheKey);
     return cached ?? new Response(JSON.stringify({ error: 'offline' }), {
       status: 503,
       headers: { 'Content-Type': 'application/json' },

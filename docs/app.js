@@ -1,5 +1,7 @@
 // ── Config ────────────────────────────────────────────────────────────────
 const DATA_URL = './data.json';
+const LIVE_URL = './live.json';
+const RESULTS_URL = './results.json';
 const FLAG_BASE = 'https://flagcdn.com/w80/';
 const DIVERGENCE_THRESHOLD = 0.04;
 const XG_MAX = 4.0;
@@ -11,6 +13,7 @@ let tournament = {};
 let tournamentProbs = {};   // FIFA_code → {team, group, prob_win_group, ..., prob_champion}
 let liveScores   = [];      // today's live/finished match scores from football-data.org
 let liveByKey    = {};      // lookup: "HOME_CODE:AWAY_CODE" → live entry
+let resultsByPair = {};     // lookup: "HOME_CODE:AWAY_CODE" → finished result entry
 let currentTab = 'heute';
 let searchQuery = '';
 let filterTeam = '';
@@ -22,6 +25,15 @@ function _applyLiveData(raw) {
   liveByKey  = {};
   liveScores.forEach(e => {
     liveByKey[`${e.home_code}:${e.away_code}`] = e;
+    // Finished matches flow straight into the results store, so the
+    // Punkte-Bilanz and standings update without waiting for results.json.
+    if (e.is_done) resultsByPair[`${e.home_code}:${e.away_code}`] = e;
+  });
+}
+
+function _applyResults(raw) {
+  (raw || []).forEach(e => {
+    resultsByPair[`${e.home_code}:${e.away_code}`] = e;
   });
 }
 
@@ -31,16 +43,35 @@ function _liveEntry(match) {
   return liveByKey[`${hc}:${ac}`] || null;
 }
 
+// Best known real-world state for a match: live entry first (today,
+// includes running games), then the persistent results store.
+function _resultEntry(match) {
+  const live = _liveEntry(match);
+  if (live && (live.is_live || live.is_halftime || live.is_done)) return live;
+  return resultsByPair[`${match.home_code}:${match.away_code}`] || null;
+}
+
+function _allResults() {
+  return Object.values(resultsByPair).filter(e => e.is_done);
+}
+
 function _hasLive() {
   return liveScores.some(e => e.is_live || e.is_halftime);
 }
 
 async function _refreshLiveData() {
   try {
-    const res  = await fetch(DATA_URL + '?_=' + Date.now());
-    if (!res.ok) return;
-    const data = await res.json();
-    _applyLiveData(data.live || []);
+    // live.json is tiny (~2 KB); fall back to data.json for old deployments
+    let res = await fetch(LIVE_URL + '?_=' + Date.now());
+    if (res.ok) {
+      const data = await res.json();
+      _applyLiveData(data.live || []);
+    } else {
+      res = await fetch(DATA_URL + '?_=' + Date.now());
+      if (!res.ok) return;
+      const data = await res.json();
+      _applyLiveData(data.live || []);
+    }
     // Re-render current tab to show updated scores
     if (currentTab === 'heute' || currentTab === 'verlauf') renderTab();
     renderMeta();
@@ -106,6 +137,21 @@ function topScoredlines(lH, lA, n = 5) {
   return probs.slice(0, n);
 }
 
+// ── Kicktipp scoring (mirrors config.kicktipp_points, rules from metadata) ─
+function kicktippPoints(tipH, tipA, realH, realA) {
+  const rules = metadata.kicktipp_rules
+    || { win: { tendency: 2, goal_diff: 3, exact: 4 }, draw: { tendency: 2, exact: 4 } };
+  const tipSign  = Math.sign(tipH - tipA);
+  const realSign = Math.sign(realH - realA);
+  if (tipSign !== realSign) return 0;
+  if (realSign === 0) {
+    return (tipH === realH && tipA === realA) ? rules.draw.exact : rules.draw.tendency;
+  }
+  if (tipH === realH && tipA === realA) return rules.win.exact;
+  if (tipH - tipA === realH - realA) return rules.win.goal_diff;
+  return rules.win.tendency;
+}
+
 // ── Date helpers ──────────────────────────────────────────────────────────
 function parseKickoff(ct) {
   if (!ct) return null;
@@ -156,14 +202,33 @@ function maxDivergence(m) {
 async function init() { // returns promise
   showSkeletons(4);
   try {
-    const res = await fetch(DATA_URL);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
+    const [dataRes, liveRes, resultsRes] = await Promise.allSettled([
+      fetch(DATA_URL),
+      fetch(LIVE_URL),
+      fetch(RESULTS_URL),
+    ]);
+    if (dataRes.status !== 'fulfilled' || !dataRes.value.ok) {
+      throw new Error(`HTTP ${dataRes.status === 'fulfilled' ? dataRes.value.status : 'fetch failed'}`);
+    }
+    const data = await dataRes.value.json();
     allMatches  = data.matches;
     metadata    = data.metadata;
     tournament  = data.tournament || {};
     tournamentProbs = data.tournament_probabilities || {};
-    _applyLiveData(data.live || []);
+
+    // results.json: persistent results history (optional, may 404 on old deploys)
+    if (resultsRes.status === 'fulfilled' && resultsRes.value.ok) {
+      try { _applyResults((await resultsRes.value.json()).results || []); } catch {}
+    }
+    // live.json preferred; fall back to the live block inside data.json
+    let liveApplied = false;
+    if (liveRes.status === 'fulfilled' && liveRes.value.ok) {
+      try {
+        _applyLiveData((await liveRes.value.json()).live || []);
+        liveApplied = true;
+      } catch {}
+    }
+    if (!liveApplied) _applyLiveData(data.live || []);
     renderMeta();
     renderTab();
     _scheduleLiveRefresh();
@@ -187,7 +252,16 @@ function renderMeta() {
   if (!metadata.generated_at) return;
   const dt = new Date(metadata.generated_at);
   const time = dt.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Berlin' });
-  el.innerHTML = `<span class="pill"></span>${time} Uhr`;
+  const ageH = (Date.now() - dt.getTime()) / 36e5;
+  if (ageH > 26) {
+    // Data older than one daily build cycle — surface silently failing workflows
+    const date = dt.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', timeZone: 'Europe/Berlin' });
+    el.innerHTML = `<span class="pill pill-stale"></span>${date} · veraltet`;
+    el.title = `Daten zuletzt aktualisiert: ${date} ${time} Uhr — der tägliche Workflow läuft evtl. nicht.`;
+  } else {
+    el.innerHTML = `<span class="pill"></span>${time} Uhr`;
+    el.title = '';
+  }
 }
 
 // ── Tab switching ─────────────────────────────────────────────────────────
@@ -377,7 +451,9 @@ function renderHeuteStats(app, todayMatches) {
 
   const eyebrow = document.createElement('div');
   eyebrow.className = 'eyebrow';
-  eyebrow.textContent = `Heute & Morgen · ${todayMatches.length} Spiel${todayMatches.length !== 1 ? 'e' : ''}`;
+  eyebrow.textContent = todayMatches.length > 0
+    ? `Heute & Morgen · ${todayMatches.length} Spiel${todayMatches.length !== 1 ? 'e' : ''}`
+    : `Keine Spiele heute — nächste ${src.length} Spiel${src.length !== 1 ? 'e' : ''}`;
   app.appendChild(eyebrow);
 }
 
@@ -580,6 +656,26 @@ function buildCard(match, index) {
     badges.push(`<div class="badge-warn">⚡ Bücher uneinig (max Δ ${pct(maxDiv)})</div>`);
   }
 
+  // Real-world result line (live score or final score + earned points)
+  let resultLine = '';
+  const rEntry = _resultEntry(match);
+  if (rEntry && rEntry.score_home != null) {
+    if (rEntry.is_done) {
+      const pts = tip ? kicktippPoints(tip.home, tip.away, rEntry.score_home, rEntry.score_away) : null;
+      const cls = pts == null ? '' : pts >= 3 ? 'vp-high' : pts > 0 ? 'vp-mid' : 'vp-zero';
+      resultLine = `<div class="result-line">
+        <span class="rl-label">✓ Endstand</span>
+        <span class="rl-score">${rEntry.score_home}:${rEntry.score_away}</span>
+        ${pts != null ? `<span class="verlauf-pts ${cls}">+${pts} Pkt</span>` : ''}
+      </div>`;
+    } else if (rEntry.is_live || rEntry.is_halftime) {
+      resultLine = `<div class="result-line result-line--live">
+        <span class="rl-label"><span class="live-dot"></span>${rEntry.is_halftime ? 'Halbzeit' : (rEntry.minute ? rEntry.minute + '\'' : 'Live')}</span>
+        <span class="rl-score">${rEntry.score_home}:${rEntry.score_away}</span>
+      </div>`;
+    }
+  }
+
   // Build drawer content
   const drawerContent = buildDrawer(match, ua, oddsC);
 
@@ -608,6 +704,7 @@ function buildCard(match, index) {
       <span class="${srcClass}">${esc(srcLabel)}</span>
       ${modalNote ? `<span style="font-size:11px;color:var(--muted)">${esc(modalNote)}</span>` : ''}
     </div>` : ''}
+    ${resultLine}
 
     ${primaryP ? `
     <div class="data">
@@ -747,6 +844,62 @@ function buildDrawer(match, ua, oddsC) {
   return html;
 }
 
+// ── Group standings from real results ─────────────────────────────────────
+function computeGroupStandings() {
+  const table = {};  // code → standings row
+  const ensureRow = (code, team, group) => {
+    if (!table[code]) table[code] = { code, team, group, games: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, pts: 0 };
+    return table[code];
+  };
+
+  // Every team starts at zero so the table is complete from matchday 1
+  Object.values(tournamentProbs).forEach(t => {
+    if (t.group) ensureRow(t.code, t.team, t.group);
+  });
+
+  _allResults().forEach(r => {
+    if (r.score_home == null || r.score_away == null) return;
+    if (!(r.stage || '').toLowerCase().includes('group')) return;
+    const gH = tournamentProbs[r.home_code]?.group;
+    const gA = tournamentProbs[r.away_code]?.group;
+    if (!gH || gH !== gA) return;
+    [
+      [r.home_code, r.home_team, r.score_home, r.score_away],
+      [r.away_code, r.away_team, r.score_away, r.score_home],
+    ].forEach(([code, team, gf, ga]) => {
+      const t = ensureRow(code, team, gH);
+      t.games++; t.gf += gf; t.ga += ga;
+      if (gf > ga)      { t.w++; t.pts += 3; }
+      else if (gf === ga) { t.d++; t.pts += 1; }
+      else t.l++;
+    });
+  });
+
+  const byGroup = {};
+  Object.values(table).forEach(t => (byGroup[t.group] ||= []).push(t));
+  Object.values(byGroup).forEach(rows =>
+    rows.sort((a, b) => b.pts - a.pts || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf
+      || a.team.localeCompare(b.team)));
+  return byGroup;
+}
+
+function standingsTable(rows) {
+  return `
+    <div class="dt standings-title">Tabelle</div>
+    <table class="standings">
+      <thead><tr><th></th><th class="st-team"></th><th>Sp</th><th>Tore</th><th>Pkt</th></tr></thead>
+      <tbody>
+        ${rows.map((t, i) => `<tr class="${i < 2 ? 'st-qualify' : ''}">
+          <td class="st-pos">${i + 1}</td>
+          <td class="st-team">${flagImg(t.team, t.team)}<span>${esc(t.team)}</span></td>
+          <td>${t.games}</td>
+          <td>${t.gf}:${t.ga}</td>
+          <td class="st-pts">${t.pts}</td>
+        </tr>`).join('')}
+      </tbody>
+    </table>`;
+}
+
 // ── Gruppen tab ───────────────────────────────────────────────────────────
 function renderGruppen(app) {
   app.innerHTML = '';
@@ -791,12 +944,17 @@ function renderGruppen(app) {
   eyebrow.textContent = `12 Gruppen`;
   app.appendChild(eyebrow);
 
+  const standingsByGroup = computeGroupStandings();
+
   Object.keys(byGroup).sort().forEach(grp => {
     const teams = byGroup[grp].sort((a, b) => b.prob_win_group - a.prob_win_group);
+    const standing = standingsByGroup[grp];
+    const hasResults = standing && standing.some(t => t.games > 0);
     const card = document.createElement('div');
     card.className = 'group-card glass';
     card.innerHTML = `
       <div class="group-label">${esc(grp)}</div>
+      ${hasResults ? standingsTable(standing) : ''}
       <div class="group-teams">
         ${teams.map(t => `
           <div class="group-team-row">
@@ -889,6 +1047,55 @@ function renderBaum(app) {
   }));
 }
 
+// ── Punkte-Bilanz (model scoreboard from real results) ────────────────────
+function renderBilanz(app) {
+  let total = 0, modalTotal = 0, n = 0;
+  const tiers = { exact: 0, diff: 0, tendency: 0, miss: 0 };
+
+  allMatches.forEach(m => {
+    const r = _resultEntry(m);
+    if (!r || !r.is_done || r.score_home == null || r.score_away == null) return;
+    const tip = m.recommended_tip;
+    if (!tip) return;
+    n++;
+    const pts = kicktippPoints(tip.home, tip.away, r.score_home, r.score_away);
+    total += pts;
+    const rules = metadata.kicktipp_rules
+      || { win: { tendency: 2, goal_diff: 3, exact: 4 }, draw: { tendency: 2, exact: 4 } };
+    if (pts === 0) tiers.miss++;
+    else if (pts === rules.win.exact) tiers.exact++;
+    else if (pts === rules.win.goal_diff) tiers.diff++;
+    else tiers.tendency++;
+    const modal = m.modal_scoreline;
+    if (modal) modalTotal += kicktippPoints(modal.home, modal.away, r.score_home, r.score_away);
+  });
+
+  if (!n) return;
+
+  const avg = (total / n).toFixed(2);
+  const evDelta = total - modalTotal;
+  const card = document.createElement('div');
+  card.className = 'bilanz-card glass';
+  card.innerHTML = `
+    <div class="bilanz-head">
+      <span class="bilanz-title">Punkte-Bilanz</span>
+      <span class="bilanz-total">${total} Pkt</span>
+    </div>
+    <div class="bilanz-sub">${n} gewertete${n === 1 ? 's' : ''} Spiel${n === 1 ? '' : 'e'} · Ø ${avg} Pkt/Spiel</div>
+    <div class="bilanz-tiers">
+      <span class="bt bt-exact" title="Exaktes Ergebnis">${tiers.exact}× exakt</span>
+      <span class="bt bt-diff" title="Richtige Tordifferenz">${tiers.diff}× Differenz</span>
+      <span class="bt bt-tend" title="Richtige Tendenz">${tiers.tendency}× Tendenz</span>
+      <span class="bt bt-miss" title="Falsche Tendenz">${tiers.miss}× daneben</span>
+    </div>
+    <div class="bilanz-ev" title="Vergleich: EV-optimaler Tipp vs. wahrscheinlichstes Ergebnis (Modal)">
+      EV-Tipp vs. Modal-Tipp: <b>${evDelta > 0 ? '+' : ''}${evDelta} Pkt</b>
+      ${evDelta > 0 ? '— der Optimierer lohnt sich ✓' : evDelta < 0 ? '— Modal wäre besser gewesen' : '— gleichauf'}
+    </div>
+  `;
+  app.appendChild(card);
+}
+
 // ── Verlauf tab (match timeline with live status) ─────────────────────────
 function renderVerlauf(app) {
   app.innerHTML = '';
@@ -927,11 +1134,13 @@ function renderVerlauf(app) {
     return `${d.toLocaleDateString('de-DE', { weekday: 'long', timeZone: 'Europe/Berlin' })} · ${dm}`;
   }
 
-  const liveMatches = sorted.filter(m => matchStatus(m.commence_time) === 'live');
-  if (liveMatches.length) {
+  renderBilanz(app);
+
+  const liveCount = liveScores.filter(e => e.is_live || e.is_halftime).length;
+  if (liveCount) {
     const liveSection = document.createElement('div');
     liveSection.className = 'verlauf-live-section';
-    liveSection.innerHTML = `<div class="verlauf-live-badge"><span class="live-dot"></span>Live – ${liveMatches.length} Spiel${liveMatches.length !== 1 ? 'e' : ''} läuft gerade</div>`;
+    liveSection.innerHTML = `<div class="verlauf-live-badge"><span class="live-dot"></span>Live – ${liveCount} Spiel${liveCount !== 1 ? 'e' : ''} läuft gerade</div>`;
     app.appendChild(liveSection);
   }
 
@@ -959,8 +1168,8 @@ function renderVerlauf(app) {
           : p.away > p.home && p.away >= p.draw ? m.away_team : 'Unentschieden')
         : null;
 
-      // Real score if available from live data
-      const live = _liveEntry(m);
+      // Real score if available from live data or the results history
+      const live = _resultEntry(m);
       const hasScore = live && (live.score_home !== null && live.score_home !== undefined);
       const sh = hasScore ? live.score_home : null;
       const sa = hasScore ? live.score_away : null;
@@ -987,6 +1196,16 @@ function renderVerlauf(app) {
       const htLine = (live?.halftime_home !== null && live?.halftime_home !== undefined && live?.is_done)
         ? `<div class="verlauf-ht">HZ ${live.halftime_home}:${live.halftime_away}</div>` : '';
 
+      // Earned Kicktipp points: finished match with real score + a tip
+      let ptsHtml = '';
+      let tipResHtml = '';
+      if (live?.is_done && hasScore && tip) {
+        const pts = kicktippPoints(tip.home, tip.away, sh, sa);
+        const cls = pts >= 3 ? 'vp-high' : pts > 0 ? 'vp-mid' : 'vp-zero';
+        ptsHtml = `<span class="verlauf-pts ${cls}">+${pts} Pkt</span>`;
+        tipResHtml = `<span class="verlauf-tipres">Tipp ${tip.home}:${tip.away}</span>`;
+      }
+
       const card = document.createElement('div');
       card.className = `verlauf-card${(live?.is_live || live?.is_halftime) ? ' verlauf-live' : live?.is_done ? ' verlauf-done' : status === 'done' ? ' verlauf-done' : ''}`;
       card.innerHTML = `
@@ -1000,6 +1219,8 @@ function renderVerlauf(app) {
         </div>
         <div class="verlauf-meta">
           ${hasScore ? '' : `<span class="verlauf-tip-label">Tipp</span>`}
+          ${tipResHtml}
+          ${ptsHtml}
           ${htLine}
           ${!hasScore && favLabel && favPct !== null ? `<span class="verlauf-fav">${esc(favLabel)} ${favPct}%</span>` : ''}
           ${m.stage ? `<span class="verlauf-stage">${esc(m.stage)}</span>` : ''}
@@ -1356,6 +1577,46 @@ function showSkeletons(count = 3) {
     app.appendChild(sk);
   }
 }
+
+// ── Theme toggle: auto → dark → light → auto ─────────────────────────────
+const THEME_ICONS = {
+  auto:  '<circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/>',
+  dark:  '<path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/>',
+  light: '<circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>',
+};
+const THEME_LABELS = { auto: 'automatisch', dark: 'dunkel', light: 'hell' };
+
+function applyTheme(mode) {
+  const html = document.documentElement;
+  html.classList.toggle('force-dark', mode === 'dark');
+  html.classList.toggle('force-light', mode === 'light');
+  const btn = document.getElementById('theme-toggle');
+  if (btn) {
+    btn.querySelector('svg').innerHTML = THEME_ICONS[mode] || THEME_ICONS.auto;
+    btn.title = `Design: ${THEME_LABELS[mode] || mode}`;
+  }
+}
+
+(function initThemeToggle() {
+  let mode = localStorage.getItem('theme') || 'auto';
+  applyTheme(mode);
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    mode = mode === 'auto' ? 'dark' : mode === 'dark' ? 'light' : 'auto';
+    localStorage.setItem('theme', mode);
+    applyTheme(mode);
+  });
+})();
+
+// ── Tab bar: arrow-key navigation ─────────────────────────────────────────
+document.querySelector('.tabs')?.addEventListener('keydown', e => {
+  if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+  e.preventDefault();
+  const idx = _tabOrder.indexOf(currentTab);
+  const step = e.key === 'ArrowRight' ? 1 : -1;
+  const next = _tabOrder[(idx + step + _tabOrder.length) % _tabOrder.length];
+  window.setTab(next);
+  document.getElementById(`tab-${next}`)?.focus();
+});
 
 // ── Local testing helpers via URL params (?dark, ?tab=alle, ?open=0)
 (function applyURLParams() {

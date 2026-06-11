@@ -16,6 +16,7 @@ jobs:
     # ob die Kicktipp-Secrets konfiguriert sind (leerer String = nicht gesetzt).
     env:
       KICKTIPP_EMAIL: ${{ secrets.KICKTIPP_EMAIL }}
+      NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
 
     steps:
       - name: Checkout
@@ -33,18 +34,24 @@ jobs:
       - name: Vorhersagen generieren → docs/data.json
         # uanalyse wird per HTTP gezogen (kein Secret nötig).
         # ODDS_API_KEY ist optional — ohne Key läuft die Pipeline ohne Wettbüro-Quoten.
+        # FOOTBALL_DATA_API_KEY ist optional — liefert exakte Anstoßzeiten + Ergebnisse.
         run: python3 src/build_data.py
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
 
-      - name: docs/data.json committen
+      - name: Daten committen
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/data.json
+          git add docs/data.json docs/live.json docs/results.json
           git diff --staged --quiet && echo "Keine Änderungen." || \
             git commit -m "chore: Vorhersagen $(date -u +'%Y-%m-%d %H:%M UTC')"
           git pull --rebase && git push
+
+      - name: Tages-Tipps per ntfy senden
+        if: env.NTFY_TOPIC != ''
+        run: python3 src/notify_tips.py
 
       # ── Kicktipp Auto-Submit ──────────────────────────────────────────────
       # Läuft nur, wenn KICKTIPP_EMAIL/PASSWORD/COMPETITION gesetzt sind.

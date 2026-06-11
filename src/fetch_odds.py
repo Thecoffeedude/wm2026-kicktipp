@@ -29,17 +29,8 @@ def _log_quota(response: requests.Response) -> None:
     logger.info("Odds API quota — used: %s, remaining: %s", used, remaining)
 
 
-def fetch_odds(mock: bool = False) -> list[dict]:
-    if mock:
-        logger.info("Mock mode: loading %s", MOCK_PATH)
-        with open(MOCK_PATH, encoding="utf-8") as f:
-            return json.load(f)
-
-    api_key = os.getenv("ODDS_API_KEY")
-    if not api_key:
-        raise RuntimeError("ODDS_API_KEY not set in environment / .env")
-
-    url = f"{config.ODDS_API_BASE_URL}/sports/{config.SPORT_KEY}/odds"
+def _request_odds(api_key: str, sport_key: str) -> list[dict]:
+    url = f"{config.ODDS_API_BASE_URL}/sports/{sport_key}/odds"
     params = {
         "apiKey": api_key,
         "regions": config.ODDS_API_REGIONS,
@@ -68,6 +59,38 @@ def fetch_odds(mock: bool = False) -> list[dict]:
             raise
 
     raise RuntimeError("Failed to fetch odds after 3 attempts")
+
+
+def fetch_odds(mock: bool = False) -> list[dict]:
+    if mock:
+        logger.info("Mock mode: loading %s", MOCK_PATH)
+        with open(MOCK_PATH, encoding="utf-8") as f:
+            return json.load(f)
+
+    api_key = os.getenv("ODDS_API_KEY")
+    if not api_key:
+        raise RuntimeError("ODDS_API_KEY not set in environment / .env")
+
+    data = _request_odds(api_key, config.SPORT_KEY)
+    if data:
+        return data
+
+    # Zero matches for the configured key — the key may be wrong/inactive.
+    # Ask /sports/ for the actual World Cup key and retry once (1 extra credit).
+    logger.warning(
+        "No odds returned for sport key %r — verifying via /sports/…",
+        config.SPORT_KEY,
+    )
+    try:
+        actual_key = verify_sport_key()
+    except Exception as exc:
+        logger.warning("Sport key verification failed: %s", exc)
+        return data
+
+    if actual_key and actual_key != config.SPORT_KEY:
+        logger.info("Retrying odds fetch with discovered key %r", actual_key)
+        return _request_odds(api_key, actual_key)
+    return data
 
 
 def verify_sport_key(mock: bool = False) -> str | None:

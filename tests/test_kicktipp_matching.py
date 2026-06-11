@@ -58,9 +58,10 @@ def test_canonicalize_unknown_name():
 # ─── build_prediction_index ──────────────────────────────────────────────────
 
 def test_index_keys_are_canonical():
+    # Index is keyed by FIFA codes since the teams.py migration
     index = build_prediction_index(MATCHES, ALIASES)
-    assert ("Germany", "Brazil") in index
-    assert ("Türkiye", "Japan") in index
+    assert ("GER", "BRA") in index
+    assert ("TUR", "JPN") in index
 
 
 # ─── match_row ───────────────────────────────────────────────────────────────

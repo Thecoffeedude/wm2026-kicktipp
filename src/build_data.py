@@ -15,8 +15,9 @@ import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import config
-from src.fetch_live import fetch_live_scores
+from src.fetch_live import fetch_live_scores, fetch_schedule
 from src.fetch_odds import fetch_odds
+from src.live_update import update_results, write_live
 from src.fetch_uanalyse import fetch_uanalyse, fetch_tournament_probabilities
 from src.probabilities import process_match
 from src.scoreline import ev_optimize, poisson_matrix, derive_xg
@@ -62,6 +63,36 @@ def _bookmaker_entries(consensus_result: dict) -> list[dict]:
     ]
 
 
+def enrich_kickoff_times(matches: list[dict], schedule: list[dict]) -> int:
+    """
+    Replace date-only commence_time values with exact UTC kickoff times from
+    the football-data.org schedule. Matches by (home_code, away_code) with a
+    ±1 day tolerance on the date (timezone shifts around UTC midnight).
+    Mutates matches in place; returns the number of enriched entries.
+    """
+    by_pair: dict[tuple, list[dict]] = {}
+    for s in schedule:
+        if s.get("utc_date"):
+            by_pair.setdefault((s["home_code"], s["away_code"]), []).append(s)
+
+    enriched = 0
+    for m in matches:
+        if "T" in m["commence_time"]:
+            continue  # already has an exact time (e.g. from the odds API)
+        candidates = by_pair.get((m["home_code"], m["away_code"]), [])
+        try:
+            ua_date = datetime.strptime(m["commence_time"][:10], "%Y-%m-%d").date()
+        except ValueError:
+            continue
+        for s in candidates:
+            s_date = datetime.strptime(s["utc_date"][:10], "%Y-%m-%d").date()
+            if abs((s_date - ua_date).days) <= 1:
+                m["commence_time"] = s["utc_date"]
+                enriched += 1
+                break
+    return enriched
+
+
 def _tip_entry(tip: dict, modal: dict, based_on: str) -> tuple[dict, dict]:
     return (
         {
@@ -94,8 +125,12 @@ def build(mock: bool = False) -> dict:
             continue
         ua_by_key[key] = m
 
-    # ── 2. Load odds (secondary) ───────────────────────────────────────────
-    odds_raw = fetch_odds(mock=mock)
+    # ── 2. Load odds (secondary, optional — pipeline must survive without) ─
+    try:
+        odds_raw = fetch_odds(mock=mock)
+    except Exception as exc:
+        logger.warning("Odds unavailable (%s) — building without bookmaker data", exc)
+        odds_raw = []
     odds_by_key: dict[tuple, tuple] = {}
     for match in odds_raw:
         home_code, home = _resolve_team(match["home_team"])
@@ -218,6 +253,17 @@ def build(mock: bool = False) -> dict:
             "modal_scoreline":  modal_out,
         })
 
+    # ── 3b. Kickoff times + results from football-data.org schedule ───────
+    try:
+        schedule = fetch_schedule(mock=mock)
+    except Exception as exc:
+        logger.warning("Could not fetch schedule: %s", exc)
+        schedule = []
+
+    if schedule:
+        n = enrich_kickoff_times(matches_out, schedule)
+        logger.info("Enriched %d matches with exact kickoff times", n)
+
     matches_out.sort(key=lambda m: m["commence_time"])
 
     # ── 4. Tournament predictions (match-based) ────────────────────────────
@@ -233,12 +279,23 @@ def build(mock: bool = False) -> dict:
         logger.warning("Could not fetch tournament probabilities: %s", exc)
         tournament_probs = {}
 
-    # ── 6. Live scores (today's actual match results) ─────────────────────────
-    try:
-        live_scores = fetch_live_scores(mock=mock)
-    except Exception as exc:
-        logger.warning("Could not fetch live scores: %s", exc)
-        live_scores = []
+    # ── 6. Live scores (today) + cumulative results ───────────────────────
+    # Derived from the schedule when available (saves an API call);
+    # falls back to the dedicated today-only endpoint.
+    today_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    if schedule:
+        live_scores = [s for s in schedule if s.get("utc_date", "")[:10] == today_utc]
+    else:
+        try:
+            live_scores = fetch_live_scores(mock=mock)
+        except Exception as exc:
+            logger.warning("Could not fetch live scores: %s", exc)
+            live_scores = []
+
+    write_live(live_scores)
+    finished = [s for s in (schedule or live_scores) if s.get("is_done")]
+    total_results = update_results(finished)
+    logger.info("results.json: %d finished matches stored", total_results)
 
     now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     output = {

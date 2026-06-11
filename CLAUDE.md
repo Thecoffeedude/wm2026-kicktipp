@@ -49,10 +49,29 @@ wurde. Dieser Abschnitt dokumentiert die aktuell implementierten Datenquellen.
 - `agreement.same_tendency` = `false` → violettes Badge "⚡ Quellen uneinig" im Frontend.
 - Matches nur in Wettbüros (kein uanalyse-Eintrag) → `based_on: "odds_derived"`.
 
+### Tertiärquelle: football-data.org (Anstoßzeiten, Live, Ergebnisse)
+
+- **Endpoint:** `/v4/competitions/2000/matches` — Secret: `FOOTBALL_DATA_API_KEY`.
+- `src/fetch_live.py`:
+  - `fetch_schedule()` — kompletter Spielplan inkl. exakter Anstoßzeiten (`utcDate`)
+    und Endergebnissen. `build_data.py` reichert damit date-only `commence_time`
+    aus uanalyse an (`enrich_kickoff_times`, ±1 Tag Toleranz) — wichtig für UI-Zeiten
+    **und** den Deadline-Buffer in `kicktipp_submit.py`.
+  - `fetch_live_scores()` — nur heutige Spiele (Live-Polling).
+- **Dateisplit (kein Workflow-Race):** `predict.yml` schreibt `docs/data.json` (+ initiale
+  `live.json`/`results.json`); `live.yml` schreibt **nur** `docs/live.json` (~2 KB)
+  und `docs/results.json` (kumulativer Ergebnis-Speicher via `merge_results` —
+  Ergebnisse verschwinden nie). `live_update.py` fasst `data.json` bewusst nicht an.
+- `results.json` ist Basis für Punkte-Bilanz (Verlauf-Tab) und Gruppentabellen im Frontend.
+- Odds-Fetch ist fehlertolerant: ohne `ODDS_API_KEY` oder bei leerer Antwort läuft der
+  Build ohne Quoten weiter; bei 0 Treffern wird der Sport-Key via `/sports/` verifiziert.
+
 ### Mock-Betrieb (Entwicklung)
 
 - `--mock`-Flag nutzt `data/mock_uanalyse.csv` und `data/mock_response.json`.
 - **Nie echte API-Calls beim Entwickeln** (Quota schonen).
+- ⚠️ `build_data.py --mock` überschreibt `docs/data.json` mit Mock-Daten —
+  danach `git checkout docs/data.json`.
 
 ---
 
@@ -74,7 +93,8 @@ wurde. Dieser Abschnitt dokumentiert die aktuell implementierten Datenquellen.
 | `KICKTIPP_PASSWORD` | Ja | Passwort (nie geloggt) |
 | `KICKTIPP_COMPETITION` | Ja | Wettbewerbs-Slug (URL-Segment) |
 | `OVERWRITE` | Nein | `true` = bereits getippte Spiele überschreiben (default: false) |
-| `NTFY_TOPIC` | Nein | ntfy.sh-Topic für Push-Benachrichtigung nach Submit |
+| `NTFY_TOPIC` | Nein | ntfy.sh-Topic — Push nach Submit + tägliche Tipp-Übersicht (`src/notify_tips.py`) |
+| `FOOTBALL_DATA_API_KEY` | Nein | football-data.org — Anstoßzeiten, Live-Scores, Ergebnisse |
 
 ### Login-/Submit-Flow (aus antonengelhardt/kicktipp-bot + schwalle/kicktipp-betbot abgeleitet)
 
@@ -104,8 +124,7 @@ Tests: `tests/test_kicktipp_matching.py` (24 Tests, kein Browser).
 ### Workflow-Schritt (predict.yml)
 
 - Läuft **nach** `build_data.py`, nur wenn `KICKTIPP_EMAIL` gesetzt ist.
-- **Aktuell: `--dry-run`** (kein `--submit`-Flag).
-- ⚠️ **Vor Aktivierung von `--submit`**: dry-run-Log prüfen, dann explizites OK geben.
+- **Aktuell: `--submit`** (echter Eintrag, seit Turnierstart aktiv).
 - Screenshots bei Fehler werden als GitHub-Artifact hochgeladen.
 
 ### GitHub-Actions-Versionen (verifiziert 2026-06-10)

@@ -69,6 +69,22 @@ html.force-dark {
   }
 }
 
+/* Manual light override (theme toggle) — wins over the dark media query */
+html.force-light {
+  --bg-1:       #EAF0F7;
+  --bg-2:       #F6F1FB;
+  --blob-a:     #7FB2FF;
+  --blob-b:     #FFB37A;
+  --blob-c:     #B69BFF;
+  --solid:      #FFFFFF;
+  --ink:        #0B0E13;
+  --muted:      #6B7180;
+  --hair:       rgba(10,14,25,.08);
+  --glass:        rgba(255,255,255,.55);
+  --glass-strong: rgba(255,255,255,.72);
+  --glass-edge:   rgba(255,255,255,.85);
+}
+
 /* ── Reset ───────────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1697,3 +1713,179 @@ header { padding-top: calc(10px + env(safe-area-inset-top)); }
   margin-top: 3px;
   white-space: nowrap;
 }
+
+/* ── Header right cluster + theme toggle ─────────────────────────────────── */
+.head-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.theme-toggle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--hair);
+  background: var(--glass);
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform .15s ease;
+}
+.theme-toggle:active { transform: scale(.9); }
+.theme-toggle svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+/* Stale-data warning pill (data older than one daily build cycle) */
+.pill-stale {
+  background: var(--warn);
+  animation: livepulse 2s ease-in-out infinite;
+}
+
+/* ── Card result line (live / final score on match cards) ────────────────── */
+.result-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 2px 16px 10px;
+  font-size: 12px;
+}
+.result-line .rl-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--good);
+}
+.result-line--live .rl-label { color: #ef4444; }
+.result-line .rl-score {
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: -.02em;
+}
+
+/* ── Earned Kicktipp points chips ────────────────────────────────────────── */
+.verlauf-pts {
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.verlauf-pts.vp-high { background: color-mix(in srgb, var(--good) 18%, transparent); color: var(--good); }
+.verlauf-pts.vp-mid  { background: color-mix(in srgb, var(--home) 15%, transparent); color: var(--home); }
+.verlauf-pts.vp-zero { background: color-mix(in srgb, var(--muted) 14%, transparent); color: var(--muted); }
+.verlauf-tipres {
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* ── Punkte-Bilanz card (Verlauf tab) ────────────────────────────────────── */
+.bilanz-card {
+  border-radius: var(--r-card);
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+.bilanz-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.bilanz-title {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+}
+.bilanz-total {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  color: var(--good);
+}
+.bilanz-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.bilanz-tiers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+.bilanz-tiers .bt {
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--hair);
+}
+.bt-exact { color: var(--good); }
+.bt-diff  { color: var(--home); }
+.bt-tend  { color: var(--away); }
+.bt-miss  { color: var(--muted); }
+.bilanz-ev {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--hair);
+  font-size: 11.5px;
+  color: var(--muted);
+}
+.bilanz-ev b { color: var(--ink); }
+
+/* ── Group standings table (Gruppen tab) ─────────────────────────────────── */
+.standings-title { margin: 10px 0 6px; }
+.standings {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+.standings th {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+  padding: 2px 4px;
+}
+.standings td {
+  padding: 4px;
+  text-align: center;
+  border-top: 1px solid var(--hair);
+}
+.standings .st-team {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.standings .st-team .flag,
+.standings .st-team .flag-placeholder {
+  width: 20px;
+  height: 20px;
+  border-width: 1px;
+  box-shadow: none;
+}
+.standings .st-pos {
+  font-weight: 700;
+  color: var(--muted);
+  width: 18px;
+}
+.standings .st-pts { font-weight: 800; }
+.standings tr.st-qualify .st-pos { color: var(--good); }
