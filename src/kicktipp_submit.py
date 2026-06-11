@@ -173,6 +173,37 @@ def deadline_for(row: dict, prediction: dict | None, now: datetime | None = None
     return None
 
 
+def uncovered_due_matches(
+    matches: list[dict],
+    scraped_keys: set[tuple[str, str]],
+    tipped_keys: set[tuple[str, str]],
+    now: datetime,
+) -> list[dict]:
+    """
+    Data.json matches that are inside a submit window (safety/freshness) but have
+    NO corresponding row on the scraped Kicktipp page and aren't already tipped.
+
+    This is the safety net for a collapsed / not-yet-expanded matchday: instead of
+    silently missing a game, the caller can fire an ntfy alert.
+    """
+    out = []
+    for m in matches:
+        ct = m.get("commence_time", "")
+        if "T" not in ct:
+            continue
+        try:
+            kickoff = datetime.fromisoformat(ct.replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        ttd = (kickoff - now).total_seconds() / 60.0
+        if submit_window(ttd) not in ("safety", "freshness"):
+            continue
+        key = (m.get("home_code"), m.get("away_code"))
+        if key not in scraped_keys and key not in tipped_keys:
+            out.append(m)
+    return out
+
+
 def submit_window(ttd_min: float | None) -> str:
     """
     Classify a time-to-deadline (minutes) into a submit phase.
@@ -378,9 +409,11 @@ async def scrape_game_rows(page, competition: str) -> list[dict]:
             away_input = tr.locator('input[name*="gastTipp"]')
 
             # td[0] carries the match date/time — Kicktipp's tip deadline.
-            deadline_text = (await tr.locator("td").nth(0).inner_text()).strip()
-            home_name = (await tr.locator("td").nth(1).inner_text()).strip()
-            away_name = (await tr.locator("td").nth(2).inner_text()).strip()
+            # text_content (not inner_text) so collapsed/hidden matchday rows
+            # still yield their text instead of an empty string.
+            deadline_text = ((await tr.locator("td").nth(0).text_content()) or "").strip()
+            home_name = ((await tr.locator("td").nth(1).text_content()) or "").strip()
+            away_name = ((await tr.locator("td").nth(2).text_content()) or "").strip()
             home_val = await home_input.input_value()
             away_val = await away_input.input_value()
             home_inp_name = (await home_input.get_attribute("name")) or ""
@@ -823,17 +856,39 @@ async def run(args) -> int:
                     summary + "\n" + "\n".join(lines + sf_lines)
                 )
 
-            # ── ntfy ALERT: a game could not be tipped in time → manual action ──
-            if ntfy_topic and (missed or tip_counts["errors"] > 0):
+            # ── Coverage check: due games with NO Kicktipp row (collapsed/other
+            #    matchday view) — would otherwise be missed silently ──────────
+            scraped_keys = {
+                (_resolve_team(r["home"]), _resolve_team(r["away"])) for r in rows
+            }
+            state_now = load_submit_state()
+            tipped_keys = {
+                tuple(k.split(":")) for k, v in state_now.items() if v.get("tipped")
+            }
+            uncovered = uncovered_due_matches(matches, scraped_keys, tipped_keys, now)
+            for m in uncovered:
+                logging.warning(
+                    "UNCOVERED: %s vs %s is due but no Kicktipp row found "
+                    "(matchday collapsed / different view?)",
+                    m["home_team"], m["away_team"],
+                )
+
+            # ── ntfy ALERT: game not tipped in time OR not found → manual action ─
+            if ntfy_topic and (missed or uncovered or tip_counts["errors"] > 0):
                 alert_lines = [
                     f"⚠️ {a['kicktipp_home']} vs {a['kicktipp_away']} — {a['reason']}"
                     for a in missed
+                ]
+                alert_lines += [
+                    f"❓ {m['home_team']} vs {m['away_team']} — fällig, aber keine "
+                    f"Kicktipp-Zeile gefunden (Spieltag eingeklappt?)"
+                    for m in uncovered
                 ]
                 if tip_counts["errors"] > 0:
                     alert_lines.append(f"⚠️ {tip_counts['errors']} Eintrag-Fehler beim Absenden")
                 send_ntfy(
                     ntfy_topic, "⚠️ WM 2026 Kicktipp — manuell eingreifen!",
-                    "Folgende Spiele konnten NICHT rechtzeitig getippt werden:\n"
+                    "Diese Spiele konnten NICHT (rechtzeitig) getippt werden:\n"
                     + "\n".join(alert_lines),
                 )
 

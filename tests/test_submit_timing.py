@@ -6,9 +6,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
+from datetime import timedelta
+
 from kicktipp_submit import (
     FINISH_MARGIN_MIN, FRESH_MAX_MIN, FRESH_MIN_MIN,
     decide_action, parse_kicktipp_deadline, submit_window,
+    uncovered_due_matches,
 )
 
 _TIP = {"home": 2, "away": 1}
@@ -115,3 +118,35 @@ def test_parse_empty_is_none():
 
 def test_parse_garbage_is_none():
     assert parse_kicktipp_deadline("Mannschaft", now=_REF) is None
+
+
+# ─── uncovered_due_matches (collapsed-matchday safety net) ───────────────────
+
+def _m(hc, ac, mins_from_now, now):
+    ko = now + timedelta(minutes=mins_from_now)
+    return {"home_code": hc, "away_code": ac, "home_team": hc, "away_team": ac,
+            "commence_time": ko.strftime("%Y-%m-%dT%H:%M:%SZ")}
+
+def test_uncovered_flags_due_game_without_row():
+    now = datetime(2026, 6, 12, 12, 0, tzinfo=timezone.utc)
+    matches = [_m("CAN", "BIH", 45, now)]          # freshness window, no row
+    out = uncovered_due_matches(matches, scraped_keys=set(), tipped_keys=set(), now=now)
+    assert len(out) == 1 and out[0]["home_code"] == "CAN"
+
+def test_uncovered_ignores_present_row():
+    now = datetime(2026, 6, 12, 12, 0, tzinfo=timezone.utc)
+    matches = [_m("CAN", "BIH", 45, now)]
+    out = uncovered_due_matches(matches, scraped_keys={("CAN", "BIH")}, tipped_keys=set(), now=now)
+    assert out == []
+
+def test_uncovered_ignores_already_tipped():
+    now = datetime(2026, 6, 12, 12, 0, tzinfo=timezone.utc)
+    matches = [_m("CAN", "BIH", 480, now)]         # safety window but already tipped
+    out = uncovered_due_matches(matches, scraped_keys=set(), tipped_keys={("CAN", "BIH")}, now=now)
+    assert out == []
+
+def test_uncovered_ignores_far_future_game():
+    now = datetime(2026, 6, 12, 12, 0, tzinfo=timezone.utc)
+    matches = [_m("CAN", "BIH", 3000, now)]        # ~50h out → waiting, not due
+    out = uncovered_due_matches(matches, scraped_keys=set(), tipped_keys=set(), now=now)
+    assert out == []
