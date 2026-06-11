@@ -95,6 +95,30 @@ wurde. Dieser Abschnitt dokumentiert die aktuell implementierten Datenquellen.
 - Odds-Fetch ist fehlertolerant: ohne `ODDS_API_KEY` oder bei leerer Antwort läuft der
   Build ohne Quoten weiter; bei 0 Treffern wird der Sport-Key via `/sports/` verifiziert.
 
+### Detailstatistik: Highlightly (post-match-once)
+
+- **Base:** `https://soccer.highlightly.net` — Header `x-rapidapi-key` +
+  `x-rapidapi-host: soccer.highlightly.net`. Secret: `HIGHLIGHTLY_KEY`.
+- **World Cup = League 1635**, Saison 2026 (per CI-Discovery verifiziert;
+  API-Football-Free-Plan blockiert 2026 → Gate 0 gescheitert, 1B aktiv).
+- `src/fetch_highlightly.py` (Step in `capture.yml`): Detail-Endpunkte
+  (`/statistics`, `/events`, `/lineups`) **einmal pro Spiel nach FT**
+  (aus `docs/results.json`), permanent gecacht in `data/match_stats.json`,
+  nie re-gefetcht. **Kein Live-Polling.** Budget 100/Tag: unter 25 Requests
+  nur noch Statistik, unter 8 Stopp. Frontend liest `docs/stats.json` →
+  Drawer-Sektion „Spielstatistik" (Ballbesitz, Schüsse, xG, Timeline,
+  Aufstellungen) — erscheint erst, wenn Daten existieren.
+- Possession kommt als String (`"56%"`) → int; Summe wegen Rundung ≠ 100 möglich.
+
+### Team-Artwork: TheSportsDB
+
+- `src/fetch_artwork.py` (Step in `predict.yml`, no-op wenn vollständig):
+  Wappen je Team **einmal** geholt → `data/team_artwork.json` (Cache forever,
+  48/48 erfasst). Treffer nur bei Sport=Soccer + Liga „FIFA World Cup"/
+  WC-Qualifying **und** `resolve(strTeam)`==Code. `TSDB_KEY` optional
+  (Fallback: öffentlicher Doku-Test-Key). Frontend: Wappen statt Flagge,
+  onerror-Fallback auf flagcdn.
+
 ### Mock-Betrieb (Entwicklung)
 
 - `--mock`-Flag nutzt `data/mock_uanalyse.csv` und `data/mock_response.json`.

@@ -2,6 +2,7 @@
 const DATA_URL = './data.json';
 const LIVE_URL = './live.json';
 const RESULTS_URL = './results.json';
+const STATS_URL = './stats.json';
 const FLAG_BASE = 'https://flagcdn.com/w80/';
 const DIVERGENCE_THRESHOLD = 0.04;
 const XG_MAX = 4.0;
@@ -15,6 +16,7 @@ let tournamentProbs = {};   // FIFA_code → {team, group, prob_win_group, ..., 
 let liveScores   = [];      // today's live/finished match scores from football-data.org
 let liveByKey    = {};      // lookup: "HOME_CODE:AWAY_CODE" → live entry
 let resultsByPair = {};     // lookup: "HOME_CODE:AWAY_CODE" → finished result entry
+let matchStats = {};        // match.id → post-match stats/events/lineups (docs/stats.json)
 let currentTab = 'heute';
 let searchQuery = '';
 let filterTeam = '';
@@ -97,8 +99,9 @@ async function refreshAllData() {
   if (Date.now() - _lastFullRefresh < 8_000) return;   // debounce
   _lastFullRefresh = Date.now();
   const bust = '?_=' + Date.now();
-  const [d, l, r] = await Promise.allSettled([
+  const [d, l, r, st] = await Promise.allSettled([
     fetch(DATA_URL + bust), fetch(LIVE_URL + bust), fetch(RESULTS_URL + bust),
+    fetch(STATS_URL + bust),
   ]);
   try {
     if (d.status === 'fulfilled' && d.value.ok) {
@@ -111,6 +114,7 @@ async function refreshAllData() {
     }
     if (l.status === 'fulfilled' && l.value.ok) _applyLiveData((await l.value.json()).live || []);
     if (r.status === 'fulfilled' && r.value.ok) _applyResults((await r.value.json()).results || []);
+    if (st.status === 'fulfilled' && st.value.ok) matchStats = (await st.value.json()).matches || {};
     renderMeta();
     renderTab();
     _scheduleLiveRefresh();   // restart timer (iOS freezes intervals in background)
@@ -411,10 +415,11 @@ function maxDivergence(m) {
 async function init() { // returns promise
   showSkeletons(4);
   try {
-    const [dataRes, liveRes, resultsRes] = await Promise.allSettled([
+    const [dataRes, liveRes, resultsRes, statsRes] = await Promise.allSettled([
       fetch(DATA_URL),
       fetch(LIVE_URL),
       fetch(RESULTS_URL),
+      fetch(STATS_URL),
     ]);
     if (dataRes.status !== 'fulfilled' || !dataRes.value.ok) {
       throw new Error(`HTTP ${dataRes.status === 'fulfilled' ? dataRes.value.status : 'fetch failed'}`);
@@ -429,6 +434,10 @@ async function init() { // returns promise
     // results.json: persistent results history (optional, may 404 on old deploys)
     if (resultsRes.status === 'fulfilled' && resultsRes.value.ok) {
       try { _applyResults((await resultsRes.value.json()).results || []); } catch {}
+    }
+    // stats.json: post-match detail statistics (optional)
+    if (statsRes.status === 'fulfilled' && statsRes.value.ok) {
+      try { matchStats = (await statsRes.value.json()).matches || {}; } catch {}
     }
     // live.json preferred; fall back to the live block inside data.json
     let liveApplied = false;
@@ -987,6 +996,9 @@ function buildDrawer(match, ua, oddsC) {
   // 6 · Flag-tinted hero + entropy indicator
   html += buildDetailHero(match);
 
+  // Post-match statistics (Highlightly) — section absent until data exists
+  html += buildMatchStats(match);
+
   // 1+2 · Result heatmap (probability ↔ expected points) and 3 · Poisson curves
   if (lambda?.home != null) {
     html += buildHeatmap(match, lambda);
@@ -1263,6 +1275,99 @@ function buildStakes(match) {
     </div>
     <div class="stakes">${rows}</div>`;
 }
+
+// ── Post-match statistics (Highlightly) ────────────────────────────────────
+function _msCompareRow(label, vH, vA, cH, cA, digits = 0) {
+  if (vH == null && vA == null) return '';
+  const h = vH ?? 0, a = vA ?? 0;
+  const total = h + a || 1;
+  const fmt = v => v == null ? '–' : (digits ? v.toFixed(digits) : v);
+  return `<div class="ms-row">
+    <span class="ms-val">${fmt(vH)}</span>
+    <div class="ms-track">
+      <div class="ms-seg" style="width:${(h / total * 100).toFixed(1)}%;background:${cH}"></div>
+      <div class="ms-seg" style="width:${(a / total * 100).toFixed(1)}%;background:${cA}"></div>
+    </div>
+    <span class="ms-val">${fmt(vA)}</span>
+    <span class="ms-lab">${label}</span>
+  </div>`;
+}
+
+const _EVENT_ICON = {
+  'Goal': '⚽', 'Own Goal': '⚽', 'Penalty': '⚽',
+  'Yellow Card': '🟨', 'Red Card': '🟥', 'Yellow Red Card': '🟥',
+  'Substitution': '🔁', 'VAR': '📺',
+};
+
+function buildMatchStats(match) {
+  const ms = matchStats[match.id];
+  if (!ms) return '';   // pre-match / not yet fetched → no section at all
+  const { home: cH, away: cA } = matchColors(match.home_team, match.away_team);
+  let html = '';
+
+  const st = ms.stats;
+  if (st?.home && st?.away) {
+    html += `<div class="dt">Spielstatistik</div>`;
+    const ph = st.home.possession, pa = st.away.possession;
+    if (ph != null && pa != null) {
+      html += `<div class="ms-poss" title="Ballbesitz">
+        <span class="ms-val">${ph}%</span>
+        <div class="ms-track ms-track--poss">
+          <div class="ms-seg" style="width:${ph}%;background:${cH}"></div>
+          <div class="ms-seg" style="width:${100 - ph}%;background:${cA}"></div>
+        </div>
+        <span class="ms-val">${pa}%</span>
+        <span class="ms-lab">Ballbesitz</span>
+      </div>`;
+    }
+    html += _msCompareRow('Schüsse', st.home.shots, st.away.shots, cH, cA);
+    html += _msCompareRow('aufs Tor', st.home.shots_on_target, st.away.shots_on_target, cH, cA);
+    html += _msCompareRow('xG', st.home.xg, st.away.xg, cH, cA, 2);
+    html += _msCompareRow('Ecken', st.home.corners, st.away.corners, cH, cA);
+    html += _msCompareRow('Fouls', st.home.fouls, st.away.fouls, cH, cA);
+  }
+
+  const events = ms.events || [];
+  if (events.length) {
+    html += `<div class="dt">Spielverlauf</div><div class="ms-timeline">`;
+    events.forEach(ev => {
+      const icon = _EVENT_ICON[ev.type] || '·';
+      const detail = ev.type === 'Substitution'
+        ? `${esc(ev.sub_in || '')} <span class="ms-ev-sub">für ${esc(ev.player || '')}</span>`
+        : `${esc(ev.player || '')}${ev.assist ? ` <span class="ms-ev-sub">(${esc(ev.assist)})</span>` : ''}`;
+      html += `<div class="ms-ev ${ev.side}">
+        <span class="ms-ev-min">${esc(String(ev.time ?? ''))}′</span>
+        <span class="ms-ev-icon">${icon}</span>
+        <span class="ms-ev-txt">${detail}</span>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  const lu = ms.lineups;
+  if (lu?.home?.xi?.length || lu?.away?.xi?.length) {
+    const luId = `lu-${match.id}`;
+    const side = (s, team, color) => `
+      <div class="ms-lu-side">
+        <div class="ms-lu-head"><span class="ms-lu-dot" style="background:${color}"></span>
+          ${esc(team)}${s.formation ? ` · ${esc(s.formation)}` : ''}</div>
+        ${(s.xi || []).map(p => `<div class="ms-lu-p"><b>${p.number ?? ''}</b> ${esc(p.name || '')}</div>`).join('')}
+        ${(s.bench || []).length ? `<div class="ms-lu-bench">Bank: ${s.bench.map(p => esc(p.name || '')).join(', ')}</div>` : ''}
+      </div>`;
+    html += `
+      <button class="bk-toggle" aria-expanded="false" aria-controls="${luId}" onclick="toggleBookmakers(this)">
+        <span>Aufstellungen</span>
+        <svg class="bk-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="${luId}" class="ms-lineups" hidden>
+        ${side(lu.home || {}, match.home_team, cH)}
+        ${side(lu.away || {}, match.away_team, cA)}
+      </div>`;
+  }
+
+  return html;
+}
+
 
 // ── Group standings from real results ─────────────────────────────────────
 function computeGroupStandings() {

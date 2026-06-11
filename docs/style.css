@@ -2334,3 +2334,86 @@ header { padding-top: calc(10px + env(safe-area-inset-top)); }
   .hm-corner { font-size: 7px; }
   .stake-row { grid-template-columns: 1fr 64px 1fr; gap: 6px; }
 }
+
+/* ── Post-match statistics (Highlightly, Detailansicht) ──────────────────── */
+.ms-poss, .ms-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 7px 0;
+  font-size: 12px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.ms-val { min-width: 34px; text-align: center; flex-shrink: 0; }
+.ms-track {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  background: color-mix(in srgb, var(--muted) 14%, transparent);
+}
+.ms-track--poss { height: 12px; border-radius: 6px; }
+.ms-seg { height: 100%; }
+.ms-lab {
+  width: 56px;
+  flex-shrink: 0;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--muted);
+  text-align: right;
+}
+
+/* Event timeline */
+.ms-timeline { display: flex; flex-direction: column; gap: 4px; }
+.ms-ev {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  font-size: 12px;
+}
+.ms-ev.away { flex-direction: row-reverse; text-align: right; }
+.ms-ev-min {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  min-width: 28px;
+}
+.ms-ev.away .ms-ev-min { text-align: left; }
+.ms-ev-icon { flex-shrink: 0; }
+.ms-ev-txt { font-weight: 600; min-width: 0; }
+.ms-ev-sub { color: var(--muted); font-weight: 500; font-size: 11px; }
+
+/* Lineups */
+.ms-lineups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding-top: 8px;
+}
+.ms-lu-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.ms-lu-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+.ms-lu-p { font-size: 11.5px; padding: 1.5px 0; }
+.ms-lu-p b {
+  display: inline-block;
+  min-width: 20px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.ms-lu-bench {
+  margin-top: 7px;
+  font-size: 10.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+@media (max-width: 380px) {
+  .ms-lineups { grid-template-columns: 1fr; }
+}
