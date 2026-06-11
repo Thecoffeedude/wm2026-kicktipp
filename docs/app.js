@@ -1492,6 +1492,48 @@ function renderVerlauf(app) {
 }
 
 // ── Model tab ─────────────────────────────────────────────────────────────
+function weightingPanel(meta) {
+  const wt = meta.weighting;
+  if (!wt) return '';
+  const wm = Math.round((wt.weights?.market ?? 0.5) * 100);
+  const wu = 100 - wm;
+  const regimeLabel = wt.regime === 'performance' ? 'Performance' : 'Prior';
+  const sharpTxt = wt.sharp_books
+    ? `Scharfe Bücher erkannt (${(wt.book_keys || []).filter(k => /pinnacle|betfair|matchbook/.test(k)).join(', ') || 'ja'}) → Markt bekommt den Prior-Vorteil.`
+    : 'Keine scharfen Bücher (Pinnacle/Betfair) in der Antwort → Gewichte auf Parität.';
+
+  const perf = wt.performance || {};
+  const hasPerf = perf.market && perf.uanalyse;
+  let perfHtml;
+  if (hasPerf) {
+    const row = (lab, src) => `
+      <div class="perf-row">
+        <span class="perf-src">${lab}</span>
+        <span class="perf-metric"><i>Treffer</i><b>${pct(perf[src].hit_rate)}</b></span>
+        <span class="perf-metric"><i>Brier</i><b>${(perf[src].brier).toFixed(3)}</b></span>
+        <span class="perf-metric"><i>LogLoss</i><b>${(perf[src].log_loss).toFixed(3)}</b></span>
+        <span class="perf-metric"><i>n</i><b>${perf[src].n}</b></span>
+      </div>`;
+    perfHtml = `
+      <div class="dt" style="margin-top:14px">Rollierende Treffsicherheit · ${wt.n_settled} Spiele</div>
+      ${row('Wettbüros', 'market')}
+      ${row('uanalyse', 'uanalyse')}
+      <p class="model-note">Niedrigerer Brier/Log-Loss = treffsicherer. Die Gewichte ziehen invers zum Fehler nach${wt.reweighting_enabled ? '' : ' (Reweighting noch inaktiv — schaltet automatisch frei, sobald genug Ergebnisse vorliegen)'}.</p>`;
+  } else {
+    perfHtml = `<p class="model-note">Noch keine ausgewerteten Ergebnisse — die Gewichte stammen aus dem Prior. Die performancebasierte Nachgewichtung (Brier &amp; Log-Loss je Quelle) schaltet sich frei, sobald der Ergebnis-Feed läuft.</p>`;
+  }
+
+  return `
+    <div class="dt" style="margin-top:16px">Quellen-Gewichtung
+      <span class="regime-badge regime-${wt.regime}">${regimeLabel}</span></div>
+    <div class="weight-split" role="img" aria-label="Markt ${wm} Prozent, uanalyse ${wu} Prozent">
+      <div class="ws-seg ws-market" style="width:${wm}%">Markt ${wm}%</div>
+      <div class="ws-seg ws-ua" style="width:${wu}%">uanalyse ${wu}%</div>
+    </div>
+    <p class="model-note">${sharpTxt}</p>
+    ${perfHtml}`;
+}
+
 function renderModel(app) {
   const meta = metadata;
   const generated = meta.generated_at
@@ -1512,6 +1554,11 @@ function renderModel(app) {
       auch Ergebnisse wie 2:1, 3:2 usw. einfängt.</p>
       <p>Keine Tordifferenz-Stufe bei Unentschieden (Kicktipp-Regelwerk):
       2 Pkt Tendenz · 4 Pkt exakt.</p>
+      <p>Der Tipp basiert auf einem gewichteten <b>Blend</b> aus Markt-Schlussquoten
+      und uanalyse (Logit-Pooling), das auf Poisson-λ kalibriert wird — keine Quelle
+      wird ignoriert.</p>
+
+      ${weightingPanel(meta)}
 
       <div class="dt" style="margin-top:16px">Quellen</div>
       <div class="stat-row">

@@ -23,18 +23,42 @@ logger = logging.getLogger(__name__)
 MOCK_PATH = Path(__file__).parent.parent / "data" / "mock_response.json"
 
 
+def _parse_remaining(response: requests.Response) -> int | None:
+    raw = response.headers.get("x-requests-remaining")
+    try:
+        return int(raw) if raw is not None else None
+    except ValueError:
+        return None
+
+
 def _log_quota(response: requests.Response) -> None:
     remaining = response.headers.get("x-requests-remaining", "?")
     used = response.headers.get("x-requests-used", "?")
     logger.info("Odds API quota — used: %s, remaining: %s", used, remaining)
 
 
-def _request_odds(api_key: str, sport_key: str) -> list[dict]:
+def request_odds(
+    markets: str = config.ODDS_API_MARKETS,
+    sport_key: str = config.SPORT_KEY,
+    api_key: str | None = None,
+) -> tuple[list[dict], int | None]:
+    """
+    Single odds call. Returns (payload, requests_remaining).
+
+    `markets` controls cost: "h2h" = 1 credit, "h2h,totals" = 2 credits
+    (× number of regions). The remaining-credits header is surfaced so callers
+    can budget-guard. Raises on hard HTTP errors after retries.
+    """
+    if api_key is None:
+        api_key = os.getenv("ODDS_API_KEY")
+    if not api_key:
+        raise RuntimeError("ODDS_API_KEY not set in environment / .env")
+
     url = f"{config.ODDS_API_BASE_URL}/sports/{sport_key}/odds"
     params = {
         "apiKey": api_key,
         "regions": config.ODDS_API_REGIONS,
-        "markets": config.ODDS_API_MARKETS,
+        "markets": markets,
         "oddsFormat": config.ODDS_API_FORMAT,
     }
 
@@ -48,7 +72,7 @@ def _request_odds(api_key: str, sport_key: str) -> list[dict]:
                 continue
             response.raise_for_status()
             _log_quota(response)
-            return response.json()
+            return response.json(), _parse_remaining(response)
         except requests.exceptions.Timeout:
             logger.error("Request timed out (attempt %d/3)", attempt)
             if attempt == 3:
@@ -59,6 +83,22 @@ def _request_odds(api_key: str, sport_key: str) -> list[dict]:
             raise
 
     raise RuntimeError("Failed to fetch odds after 3 attempts")
+
+
+def book_keys(payload: list[dict]) -> list[str]:
+    """Distinct bookmaker keys present across an odds payload."""
+    keys: set[str] = set()
+    for match in payload:
+        for b in match.get("bookmakers", []):
+            if b.get("key"):
+                keys.add(b["key"])
+    return sorted(keys)
+
+
+def _request_odds(api_key: str, sport_key: str) -> list[dict]:
+    """Back-compat shim: payload only, default markets."""
+    payload, _ = request_odds(markets=config.ODDS_API_MARKETS, sport_key=sport_key, api_key=api_key)
+    return payload
 
 
 def fetch_odds(mock: bool = False) -> list[dict]:

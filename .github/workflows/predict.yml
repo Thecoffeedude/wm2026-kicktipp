@@ -33,11 +33,11 @@ jobs:
 
       - name: Vorhersagen generieren → docs/data.json
         # uanalyse wird per HTTP gezogen (kein Secret nötig).
-        # ODDS_API_KEY ist optional — ohne Key läuft die Pipeline ohne Wettbüro-Quoten.
+        # Markt-Quoten kommen aus docs/odds_latest.json (vom Capture-Workflow) —
+        # build_data ruft die Odds-API NICHT mehr selbst auf (spart Credits).
         # FOOTBALL_DATA_API_KEY ist optional — liefert exakte Anstoßzeiten + Ergebnisse.
         run: python3 src/build_data.py
         env:
-          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
           FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
 
       - name: Daten committen

@@ -36,18 +36,47 @@ wurde. Dieser Abschnitt dokumentiert die aktuell implementierten Datenquellen.
 - **Basis-URL:** `https://api.the-odds-api.com/v4`
 - **Sport-Key:** `soccer_fifa_world_cup`
 - **Secret:** `ODDS_API_KEY` (GitHub Secret, nie in Code oder Logs)
-- **Abruf:** `src/fetch_odds.py` — 2 Credits pro Call (h2h + totals, Region eu).
-  Free Tier: 500 Credits/Monat. Täglich 1× abrufen reicht.
-- **Verwendung:** Per-Buchmacher-Quoten, margenbereinigter Konsens,
-  Divergenz-Badge. **Nicht** als Basis für `recommended_tip`.
+- **Kosten:** 1 Credit (`h2h`) bzw. 2 Credits (`h2h,totals`) × Regionen. Free Tier:
+  500 Credits/Monat. **Ein** Call liefert *alle* anstehenden Spiele gleichzeitig.
+- **Abruf — kickoff-ankernd (`src/odds_capture.py`, Workflow `capture.yml`):**
+  NICHT mehr uniform/täglich. Pro Spiel werden Snapshots an Offsets erfasst:
+  `closing` (8–55 min vor Anpfiff, **Pflicht**, `h2h,totals`), `T-3h` und `T-24h`
+  (optional, `h2h`-only). Ein Lauf fetcht nur, wenn ein Spiel in einem noch nicht
+  gefüllten Fenster liegt (Dedup über den Snapshot-Store).
+- **Budget-Guard:** `x-requests-remaining` wird in `data/odds_budget.json` getrackt.
+  Unter `SAFETY_MARGIN` (120) nur noch Pflicht-Schlussquoten; bei ≤1 Credit
+  degradiert `closing` auf `h2h`-only.
+- **Sharp-Book-Check:** beim Fetch werden die `bookmaker.key` geloggt. Ohne
+  Pinnacle/Betfair → Gewichts-Prior auf Parität (`weighting.has_sharp_books`).
+- `build_data.py` ruft die Odds-API **nicht** mehr selbst — es liest die vom
+  Capture-Workflow geschriebene `docs/odds_latest.json` (spart Credits).
+
+### Snapshot-Store (append-only) — `data/snapshots.jsonl`
+
+- `src/snapshot_store.py`: eine JSON-Zeile pro Event, **nie überschrieben**.
+  Typen: `odds` (margenbereinigte Markt-1X2 je Offset), `uanalyse` (1X2 + λ,
+  Snapshot am nächsten zum Anpfiff), `result` (echtes Ergebnis).
+- Ergebnisse werden ohne Extra-API-Call aus `docs/results.json` (von `live.yml`)
+  nachgetragen (`odds_capture.backfill_results`). Reproduzierbar & auditierbar.
+
+### Dynamische Quellen-Gewichtung — `src/weighting.py`
+
+- **Prior:** scharfe Bücher → Markt 57.5 / uanalyse 42.5; sonst 50/50.
+- **Blend:** 1X2 per Logit-Pooling (`logit_pool`) kombiniert, dann λ kalibriert
+  (`calibrate_lambda`), sodass das aggregierte 1X2 dem Blend entspricht — keine
+  Quelle wird verworfen. Der EV-Optimierer nutzt diese λ. Schalter: `config.ENABLE_BLEND`.
+- **Performance-Reweighting (Phase B):** sobald Ergebnisse fließen, rollierender
+  Brier/Log-Loss je Quelle → Gewichte invers zum Fehler. Aktiviert sich über
+  `weighting.ENABLE_PERFORMANCE_REWEIGHTING` (default `False`) + `MIN_SETTLED_FOR_PERF`.
+  Bis dahin gilt der Prior. `metadata.weighting` in `data.json` speist den Modell-Tab.
 
 ### Zusammenführung
 
-- Match-Matching via `(canonical_home, canonical_away, kickoff_date)`.
-- Team-Alias-Map in `config.TEAM_ALIASES` (uanalyse-Schreibweise = kanonisch).
-- Pro Match: `sources.uanalyse` und/oder `sources.odds_consensus` in `data.json`.
+- Match-Matching via `(home_code, away_code, kickoff_date)` (FIFA-Codes).
+- Pro Match: `sources.uanalyse`, `sources.odds_consensus` und/oder `sources.blend`.
 - `agreement.same_tendency` = `false` → violettes Badge "⚡ Quellen uneinig" im Frontend.
-- Matches nur in Wettbüros (kein uanalyse-Eintrag) → `based_on: "odds_derived"`.
+- Tip-Basis: `based_on` ∈ `blend` (beide Quellen), `uanalyse` (nur uanalyse),
+  `odds_derived` (nur Wettbüros, kein uanalyse-Eintrag).
 
 ### Tertiärquelle: football-data.org (Anstoßzeiten, Live, Ergebnisse)
 

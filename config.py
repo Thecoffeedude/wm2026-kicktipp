@@ -47,6 +47,10 @@ def kicktipp_points(tip: tuple[int, int], real: tuple[int, int],
         return rules["win"]["goal_diff"]
     return rules["win"]["tendency"]
 
+# Blend market (bookmaker consensus) + uanalyse into the recommended tip via
+# logit pooling + λ-calibration (src/weighting.py). False = uanalyse-only tips.
+ENABLE_BLEND = True
+
 # Poisson matrix upper bound per team (scores 0..MAX_GOALS inclusive)
 MAX_GOALS = 7
 

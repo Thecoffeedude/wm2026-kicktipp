@@ -15,6 +15,8 @@ import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import config
+from src import snapshot_store as ss
+from src import weighting
 from src.fetch_live import fetch_live_scores, fetch_schedule
 from src.fetch_odds import fetch_odds
 from src.live_update import update_results, write_live
@@ -27,6 +29,34 @@ from src.tournament import build_tournament_predictions
 logger = logging.getLogger(__name__)
 
 OUTPUT_PATH = Path(__file__).parent.parent / "docs" / "data.json"
+ODDS_LATEST_PATH = Path(__file__).parent.parent / "docs" / "odds_latest.json"
+
+
+def load_odds_latest(mock: bool) -> tuple[list[dict], bool, list[str]]:
+    """
+    Source the market odds payload. The capture workflow owns all Odds API calls
+    and writes docs/odds_latest.json; build_data only reads it (no credit spend).
+    Returns (raw_match_dicts, sharp_books_present, book_keys).
+    """
+    if mock:
+        try:
+            payload = fetch_odds(mock=True)
+        except Exception as exc:
+            logger.warning("Mock odds unavailable (%s)", exc)
+            payload = []
+        keys = sorted({b["key"] for m in payload for b in m.get("bookmakers", []) if b.get("key")})
+        return payload, weighting.has_sharp_books(keys), keys
+
+    if not ODDS_LATEST_PATH.exists():
+        logger.info("odds_latest.json not present — building without market odds "
+                    "(capture workflow has not run yet)")
+        return [], False, []
+    try:
+        doc = json.loads(ODDS_LATEST_PATH.read_text(encoding="utf-8"))
+        return doc.get("matches", []), bool(doc.get("sharp")), doc.get("book_keys", [])
+    except (json.JSONDecodeError, AttributeError) as exc:
+        logger.warning("Could not parse odds_latest.json (%s)", exc)
+        return [], False, []
 
 
 # ---------------------------------------------------------------------------
@@ -109,6 +139,37 @@ def _tip_entry(tip: dict, modal: dict, based_on: str) -> tuple[dict, dict]:
     )
 
 
+def resolve_weighting() -> tuple[dict, int]:
+    """
+    Load the snapshot store and compute rolling forecast skill per source.
+    Returns (rolling_performance, n_settled). The sharp flag + prior/performance
+    selection happen at the call site via weighting.effective_weights.
+    """
+    events = ss.load_events()
+    settled = ss.settled_forecasts(events)
+    perf = weighting.rolling_performance(settled)
+    n_settled = ss.count_settled_matches(events)
+    return perf, n_settled
+
+
+def blend_match(
+    ua_p: dict[str, float],
+    market_p: dict[str, float],
+    lambda_total_hint: float,
+    totals_line: float | None,
+    totals_over_prob: float | None,
+    weights: dict[str, float],
+) -> tuple[dict[str, float], dict[str, float]]:
+    """Logit-pool the two 1X2 distributions, then calibrate λ to the blend."""
+    blended = weighting.logit_pool(
+        [ua_p, market_p], [weights["uanalyse"], weights["market"]]
+    )
+    lam = weighting.calibrate_lambda(
+        blended, totals_line, totals_over_prob, lambda_total_hint=lambda_total_hint
+    )
+    return blended, lam
+
+
 # ---------------------------------------------------------------------------
 # Core builder
 # ---------------------------------------------------------------------------
@@ -125,12 +186,17 @@ def build(mock: bool = False) -> dict:
             continue
         ua_by_key[key] = m
 
-    # ── 2. Load odds (secondary, optional — pipeline must survive without) ─
-    try:
-        odds_raw = fetch_odds(mock=mock)
-    except Exception as exc:
-        logger.warning("Odds unavailable (%s) — building without bookmaker data", exc)
-        odds_raw = []
+    # ── 2. Load odds from the capture store (no Odds API call here) ────────
+    odds_raw, sharp_books, odds_book_keys = load_odds_latest(mock=mock)
+
+    # Resolve dynamic source weights (prior now; performance once results flow)
+    perf, n_settled = resolve_weighting()
+    blend_weights, regime = weighting.effective_weights(sharp_books, perf, n_settled)
+    logger.info(
+        "Weighting: regime=%s sharp=%s weights=%s (settled=%d)",
+        regime, sharp_books, blend_weights, n_settled,
+    )
+
     odds_by_key: dict[tuple, tuple] = {}
     for match in odds_raw:
         home_code, home = _resolve_team(match["home_team"])
@@ -153,18 +219,18 @@ def build(mock: bool = False) -> dict:
 
         lh = ua["lambda_home"]
         la = ua["lambda_away"]
+        ua_p = {"home": ua["p_home"], "draw": ua["p_draw"], "away": ua["p_away"]}
+
+        # Default: uanalyse-only tip (used as-is when no odds available)
         matrix = poisson_matrix(lh, la)
         tip, modal = ev_optimize(matrix)
         rec_tip, modal_out = _tip_entry(tip, modal, "uanalyse")
+        lh_out, la_out = lh, la
 
         sources: dict = {
             "uanalyse": {
                 "lambda": {"home": lh, "away": la},
-                "p": {
-                    "home":  ua["p_home"],
-                    "draw":  ua["p_draw"],
-                    "away":  ua["p_away"],
-                },
+                "p": ua_p,
             }
         }
 
@@ -183,18 +249,31 @@ def build(mock: bool = False) -> dict:
             divergence       = odds_result["divergence"]
             totals_line      = odds_result["totals_line"]
             totals_over_prob = odds_result["totals_over_prob"]
+            market_p         = odds_result["consensus"]
 
-            sources["odds_consensus"] = {"p": odds_result["consensus"]}
+            sources["odds_consensus"] = {"p": market_p}
 
             ua_tend   = _tendency(ua["p_home"], ua["p_draw"], ua["p_away"])
-            odds_tend = _tendency(
-                odds_result["consensus"]["home"],
-                odds_result["consensus"]["draw"],
-                odds_result["consensus"]["away"],
-            )
+            odds_tend = _tendency(market_p["home"], market_p["draw"], market_p["away"])
             same = ua_tend == odds_tend
             note = "" if same else f"uanalyse: {ua_tend}, odds: {odds_tend}"
             agreement = {"same_tendency": same, "note": note}
+
+            # ── Blend market + uanalyse → calibrated λ → EV-optimal tip ──────
+            if config.ENABLE_BLEND:
+                blended, blam = blend_match(
+                    ua_p, market_p, lh + la, totals_line, totals_over_prob, blend_weights
+                )
+                b_matrix = poisson_matrix(blam["home"], blam["away"])
+                b_tip, b_modal = ev_optimize(b_matrix)
+                rec_tip, modal_out = _tip_entry(b_tip, b_modal, "blend")
+                lh_out, la_out = blam["home"], blam["away"]
+                sources["blend"] = {
+                    "p": {k: round(v, 4) for k, v in blended.items()},
+                    "lambda": blam,
+                    "weights": {k: round(v, 4) for k, v in blend_weights.items()},
+                    "regime": regime,
+                }
 
         matches_out.append({
             "id":               f"ua_{ua['home_code']}_{ua['away_code']}_{ua['kickoff_date']}",
@@ -210,7 +289,7 @@ def build(mock: bool = False) -> dict:
             "divergence":       divergence,
             "totals_line":      totals_line,
             "totals_over_prob": totals_over_prob,
-            "expected_goals":   {"home": lh, "away": la},
+            "expected_goals":   {"home": lh_out, "away": la_out},
             "recommended_tip":  rec_tip,
             "modal_scoreline":  modal_out,
         })
@@ -313,6 +392,16 @@ def build(mock: bool = False) -> dict:
             "match_count":          len(matches_out),
             "uanalyse_count":       len(ua_rows),
             "odds_count":           len(odds_raw),
+            "weighting": {
+                "regime":              regime,
+                "blend_enabled":       config.ENABLE_BLEND,
+                "reweighting_enabled": weighting.ENABLE_PERFORMANCE_REWEIGHTING,
+                "sharp_books":         sharp_books,
+                "book_keys":           odds_book_keys,
+                "weights":             {k: round(v, 4) for k, v in blend_weights.items()},
+                "performance":         perf,
+                "n_settled":           n_settled,
+            },
         },
         "matches":     matches_out,
         "tournament":  tournament_match,

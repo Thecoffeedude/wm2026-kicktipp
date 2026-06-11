@@ -673,6 +673,80 @@ nav.nav-hidden { transform: translateY(120%); }
 .model-panel a { color: var(--accent); text-decoration: none; }
 .model-panel a:hover { text-decoration: underline; }
 
+/* ── Source weighting panel (Modell-Tab) ─────────────────────────────────── */
+.regime-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 9px;
+  border-radius: 9px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .03em;
+  text-transform: none;
+  vertical-align: middle;
+}
+.regime-prior { color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.regime-performance { color: var(--good); background: color-mix(in srgb, var(--good) 16%, transparent); }
+
+.weight-split {
+  display: flex;
+  height: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 4px 0 10px;
+  background: color-mix(in srgb, var(--muted) 12%, transparent);
+}
+.ws-seg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  color: #fff;
+  white-space: nowrap;
+  transition: width .5s cubic-bezier(.2,.8,.2,1);
+}
+.ws-market { background: var(--home); }
+.ws-ua { background: var(--sources); }
+
+.model-note {
+  font-size: 12px !important;
+  color: var(--muted);
+  line-height: 1.55 !important;
+  margin-bottom: 8px !important;
+}
+.perf-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--hair);
+  flex-wrap: wrap;
+}
+.perf-src {
+  font-size: 13px;
+  font-weight: 800;
+  min-width: 78px;
+}
+.perf-metric {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.1;
+}
+.perf-metric i {
+  font-style: normal;
+  font-size: 9.5px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+.perf-metric b { font-size: 13px; font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ws-seg { transition: none; }
+}
+
 /* ── Loading / error ─────────────────────────────────────────────────────── */
 .loading, .error {
   text-align: center;
