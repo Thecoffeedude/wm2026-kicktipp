@@ -1,0 +1,20 @@
+name: GATE 0 – API-Football Saison-Check (Diagnose)
+
+# Einmaliger Verfügbarkeits-Check: liefert der Free-Plan echte Fixtures für
+# Saison 2026? Nur manuell auslösbar, ändert nichts am Repo.
+on:
+  workflow_dispatch:
+
+jobs:
+  gate0:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - name: Saison-2026-Check ausführen
+        run: python3 src/check_apifootball.py
+        env:
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
