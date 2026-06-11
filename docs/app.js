@@ -5,6 +5,7 @@ const RESULTS_URL = './results.json';
 const FLAG_BASE = 'https://flagcdn.com/w80/';
 const DIVERGENCE_THRESHOLD = 0.04;
 const XG_MAX = 4.0;
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // ── State ─────────────────────────────────────────────────────────────────
 let allMatches = [];
@@ -429,13 +430,17 @@ function renderHeuteStats(app, todayMatches) {
     <div class="stat-widget glass" title="Wie oft stimmen Modell und Buchmacher in der Tendenz überein">
       <div class="sw-label">Modell-Konsens</div>
       ${agreeRate !== null
-        ? `<div class="sw-gauge" style="--g:${(agreeRate*180).toFixed(0)}deg"></div>
-           <div class="sw-sub">${pct(agreeRate)} Deckung</div>`
-        : `<div class="sw-gauge" style="--g:0deg"></div>
-           <div class="sw-sub">–</div>`}
+        ? `<div class="sw-pct" data-target="${Math.round(agreeRate*100)}">0%</div>
+           <div class="sw-sub">Deckung</div>`
+        : `<div class="sw-pct sw-pct--empty">–</div>
+           <div class="sw-sub">Deckung</div>`}
     </div>
   `;
   app.appendChild(row);
+
+  // Count-up animation for the consensus percentage
+  const pctEl = row.querySelector('.sw-pct[data-target]');
+  if (pctEl) animateConsensus(pctEl);
 
   const eyebrow = document.createElement('div');
   eyebrow.className = 'eyebrow';
@@ -1319,6 +1324,33 @@ function animateBars() {
       el.classList.add('revealed');
     });
   }));
+}
+
+// Map a 0–100 consensus value to a hue-based color (red → amber → green).
+function consensusColor(value) {
+  const hue = Math.round((value / 100) * 130); // 0=red, 130=green
+  return `hsl(${hue} 72% 45%)`;
+}
+
+// Count up from 0 to data-target, recoloring the text as it climbs.
+function animateConsensus(el) {
+  const target = parseInt(el.dataset.target, 10) || 0;
+  if (prefersReducedMotion) {
+    el.textContent = `${target}%`;
+    el.style.color = consensusColor(target);
+    return;
+  }
+  const duration = 700; // ms — fast
+  const start = performance.now();
+  function frame(now) {
+    const t = Math.min(1, (now - start) / duration);
+    const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+    const val = Math.round(eased * target);
+    el.textContent = `${val}%`;
+    el.style.color = consensusColor(val);
+    if (t < 1) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
 }
 
 // ── Utilities ─────────────────────────────────────────────────────────────
