@@ -27,7 +27,7 @@
     "match_count": 72,
     "uanalyse_count": 72,
     "odds_count": 0,
-    "live_updated_at": "2026-06-10T23:14:54Z"
+    "live_updated_at": "2026-06-11T01:43:34Z"
   },
   "matches": [
     {
@@ -4211,5 +4211,24 @@
       "prob_champion": 0.0
     }
   },
-  "live": []
+  "live": [
+    {
+      "home_code": "MEX",
+      "away_code": "RSA",
+      "home_team": "Mexico",
+      "away_team": "South Africa",
+      "status": "TIMED",
+      "status_de": "Bald",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": false,
+      "minute": null,
+      "score_home": null,
+      "score_away": null,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-06-11T19:00:00Z",
+      "stage": "Group Stage"
+    }
+  ]
 }
