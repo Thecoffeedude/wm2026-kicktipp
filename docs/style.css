@@ -2477,3 +2477,10 @@ header { padding-top: calc(10px + env(safe-area-inset-top)); }
   color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
+
+/* Verlauf: collapsible prediction-analysis widget */
+.va-toggle { margin-top: 4px; }
+.va-body .va-data {
+  margin: 8px 0 2px;
+  background: color-mix(in srgb, var(--muted) 6%, var(--solid));
+}

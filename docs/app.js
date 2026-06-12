@@ -1045,14 +1045,32 @@ function renderOddsCompare(p) {
 }
 
 function buildDrawer(match, ua, oddsC) {
-  const lambda = ua?.lambda ?? match.expected_goals;
+  const fin = !!_resultEntry(match)?.is_done;
+  const statsHtml = buildMatchStats(match);
   let html = '<div class="data" style="margin:0 12px 12px">';
+
+  // Finished match with stats: the drawer shows ONLY Spielstatistik,
+  // Spielverlauf and Aufstellungen — the prediction analysis moves to the
+  // Verlauf tab (collapsible per match).
+  if (fin && statsHtml) {
+    return html + statsHtml + '</div>';
+  }
 
   // 6 · Flag-tinted hero + entropy indicator
   html += buildDetailHero(match);
+  html += statsHtml;            // '' pre-match; fallback when fin without stats
+  html += buildAnalysisSections(match, ua, oddsC);
+  html += '</div>';
+  return html;
+}
 
-  // Post-match statistics (Highlightly) — section absent until data exists
-  html += buildMatchStats(match);
+// Prediction analysis: Ergebnis-Matrix → … → Buchmacher-Quoten.
+// Shared by the card drawer (upcoming games) and the Verlauf widget (finished).
+function buildAnalysisSections(match, ua, oddsC, idSuffix = '') {
+  ua = ua ?? match.sources?.uanalyse;
+  oddsC = oddsC ?? match.sources?.odds_consensus;
+  const lambda = ua?.lambda ?? match.expected_goals;
+  let html = '';
 
   // 1+2 · Result heatmap (probability ↔ expected points) and 3 · Poisson curves
   if (lambda?.home != null) {
@@ -1087,7 +1105,7 @@ function buildDrawer(match, ua, oddsC) {
 
   // Bookmakers (collapsible)
   if (match.bookmakers?.length > 0) {
-    const bkId = `bk-${match.id || Math.random().toString(36).slice(2)}`;
+    const bkId = `bk-${match.id || Math.random().toString(36).slice(2)}${idSuffix}`;
     html += `
       <button class="bk-toggle" aria-expanded="false" aria-controls="${bkId}"
         onclick="toggleBookmakers(this)">
@@ -1110,7 +1128,6 @@ function buildDrawer(match, ua, oddsC) {
     html += `</div>`;
   }
 
-  html += '</div>';
   return html;
 }
 
@@ -1407,7 +1424,7 @@ function buildMatchStats(match) {
         <div class="ms-lu-head"><span class="ms-lu-dot" style="background:${color}"></span>
           ${esc(team)}${s.formation ? ` · ${esc(s.formation)}` : ''}</div>
         ${(s.xi || []).map(p => `<div class="ms-lu-p"><b>${p.number ?? ''}</b> ${esc(p.name || '')}</div>`).join('')}
-        ${(s.bench || []).length ? `<div class="ms-lu-bench">Bank: ${s.bench.map(p => esc(p.name || '')).join(', ')}</div>` : ''}
+
       </div>`;
     html += `
       <button class="bk-toggle" aria-expanded="false" aria-controls="${luId}" onclick="toggleBookmakers(this)">
@@ -1794,7 +1811,13 @@ function renderVerlauf(app) {
         predDetail = `<div class="verlauf-pred">
           ${p ? renderMiniBar(p) : ''}
           <span class="vp-detail">${bits.join(' · ')}</span>
-        </div>`;
+        </div>
+        <button class="bk-toggle va-toggle" aria-expanded="false" aria-controls="va-${m.id}"
+          data-match="${m.id}" onclick="toggleVerlaufAnalysis(this)">
+          <span>Prognose-Analyse</span>
+          <svg class="bk-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div id="va-${m.id}" class="va-body" hidden data-built="0"></div>`;
       }
 
       const card = document.createElement('div');
@@ -1967,6 +1990,28 @@ function toggleBookmakers(btn) {
   btn.querySelector('.bk-chevron')?.classList.toggle('bk-chevron-open', open);
 }
 window.toggleBookmakers = toggleBookmakers;
+
+// Verlauf: lazily build the prediction-analysis widget on first open
+function toggleVerlaufAnalysis(btn) {
+  const body = document.getElementById(btn.getAttribute('aria-controls'));
+  if (!body) return;
+  if (body.dataset.built === '0') {
+    const match = allMatches.find(x => x.id === btn.dataset.match);
+    if (match) {
+      body.innerHTML = `<div class="data va-data">${buildAnalysisSections(match, null, null, '-v')}</div>`;
+      body.dataset.built = '1';
+    }
+  }
+  const open = body.hidden;
+  body.hidden = !open;
+  btn.setAttribute('aria-expanded', String(open));
+  btn.querySelector('.bk-chevron')?.classList.toggle('bk-chevron-open', open);
+  if (open) {
+    requestAnimationFrame(() =>
+      body.querySelectorAll('.xg-fill').forEach(el => el.classList.add('revealed')));
+  }
+}
+window.toggleVerlaufAnalysis = toggleVerlaufAnalysis;
 
 // ── Heatmap: probability ↔ expected-points mode + cell selection ───────────
 function setHeatmapMode(btn) {
