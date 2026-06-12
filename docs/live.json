@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-12T17:36:32Z",
+  "updated_at": "2026-06-12T20:07:23Z",
   "live": [
     {
       "fd_id": 537328,
@@ -29,18 +29,19 @@
       "away_code": "BIH",
       "home_team": "Canada",
       "away_team": "Bosnia-Herzegovina",
-      "status": "TIMED",
-      "status_de": "Bald",
+      "status": "PAUSED",
+      "status_de": "Halbzeit",
       "is_live": false,
-      "is_halftime": false,
+      "is_halftime": true,
       "is_done": false,
       "minute": null,
-      "score_home": null,
-      "score_away": null,
-      "halftime_home": null,
-      "halftime_away": null,
+      "score_home": 0,
+      "score_away": 1,
+      "halftime_home": 0,
+      "halftime_away": 1,
       "utc_date": "2026-06-12T19:00:00Z",
-      "stage": "Group Stage"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
