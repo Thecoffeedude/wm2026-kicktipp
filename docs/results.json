@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-12T04:17:33Z",
+  "updated_at": "2026-06-12T04:57:05Z",
   "results": [
     {
       "fd_id": 537327,
@@ -23,10 +23,12 @@
       "goals": []
     },
     {
+      "fd_id": 537328,
+      "fd_home_id": 772,
       "home_code": "KOR",
       "away_code": "CZE",
       "home_team": "South Korea",
-      "away_team": "Czech Republic",
+      "away_team": "Czechia",
       "status": "FINISHED",
       "status_de": "Beendet",
       "is_live": false,
@@ -35,11 +37,11 @@
       "minute": null,
       "score_home": 2,
       "score_away": 1,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 0,
       "utc_date": "2026-06-12T02:00:00Z",
-      "stage": "Group Stage - 1",
-      "score_source": "highlightly"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
