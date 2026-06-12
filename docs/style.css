@@ -2460,3 +2460,20 @@ header { padding-top: calc(10px + env(safe-area-inset-top)); }
 }
 .pred-toggle { margin: 0 16px 4px; width: calc(100% - 32px); }
 .pred-collapsed { padding-top: 2px; }
+
+/* Prediction details in the Verlauf tab (finished matches) */
+.verlauf-pred {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 7px;
+  padding-top: 7px;
+  border-top: 1px solid var(--hair);
+}
+.verlauf-pred .mini { height: 9px; border-radius: 5px; }
+.vp-detail {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}

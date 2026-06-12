@@ -72,6 +72,11 @@ def test_pct_int_passthrough():
 def test_pct_garbage_none():
     assert _pct_to_int("n/a") is None
 
+def test_pct_fraction_scaled():
+    # Real FT payload delivers possession as a fraction (0.56 → 56%)
+    assert _pct_to_int(0.56) == 56
+    assert _pct_to_int(0.44) == 44
+
 
 # ── normalize_statistics ───────────────────────────────────────────────────
 

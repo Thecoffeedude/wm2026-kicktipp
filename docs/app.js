@@ -995,14 +995,9 @@ function buildCard(match, index) {
           ${ua && oddsC ? renderOddsCompare(oddsC.p) : ''}
         </div>` : ''}`;
       if (!fin) return predHtml + badges.join('');
-      // finished: prediction stays available, but collapsed by default
-      return `
-        <button class="bk-toggle pred-toggle" aria-expanded="false" aria-controls="pred-${match.id}"
-          onclick="toggleBookmakers(this)">
-          <span>Vorhersage anzeigen</span>
-          <svg class="bk-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div id="pred-${match.id}" class="pred-collapsed" hidden>${predHtml}</div>`;
+      // finished: prediction details live in the Verlauf tab — the card keeps
+      // only the partial info ("Tipp war x:y" + points in the result line).
+      return '';
     })()}
 
     <div class="drawer"><div class="drawer-inner" data-built="0"></div></div>
@@ -1784,11 +1779,22 @@ function renderVerlauf(app) {
       // Earned Kicktipp points: finished match with real score + a tip
       let ptsHtml = '';
       let tipResHtml = '';
+      let predDetail = '';
       if (live?.is_done && hasScore && tip) {
         const pts = kicktippPoints(tip.home, tip.away, sh, sa);
         const cls = pts >= 3 ? 'vp-high' : pts > 0 ? 'vp-mid' : 'vp-zero';
         ptsHtml = `<span class="verlauf-pts ${cls}">+${pts} Pkt</span>`;
         tipResHtml = `<span class="verlauf-tipres">Tipp ${tip.home}:${tip.away}</span>`;
+        // Full prediction details move here once a match is finished
+        const modal = m.modal_scoreline;
+        const srcLabel = tip.based_on === 'blend' ? 'Blend'
+          : tip.based_on === 'uanalyse' ? 'uanalyse' : 'Wettbüros';
+        const bits = [`EV +${tip.expected_points} Pkt`, srcLabel];
+        if (modal) bits.push(`Modal ${modal.home}:${modal.away} (${pct(modal.probability)})`);
+        predDetail = `<div class="verlauf-pred">
+          ${p ? renderMiniBar(p) : ''}
+          <span class="vp-detail">${bits.join(' · ')}</span>
+        </div>`;
       }
 
       const card = document.createElement('div');
@@ -1810,6 +1816,7 @@ function renderVerlauf(app) {
           ${!hasScore && favLabel && favPct !== null ? `<span class="verlauf-fav">${esc(favLabel)} ${favPct}%</span>` : ''}
           ${m.stage ? `<span class="verlauf-stage">${esc(m.stage)}</span>` : ''}
         </div>
+        ${predDetail}
       `;
       app.appendChild(card);
     });

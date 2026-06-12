@@ -85,7 +85,7 @@ def _get(path: str, params: dict | None = None) -> tuple[object, int | None]:
 # ── Pure normalizers (unit-tested) ─────────────────────────────────────────
 
 def _pct_to_int(value) -> int | None:
-    """'56%' → 56, 56 → 56, 0.56 stays 56 only if already scaled."""
+    """'56%' → 56, 56 → 56, 0.56 → 56 (real FT payload uses fractions)."""
     if value is None:
         return None
     if isinstance(value, str):
@@ -94,7 +94,10 @@ def _pct_to_int(value) -> int | None:
             value = float(value)
         except ValueError:
             return None
-    return int(round(float(value)))
+    value = float(value)
+    if 0 < value <= 1.0:          # fraction → percent (possession is never ≤1%)
+        value *= 100
+    return int(round(value))
 
 
 def normalize_statistics(raw: list, home_code: str) -> dict | None:
