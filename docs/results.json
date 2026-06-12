@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-12T21:15:24Z",
+  "updated_at": "2026-06-12T22:05:59Z",
   "results": [
     {
       "fd_id": 537327,
@@ -43,10 +43,12 @@
       "goals": []
     },
     {
+      "fd_id": 537333,
+      "fd_home_id": 828,
       "home_code": "CAN",
       "away_code": "BIH",
       "home_team": "Canada",
-      "away_team": "Bosnia & Herzegovina",
+      "away_team": "Bosnia-Herzegovina",
       "status": "FINISHED",
       "status_de": "Beendet",
       "is_live": false,
@@ -55,11 +57,11 @@
       "minute": null,
       "score_home": 1,
       "score_away": 1,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 1,
       "utc_date": "2026-06-12T19:00:00Z",
-      "stage": "Group Stage - 1",
-      "score_source": "highlightly"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
