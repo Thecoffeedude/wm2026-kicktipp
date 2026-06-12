@@ -1,0 +1,32 @@
+{
+  "CAN:BIH": {
+    "tipped": true,
+    "last_tip": null,
+    "updated_at": "2026-06-12T11:08:29Z"
+  },
+  "USA:PAR": {
+    "tipped": true,
+    "last_tip": null,
+    "updated_at": "2026-06-12T11:08:29Z"
+  },
+  "QAT:SUI": {
+    "tipped": true,
+    "last_tip": null,
+    "updated_at": "2026-06-12T11:08:29Z"
+  },
+  "BRA:MAR": {
+    "tipped": true,
+    "last_tip": null,
+    "updated_at": "2026-06-12T11:08:29Z"
+  },
+  "HAI:SCO": {
+    "tipped": true,
+    "last_tip": null,
+    "updated_at": "2026-06-12T11:08:29Z"
+  },
+  "AUS:TUR": {
+    "tipped": true,
+    "last_tip": null,
+    "updated_at": "2026-06-12T11:08:29Z"
+  }
+}
