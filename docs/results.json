@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-13T16:12:53Z",
+  "updated_at": "2026-06-13T21:10:32Z",
   "results": [
     {
       "fd_id": 537327,
@@ -79,6 +79,27 @@
       "halftime_home": 3,
       "halftime_away": 0,
       "utc_date": "2026-06-13T01:00:00Z",
+      "stage": "Group Stage",
+      "goals": []
+    },
+    {
+      "fd_id": 537334,
+      "fd_home_id": 8030,
+      "home_code": "QAT",
+      "away_code": "SUI",
+      "home_team": "Qatar",
+      "away_team": "Switzerland",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 1,
+      "score_away": 1,
+      "halftime_home": 0,
+      "halftime_away": 1,
+      "utc_date": "2026-06-13T19:00:00Z",
       "stage": "Group Stage",
       "goals": []
     }
