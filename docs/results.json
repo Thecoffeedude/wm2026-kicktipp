@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-13T04:05:45Z",
+  "updated_at": "2026-06-13T04:43:36Z",
   "results": [
     {
       "fd_id": 537327,
@@ -64,9 +64,11 @@
       "goals": []
     },
     {
+      "fd_id": 537345,
+      "fd_home_id": 771,
       "home_code": "USA",
       "away_code": "PAR",
-      "home_team": "USA",
+      "home_team": "United States",
       "away_team": "Paraguay",
       "status": "FINISHED",
       "status_de": "Beendet",
@@ -76,11 +78,11 @@
       "minute": null,
       "score_home": 4,
       "score_away": 1,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 3,
+      "halftime_away": 0,
       "utc_date": "2026-06-13T01:00:00Z",
-      "stage": "Group Stage - 1",
-      "score_source": "highlightly"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
