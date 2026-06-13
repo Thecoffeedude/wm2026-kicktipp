@@ -21,13 +21,13 @@
   },
   "HAI:SCO": {
     "tipped": true,
-    "last_tip": null,
-    "updated_at": "2026-06-13T21:25:43Z"
+    "last_tip": "0:1",
+    "updated_at": "2026-06-13T23:52:35Z"
   },
   "AUS:TUR": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-06-13T21:25:43Z"
+    "updated_at": "2026-06-13T23:52:35Z"
   },
   "GER:CUW": {
     "tipped": true,
