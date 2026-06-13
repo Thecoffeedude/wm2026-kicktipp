@@ -6,27 +6,27 @@
   },
   "USA:PAR": {
     "tipped": true,
-    "last_tip": null,
-    "updated_at": "2026-06-12T11:08:29Z"
+    "last_tip": "1:0",
+    "updated_at": "2026-06-13T00:26:41Z"
   },
   "QAT:SUI": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-06-12T11:08:29Z"
+    "updated_at": "2026-06-13T00:26:41Z"
   },
   "BRA:MAR": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-06-12T11:08:29Z"
+    "updated_at": "2026-06-13T00:26:41Z"
   },
   "HAI:SCO": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-06-12T11:08:29Z"
+    "updated_at": "2026-06-13T00:26:41Z"
   },
   "AUS:TUR": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-06-12T11:08:29Z"
+    "updated_at": "2026-06-13T00:26:41Z"
   }
 }
