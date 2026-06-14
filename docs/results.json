@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-14T08:31:01Z",
+  "updated_at": "2026-06-14T08:48:07Z",
   "results": [
     {
       "fd_id": 537327,
@@ -144,10 +144,12 @@
       "goals": []
     },
     {
+      "fd_id": 537346,
+      "fd_home_id": 779,
       "home_code": "AUS",
       "away_code": "TUR",
       "home_team": "Australia",
-      "away_team": "Turkey",
+      "away_team": "Türkiye",
       "status": "FINISHED",
       "status_de": "Beendet",
       "is_live": false,
@@ -156,11 +158,11 @@
       "minute": null,
       "score_home": 2,
       "score_away": 0,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 1,
+      "halftime_away": 0,
       "utc_date": "2026-06-14T04:00:00Z",
-      "stage": "Group Stage - 1",
-      "score_source": "highlightly"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
