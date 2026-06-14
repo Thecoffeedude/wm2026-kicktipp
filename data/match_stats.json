@@ -3001,5 +3001,413 @@
     ]
    }
   }
+ },
+ "ua_AUS_TUR_2026-06-14": {
+  "hl_id": 1309690635,
+  "fetched_at": "2026-06-14T08:31:01Z",
+  "stats": {
+   "home": {
+    "xg": 0.77,
+    "possession": 28,
+    "shots_on_target": 4,
+    "corners": 5,
+    "passes": 270,
+    "saves": 8,
+    "fouls": 12,
+    "shots": 9
+   },
+   "away": {
+    "xg": 1.33,
+    "possession": 72,
+    "shots_on_target": 8,
+    "corners": 8,
+    "passes": 704,
+    "saves": 2,
+    "fouls": 4,
+    "shots": 30
+   }
+  },
+  "events": [
+   {
+    "time": "27",
+    "type": "Goal",
+    "player": "N. Irankunda",
+    "assist": "P. Okon-Engstler",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "B. Yilmaz",
+    "assist": null,
+    "sub_in": "K. Yildiz",
+    "side": "away"
+   },
+   {
+    "time": "61",
+    "type": "Substitution",
+    "player": "N. Irankunda",
+    "assist": null,
+    "sub_in": "N. Velupillay",
+    "side": "home"
+   },
+   {
+    "time": "62",
+    "type": "Substitution",
+    "player": "O. Kokcu",
+    "assist": null,
+    "sub_in": "Y. Akgun",
+    "side": "away"
+   },
+   {
+    "time": "74",
+    "type": "Substitution",
+    "player": "M. Toure",
+    "assist": null,
+    "sub_in": "T. Yengi",
+    "side": "home"
+   },
+   {
+    "time": "74",
+    "type": "Substitution",
+    "player": "J. Italiano",
+    "assist": null,
+    "sub_in": "J. Geria",
+    "side": "home"
+   },
+   {
+    "time": "75",
+    "type": "Goal",
+    "player": "C. Metcalfe",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "81",
+    "type": "Substitution",
+    "player": "I. Yuksek",
+    "assist": null,
+    "sub_in": "S. Ozcan",
+    "side": "away"
+   },
+   {
+    "time": "81",
+    "type": "Substitution",
+    "player": "Z. Celik",
+    "assist": null,
+    "sub_in": "M. Muldur",
+    "side": "away"
+   },
+   {
+    "time": "84",
+    "type": "Substitution",
+    "player": "J. Bos",
+    "assist": null,
+    "sub_in": "A. Behich",
+    "side": "home"
+   },
+   {
+    "time": "84",
+    "type": "Substitution",
+    "player": "P. Okon-Engstler",
+    "assist": null,
+    "sub_in": "J. Irvine",
+    "side": "home"
+   },
+   {
+    "time": "85",
+    "type": "Substitution",
+    "player": "K. Akturkoglu",
+    "assist": null,
+    "sub_in": "D. Gul",
+    "side": "away"
+   },
+   {
+    "time": "86",
+    "type": "Yellow Card",
+    "player": "Y. Akgun",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "3-4-2-1",
+    "xi": [
+     {
+      "name": "Patrick Beach",
+      "number": 18,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Cameron Burgess",
+      "number": 21,
+      "pos": "Defender"
+     },
+     {
+      "name": "Harry Souttar",
+      "number": 19,
+      "pos": "Defender"
+     },
+     {
+      "name": "Alessandro Circati",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jordan Bos",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Paul Okon-Engstler",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Aiden O'Neill",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jacob Italiano",
+      "number": 4,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Connor Metcalfe",
+      "number": 8,
+      "pos": "Forward"
+     },
+     {
+      "name": "Nestory Irankunda",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Mohamed Touré",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Mathew Ryan",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Paul Izzo",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Miloš Degenek",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jason Geria",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Aziz Behich",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "Lucas Herrington",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Kai Trewin",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Cameron Devlin",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jackson Irvine",
+      "number": 22,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mathew Leckie",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ajdin Hrustić",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Awer Mabil",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Cristian Volpato",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nishan Velupillay",
+      "number": 23,
+      "pos": "Forward"
+     },
+     {
+      "name": "Tete Yengi",
+      "number": 26,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Uğurcan Çakır",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Ferdi Kadıoğlu",
+      "number": 20,
+      "pos": "Defender"
+     },
+     {
+      "name": "Abdülkerim Bardakcı",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Merih Demiral",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Zeki Çelik",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "İsmail Yüksek",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Hakan Çalhanoğlu",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Barış Alper Yılmaz",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Orkun Kökçü",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Arda Güler",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kerem Aktürkoğlu",
+      "number": 7,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Mert Günok",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Altay Bayındır",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Çağlar Söyüncü",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Eren Elmalı",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ozan Kabak",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mert Müldür",
+      "number": 18,
+      "pos": "Defender"
+     },
+     {
+      "name": "Samet Akaydın",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Kaan Ayhan",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Salih Özcan",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "İrfan Can Kahveci",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Yunus Akgün",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Oğuz Aydın",
+      "number": 24,
+      "pos": "Forward"
+     },
+     {
+      "name": "Can Uzun",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Deniz Gül",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Kenan Yıldız",
+      "number": 11,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
