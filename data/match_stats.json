@@ -5068,5 +5068,445 @@
     ]
    }
   }
+ },
+ "ua_NED_JPN_2026-06-14": {
+  "hl_id": 1267459760,
+  "fetched_at": "2026-06-14T23:16:31Z",
+  "stats": {
+   "home": {
+    "xg": 0.79,
+    "possession": 60,
+    "shots_on_target": 6,
+    "corners": 5,
+    "passes": 525,
+    "saves": 1,
+    "fouls": 7,
+    "shots": 10
+   },
+   "away": {
+    "xg": 0.54,
+    "possession": 40,
+    "shots_on_target": 3,
+    "corners": 4,
+    "passes": 342,
+    "saves": 4,
+    "fouls": 7,
+    "shots": 10
+   }
+  },
+  "events": [
+   {
+    "time": "51",
+    "type": "Goal",
+    "player": "V. van Dijk",
+    "assist": "R. Gravenberch",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "57",
+    "type": "Goal",
+    "player": "K. Nakamura",
+    "assist": "T. Kubo",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "61",
+    "type": "Yellow Card",
+    "player": "C. Summerville",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "64",
+    "type": "Goal",
+    "player": "C. Summerville",
+    "assist": "R. Gravenberch",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "66",
+    "type": "Substitution",
+    "player": "D. Maeda",
+    "assist": null,
+    "sub_in": "J. Ito",
+    "side": "away"
+   },
+   {
+    "time": "70",
+    "type": "Substitution",
+    "player": "D. Malen",
+    "assist": null,
+    "sub_in": "M. Depay",
+    "side": "home"
+   },
+   {
+    "time": "70",
+    "type": "Substitution",
+    "player": "C. Summerville",
+    "assist": null,
+    "sub_in": "T. Koopmeiners",
+    "side": "home"
+   },
+   {
+    "time": "70",
+    "type": "Substitution",
+    "player": "T. Reijnders",
+    "assist": null,
+    "sub_in": "Q. Timber",
+    "side": "home"
+   },
+   {
+    "time": "75",
+    "type": "Substitution",
+    "player": "T. Watanabe",
+    "assist": null,
+    "sub_in": "T. Tomiyasu",
+    "side": "away"
+   },
+   {
+    "time": "75",
+    "type": "Substitution",
+    "player": "T. Kubo",
+    "assist": null,
+    "sub_in": "K. Ogawa",
+    "side": "away"
+   },
+   {
+    "time": "75",
+    "type": "Substitution",
+    "player": "R. Doan",
+    "assist": null,
+    "sub_in": "Y. Sugawara",
+    "side": "away"
+   },
+   {
+    "time": "81",
+    "type": "Substitution",
+    "player": "R. Gravenberch",
+    "assist": null,
+    "sub_in": "N. Ake",
+    "side": "home"
+   },
+   {
+    "time": "83",
+    "type": "Yellow Card",
+    "player": "M. Depay",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "84",
+    "type": "Substitution",
+    "player": "A. Ueda",
+    "assist": null,
+    "sub_in": "K. Shiogai",
+    "side": "away"
+   },
+   {
+    "time": "85",
+    "type": "Substitution",
+    "player": "C. Gakpo",
+    "assist": null,
+    "sub_in": "B. Brobbey",
+    "side": "home"
+   },
+   {
+    "time": "88",
+    "type": "Goal",
+    "player": "D. Kamada",
+    "assist": "K. Ogawa",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "90+1",
+    "type": "Yellow Card",
+    "player": "M. van de Ven",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-3-3",
+    "xi": [
+     {
+      "name": "Bart Verbruggen",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Jan Paul van Hecke",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Virgil van Dijk",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Micky van de Ven",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Denzel Dumfries",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tijjani Reijnders",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Frenkie de Jong",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ryan Gravenberch",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Cody Gakpo",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Donyell Malen",
+      "number": 18,
+      "pos": "Forward"
+     },
+     {
+      "name": "Crysencio Summerville",
+      "number": 24,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Mark Flekken",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Robin Roefs",
+      "number": 13,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Jorrel Hato",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Lutsharel Geertruida",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mats Wieffer",
+      "number": 12,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nathan Aké",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Guus Til",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Marten de Roon",
+      "number": 3,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Justin Kluivert",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Quinten Timber",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Teun Koopmeiners",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Brian Brobbey",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Memphis Depay",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "Wout Weghorst",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Noa Lang",
+      "number": 17,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "3-4-2-1",
+    "xi": [
+     {
+      "name": "Zion Suzuki",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Hiroki Itō",
+      "number": 21,
+      "pos": "Defender"
+     },
+     {
+      "name": "Shogo Taniguchi",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tsuyoshi Watanabe",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "Keito Nakamura",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kaishu Sano",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Daichi Kamada",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ritsu Doan",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Daizen Maeda",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Takefusa Kubo",
+      "number": 8,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ayase Ueda",
+      "number": 18,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Keisuke Osako",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Tomoki Hayakawa",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Ayumu Seko",
+      "number": 20,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ko Itakura",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Junnosuke Suzuki",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Yukinari Sugawara",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Takehiro Tomiyasu",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Yuto Nagatomo",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ao Tanaka",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Yuito Suzuki",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Junya Ito",
+      "number": 14,
+      "pos": "Forward"
+     },
+     {
+      "name": "Keisuke Goto",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Koki Ogawa",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Kento Shiogai",
+      "number": 26,
+      "pos": "Forward"
+     },
+     {
+      "name": "Shuto Machino",
+      "number": 6,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
