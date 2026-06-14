@@ -4636,5 +4636,437 @@
     ]
    }
   }
+ },
+ "ua_GER_CUW_2026-06-14": {
+  "hl_id": 1267458058,
+  "fetched_at": "2026-06-14T20:07:52Z",
+  "stats": {
+   "home": {
+    "xg": 4,
+    "possession": 65,
+    "shots_on_target": 12,
+    "corners": 8,
+    "passes": 635,
+    "saves": 1,
+    "fouls": 18,
+    "shots": 26
+   },
+   "away": {
+    "xg": 0.4,
+    "possession": 35,
+    "shots_on_target": 2,
+    "corners": 1,
+    "passes": 341,
+    "saves": 4,
+    "fouls": 11,
+    "shots": 8
+   }
+  },
+  "events": [
+   {
+    "time": "6",
+    "type": "Goal",
+    "player": "F. Nmecha",
+    "assist": "F. Wirtz",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "21",
+    "type": "Goal",
+    "player": "L. Comenencia",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "38",
+    "type": "Goal",
+    "player": "N. Schlotterbeck",
+    "assist": "N. Brown",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "45+5",
+    "type": "Penalty",
+    "player": "K. Havertz",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "S. Hansen",
+    "assist": null,
+    "sub_in": "J. Antonisse",
+    "side": "away"
+   },
+   {
+    "time": "47",
+    "type": "Goal",
+    "player": "J. Musiala",
+    "assist": "J. Kimmich",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "64",
+    "type": "Substitution",
+    "player": "J. Musiala",
+    "assist": null,
+    "sub_in": "D. Undav",
+    "side": "home"
+   },
+   {
+    "time": "65",
+    "type": "Substitution",
+    "player": "J. Locadia",
+    "assist": null,
+    "sub_in": "J. Margaritha",
+    "side": "away"
+   },
+   {
+    "time": "68",
+    "type": "Goal",
+    "player": "N. Brown",
+    "assist": "D. Undav",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "73",
+    "type": "Substitution",
+    "player": "J. Tah",
+    "assist": null,
+    "sub_in": "A. Rudiger",
+    "side": "home"
+   },
+   {
+    "time": "73",
+    "type": "Substitution",
+    "player": "F. Nmecha",
+    "assist": null,
+    "sub_in": "L. Goretzka",
+    "side": "home"
+   },
+   {
+    "time": "73",
+    "type": "Substitution",
+    "player": "N. Brown",
+    "assist": null,
+    "sub_in": "D. Raum",
+    "side": "home"
+   },
+   {
+    "time": "78",
+    "type": "Goal",
+    "player": "D. Undav",
+    "assist": "J. Kimmich",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "83",
+    "type": "Substitution",
+    "player": "T. Chong",
+    "assist": null,
+    "sub_in": "G. Kastaneer",
+    "side": "away"
+   },
+   {
+    "time": "83",
+    "type": "Substitution",
+    "player": "J. Kimmich",
+    "assist": null,
+    "sub_in": "W. Anton",
+    "side": "home"
+   },
+   {
+    "time": "88",
+    "type": "Goal",
+    "player": "K. Havertz",
+    "assist": "D. Undav",
+    "sub_in": null,
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Manuel Neuer",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Nathaniel Brown",
+      "number": 18,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nico Schlotterbeck",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jonathan Tah",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Joshua Kimmich",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Felix Nmecha",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Aleksandar Pavlović",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Florian Wirtz",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jamal Musiala",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Leroy Sané",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kai Havertz",
+      "number": 7,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Alexander Nübel",
+      "number": 21,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Oliver Baumann",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "David Raum",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Waldemar Anton",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Antonio Rüdiger",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Malick Thiaw",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jamie Leweling",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Leon Goretzka",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Assan Ouédraogo",
+      "number": 25,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nadiem Amiri",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Angelo Stiller",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Pascal Groß",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nick Woltemade",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Maximilian Beier",
+      "number": 14,
+      "pos": "Forward"
+     },
+     {
+      "name": "Deniz Undav",
+      "number": 26,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Eloy Room",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Deveron Fonville",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Armando Obispo",
+      "number": 18,
+      "pos": "Defender"
+     },
+     {
+      "name": "Riechedly Bazoer",
+      "number": 23,
+      "pos": "Defender"
+     },
+     {
+      "name": "Sherel Constancio Floranus",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Leandro Bacuna",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Livano Comenencia",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Juninho Bacuna",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Tahith Chong",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Sontje Hansen",
+      "number": 12,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jürgen Locadia",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Trevor Iriving Doornbusch",
+      "number": 26,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Tyrick Bodak",
+      "number": 25,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Jurien Gaari",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Joshua Brenet",
+      "number": 20,
+      "pos": "Defender"
+     },
+     {
+      "name": "Shurandy Sambo",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Roshon van Eijma",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ar'Jany Martha",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jeremy Antonisse",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Kenji Gorré",
+      "number": 14,
+      "pos": "Forward"
+     },
+     {
+      "name": "Kevin Felida",
+      "number": 22,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Tyrese Noslin",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jearl Margaritha",
+      "number": 16,
+      "pos": "Forward"
+     },
+     {
+      "name": "Godfried Roemeratoe",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Gervane Kastaneer",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Brandley Kuwas",
+      "number": 17,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
