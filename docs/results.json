@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-14T04:23:30Z",
+  "updated_at": "2026-06-14T05:01:42Z",
   "results": [
     {
       "fd_id": 537327,
@@ -123,6 +123,8 @@
       "score_source": "highlightly"
     },
     {
+      "fd_id": 537340,
+      "fd_home_id": 836,
       "home_code": "HAI",
       "away_code": "SCO",
       "home_team": "Haiti",
@@ -135,11 +137,11 @@
       "minute": null,
       "score_home": 0,
       "score_away": 1,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 1,
       "utc_date": "2026-06-14T01:00:00Z",
-      "stage": "Group Stage - 1",
-      "score_source": "highlightly"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
