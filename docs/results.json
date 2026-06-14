@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-14T08:48:07Z",
+  "updated_at": "2026-06-14T09:35:49Z",
   "results": [
     {
       "fd_id": 537327,
@@ -79,8 +79,7 @@
       "halftime_home": 3,
       "halftime_away": 0,
       "utc_date": "2026-06-13T01:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537334,
@@ -100,10 +99,11 @@
       "halftime_home": 0,
       "halftime_away": 1,
       "utc_date": "2026-06-13T19:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
+      "fd_id": 537339,
+      "fd_home_id": 764,
       "home_code": "BRA",
       "away_code": "MAR",
       "home_team": "Brazil",
@@ -116,11 +116,10 @@
       "minute": null,
       "score_home": 1,
       "score_away": 1,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 1,
+      "halftime_away": 1,
       "utc_date": "2026-06-13T22:00:00Z",
-      "stage": "Group Stage - 1",
-      "score_source": "highlightly"
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537340,
@@ -140,8 +139,7 @@
       "halftime_home": 0,
       "halftime_away": 1,
       "utc_date": "2026-06-14T01:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537346,
@@ -161,8 +159,7 @@
       "halftime_home": 1,
       "halftime_away": 0,
       "utc_date": "2026-06-14T04:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     }
   ]
 }
