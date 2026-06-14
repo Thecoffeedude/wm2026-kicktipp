@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-13T23:26:27Z",
+  "updated_at": "2026-06-14T00:15:42Z",
   "results": [
     {
       "fd_id": 537327,
@@ -102,6 +102,25 @@
       "utc_date": "2026-06-13T19:00:00Z",
       "stage": "Group Stage",
       "goals": []
+    },
+    {
+      "home_code": "BRA",
+      "away_code": "MAR",
+      "home_team": "Brazil",
+      "away_team": "Morocco",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 1,
+      "score_away": 1,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-06-13T22:00:00Z",
+      "stage": "Group Stage - 1",
+      "score_source": "highlightly"
     }
   ]
 }
