@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-14T21:08:50Z",
+  "updated_at": "2026-06-14T21:10:56Z",
   "live": [
     {
       "fd_id": 537340,
@@ -71,10 +71,10 @@
       "away_code": "JPN",
       "home_team": "Netherlands",
       "away_team": "Japan",
-      "status": "PAUSED",
-      "status_de": "Halbzeit",
-      "is_live": false,
-      "is_halftime": true,
+      "status": "IN_PLAY",
+      "status_de": "Live",
+      "is_live": true,
+      "is_halftime": false,
       "is_done": false,
       "minute": null,
       "score_home": 0,
