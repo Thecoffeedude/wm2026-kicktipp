@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-14T19:23:02Z",
+  "updated_at": "2026-06-14T19:26:09Z",
   "live": [
     {
       "fd_id": 537340,
@@ -91,8 +91,8 @@
       "away_code": "ECU",
       "home_team": "Ivory Coast",
       "away_team": "Ecuador",
-      "status": "TIMED",
-      "status_de": "Bald",
+      "status": "SCHEDULED",
+      "status_de": "Geplant",
       "is_live": false,
       "is_halftime": false,
       "is_done": false,
