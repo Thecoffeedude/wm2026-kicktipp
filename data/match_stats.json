@@ -2593,5 +2593,413 @@
     ]
    }
   }
+ },
+ "ua_HAI_SCO_2026-06-14": {
+  "hl_id": 1267456356,
+  "fetched_at": "2026-06-14T04:23:30Z",
+  "stats": {
+   "home": {
+    "xg": 1.21,
+    "possession": 54,
+    "shots_on_target": 2,
+    "corners": 4,
+    "passes": 431,
+    "saves": 1,
+    "fouls": 23,
+    "shots": 15
+   },
+   "away": {
+    "xg": 1.05,
+    "possession": 46,
+    "shots_on_target": 2,
+    "corners": 3,
+    "passes": 373,
+    "saves": 2,
+    "fouls": 21,
+    "shots": 9
+   }
+  },
+  "events": [
+   {
+    "time": "28",
+    "type": "Goal",
+    "player": "J. McGinn",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "39",
+    "type": "Yellow Card",
+    "player": "J. Bellegarde",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "46",
+    "type": "Yellow Card",
+    "player": "A. Hickey",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "61",
+    "type": "Substitution",
+    "player": "L. Deedson",
+    "assist": null,
+    "sub_in": "J. Casimir",
+    "side": "home"
+   },
+   {
+    "time": "75",
+    "type": "Substitution",
+    "player": "B. Gannon-Doak",
+    "assist": null,
+    "sub_in": "R. Christie",
+    "side": "away"
+   },
+   {
+    "time": "75",
+    "type": "Substitution",
+    "player": "A. Hickey",
+    "assist": null,
+    "sub_in": "N. Patterson",
+    "side": "away"
+   },
+   {
+    "time": "75",
+    "type": "Substitution",
+    "player": "C. Adams",
+    "assist": null,
+    "sub_in": "L. Dykes",
+    "side": "away"
+   },
+   {
+    "time": "76",
+    "type": "Substitution",
+    "player": "W. Isidor",
+    "assist": null,
+    "sub_in": "L. Joseph",
+    "side": "home"
+   },
+   {
+    "time": "83",
+    "type": "Substitution",
+    "player": "J. McGinn",
+    "assist": null,
+    "sub_in": "F. Curtis",
+    "side": "away"
+   },
+   {
+    "time": "83",
+    "type": "Substitution",
+    "player": "L. Shankland",
+    "assist": null,
+    "sub_in": "K. McLean",
+    "side": "away"
+   },
+   {
+    "time": "85",
+    "type": "Substitution",
+    "player": "R. Providence",
+    "assist": null,
+    "sub_in": "Y. Fortune",
+    "side": "home"
+   },
+   {
+    "time": "90+1",
+    "type": "Yellow Card",
+    "player": "F. Curtis",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "90+5",
+    "type": "Yellow Card",
+    "player": "K. McLean",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-4-2",
+    "xi": [
+     {
+      "name": "Johny Placide",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Martin Expérience",
+      "number": 8,
+      "pos": "Defender"
+     },
+     {
+      "name": "Hannes Delcroix",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ricardo Adé",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Carlens Arcus",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ruben Providence",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jean-Ricner Bellegarde",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Danley Jean Jacques",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Louicius Don Deedson",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Wilson Isidor",
+      "number": 18,
+      "pos": "Forward"
+     },
+     {
+      "name": "Frantzdy Pierrot",
+      "number": 20,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Alexandre Pierre",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Josué Duverger",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Keeto Thermoncy",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Duke Lacroix",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Garven-Michee Metusala",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jean-Kévin Duverne",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Wilguens Paugain",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Carl Fred Sainté",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Dominique Simon",
+      "number": 25,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Woodensky Pierre",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Josué Casimir",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "Derrick Etienne",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Duckens Nazon",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Lenny Joseph",
+      "number": 16,
+      "pos": "Forward"
+     },
+     {
+      "name": "Yassin Fortune",
+      "number": 19,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-4-2",
+    "xi": [
+     {
+      "name": "Angus Gunn",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Andy Robertson",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Grant Hanley",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jack Hendry",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Aaron Hickey",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "John McGinn",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Lewis Ferguson",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Scott McTominay",
+      "number": 4,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ben Gannon-Doak",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Che Adams",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "Lawrence Shankland",
+      "number": 20,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Liam Kelly",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Craig Gordon",
+      "number": 21,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Kieran Tierney",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "John Souttar",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Dominic Hyam",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nathan Patterson",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tony Ralston",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Scott McKenna",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tyler Fletcher",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ryan Christie",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kenny McLean",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Findlay Curtis",
+      "number": 25,
+      "pos": "Forward"
+     },
+     {
+      "name": "Lyndon Dykes",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ross Stewart",
+      "number": 14,
+      "pos": "Forward"
+     },
+     {
+      "name": "George Hirst",
+      "number": 18,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
