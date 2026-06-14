@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-14T16:20:11Z",
+  "updated_at": "2026-06-14T19:23:02Z",
   "results": [
     {
       "fd_id": 537327,
@@ -160,6 +160,27 @@
       "halftime_home": 1,
       "halftime_away": 0,
       "utc_date": "2026-06-14T04:00:00Z",
+      "stage": "Group Stage",
+      "goals": []
+    },
+    {
+      "fd_id": 537351,
+      "fd_home_id": 759,
+      "home_code": "GER",
+      "away_code": "CUW",
+      "home_team": "Germany",
+      "away_team": "Curaçao",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 7,
+      "score_away": 1,
+      "halftime_home": 3,
+      "halftime_away": 1,
+      "utc_date": "2026-06-14T17:00:00Z",
       "stage": "Group Stage",
       "goals": []
     }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-14T18:16:04Z",
+  "updated_at": "2026-06-14T19:23:02Z",
   "live": [
     {
       "fd_id": 537340,
@@ -50,13 +50,13 @@
       "away_code": "CUW",
       "home_team": "Germany",
       "away_team": "Curaçao",
-      "status": "IN_PLAY",
-      "status_de": "Live",
-      "is_live": true,
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
       "is_halftime": false,
-      "is_done": false,
+      "is_done": true,
       "minute": null,
-      "score_home": 4,
+      "score_home": 7,
       "score_away": 1,
       "halftime_home": 3,
       "halftime_away": 1,
