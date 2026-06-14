@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-14T19:23:02Z",
+  "updated_at": "2026-06-14T22:07:24Z",
   "results": [
     {
       "fd_id": 537327,
@@ -181,6 +181,27 @@
       "halftime_home": 3,
       "halftime_away": 1,
       "utc_date": "2026-06-14T17:00:00Z",
+      "stage": "Group Stage",
+      "goals": []
+    },
+    {
+      "fd_id": 537357,
+      "fd_home_id": 8601,
+      "home_code": "NED",
+      "away_code": "JPN",
+      "home_team": "Netherlands",
+      "away_team": "Japan",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 2,
+      "score_away": 2,
+      "halftime_home": 0,
+      "halftime_away": 0,
+      "utc_date": "2026-06-14T20:00:00Z",
       "stage": "Group Stage",
       "goals": []
     }
