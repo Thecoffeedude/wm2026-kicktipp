@@ -7220,5 +7220,397 @@
     ]
    }
   }
+ },
+ "ua_ESP_CPV_2026-06-15": {
+  "hl_id": 1267463164,
+  "fetched_at": "2026-06-15T19:52:48Z",
+  "stats": {
+   "home": {
+    "xg": 2.29,
+    "possession": 74,
+    "shots_on_target": 7,
+    "corners": 11,
+    "passes": 801,
+    "saves": 1,
+    "fouls": 10,
+    "shots": 27
+   },
+   "away": {
+    "xg": 0.29,
+    "possession": 26,
+    "shots_on_target": 1,
+    "corners": 1,
+    "passes": 279,
+    "saves": 7,
+    "fouls": 1,
+    "shots": 6
+   }
+  },
+  "events": [
+   {
+    "time": "16",
+    "type": "Yellow Card",
+    "player": "S. Lopes Cabral",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "61",
+    "type": "Substitution",
+    "player": "J. Cabral",
+    "assist": null,
+    "sub_in": "W. Semedo",
+    "side": "away"
+   },
+   {
+    "time": "61",
+    "type": "Substitution",
+    "player": "D. Livramento",
+    "assist": null,
+    "sub_in": "N. Da Costa",
+    "side": "away"
+   },
+   {
+    "time": "61",
+    "type": "Substitution",
+    "player": "L. Duarte",
+    "assist": null,
+    "sub_in": "D. Duarte",
+    "side": "away"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "F. Ruiz",
+    "assist": null,
+    "sub_in": "M. Merino",
+    "side": "home"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "Gavi",
+    "assist": null,
+    "sub_in": "Lamine Yamal",
+    "side": "home"
+   },
+   {
+    "time": "76",
+    "type": "Substitution",
+    "player": "S. Lopes Cabral",
+    "assist": null,
+    "sub_in": "Joao Paulo",
+    "side": "away"
+   },
+   {
+    "time": "79",
+    "type": "Substitution",
+    "player": "J. Monteiro",
+    "assist": null,
+    "sub_in": "T. Arcanjo",
+    "side": "away"
+   },
+   {
+    "time": "81",
+    "type": "Substitution",
+    "player": "F. Torres",
+    "assist": null,
+    "sub_in": "D. Olmo",
+    "side": "home"
+   },
+   {
+    "time": "87",
+    "type": "Substitution",
+    "player": "Rodri",
+    "assist": null,
+    "sub_in": "N. Williams",
+    "side": "home"
+   },
+   {
+    "time": "90+3",
+    "type": "Yellow Card",
+    "player": "Pedri",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-3-3",
+    "xi": [
+     {
+      "name": "Unai Simón",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Marc Cucurella",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Aymeric Laporte",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Pau Cubarsí",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marcos Llorente",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Fabián Ruiz",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Rodri",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Pedri",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Pablo Gavi",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Mikel Oyarzabal",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ferran Torres",
+      "number": 7,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "David Raya",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Joan García",
+      "number": 13,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Marc Pubill",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Eric García",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Pedro Porro",
+      "number": 12,
+      "pos": "Defender"
+     },
+     {
+      "name": "Alejandro Grimaldo",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mikel Merino",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Alex Baena",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Martín Zubimendi",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Dani Olmo",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nico Williams",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Lamine Yamal",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Yéremy Pino",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Victor Muñoz",
+      "number": 25,
+      "pos": "Forward"
+     },
+     {
+      "name": "Borja Iglesias",
+      "number": 26,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Vozinha",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Sidny Lopes Cabral",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Diney Borges",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Pico",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Steven Moreira",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Laros Duarte",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kevin Lenini",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jovane Cabral",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jamiro Monteiro",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ryan Mendes",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Dailon Rocha Livramento",
+      "number": 19,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Márcio Rosa",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "CJ Dos Santos",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Stopira",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Logan Costa",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Wagner Pina",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Kelvin Pires",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "João Paulo",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Garry Rodrigues",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Deroy Duarte",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Yannick Semedo",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Willy Semedo",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Telmo Arcanjo",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Hélio Varela",
+      "number": 26,
+      "pos": "Forward"
+     },
+     {
+      "name": "Nuno Da Costa",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "Gilson Tavares",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
