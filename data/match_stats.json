@@ -5924,5 +5924,445 @@
     ]
    }
   }
+ },
+ "ua_SWE_TUN_2026-06-15": {
+  "hl_id": 1309691486,
+  "fetched_at": "2026-06-15T04:46:53Z",
+  "stats": {
+   "home": {
+    "xg": 1.37,
+    "possession": 49,
+    "shots_on_target": 7,
+    "corners": 4,
+    "passes": 355,
+    "saves": 1,
+    "fouls": 10,
+    "shots": 13
+   },
+   "away": {
+    "xg": 0.29,
+    "possession": 51,
+    "shots_on_target": 2,
+    "corners": 2,
+    "passes": 364,
+    "saves": 1,
+    "fouls": 8,
+    "shots": 6
+   }
+  },
+  "events": [
+   {
+    "time": "7",
+    "type": "Goal",
+    "player": "Y. Ayari",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "30",
+    "type": "Goal",
+    "player": "A. Isak",
+    "assist": "V. Gyokeres",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "43",
+    "type": "Goal",
+    "player": "O. Rekik",
+    "assist": "H. Mejbri",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "54",
+    "type": "Yellow Card",
+    "player": "R. Khedira",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "59",
+    "type": "Goal",
+    "player": "V. Gyokeres",
+    "assist": "A. Isak",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "65",
+    "type": "Substitution",
+    "player": "G. Gudmundsson",
+    "assist": null,
+    "sub_in": "E. Stroud",
+    "side": "home"
+   },
+   {
+    "time": "65",
+    "type": "Substitution",
+    "player": "B. Nygren",
+    "assist": null,
+    "sub_in": "L. Bergvall",
+    "side": "home"
+   },
+   {
+    "time": "72",
+    "type": "Substitution",
+    "player": "E. Saad",
+    "assist": null,
+    "sub_in": "S. Tounekti",
+    "side": "away"
+   },
+   {
+    "time": "72",
+    "type": "Substitution",
+    "player": "Y. Valery",
+    "assist": null,
+    "sub_in": "M. Belhadj",
+    "side": "away"
+   },
+   {
+    "time": "72",
+    "type": "Substitution",
+    "player": "E. Skhiri",
+    "assist": null,
+    "sub_in": "E. Achouri",
+    "side": "away"
+   },
+   {
+    "time": "83",
+    "type": "Substitution",
+    "player": "R. Khedira",
+    "assist": null,
+    "sub_in": "I. Gharbi",
+    "side": "away"
+   },
+   {
+    "time": "83",
+    "type": "Substitution",
+    "player": "A. Slimane",
+    "assist": null,
+    "sub_in": "F. Chaouat",
+    "side": "away"
+   },
+   {
+    "time": "84",
+    "type": "Substitution",
+    "player": "J. Karlstrom",
+    "assist": null,
+    "sub_in": "M. Svanberg",
+    "side": "home"
+   },
+   {
+    "time": "84",
+    "type": "Goal",
+    "player": "M. Svanberg",
+    "assist": "A. Isak",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "90+1",
+    "type": "Substitution",
+    "player": "A. Isak",
+    "assist": null,
+    "sub_in": "A. Elanga",
+    "side": "home"
+   },
+   {
+    "time": "90+1",
+    "type": "Substitution",
+    "player": "A. Bernhardsson",
+    "assist": null,
+    "sub_in": "D. Svensson",
+    "side": "home"
+   },
+   {
+    "time": "90+6",
+    "type": "Goal",
+    "player": "Y. Ayari",
+    "assist": "L. Bergvall",
+    "sub_in": null,
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "3-4-1-2",
+    "xi": [
+     {
+      "name": "Kristoffer Nordfeldt",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Victor Lindelöf",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Isak Hien",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gustaf Lagerbielke",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gabriel Gudmundsson",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Yasin Ayari",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jesper Karlström",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Alexander Bernhardsson",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Benjamin Nygren",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "Alexander Isak",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Viktor Gyökeres",
+      "number": 17,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Jacob Widell Zetterström",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Viktor Johansson",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Hjalmar Ekdal",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Eric Smith",
+      "number": 20,
+      "pos": "Defender"
+     },
+     {
+      "name": "Carl Starfelt",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Daniel Svensson",
+      "number": 8,
+      "pos": "Defender"
+     },
+     {
+      "name": "Herman Johansson",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Elliot Stroud",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Lucas Bergvall",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ken Sema",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mattias Svanberg",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Besfort Zeneli",
+      "number": 22,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Taha Abdi Ali",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Anthony Elanga",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Gustaf Nilsson",
+      "number": 25,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Abdelmouhib Chamakh",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Amine Ben Hmida",
+      "number": 21,
+      "pos": "Defender"
+     },
+     {
+      "name": "Omar Rekik",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Montassar Talbi",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Yan Valery",
+      "number": 20,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ellyes Skhiri",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Rani Khedira",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ali Abdi",
+      "number": 2,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Hannibal Mejbri",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Anis Ben Slimane",
+      "number": 25,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Elias Saad",
+      "number": 8,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Aymen Dahmen",
+      "number": 16,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Sabri Ben Hessen",
+      "number": 22,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Adem Arous",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Dylan Bronn",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Moataz Nefati",
+      "number": 23,
+      "pos": "Defender"
+     },
+     {
+      "name": "Raed Chikhaoui",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mortadha Ben Ouanes",
+      "number": 12,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ismael Gharbi",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Mohamed Belhadj Mahmoud",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Sebastian Tounekti",
+      "number": 26,
+      "pos": "Forward"
+     },
+     {
+      "name": "Elias Achouri",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Khalil Ayari",
+      "number": 14,
+      "pos": "Forward"
+     },
+     {
+      "name": "Rayan Elloumi",
+      "number": 18,
+      "pos": "Forward"
+     },
+     {
+      "name": "Hazem Mastouri",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Firas Chaouat",
+      "number": 19,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }

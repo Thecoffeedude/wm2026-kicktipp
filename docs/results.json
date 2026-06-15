@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-15T02:01:48Z",
+  "updated_at": "2026-06-15T04:46:53Z",
   "results": [
     {
       "fd_id": 537327,
@@ -221,6 +221,25 @@
       "halftime_home": null,
       "halftime_away": null,
       "utc_date": "2026-06-14T23:00:00Z",
+      "stage": "Group Stage - 1",
+      "score_source": "highlightly"
+    },
+    {
+      "home_code": "SWE",
+      "away_code": "TUN",
+      "home_team": "Sweden",
+      "away_team": "Tunisia",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 5,
+      "score_away": 1,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-06-15T02:00:00Z",
       "stage": "Group Stage - 1",
       "score_source": "highlightly"
     }
