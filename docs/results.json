@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-15T19:02:47Z",
+  "updated_at": "2026-06-15T21:48:16Z",
   "results": [
     {
       "fd_id": 537327,
@@ -260,6 +260,27 @@
       "halftime_home": 0,
       "halftime_away": 0,
       "utc_date": "2026-06-15T16:00:00Z",
+      "stage": "Group Stage",
+      "goals": []
+    },
+    {
+      "fd_id": 537363,
+      "fd_home_id": 805,
+      "home_code": "BEL",
+      "away_code": "EGY",
+      "home_team": "Belgium",
+      "away_team": "Egypt",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 1,
+      "score_away": 1,
+      "halftime_home": 0,
+      "halftime_away": 1,
+      "utc_date": "2026-06-15T19:00:00Z",
       "stage": "Group Stage",
       "goals": []
     }
