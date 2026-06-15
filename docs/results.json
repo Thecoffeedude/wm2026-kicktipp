@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-15T23:43:52Z",
+  "updated_at": "2026-06-15T23:44:56Z",
   "results": [
     {
       "fd_id": 537327,
@@ -281,7 +281,8 @@
       "halftime_home": 0,
       "halftime_away": 1,
       "utc_date": "2026-06-15T19:00:00Z",
-      "stage": "Group Stage"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
