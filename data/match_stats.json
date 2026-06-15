@@ -7612,5 +7612,432 @@
     ]
    }
   }
+ },
+ "ua_BEL_EGY_2026-06-15": {
+  "hl_id": 1267460611,
+  "fetched_at": "2026-06-15T22:23:51Z",
+  "stats": {
+   "home": {
+    "xg": 1.31,
+    "possession": 54,
+    "shots_on_target": 3,
+    "corners": 2,
+    "passes": 453,
+    "saves": 2,
+    "fouls": 15,
+    "shots": 15
+   },
+   "away": {
+    "xg": 1.07,
+    "possession": 46,
+    "shots_on_target": 3,
+    "corners": 7,
+    "passes": 397,
+    "saves": 3,
+    "fouls": 15,
+    "shots": 14
+   }
+  },
+  "events": [
+   {
+    "time": "13",
+    "type": "Yellow Card",
+    "player": "M. Attia",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "14",
+    "type": "Yellow Card",
+    "player": "T. Castagne",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "19",
+    "type": "Goal",
+    "player": "E. Ashour",
+    "assist": "M. Salah",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "34",
+    "type": "Yellow Card",
+    "player": "A. Fatouh",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "56",
+    "type": "Substitution",
+    "player": "T. Castagne",
+    "assist": null,
+    "sub_in": "N. Raskin",
+    "side": "home"
+   },
+   {
+    "time": "56",
+    "type": "Substitution",
+    "player": "A. Onana",
+    "assist": null,
+    "sub_in": "M. De Cuyper",
+    "side": "home"
+   },
+   {
+    "time": "66",
+    "type": "Substitution",
+    "player": "C. De Ketelaere",
+    "assist": null,
+    "sub_in": "R. Lukaku",
+    "side": "home"
+   },
+   {
+    "time": "66",
+    "type": "Own Goal",
+    "player": "M. Hany",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "E. Ashour",
+    "assist": null,
+    "sub_in": "R. Rabia",
+    "side": "away"
+   },
+   {
+    "time": "75",
+    "type": "Yellow Card",
+    "player": "M. De Cuyper",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "76",
+    "type": "Substitution",
+    "player": "M. Ziko",
+    "assist": null,
+    "sub_in": "Zizo",
+    "side": "away"
+   },
+   {
+    "time": "76",
+    "type": "Substitution",
+    "player": "M. Salah",
+    "assist": null,
+    "sub_in": "H. Abdelkarim",
+    "side": "away"
+   },
+   {
+    "time": "86",
+    "type": "Substitution",
+    "player": "J. Doku",
+    "assist": null,
+    "sub_in": "M. Fernandez-Pardo",
+    "side": "home"
+   },
+   {
+    "time": "86",
+    "type": "Substitution",
+    "player": "K. De Bruyne",
+    "assist": null,
+    "sub_in": "H. Vanaken",
+    "side": "home"
+   },
+   {
+    "time": "89",
+    "type": "Substitution",
+    "player": "H. Fathy",
+    "assist": null,
+    "sub_in": "I. Adel",
+    "side": "away"
+   },
+   {
+    "time": "89",
+    "type": "Substitution",
+    "player": "A. Fatouh",
+    "assist": null,
+    "sub_in": "K. Hafez",
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Thibaut Courtois",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Timothy Castagne",
+      "number": 21,
+      "pos": "Defender"
+     },
+     {
+      "name": "Brandon Mechele",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nathan Ngoy",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Thomas Meunier",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Youri Tielemans",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Amadou Onana",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Leandro Trossard",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kevin De Bruyne",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jérémy Doku",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Charles De Ketelaere",
+      "number": 17,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Senne Lammens",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Mike Penders",
+      "number": 13,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Arthur Theate",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Joaquin Seys",
+      "number": 18,
+      "pos": "Defender"
+     },
+     {
+      "name": "Koni De Winter",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "Maxim De Cuyper",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Alexis Saelemaekers",
+      "number": 22,
+      "pos": "Forward"
+     },
+     {
+      "name": "Axel Witsel",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Diego Moreira",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Dodi Lukebakio",
+      "number": 14,
+      "pos": "Forward"
+     },
+     {
+      "name": "Nicolas Raskin",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Hans Vanaken",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Matías Fernández-Pardo",
+      "number": 26,
+      "pos": "Forward"
+     },
+     {
+      "name": "Romelu Lukaku",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Mostafa Shobeir",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Ahmed Fatouh",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Hamdy Fathy",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Yasser Ibrahim",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mohamed Hany",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marwan Attia",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mohanad Lasheen",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mostafa Ziko",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Emam Ashour",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mohamed Salah",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Omar Marmoush",
+      "number": 22,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Mahdi Soliman",
+      "number": 16,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Mohamed Alaa",
+      "number": 26,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Mohamed El-Shenawy",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Hossam Abdelmaguid",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Karim Hafez",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mohamed Abdelmonem",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Rami Rabia",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tarek Alaa",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Haissem Hassan",
+      "number": 12,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ibrahim Adel",
+      "number": 20,
+      "pos": "Forward"
+     },
+     {
+      "name": "Mahmoud Saber",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mahmoud Trézéguet",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Nabil Donga",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Zizo",
+      "number": 25,
+      "pos": "Forward"
+     },
+     {
+      "name": "Hamza Abdelkarim",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
