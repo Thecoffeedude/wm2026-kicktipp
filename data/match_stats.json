@@ -8848,5 +8848,397 @@
     ]
    }
   }
+ },
+ "ua_FRA_SEN_2026-06-16": {
+  "hl_id": 1267465717,
+  "fetched_at": "2026-06-16T22:01:41Z",
+  "stats": {
+   "home": {
+    "xg": 1.89,
+    "possession": 54,
+    "shots_on_target": 8,
+    "corners": 6,
+    "passes": 576,
+    "saves": 2,
+    "fouls": 5,
+    "shots": 11
+   },
+   "away": {
+    "xg": 0.5,
+    "possession": 46,
+    "shots_on_target": 2,
+    "corners": 4,
+    "passes": 497,
+    "saves": 5,
+    "fouls": 9,
+    "shots": 6
+   }
+  },
+  "events": [
+   {
+    "time": "66",
+    "type": "Goal",
+    "player": "K. Mbappe",
+    "assist": "M. Olise",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "75",
+    "type": "Substitution",
+    "player": "I. Sarr",
+    "assist": null,
+    "sub_in": "I. Mbaye",
+    "side": "away"
+   },
+   {
+    "time": "76",
+    "type": "Substitution",
+    "player": "L. Camara",
+    "assist": null,
+    "sub_in": "H. Diarra",
+    "side": "away"
+   },
+   {
+    "time": "80",
+    "type": "Substitution",
+    "player": "O. Dembele",
+    "assist": null,
+    "sub_in": "B. Barcola",
+    "side": "home"
+   },
+   {
+    "time": "82",
+    "type": "Goal",
+    "player": "B. Barcola",
+    "assist": "A. Rabiot",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "83",
+    "type": "Substitution",
+    "player": "P. Gueye",
+    "assist": null,
+    "sub_in": "I. Ndiaye",
+    "side": "away"
+   },
+   {
+    "time": "83",
+    "type": "Substitution",
+    "player": "N. Jackson",
+    "assist": null,
+    "sub_in": "B. Dieng",
+    "side": "away"
+   },
+   {
+    "time": "87",
+    "type": "Substitution",
+    "player": "D. Doue",
+    "assist": null,
+    "sub_in": "R. Cherki",
+    "side": "home"
+   },
+   {
+    "time": "88",
+    "type": "Substitution",
+    "player": "I. Gueye",
+    "assist": null,
+    "sub_in": "P. Ciss",
+    "side": "away"
+   },
+   {
+    "time": "90+5",
+    "type": "Goal",
+    "player": "I. Mbaye",
+    "assist": "I. Ndiaye",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "90+6",
+    "type": "Goal",
+    "player": "K. Mbappe",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Mike Maignan",
+      "number": 16,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Theo Hernández",
+      "number": 19,
+      "pos": "Defender"
+     },
+     {
+      "name": "Dayot Upamecano",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "William Saliba",
+      "number": 17,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jules Koundé",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Adrien Rabiot",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Aurélien Tchouaméni",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Désiré Doué",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ousmane Dembélé",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Michael Olise",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kylian Mbappé",
+      "number": 10,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Brice Samba",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Robin Risser",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Maxence Lacroix",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Lucas Hernández",
+      "number": 21,
+      "pos": "Defender"
+     },
+     {
+      "name": "Lucas Digne",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ibrahima Konaté",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Malo Gusto",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Manu Koné",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "N'Golo Kanté",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Rayan Cherki",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Warren Zaïre-Emery",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Maghnes Akliouche",
+      "number": 25,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Marcus Thuram",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Jean-Philippe Mateta",
+      "number": 22,
+      "pos": "Forward"
+     },
+     {
+      "name": "Bradley Barcola",
+      "number": 12,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-3-3",
+    "xi": [
+     {
+      "name": "Edouard Mendy",
+      "number": 16,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "El Hadji Malick Diouf",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Moussa Niakhaté",
+      "number": 19,
+      "pos": "Defender"
+     },
+     {
+      "name": "Kalidou Koulibaly",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Krépin Diatta",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Pape Gueye",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Idrissa Gana Gueye",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Lamine Camara",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Sadio Mané",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "Nicolas Jackson",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ismaïla Sarr",
+      "number": 18,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Yehvann Diouf",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Mory Diaw",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Ismail Jakobs",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Antoine Mendy",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mamadou Sarr",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Abdoulaye Seck",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Pape Matar Sarr",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Pathé Ismaël Ciss",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Iliman Ndiaye",
+      "number": 13,
+      "pos": "Forward"
+     },
+     {
+      "name": "Habib Diarra",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Bara Sapoko Ndiaye",
+      "number": 22,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Cherif Ndiaye",
+      "number": 12,
+      "pos": "Forward"
+     },
+     {
+      "name": "Assane Diao",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ibrahim Mbaye",
+      "number": 20,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ahmadou Bamba Dieng",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
