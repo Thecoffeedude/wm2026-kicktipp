@@ -8039,5 +8039,403 @@
     ]
    }
   }
+ },
+ "ua_KSA_URU_2026-06-15": {
+  "hl_id": 1267462313,
+  "fetched_at": "2026-06-16T00:13:43Z",
+  "stats": {
+   "home": {
+    "xg": 0.99,
+    "possession": 33,
+    "shots_on_target": 3,
+    "corners": 4,
+    "passes": 320,
+    "saves": 9,
+    "fouls": 11,
+    "shots": 7
+   },
+   "away": {
+    "xg": 1.6,
+    "possession": 67,
+    "shots_on_target": 10,
+    "corners": 14,
+    "passes": 610,
+    "saves": 2,
+    "fouls": 6,
+    "shots": 28
+   }
+  },
+  "events": [
+   {
+    "time": "41",
+    "type": "Goal",
+    "player": "A. Al Amri",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "44",
+    "type": "Yellow Card",
+    "player": "A. Al Amri",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "M. Vina",
+    "assist": null,
+    "sub_in": "J. Sanabria",
+    "side": "away"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "D. Nunez",
+    "assist": null,
+    "sub_in": "A. Canobbio",
+    "side": "away"
+   },
+   {
+    "time": "63",
+    "type": "Substitution",
+    "player": "M. Al Juwayr",
+    "assist": null,
+    "sub_in": "N. Al Dawsari",
+    "side": "home"
+   },
+   {
+    "time": "72",
+    "type": "Substitution",
+    "player": "M. Ugarte",
+    "assist": null,
+    "sub_in": "N. de la Cruz",
+    "side": "away"
+   },
+   {
+    "time": "80",
+    "type": "Goal",
+    "player": "M. Araujo",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "81",
+    "type": "Substitution",
+    "player": "M. Araujo",
+    "assist": null,
+    "sub_in": "B. Rodriguez",
+    "side": "away"
+   },
+   {
+    "time": "81",
+    "type": "Substitution",
+    "player": "M. Abu Al Shamat",
+    "assist": null,
+    "sub_in": "N. Boushal",
+    "side": "home"
+   },
+   {
+    "time": "90",
+    "type": "Substitution",
+    "player": "F. Vinas",
+    "assist": null,
+    "sub_in": "R. Aguirre",
+    "side": "away"
+   },
+   {
+    "time": "90+2",
+    "type": "Substitution",
+    "player": "S. Abdulhamid",
+    "assist": null,
+    "sub_in": "A. Lajami",
+    "side": "home"
+   },
+   {
+    "time": "90+3",
+    "type": "Substitution",
+    "player": "M. Al Harbi",
+    "assist": null,
+    "sub_in": "A. Al Hamdan",
+    "side": "home"
+   },
+   {
+    "time": "90+3",
+    "type": "Substitution",
+    "player": "F. Al Buraikan",
+    "assist": null,
+    "sub_in": "A. Hejji",
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-4-2",
+    "xi": [
+     {
+      "name": "Mohammed Al-Owais",
+      "number": 21,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Moteb Al-Harbi",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Abdulelah Al-Amri",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Hassan Altambakti",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Saud Abdulhamid",
+      "number": 12,
+      "pos": "Defender"
+     },
+     {
+      "name": "Salem Al-Dawsari",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Abdullah Al-Khaibari",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mohamed Kanno",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mohammed Abu Al-Shamat",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Firas Al-Buraikan",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Musab Al Juwayr",
+      "number": 7,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Ahmed Al-Kassar",
+      "number": 22,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Nawaf Al-Aqidi",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Ali Lajami",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jehad Thakri",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Hassan Kadesh",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ali Majrashi",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nawaf Boushal",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nasser Al-Dawsari",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ziyad Aljohani",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ayman Yahya",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ala'a Al-Hejji",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Saleh Al-Shehri",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Khalid Al-Ghannam",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Abdullah Al-Hamdan",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Sultan Mandash",
+      "number": 20,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-4-2",
+    "xi": [
+     {
+      "name": "Fernando Muslera",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Matías Viña",
+      "number": 17,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mathías Olivera",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "Sebastián Cáceres",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Guillermo Varela",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Maximiliano Araújo",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Rodrigo Bentancur",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Manuel Ugarte",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Federico Valverde",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Darwin Núñez",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Federico Viñas",
+      "number": 21,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Santiago Mele",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Sergio Rochet",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "José María Giménez",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Juan Sanabria",
+      "number": 25,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Santiago Bueno",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Joaquín Piquerez",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Brian Rodríguez",
+      "number": 18,
+      "pos": "Forward"
+     },
+     {
+      "name": "Facundo Pellistri",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Emiliano Martínez",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Agustín Canobbio",
+      "number": 14,
+      "pos": "Forward"
+     },
+     {
+      "name": "Nicolás de la Cruz",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Rodrigo Zalazar",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Rodrigo Aguirre",
+      "number": 19,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
