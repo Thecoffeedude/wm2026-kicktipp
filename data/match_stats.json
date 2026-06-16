@@ -8437,5 +8437,416 @@
     ]
    }
   }
+ },
+ "ua_IRN_NZL_2026-06-16": {
+  "hl_id": 1267461462,
+  "fetched_at": "2026-06-16T04:43:57Z",
+  "stats": {
+   "home": {
+    "xg": 1.49,
+    "possession": 48,
+    "shots_on_target": 4,
+    "corners": 4,
+    "passes": 407,
+    "saves": 6,
+    "fouls": 10,
+    "shots": 17
+   },
+   "away": {
+    "xg": 1.24,
+    "possession": 52,
+    "shots_on_target": 8,
+    "corners": 1,
+    "passes": 447,
+    "saves": 2,
+    "fouls": 8,
+    "shots": 14
+   }
+  },
+  "events": [
+   {
+    "time": "7",
+    "type": "Goal",
+    "player": "Elijah Just",
+    "assist": "Chris Wood",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "32",
+    "type": "Goal",
+    "player": "Ramin Rezaeian",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "45",
+    "type": "Substitution",
+    "player": "Arya Yousefi",
+    "assist": null,
+    "sub_in": "Mehdi Ghayedi",
+    "side": "home"
+   },
+   {
+    "time": "53",
+    "type": "Substitution",
+    "player": "Shahriyar Moghanloo",
+    "assist": null,
+    "sub_in": "Ali Alipour",
+    "side": "home"
+   },
+   {
+    "time": "54",
+    "type": "Goal",
+    "player": "Elijah Just",
+    "assist": "Chris Wood",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "64",
+    "type": "Goal",
+    "player": "Mohammad Mohebbi",
+    "assist": "Ramin Rezaeian",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "65",
+    "type": "Substitution",
+    "player": "Saman Ghoddos",
+    "assist": null,
+    "sub_in": "Ehsan Hajisafi",
+    "side": "home"
+   },
+   {
+    "time": "68",
+    "type": "Substitution",
+    "player": "Callum McCowatt",
+    "assist": null,
+    "sub_in": "Ryan Thomas",
+    "side": "away"
+   },
+   {
+    "time": "68",
+    "type": "Substitution",
+    "player": "Liberato Cacace",
+    "assist": null,
+    "sub_in": "Ben Old",
+    "side": "away"
+   },
+   {
+    "time": "78",
+    "type": "Substitution",
+    "player": "Tim Payne",
+    "assist": null,
+    "sub_in": "Callan Elliot",
+    "side": "away"
+   },
+   {
+    "time": "80",
+    "type": "Substitution",
+    "player": "Mehdi Taremi",
+    "assist": null,
+    "sub_in": "Amirhossein Hosseinzadeh",
+    "side": "home"
+   },
+   {
+    "time": "89",
+    "type": "Yellow Card",
+    "player": "Ehsan Hajisafi",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "92",
+    "type": "Substitution",
+    "player": "Sarpreet Singh",
+    "assist": null,
+    "sub_in": "Jesse Randall",
+    "side": "away"
+   },
+   {
+    "time": "92",
+    "type": "Substitution",
+    "player": "Marko Stamenić",
+    "assist": null,
+    "sub_in": "Tyler Bindon",
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-4-2",
+    "xi": [
+     {
+      "name": "Alireza Beiranvand",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Milad Mohammadi",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Shoja Khalilzadeh",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ali Nemati",
+      "number": 19,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ramin Rezaeian",
+      "number": 23,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mohammad Mohebi",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Saeid Ezatolahi",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Saman Ghoddos",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Aria Yousefi",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mehdi Taremi",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Shahriar Moghanlou",
+      "number": 20,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Payam Niazmand",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Hossein Hosseini",
+      "number": 22,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Saleh Hardani",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Hossein Kanaani",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ehsan Hajsafi",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Roozbeh Cheshmi",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Danial Eiri",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Amirmohammad Razzaghinia",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mehdi Ghayedi",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "Mohammad Ghorbani",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mahdi Torabi",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ali Alipour",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Amirhossein Hosseinzadeh",
+      "number": 18,
+      "pos": "Forward"
+     },
+     {
+      "name": "Alireza Jahanbakhsh",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Dennis Eckert Ayensa",
+      "number": 24,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Max Crocombe",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Liberato Cacace",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Michael Boxall",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Finn Surman",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tim Payne",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marko Stamenić",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Joe Bell",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Elijah Just",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Sarpreet Singh",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Callum McCowatt",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Chris Wood",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Alex Paulsen",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Michael Woud",
+      "number": 22,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Tommy Smith",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Francis De Vries",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nando Pijnaker",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Callan Elliot",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tyler Bindon",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jesse Randall",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "Benjamin Old",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ryan Thomas",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Lachlan Bayliss",
+      "number": 25,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Alex Rufer",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ben Waine",
+      "number": 18,
+      "pos": "Forward"
+     },
+     {
+      "name": "Kosta Barbarouses",
+      "number": 17,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
