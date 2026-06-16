@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-16T18:54:22Z",
+  "updated_at": "2026-06-16T21:41:06Z",
   "results": [
     {
       "fd_id": 537327,
@@ -319,6 +319,27 @@
       "halftime_home": 1,
       "halftime_away": 1,
       "utc_date": "2026-06-16T01:00:00Z",
+      "stage": "Group Stage",
+      "goals": []
+    },
+    {
+      "fd_id": 537391,
+      "fd_home_id": 773,
+      "home_code": "FRA",
+      "away_code": "SEN",
+      "home_team": "France",
+      "away_team": "Senegal",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 3,
+      "score_away": 1,
+      "halftime_home": 0,
+      "halftime_away": 0,
+      "utc_date": "2026-06-16T19:00:00Z",
       "stage": "Group Stage",
       "goals": []
     }
