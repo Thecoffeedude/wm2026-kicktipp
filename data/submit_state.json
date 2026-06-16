@@ -68,5 +68,45 @@
     "tipped": true,
     "last_tip": null,
     "updated_at": "2026-06-14T21:42:49Z"
+  },
+  "FRA:SEN": {
+    "tipped": true,
+    "last_tip": "1:0",
+    "updated_at": "2026-06-16T00:18:45Z"
+  },
+  "IRQ:NOR": {
+    "tipped": true,
+    "last_tip": "0:1",
+    "updated_at": "2026-06-16T00:18:45Z"
+  },
+  "ARG:ALG": {
+    "tipped": true,
+    "last_tip": "2:1",
+    "updated_at": "2026-06-16T00:18:45Z"
+  },
+  "AUT:JOR": {
+    "tipped": true,
+    "last_tip": "1:0",
+    "updated_at": "2026-06-16T00:18:45Z"
+  },
+  "POR:COD": {
+    "tipped": true,
+    "last_tip": "1:0",
+    "updated_at": "2026-06-16T00:18:45Z"
+  },
+  "ENG:CRO": {
+    "tipped": true,
+    "last_tip": "1:0",
+    "updated_at": "2026-06-16T00:18:45Z"
+  },
+  "GHA:PAN": {
+    "tipped": true,
+    "last_tip": "1:0",
+    "updated_at": "2026-06-16T00:18:45Z"
+  },
+  "UZB:COL": {
+    "tipped": true,
+    "last_tip": "0:1",
+    "updated_at": "2026-06-16T00:18:45Z"
   }
 }
