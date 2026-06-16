@@ -81,32 +81,32 @@
   },
   "ARG:ALG": {
     "tipped": true,
-    "last_tip": "2:1",
-    "updated_at": "2026-06-16T00:18:45Z"
+    "last_tip": "1:0",
+    "updated_at": "2026-06-16T23:59:10Z"
   },
   "AUT:JOR": {
     "tipped": true,
-    "last_tip": "1:0",
-    "updated_at": "2026-06-16T00:18:45Z"
+    "last_tip": null,
+    "updated_at": "2026-06-16T23:59:10Z"
   },
   "POR:COD": {
     "tipped": true,
-    "last_tip": "1:0",
-    "updated_at": "2026-06-16T00:18:45Z"
+    "last_tip": null,
+    "updated_at": "2026-06-16T23:59:10Z"
   },
   "ENG:CRO": {
     "tipped": true,
-    "last_tip": "1:0",
-    "updated_at": "2026-06-16T00:18:45Z"
+    "last_tip": null,
+    "updated_at": "2026-06-16T23:59:10Z"
   },
   "GHA:PAN": {
     "tipped": true,
-    "last_tip": "1:0",
-    "updated_at": "2026-06-16T00:18:45Z"
+    "last_tip": null,
+    "updated_at": "2026-06-16T23:59:10Z"
   },
   "UZB:COL": {
     "tipped": true,
-    "last_tip": "0:1",
-    "updated_at": "2026-06-16T00:18:45Z"
+    "last_tip": null,
+    "updated_at": "2026-06-16T23:59:10Z"
   }
 }
