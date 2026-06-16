@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-16T04:43:57Z",
+  "updated_at": "2026-06-16T05:25:33Z",
   "results": [
     {
       "fd_id": 537327,
@@ -304,6 +304,8 @@
       "score_source": "highlightly"
     },
     {
+      "fd_id": 537364,
+      "fd_home_id": 840,
       "home_code": "IRN",
       "away_code": "NZL",
       "home_team": "Iran",
@@ -316,11 +318,11 @@
       "minute": null,
       "score_home": 2,
       "score_away": 2,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 1,
+      "halftime_away": 1,
       "utc_date": "2026-06-16T01:00:00Z",
-      "stage": "Group Stage - 1",
-      "score_source": "highlightly"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
