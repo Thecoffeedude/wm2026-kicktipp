@@ -54,6 +54,37 @@ ENABLE_BLEND = True
 # Poisson matrix upper bound per team (scores 0..MAX_GOALS inclusive)
 MAX_GOALS = 7
 
+# ---------------------------------------------------------------------------
+# Scoreline calibration (Phase B — post-mortem of match days 1–3)
+# ---------------------------------------------------------------------------
+# Empirical finding over the first 20 games: the model's λ_total was already
+# well calibrated (Ø 3.19 predicted vs 3.00 realised), but the EV-optimiser
+# shrank the *tipped* scoreline toward 1:0/0:0 (Ø 1.45 goals) and so missed the
+# goal-difference tier on clear favourite wins. κ and the variance dial below
+# are two handles on that decision-rule conservatism — not a fix of λ.
+
+# κ — goal-level scaling applied to λ_total before the Poisson matrix is built.
+# Static base de-shrinks the tip; the adaptive term nudges it from the running
+# realised/predicted goal ratio in the snapshot store (heavily shrunk, bounded).
+GOAL_SCALE_KAPPA = 1.15            # static base scaling (1.0 = off)
+ENABLE_ADAPTIVE_KAPPA = True       # blend base with realised/predicted ratio
+KAPPA_BOUNDS = (1.0, 1.5)          # never shrink goals; cap the stretch
+KAPPA_MIN_SETTLED = 6              # settled matches before adaptive κ engages
+KAPPA_SHRINK = 0.4                 # weight of the empirical ratio vs the base
+
+# ρ — Dixon & Coles (1997) low-score dependence. ρ<0 lifts the 0:0/1:1 cells
+# (draw mass). In-sample effect on MD1–3 ≈ 0 (the draws were market upsets) but
+# it is the literature-standard guard against long-run draw under-dispersion.
+ENABLE_DIXON_COLES = True
+DIXON_COLES_RHO = -0.10
+
+# Variance dial ("Rang statt EV") — mean–variance tip selection.
+# 0.0 = pure EV-optimal (safe, mid-table). >0 rewards point-variance / upside
+# (exact-scoreline and draw gambles) to buy rank upside in a pool of upsets.
+# Costs expected points; it is a product decision, hence default off.
+# Pool literature: Kaplan & Garstka (2001), Clair & Letscher (2007).
+VARIANCE_AGGRESSION = 0.0
+
 # Divergence threshold above which the "Bücher uneinig" badge is shown
 DIVERGENCE_BADGE_THRESHOLD = 0.04
 

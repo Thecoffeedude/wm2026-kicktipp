@@ -143,6 +143,65 @@ def test_rules_sourced_from_config():
     assert tip["expected_points"] > 0
 
 
+# ---------------------------------------------------------------------------
+# Dixon-Coles τ low-score correction
+# ---------------------------------------------------------------------------
+
+def test_dixon_coles_default_off():
+    """rho=0 must reproduce the plain independent-Poisson matrix exactly."""
+    m0 = poisson_matrix(1.6, 1.1)
+    m_off = poisson_matrix(1.6, 1.1, rho=0.0)
+    assert np.allclose(m0, m_off)
+
+def test_dixon_coles_renormalises():
+    m = poisson_matrix(1.4, 1.2, rho=-0.10)
+    assert abs(m.sum() - 1.0) < 1e-9
+
+def test_dixon_coles_negative_rho_lifts_draws():
+    """rho<0 must increase the 0:0 and 1:1 cells and lower 1:0 / 0:1."""
+    base = poisson_matrix(1.3, 1.3)
+    dc = poisson_matrix(1.3, 1.3, rho=-0.12)
+    assert dc[0, 0] > base[0, 0]
+    assert dc[1, 1] > base[1, 1]
+    assert dc[1, 0] < base[1, 0]
+    assert dc[0, 1] < base[0, 1]
+
+def test_dixon_coles_increases_draw_mass():
+    base = poisson_matrix(1.3, 1.3)
+    dc = poisson_matrix(1.3, 1.3, rho=-0.12)
+    assert float(np.trace(dc)) > float(np.trace(base))
+
+def test_dixon_coles_no_negative_cells():
+    m = poisson_matrix(3.0, 3.0, rho=-0.30)
+    assert (m >= 0).all()
+
+
+# ---------------------------------------------------------------------------
+# Variance dial ("Rang statt EV")
+# ---------------------------------------------------------------------------
+
+def test_variance_default_matches_ev():
+    """gamma=0 must return the pure EV-optimal tip."""
+    matrix = poisson_matrix(1.6, 1.1)
+    base, _ = ev_optimize(matrix)
+    same, _ = ev_optimize(matrix, variance_aggression=0.0)
+    assert (base["home"], base["away"]) == (same["home"], same["away"])
+
+def test_variance_reports_true_ev():
+    """expected_points must stay the true EV, never the inflated objective."""
+    matrix = poisson_matrix(1.6, 1.1)
+    tip, _ = ev_optimize(matrix, variance_aggression=1.0)
+    true_ev = _manual_ev(tip["home"], tip["away"], matrix)
+    assert abs(tip["expected_points"] - true_ev) < 1e-4
+
+def test_variance_does_not_increase_ev():
+    """A positive variance dial can only trade EV away, never gain it."""
+    matrix = poisson_matrix(1.5, 1.2)
+    ev_tip, _ = ev_optimize(matrix)
+    var_tip, _ = ev_optimize(matrix, variance_aggression=1.0)
+    assert var_tip["expected_points"] <= ev_tip["expected_points"] + 1e-9
+
+
 if __name__ == "__main__":
     import traceback
     tests = [

@@ -33,10 +33,11 @@ SHARP_BOOKS: frozenset[str] = frozenset({
 PRIOR_SHARP = {"market": 0.575, "uanalyse": 0.425}
 PRIOR_PARITY = {"market": 0.5, "uanalyse": 0.5}
 
-# Master switch for performance-based reweighting. Stays False until the
-# results feed is trusted; flipping to True activates the rolling-skill weights
-# with no other code change required.
-ENABLE_PERFORMANCE_REWEIGHTING = False
+# Master switch for performance-based reweighting. Results feed is trusted as of
+# match day 3; activates rolling-skill (inverse-Brier) weights once
+# MIN_SETTLED_FOR_PERF matches have settled. Expected to sit near parity on the
+# current sample (both sources score ≈ equally) — this is hygiene, not a lever.
+ENABLE_PERFORMANCE_REWEIGHTING = True
 
 # Minimum settled matches before performance weights are allowed to engage.
 MIN_SETTLED_FOR_PERF = 8
