@@ -3,7 +3,6 @@ xG derivation, Poisson score matrix, and EV-optimal Kicktipp recommendation.
 Scoring logic lives exclusively in config.kicktipp_points / config.KICKTIPP_POINTS.
 """
 
-import math
 from typing import TypedDict
 
 import numpy as np
@@ -127,12 +126,15 @@ def poisson_matrix(lambda_home: float, lambda_away: float,
 def ev_optimize(matrix: np.ndarray,
                 variance_aggression: float = 0.0) -> tuple[ScoretipResult, ModalScoreline]:
     """
-    Find the tip (a, b) that maximises a mean–variance objective over Kicktipp
-    points: score = E[pts] + γ · σ[pts], where γ = `variance_aggression`.
+    Find the tip (a, b) that maximises an upside-weighted objective over Kicktipp
+    points: score = E[pts] + γ · P(exact hit) · exact_points, γ = `variance_aggression`.
 
     γ = 0 → pure EV-optimal (the safe, mid-table tip; default, unchanged).
-    γ > 0 → rewards point-variance / upside (exact-scoreline and draw gambles)
-            to buy rank upside in a pool of upsets ("Rang statt EV"). The
+    γ > 0 → adds a bonus for how likely the tip is to land *exactly* right,
+            pulling the tip toward the most probable scoreline. This trades a
+            little tendency-safety for exact-hit upside (4 pts) — a deliberate
+            "more risk, sensibly" lever, validated to stay on the safe plateau
+            for modest γ before draw/exact gambles start to degrade it. The
             reported expected_points always remains the *true* EV of the chosen
             tip, never the inflated objective.
     Scoring is read exclusively from config.kicktipp_points.
@@ -147,7 +149,6 @@ def ev_optimize(matrix: np.ndarray,
     for tip_h in range(n):
         for tip_a in range(n):
             ev = 0.0
-            ev_sq = 0.0
             for real_h in range(n):
                 for real_a in range(n):
                     p = matrix[real_h, real_a]
@@ -157,10 +158,10 @@ def ev_optimize(matrix: np.ndarray,
                         (tip_h, tip_a), (real_h, real_a)
                     )
                     ev += p * pts
-                    ev_sq += p * pts * pts
             if variance_aggression:
-                std = math.sqrt(max(ev_sq - ev * ev, 0.0))
-                score = ev + variance_aggression * std
+                # Bonus ∝ probability the tip is exactly right × its exact reward.
+                exact_pts = config.kicktipp_points((tip_h, tip_a), (tip_h, tip_a))
+                score = ev + variance_aggression * matrix[tip_h, tip_a] * exact_pts
             else:
                 score = ev
             if score > best_score:

@@ -201,6 +201,12 @@ def test_variance_does_not_increase_ev():
     var_tip, _ = ev_optimize(matrix, variance_aggression=1.0)
     assert var_tip["expected_points"] <= ev_tip["expected_points"] + 1e-9
 
+def test_variance_converges_to_modal_scoreline():
+    """As γ→∞ the upside bonus dominates → the tip approaches the modal scoreline."""
+    matrix = poisson_matrix(1.6, 1.1)         # EV-optimal 1:0, modal 1:1
+    tip, modal = ev_optimize(matrix, variance_aggression=50.0)
+    assert (tip["home"], tip["away"]) == (modal["home"], modal["away"])
+
 
 if __name__ == "__main__":
     import traceback

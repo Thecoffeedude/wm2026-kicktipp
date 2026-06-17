@@ -78,12 +78,14 @@ KAPPA_SHRINK = 0.4                 # weight of the empirical ratio vs the base
 ENABLE_DIXON_COLES = True
 DIXON_COLES_RHO = -0.10
 
-# Variance dial ("Rang statt EV") — mean–variance tip selection.
-# 0.0 = pure EV-optimal (safe, mid-table). >0 rewards point-variance / upside
-# (exact-scoreline and draw gambles) to buy rank upside in a pool of upsets.
-# Costs expected points; it is a product decision, hence default off.
+# Risk dial ("Rang statt EV") — upside-weighted tip selection.
+# objective = E[pts] + γ · P(exact hit) · exact_points. γ=0 → pure EV-optimal.
+# γ>0 pulls the tip toward the most probable scoreline, trading a little
+# tendency-safety for exact-hit upside (4 pts). Backtest over the first 20
+# games: the safe plateau is γ≈0.5–1.0 (+2 pts, +1 exact hit, no forced draws);
+# γ≥1.5 starts forcing draw/exact gambles and degrades. 0.75 sits mid-plateau.
 # Pool literature: Kaplan & Garstka (2001), Clair & Letscher (2007).
-VARIANCE_AGGRESSION = 0.0
+VARIANCE_AGGRESSION = 0.75
 
 # Divergence threshold above which the "Bücher uneinig" badge is shown
 DIVERGENCE_BADGE_THRESHOLD = 0.04
