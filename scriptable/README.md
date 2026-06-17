@@ -22,17 +22,12 @@ stattdessen zwei getrennt speicherbare Skripte. Nimm das, das zu dir passt:
    **M** wählen → platzieren.
 4. Widget antippen und gedrückt halten → **Widget bearbeiten** → Skript wählen.
 
-Optik: führt den **Liquid-Glass-Look** der App fort — Verlauf, die beiden
-Länderflaggen subtil im Hintergrund, Scrim für sicheren Schrift-Kontrast, feine
-Glanzkante oben, große/wuchtige Schriften.
+Optik: **Liquid-Glass-Look** der App — weicher Farbverlauf als Hintergrund,
+große/wuchtige Schriften. Die beiden Länderflaggen sind **klein & scharf** als
+Akzent neben den Team-Codes (kein geblurrter Flaggen-Hintergrund mehr).
 
 > Nach Skript-Updates den Inhalt erneut in Scriptable einfügen (das Widget lädt
 > nur Daten, nicht den Skript-Code, aus dem Netz).
-
-Die beiden Flaggen liegen je auf einer Hälfte des Hintergrunds (keine
-Überlappung) und werden **global** mit einer **echten Gauß'schen Unschärfe**
-(CSS `filter: blur` via WebView) weichgezeichnet — eine Anwendung über den
-ganzen Hintergrund, daher eine weiche Mittel-Naht statt scharfer Kante.
 
 ## Tap-Ziel
 
