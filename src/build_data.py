@@ -24,7 +24,7 @@ from src.live_update import update_results, write_live
 from src.fetch_uanalyse import fetch_uanalyse, fetch_tournament_probabilities
 from src.probabilities import process_match
 from src.scoreline import ev_optimize, poisson_matrix, derive_xg
-from src.teams import resolve, canonical_en
+from src.teams import resolve, canonical_en, get_iso2
 from src.tournament import build_tournament_predictions
 
 logger = logging.getLogger(__name__)
@@ -333,9 +333,17 @@ def build_widget_payload(matches: list[dict], now: datetime, n_next: int = 3) ->
             "fav": _favorite(m),
         })
 
+    # FIFA code → ISO2 (for flagcdn) so the widget can render flags for any match
+    codes: set[str] = set()
+    for m in matches:
+        codes.add(m["home_code"])
+        codes.add(m["away_code"])
+    iso = {c: get_iso2(c) for c in sorted(codes) if get_iso2(c)}
+
     return {
         "generated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
         "site": SITE_URL,
+        "iso": iso,
         "tips": tips,
         "next": nxt,
     }

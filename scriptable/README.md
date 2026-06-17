@@ -15,6 +15,10 @@ zieht.
 4. Widget antippen und gedrückt halten → **Widget bearbeiten** → Skript
    „WM 2026" auswählen.
 
+Optik: führt den **Liquid-Glass-Look** der App fort — dunkler Verlauf, die
+beiden Länderflaggen weich/subtil links und rechts im Hintergrund, dunkler
+Scrim für sicheren Schrift-Kontrast, feine Glanzkante oben.
+
 ## Was es zeigt
 
 - **Laufendes Spiel** (falls eines live ist): Live-Score + Minute + eigener Tipp.
