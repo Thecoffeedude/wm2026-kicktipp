@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2026-06-17T19:04:28Z",
-    "live_updated_at": "2026-06-17T19:04:28Z",
+    "generated_at": "2026-06-17T19:21:57Z",
+    "live_updated_at": "2026-06-17T19:21:57Z",
     "source_primary": "uanalyse/world-cup-2026-predictions (CC BY 4.0)",
     "source_secondary": "the-odds-api",
     "source_live": "football-data.org (CC BY)",
@@ -162,7 +162,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 0,
-        "expected_points": 1.6617,
+        "expected_points": 1.66,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -208,7 +208,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 1,
-        "expected_points": 1.0926,
+        "expected_points": 1.09,
         "based_on": "odds_derived"
       },
       "modal_scoreline": {
@@ -254,7 +254,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 1,
-        "expected_points": 1.7095,
+        "expected_points": 1.71,
         "based_on": "odds_derived"
       },
       "modal_scoreline": {
@@ -331,7 +331,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 1,
-        "expected_points": 1.2014,
+        "expected_points": 1.2,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -377,7 +377,7 @@
       "recommended_tip": {
         "home": 0,
         "away": 2,
-        "expected_points": 2.1979,
+        "expected_points": 2.2,
         "based_on": "odds_derived"
       },
       "modal_scoreline": {
@@ -454,7 +454,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 0,
-        "expected_points": 1.3928,
+        "expected_points": 1.39,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -531,7 +531,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 2,
-        "expected_points": 1.4087,
+        "expected_points": 1.41,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -577,7 +577,7 @@
       "recommended_tip": {
         "home": 0,
         "away": 2,
-        "expected_points": 1.7129,
+        "expected_points": 1.71,
         "based_on": "odds_derived"
       },
       "modal_scoreline": {
@@ -654,7 +654,7 @@
       "recommended_tip": {
         "home": 4,
         "away": 1,
-        "expected_points": 2.0186,
+        "expected_points": 2.02,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -700,7 +700,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 1,
-        "expected_points": 1.5102,
+        "expected_points": 1.51,
         "based_on": "odds_derived"
       },
       "modal_scoreline": {
@@ -746,7 +746,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 2,
-        "expected_points": 1.1579,
+        "expected_points": 1.16,
         "based_on": "odds_derived"
       },
       "modal_scoreline": {
@@ -869,7 +869,7 @@
       "recommended_tip": {
         "home": 3,
         "away": 1,
-        "expected_points": 1.9236,
+        "expected_points": 1.92,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -915,7 +915,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 0,
-        "expected_points": 1.8605,
+        "expected_points": 1.86,
         "based_on": "odds_derived"
       },
       "modal_scoreline": {
@@ -961,7 +961,7 @@
       "recommended_tip": {
         "home": 0,
         "away": 2,
-        "expected_points": 1.9739,
+        "expected_points": 1.97,
         "based_on": "odds_derived"
       },
       "modal_scoreline": {
@@ -1038,7 +1038,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 0,
-        "expected_points": 1.5025,
+        "expected_points": 1.5,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -1084,7 +1084,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 0,
-        "expected_points": 1.9548,
+        "expected_points": 1.95,
         "based_on": "odds_derived"
       },
       "modal_scoreline": {
@@ -1130,7 +1130,7 @@
       "recommended_tip": {
         "home": 0,
         "away": 2,
-        "expected_points": 2.1924,
+        "expected_points": 2.19,
         "based_on": "odds_derived"
       },
       "modal_scoreline": {
@@ -1568,7 +1568,7 @@
       "recommended_tip": {
         "home": 0,
         "away": 2,
-        "expected_points": 2.1615,
+        "expected_points": 2.16,
         "based_on": "odds_derived"
       },
       "modal_scoreline": {
@@ -2023,7 +2023,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 0,
-        "expected_points": 1.9964,
+        "expected_points": 2.0,
         "based_on": "odds_derived"
       },
       "modal_scoreline": {
@@ -2069,7 +2069,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 0,
-        "expected_points": 2.0101,
+        "expected_points": 2.01,
         "based_on": "odds_derived"
       },
       "modal_scoreline": {
@@ -2524,7 +2524,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 0,
-        "expected_points": 2.0431,
+        "expected_points": 2.04,
         "based_on": "odds_derived"
       },
       "modal_scoreline": {
@@ -2570,7 +2570,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 0,
-        "expected_points": 2.0546,
+        "expected_points": 2.05,
         "based_on": "odds_derived"
       },
       "modal_scoreline": {
@@ -3022,7 +3022,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 0,
-        "expected_points": 1.8979,
+        "expected_points": 1.9,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -3490,7 +3490,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 1,
-        "expected_points": 1.4344,
+        "expected_points": 1.43,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -3975,7 +3975,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 2,
-        "expected_points": 1.0316,
+        "expected_points": 1.03,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -4460,7 +4460,7 @@
       "recommended_tip": {
         "home": 0,
         "away": 2,
-        "expected_points": 1.6206,
+        "expected_points": 1.62,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -4945,7 +4945,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 1,
-        "expected_points": 1.2531,
+        "expected_points": 1.25,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -5430,7 +5430,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 1,
-        "expected_points": 1.6203,
+        "expected_points": 1.62,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -5915,7 +5915,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 0,
-        "expected_points": 1.7736,
+        "expected_points": 1.77,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -6400,7 +6400,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 0,
-        "expected_points": 1.2538,
+        "expected_points": 1.25,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -6885,7 +6885,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 1,
-        "expected_points": 1.4223,
+        "expected_points": 1.42,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -7370,7 +7370,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 2,
-        "expected_points": 1.4666,
+        "expected_points": 1.47,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -7855,7 +7855,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 0,
-        "expected_points": 1.9711,
+        "expected_points": 1.97,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -8340,7 +8340,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 1,
-        "expected_points": 1.2398,
+        "expected_points": 1.24,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -8808,7 +8808,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 1,
-        "expected_points": 1.4035,
+        "expected_points": 1.4,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -9293,7 +9293,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 1,
-        "expected_points": 1.512,
+        "expected_points": 1.51,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -9778,7 +9778,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 0,
-        "expected_points": 2.0083,
+        "expected_points": 2.01,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -10263,7 +10263,7 @@
       "recommended_tip": {
         "home": 0,
         "away": 2,
-        "expected_points": 1.5922,
+        "expected_points": 1.59,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -10748,7 +10748,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 0,
-        "expected_points": 1.9417,
+        "expected_points": 1.94,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -11233,7 +11233,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 1,
-        "expected_points": 1.4893,
+        "expected_points": 1.49,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -11718,7 +11718,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 0,
-        "expected_points": 1.5664,
+        "expected_points": 1.57,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -12203,7 +12203,7 @@
       "recommended_tip": {
         "home": 0,
         "away": 1,
-        "expected_points": 1.4913,
+        "expected_points": 1.49,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -12654,7 +12654,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 0,
-        "expected_points": 1.6077,
+        "expected_points": 1.61,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -13105,7 +13105,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 0,
-        "expected_points": 1.9924,
+        "expected_points": 1.99,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -13556,7 +13556,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 1,
-        "expected_points": 1.1188,
+        "expected_points": 1.12,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -14007,7 +14007,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 2,
-        "expected_points": 1.4178,
+        "expected_points": 1.42,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -14441,7 +14441,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 0,
-        "expected_points": 1.7408,
+        "expected_points": 1.74,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -14875,7 +14875,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 0,
-        "expected_points": 1.801,
+        "expected_points": 1.8,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -15309,7 +15309,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 2,
-        "expected_points": 1.5217,
+        "expected_points": 1.52,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -15743,7 +15743,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 0,
-        "expected_points": 1.638,
+        "expected_points": 1.64,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -16126,7 +16126,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 0,
-        "expected_points": 1.415,
+        "expected_points": 1.42,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -16509,7 +16509,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 1,
-        "expected_points": 1.023,
+        "expected_points": 1.02,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -16892,7 +16892,7 @@
       "recommended_tip": {
         "home": 0,
         "away": 2,
-        "expected_points": 1.6657,
+        "expected_points": 1.67,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -17275,7 +17275,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 0,
-        "expected_points": 1.6781,
+        "expected_points": 1.68,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -17658,7 +17658,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 2,
-        "expected_points": 1.3873,
+        "expected_points": 1.39,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -18041,7 +18041,7 @@
       "recommended_tip": {
         "home": 0,
         "away": 1,
-        "expected_points": 1.4462,
+        "expected_points": 1.45,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -18424,7 +18424,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 2,
-        "expected_points": 1.357,
+        "expected_points": 1.36,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -18807,7 +18807,7 @@
       "recommended_tip": {
         "home": 0,
         "away": 2,
-        "expected_points": 1.8783,
+        "expected_points": 1.88,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -19190,7 +19190,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 1,
-        "expected_points": 1.3019,
+        "expected_points": 1.3,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -19573,7 +19573,7 @@
       "recommended_tip": {
         "home": 0,
         "away": 2,
-        "expected_points": 1.7194,
+        "expected_points": 1.72,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -19956,7 +19956,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 0,
-        "expected_points": 1.1159,
+        "expected_points": 1.12,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -20339,7 +20339,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 2,
-        "expected_points": 1.027,
+        "expected_points": 1.03,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -20722,7 +20722,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 2,
-        "expected_points": 1.3756,
+        "expected_points": 1.38,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -21105,7 +21105,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 0,
-        "expected_points": 1.6207,
+        "expected_points": 1.62,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -21488,7 +21488,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 2,
-        "expected_points": 1.0898,
+        "expected_points": 1.09,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -21871,7 +21871,7 @@
       "recommended_tip": {
         "home": 0,
         "away": 1,
-        "expected_points": 1.534,
+        "expected_points": 1.53,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -22254,7 +22254,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 0,
-        "expected_points": 1.0494,
+        "expected_points": 1.05,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -22637,7 +22637,7 @@
       "recommended_tip": {
         "home": 0,
         "away": 2,
-        "expected_points": 1.8366,
+        "expected_points": 1.84,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -23020,7 +23020,7 @@
       "recommended_tip": {
         "home": 2,
         "away": 1,
-        "expected_points": 1.5294,
+        "expected_points": 1.53,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -23403,7 +23403,7 @@
       "recommended_tip": {
         "home": 0,
         "away": 2,
-        "expected_points": 1.7848,
+        "expected_points": 1.78,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -23735,7 +23735,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 2,
-        "expected_points": 1.0338,
+        "expected_points": 1.03,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -24067,7 +24067,7 @@
       "recommended_tip": {
         "home": 0,
         "away": 1,
-        "expected_points": 1.0439,
+        "expected_points": 1.04,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -24433,7 +24433,7 @@
       "recommended_tip": {
         "home": 1,
         "away": 1,
-        "expected_points": 0.845,
+        "expected_points": 0.85,
         "based_on": "blend"
       },
       "modal_scoreline": {
@@ -24782,7 +24782,7 @@
       "recommended_tip": {
         "home": 0,
         "away": 2,
-        "expected_points": 1.7625,
+        "expected_points": 1.76,
         "based_on": "blend"
       },
       "modal_scoreline": {

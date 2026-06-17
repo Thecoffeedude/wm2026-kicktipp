@@ -1,0 +1,344 @@
+{
+  "generated_at": "2026-06-17T19:21:57Z",
+  "site": "https://thecoffeedude.github.io/wm2026-kicktipp/",
+  "tips": {
+    "MEX:RSA": [
+      2,
+      0
+    ],
+    "KOR:CZE": [
+      2,
+      1
+    ],
+    "CAN:BIH": [
+      2,
+      1
+    ],
+    "USA:PAR": [
+      2,
+      1
+    ],
+    "QAT:SUI": [
+      0,
+      2
+    ],
+    "BRA:MAR": [
+      1,
+      0
+    ],
+    "HAI:SCO": [
+      1,
+      2
+    ],
+    "AUS:TUR": [
+      0,
+      2
+    ],
+    "GER:CUW": [
+      4,
+      1
+    ],
+    "NED:JPN": [
+      2,
+      1
+    ],
+    "CIV:ECU": [
+      1,
+      2
+    ],
+    "SWE:TUN": [
+      1,
+      0
+    ],
+    "ESP:CPV": [
+      3,
+      1
+    ],
+    "BEL:EGY": [
+      2,
+      0
+    ],
+    "KSA:URU": [
+      0,
+      2
+    ],
+    "IRN:NZL": [
+      1,
+      0
+    ],
+    "FRA:SEN": [
+      2,
+      0
+    ],
+    "IRQ:NOR": [
+      0,
+      2
+    ],
+    "ARG:ALG": [
+      2,
+      0
+    ],
+    "AUT:JOR": [
+      2,
+      0
+    ],
+    "POR:COD": [
+      2,
+      0
+    ],
+    "ENG:CRO": [
+      2,
+      1
+    ],
+    "GHA:PAN": [
+      1,
+      2
+    ],
+    "UZB:COL": [
+      0,
+      2
+    ],
+    "CZE:RSA": [
+      2,
+      1
+    ],
+    "SUI:BIH": [
+      2,
+      1
+    ],
+    "CAN:QAT": [
+      2,
+      0
+    ],
+    "MEX:KOR": [
+      1,
+      0
+    ],
+    "USA:AUS": [
+      2,
+      1
+    ],
+    "SCO:MAR": [
+      1,
+      2
+    ],
+    "BRA:HAI": [
+      2,
+      0
+    ],
+    "TUR:PAR": [
+      2,
+      1
+    ],
+    "NED:SWE": [
+      2,
+      1
+    ],
+    "GER:CIV": [
+      2,
+      1
+    ],
+    "ECU:CUW": [
+      2,
+      0
+    ],
+    "TUN:JPN": [
+      0,
+      2
+    ],
+    "ESP:KSA": [
+      2,
+      0
+    ],
+    "BEL:IRN": [
+      2,
+      1
+    ],
+    "URU:CPV": [
+      1,
+      0
+    ],
+    "NZL:EGY": [
+      0,
+      1
+    ],
+    "ARG:AUT": [
+      1,
+      0
+    ],
+    "FRA:IRQ": [
+      2,
+      0
+    ],
+    "NOR:SEN": [
+      2,
+      1
+    ],
+    "JOR:ALG": [
+      1,
+      2
+    ],
+    "POR:UZB": [
+      2,
+      0
+    ],
+    "ENG:GHA": [
+      2,
+      0
+    ],
+    "PAN:CRO": [
+      1,
+      2
+    ],
+    "COL:COD": [
+      2,
+      0
+    ],
+    "BIH:QAT": [
+      1,
+      0
+    ],
+    "SUI:CAN": [
+      2,
+      1
+    ],
+    "SCO:BRA": [
+      0,
+      2
+    ],
+    "MAR:HAI": [
+      2,
+      0
+    ],
+    "RSA:KOR": [
+      1,
+      2
+    ],
+    "CZE:MEX": [
+      0,
+      1
+    ],
+    "ECU:GER": [
+      1,
+      2
+    ],
+    "CUW:CIV": [
+      0,
+      2
+    ],
+    "JPN:SWE": [
+      2,
+      1
+    ],
+    "TUN:NED": [
+      0,
+      2
+    ],
+    "PAR:AUS": [
+      1,
+      0
+    ],
+    "TUR:USA": [
+      1,
+      2
+    ],
+    "NOR:FRA": [
+      1,
+      2
+    ],
+    "SEN:IRQ": [
+      1,
+      0
+    ],
+    "CPV:KSA": [
+      1,
+      2
+    ],
+    "URU:ESP": [
+      0,
+      1
+    ],
+    "EGY:IRN": [
+      1,
+      0
+    ],
+    "NZL:BEL": [
+      0,
+      2
+    ],
+    "CRO:GHA": [
+      2,
+      1
+    ],
+    "PAN:ENG": [
+      0,
+      2
+    ],
+    "COL:POR": [
+      1,
+      2
+    ],
+    "COD:UZB": [
+      0,
+      1
+    ],
+    "ALG:AUT": [
+      1,
+      1
+    ],
+    "JOR:ARG": [
+      0,
+      2
+    ]
+  },
+  "next": [
+    {
+      "home": "England",
+      "away": "Croatia",
+      "hc": "ENG",
+      "ac": "CRO",
+      "kickoff": "2026-06-17T20:00:00Z",
+      "stage": "Group stage",
+      "tip": [
+        2,
+        1
+      ],
+      "fav": {
+        "label": "England",
+        "pct": 54
+      }
+    },
+    {
+      "home": "Ghana",
+      "away": "Panama",
+      "hc": "GHA",
+      "ac": "PAN",
+      "kickoff": "2026-06-17T23:00:00Z",
+      "stage": "Group stage",
+      "tip": [
+        1,
+        2
+      ],
+      "fav": {
+        "label": "Panama",
+        "pct": 38
+      }
+    },
+    {
+      "home": "Uzbekistan",
+      "away": "Colombia",
+      "hc": "UZB",
+      "ac": "COL",
+      "kickoff": "2026-06-18T02:00:00Z",
+      "stage": "Group stage",
+      "tip": [
+        0,
+        2
+      ],
+      "fav": {
+        "label": "Colombia",
+        "pct": 64
+      }
+    }
+  ]
+}
