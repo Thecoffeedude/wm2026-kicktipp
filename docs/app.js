@@ -1954,8 +1954,18 @@ function renderModel(app) {
 }
 
 // ── Interactions ──────────────────────────────────────────────────────────
+// Play the "tap" bounce on a card — only when it actually opens/closes.
+function pressCard(el) {
+  if (!el || prefersReducedMotion) return;
+  el.classList.remove('pressing');
+  void el.offsetWidth;                 // reflow so rapid re-toggles re-trigger
+  el.classList.add('pressing');
+  el.addEventListener('animationend', () => el.classList.remove('pressing'), { once: true });
+}
+
 function toggleCard(btn) {
   const card = btn.closest('.card');
+  pressCard(card);
 
   // Lazy-build the (heavy) drawer content on first open
   const inner = card.querySelector('.drawer-inner');
@@ -1995,6 +2005,7 @@ window.toggleBookmakers = toggleBookmakers;
 function toggleVerlaufAnalysis(btn) {
   const body = document.getElementById(btn.getAttribute('aria-controls'));
   if (!body) return;
+  pressCard(btn.closest('.verlauf-card'));
   if (body.dataset.built === '0') {
     const match = allMatches.find(x => x.id === btn.dataset.match);
     if (match) {

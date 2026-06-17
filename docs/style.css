@@ -1055,7 +1055,20 @@ header { padding-top: calc(10px + env(safe-area-inset-top)); }
   cursor: pointer;
   transition: transform .15s cubic-bezier(.2,.8,.2,1), opacity .15s;
 }
-.card:active { transform: scale(0.97) !important; }
+
+/* Press "tap" bounce — fired by JS only when a card opens/closes (not on every
+   stray tap). Shared by .card (Heute/Spiele) and .verlauf-card (Verlauf). */
+@keyframes card-press {
+  0%   { transform: scale(1); }
+  45%  { transform: scale(0.97); }
+  100% { transform: scale(1); }
+}
+.card.pressing,
+.verlauf-card.pressing { animation: card-press .2s ease; }
+@media (prefers-reduced-motion: reduce) {
+  .card.pressing,
+  .verlauf-card.pressing { animation: none; }
+}
 
 /* ── Skeleton loader ─────────────────────────────────────────────────────── */
 .skeleton-card {
@@ -1610,7 +1623,6 @@ header { padding-top: calc(10px + env(safe-area-inset-top)); }
   -webkit-tap-highlight-color: transparent;
   transition: transform .1s;
 }
-.verlauf-card:active { transform: scale(0.98); }
 .verlauf-live {
   border-color: color-mix(in srgb, #FF3B30 35%, var(--hair));
   background: color-mix(in srgb, #FF3B30 5%, var(--solid));
