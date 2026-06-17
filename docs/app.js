@@ -1972,8 +1972,16 @@ function pressCard(el) {
 const HEADER_OFFSET = 80;
 function reanchorOnClose(el) {
   if (!el) return;
-  const top = el.getBoundingClientRect().top;
-  if (top < HEADER_OFFSET) window.scrollBy(0, top - HEADER_OFFSET);
+  // Card's distance from the top of the document — stable across its own
+  // collapse (content above it doesn't change), so the target stays valid.
+  const target = Math.max(0, window.scrollY + el.getBoundingClientRect().top - HEADER_OFFSET);
+  if (window.scrollY <= target + 1) return;     // card top already visible below header
+  const apply = () => window.scrollTo(0, target);
+  apply();                                       // immediately
+  // Re-assert once the collapse settles, in case the height change moved us.
+  const drawer = el.querySelector('.drawer');
+  if (drawer) drawer.addEventListener('transitionend', apply, { once: true });
+  setTimeout(apply, 450);                        // fallback when there is no transition
 }
 
 function toggleCard(btn) {
