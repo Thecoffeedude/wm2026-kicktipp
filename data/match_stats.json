@@ -12224,5 +12224,432 @@
     ]
    }
   }
+ },
+ "ua_ENG_CRO_2026-06-17": {
+  "hl_id": 1267466568,
+  "fetched_at": "2026-06-17T22:07:26Z",
+  "stats": {
+   "home": {
+    "xg": 2.8,
+    "possession": 52,
+    "shots_on_target": 11,
+    "corners": 8,
+    "passes": 473,
+    "saves": 3,
+    "fouls": 10,
+    "shots": 22
+   },
+   "away": {
+    "xg": 0.71,
+    "possession": 48,
+    "shots_on_target": 5,
+    "corners": 2,
+    "passes": 442,
+    "saves": 7,
+    "fouls": 12,
+    "shots": 10
+   }
+  },
+  "events": [
+   {
+    "time": "12",
+    "type": "Penalty",
+    "player": "H. Kane",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "36",
+    "type": "Goal",
+    "player": "M. Baturina",
+    "assist": "P. Sucic",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "42",
+    "type": "Goal",
+    "player": "H. Kane",
+    "assist": "D. Rice",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "45+5",
+    "type": "Goal",
+    "player": "P. Musa",
+    "assist": "I. Perisic",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "47",
+    "type": "Goal",
+    "player": "J. Bellingham",
+    "assist": "E. Anderson",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "58",
+    "type": "Substitution",
+    "player": "L. Modric",
+    "assist": null,
+    "sub_in": "M. Kovacic",
+    "side": "away"
+   },
+   {
+    "time": "66",
+    "type": "Substitution",
+    "player": "L. Vuskovic",
+    "assist": null,
+    "sub_in": "M. Pasalic",
+    "side": "away"
+   },
+   {
+    "time": "66",
+    "type": "Substitution",
+    "player": "P. Musa",
+    "assist": null,
+    "sub_in": "I. Matanovic",
+    "side": "away"
+   },
+   {
+    "time": "72",
+    "type": "Substitution",
+    "player": "A. Gordon",
+    "assist": null,
+    "sub_in": "M. Rashford",
+    "side": "home"
+   },
+   {
+    "time": "72",
+    "type": "Substitution",
+    "player": "N. Madueke",
+    "assist": null,
+    "sub_in": "B. Saka",
+    "side": "home"
+   },
+   {
+    "time": "72",
+    "type": "Substitution",
+    "player": "D. Rice",
+    "assist": null,
+    "sub_in": "M. Rogers",
+    "side": "home"
+   },
+   {
+    "time": "78",
+    "type": "Substitution",
+    "player": "M. Baturina",
+    "assist": null,
+    "sub_in": "N. Vlasic",
+    "side": "away"
+   },
+   {
+    "time": "79",
+    "type": "Substitution",
+    "player": "M. Pasalic",
+    "assist": null,
+    "sub_in": "A. Kramaric",
+    "side": "away"
+   },
+   {
+    "time": "80",
+    "type": "Substitution",
+    "player": "J. Bellingham",
+    "assist": null,
+    "sub_in": "D. Spence",
+    "side": "home"
+   },
+   {
+    "time": "85",
+    "type": "Goal",
+    "player": "M. Rashford",
+    "assist": "B. Saka",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "87",
+    "type": "Substitution",
+    "player": "J. Stones",
+    "assist": null,
+    "sub_in": "M. Guehi",
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Jordan Pickford",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Nico O'Reilly",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "John Stones",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ezri Konsa",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Reece James",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Declan Rice",
+      "number": 4,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Elliot Anderson",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Anthony Gordon",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jude Bellingham",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Noni Madueke",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Harry Kane",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Dean Henderson",
+      "number": 13,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "James Trafford",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Dan Burn",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Djed Spence",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jarell Quansah",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marc Guéhi",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Eberechi Eze",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jordan Henderson",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kobbie Mainoo",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Morgan Rogers",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Bukayo Saka",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ivan Toney",
+      "number": 22,
+      "pos": "Forward"
+     },
+     {
+      "name": "Marcus Rashford",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ollie Watkins",
+      "number": 19,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "3-4-2-1",
+    "xi": [
+     {
+      "name": "Dominik Livaković",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Joško Gvardiol",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Luka Vušković",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Josip Šutalo",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ivan Perišić",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Petar Sučić",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Luka Modrić",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Josip Stanišić",
+      "number": 2,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Martin Baturina",
+      "number": 16,
+      "pos": "Forward"
+     },
+     {
+      "name": "Mario Pašalić",
+      "number": 15,
+      "pos": "Forward"
+     },
+     {
+      "name": "Petar Musa",
+      "number": 26,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Dominik Kotarski",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Ivor Pandur",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Duje Ćaleta-Car",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marin Pongračić",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Martin Erlić",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mateo Kovačić",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kristijan Jakić",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Luka Sučić",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Marco Pašalić",
+      "number": 24,
+      "pos": "Forward"
+     },
+     {
+      "name": "Nikola Moro",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nikola Vlašić",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Toni Fruk",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Andrej Kramarić",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ante Budimir",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Igor Matanović",
+      "number": 20,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }

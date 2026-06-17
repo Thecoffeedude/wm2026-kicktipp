@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-17T20:27:35Z",
+  "updated_at": "2026-06-17T22:07:26Z",
   "results": [
     {
       "fd_id": 537327,
@@ -423,6 +423,25 @@
       "utc_date": "2026-06-17T17:00:00Z",
       "stage": "Group Stage",
       "goals": []
+    },
+    {
+      "home_code": "ENG",
+      "away_code": "CRO",
+      "home_team": "England",
+      "away_team": "Croatia",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 4,
+      "score_away": 2,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-06-17T20:00:00Z",
+      "stage": "Group Stage - 1",
+      "score_source": "highlightly"
     }
   ]
 }
