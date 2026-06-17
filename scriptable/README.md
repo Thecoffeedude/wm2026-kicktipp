@@ -23,6 +23,20 @@ Schrift-Kontrast, feine Glanzkante oben. **Folgt automatisch dem System-Modus
 > Nach Skript-Updates den Inhalt von `wm2026-widget.js` erneut in Scriptable
 > einfügen (das Widget lädt nur Daten, nicht den Skript-Code, aus dem Netz).
 
+Die Flaggen werden mit einer **echten Gauß'schen Unschärfe** (CSS `filter:
+blur` via WebView) weichgezeichnet — volle Auflösung, kein Pixel-Look.
+
+## Tap öffnet die Home-Screen-App (statt Safari)
+
+iOS leitet eine normale `https`-URL **immer** in Safari (neuer Tab) — ein
+direkter Deep-Link in eine installierte PWA ist nicht möglich. Workaround:
+
+1. **Kurzbefehle**-App öffnen → neuer Kurzbefehl → Aktion **„App öffnen"**.
+2. Als App die zum Home-Screen hinzugefügte **WM-2026-Web-App** wählen.
+3. Kurzbefehl benennen, z. B. „WM 2026 App".
+4. Im Skript oben `SHORTCUT_NAME` auf genau diesen Namen setzen
+   (`const SHORTCUT_NAME = "WM 2026 App";`). Leer lassen = öffnet in Safari.
+
 ## Was es zeigt
 
 - **Laufendes Spiel** (falls eines live ist): Live-Score + Minute + eigener Tipp.

@@ -15,6 +15,17 @@
 
 const SITE = "https://thecoffeedude.github.io/wm2026-kicktipp/";
 
+// Tap-Ziel: Eine https-URL öffnet iOS IMMER in Safari (neuer Tab) — es gibt
+// keinen direkten Deep-Link in eine Home-Screen-PWA. Um stattdessen die
+// installierte PWA-Kopie zu öffnen: in der Kurzbefehle-App einen Kurzbefehl
+// anlegen → Aktion "App öffnen" → deine WM-2026-Web-App wählen → benennen
+// (z. B. "WM 2026 App"). Dann hier den Namen eintragen. Leer = Safari.
+const SHORTCUT_NAME = "";   // z. B. "WM 2026 App"
+
+const TAP_URL = SHORTCUT_NAME
+  ? `shortcuts://run-shortcut?name=${encodeURIComponent(SHORTCUT_NAME)}`
+  : SITE;
+
 function rgb(r, g, b, a) {
   const h = x => ("0" + Math.round(Math.max(0, Math.min(1, x)) * 255).toString(16)).slice(-2);
   return new Color(h(r) + h(g) + h(b), a === undefined ? 1 : a);
@@ -61,7 +72,7 @@ async function getImage(url) {
 }
 function flagURL(iso, code) {
   const i = iso && iso[code];
-  return i ? `https://flagcdn.com/w320/${i}.png` : null;
+  return i ? `https://flagcdn.com/w640/${i}.png` : null;
 }
 function fmtTime(iso) {
   if (!iso || !iso.includes("T")) return "–:––";
@@ -83,14 +94,42 @@ function pointsBalance(tips, results) {
   return { total, games };
 }
 
-// Weich heruntergerechnete Flagge (Fake-Blur durch Downsampling).
-function soften(img, w, h) {
-  const c = new DrawContext();
-  c.size = new Size(w, h);
-  c.opaque = false;
-  c.respectScreenScale = false;
-  c.drawImageInRect(img, new Rect(0, 0, w, h));
-  return c.getImage();
+// Echte Gauß'sche Unschärfe via WebView (CSS filter: blur) — volle Auflösung,
+// kein Pixel-Look. Gibt das Originalbild zurück, falls etwas schiefgeht.
+async function gaussianBlur(img, radius) {
+  try {
+    const b64 = Data.fromPNG(img).toBase64String();
+    const w = Math.round(img.size.width), h = Math.round(img.size.height);
+    const js = `
+      const im = new Image();
+      im.onload = () => {
+        const c = document.createElement('canvas');
+        c.width = ${w}; c.height = ${h};
+        const x = c.getContext('2d');
+        x.filter = 'blur(${radius}px)';
+        x.drawImage(im, 0, 0, ${w}, ${h});
+        completion(c.toDataURL('image/png'));
+      };
+      im.onerror = () => completion('');
+      im.src = 'data:image/png;base64,${b64}';
+    `;
+    const wv = new WebView();
+    await wv.loadHTML("<html><body></body></html>");
+    const url = await wv.evaluateJavaScript(js, true);  // true = wartet auf completion()
+    if (!url) return img;
+    const data = Data.fromBase64String(url.replace(/^data:image\/png;base64,/, ""));
+    return Image.fromData(data) || img;
+  } catch (e) { return img; }
+}
+
+// Flagge seitenverhältnis-erhaltend als Seiten-Wash zeichnen (über die Kante).
+function drawFlagWash(ctx, img, W, H, side) {
+  const ar = img.size.width / img.size.height;
+  const fh = H * 1.3;
+  const fw = fh * ar;
+  const y = (H - fh) / 2;
+  const x = side === "left" ? W * 0.52 - fw : W * 0.48;
+  ctx.drawImageInRect(img, new Rect(x, y, fw, fh));
 }
 
 // Glas-Hintergrund: Verlauf + Flaggen-Wash links/rechts + Scrim + Glanz.
@@ -107,10 +146,8 @@ function glassBackground(W, H, homeImg, awayImg, dark) {
     ctx.fillRect(new Rect(0, y, W, 1));
   }
   // 2) Flaggen als weicher Wash, links/rechts über die Kante hinaus
-  if (homeImg) ctx.drawImageInRect(soften(homeImg, 30, 20),
-    new Rect(-W * 0.14, -H * 0.18, W * 0.72, H * 1.36));
-  if (awayImg) ctx.drawImageInRect(soften(awayImg, 30, 20),
-    new Rect(W * 0.42, -H * 0.18, W * 0.72, H * 1.36));
+  if (homeImg) drawFlagWash(ctx, homeImg, W, H, "left");
+  if (awayImg) drawFlagWash(ctx, awayImg, W, H, "right");
   // 3) Scrim → Flaggen subtil + Schrift-Kontrast (hell: weiß, dunkel: schwarz)
   ctx.setFillColor(dark ? rgb(0.05, 0.06, 0.09, 0.70) : rgb(0.96, 0.97, 0.99, 0.66));
   ctx.fillRect(new Rect(0, 0, W, H));
@@ -146,7 +183,7 @@ async function build() {
 
   const w = new ListWidget();
   w.setPadding(16, 17, 16, 17);
-  w.url = SITE;
+  w.url = TAP_URL;
   w.refreshAfterDate = new Date(Date.now() + 10 * 60 * 1000);
 
   if (!widget) {
@@ -171,6 +208,9 @@ async function build() {
     [homeImg, awayImg] = await Promise.all([
       getImage(flagURL(iso, feat.hc)), getImage(flagURL(iso, feat.ac)),
     ]);
+    // Echte Gauß-Unschärfe (Radius ~ 4 % der Flaggenbreite)
+    if (homeImg) homeImg = await gaussianBlur(homeImg, Math.round(homeImg.size.width * 0.04));
+    if (awayImg) awayImg = await gaussianBlur(awayImg, Math.round(awayImg.size.width * 0.04));
   }
   w.backgroundImage = glassBackground(dims[0], dims[1], homeImg, awayImg, dark);
 
