@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-17T10:57:41Z",
+  "updated_at": "2026-06-17T17:48:46Z",
   "live": [
     {
       "fd_id": 537397,
@@ -19,7 +19,8 @@
       "halftime_home": 1,
       "halftime_away": 0,
       "utc_date": "2026-06-17T01:00:00Z",
-      "stage": "Group Stage"
+      "stage": "Group Stage",
+      "goals": []
     },
     {
       "fd_id": 537398,
@@ -39,7 +40,8 @@
       "halftime_home": 1,
       "halftime_away": 0,
       "utc_date": "2026-06-17T04:00:00Z",
-      "stage": "Group Stage"
+      "stage": "Group Stage",
+      "goals": []
     },
     {
       "fd_id": 537403,
@@ -48,18 +50,19 @@
       "away_code": "COD",
       "home_team": "Portugal",
       "away_team": "Congo DR",
-      "status": "TIMED",
-      "status_de": "Bald",
-      "is_live": false,
+      "status": "IN_PLAY",
+      "status_de": "Live",
+      "is_live": true,
       "is_halftime": false,
       "is_done": false,
       "minute": null,
-      "score_home": null,
-      "score_away": null,
+      "score_home": 1,
+      "score_away": 0,
       "halftime_home": null,
       "halftime_away": null,
       "utc_date": "2026-06-17T17:00:00Z",
-      "stage": "Group Stage"
+      "stage": "Group Stage",
+      "goals": []
     },
     {
       "fd_id": 537409,
