@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-17T05:05:19Z",
+  "updated_at": "2026-06-17T09:19:21Z",
   "results": [
     {
       "fd_id": 537327,
@@ -382,6 +382,25 @@
       "utc_date": "2026-06-17T01:00:00Z",
       "stage": "Group Stage",
       "goals": []
+    },
+    {
+      "home_code": "AUT",
+      "away_code": "JOR",
+      "home_team": "Austria",
+      "away_team": "Jordan",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 3,
+      "score_away": 1,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-06-17T04:00:00Z",
+      "stage": "Group Stage - 1",
+      "score_source": "highlightly"
     }
   ]
 }
