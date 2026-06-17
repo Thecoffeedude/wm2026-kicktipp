@@ -15,9 +15,13 @@ zieht.
 4. Widget antippen und gedrückt halten → **Widget bearbeiten** → Skript
    „WM 2026" auswählen.
 
-Optik: führt den **Liquid-Glass-Look** der App fort — dunkler Verlauf, die
-beiden Länderflaggen weich/subtil links und rechts im Hintergrund, dunkler
-Scrim für sicheren Schrift-Kontrast, feine Glanzkante oben.
+Optik: führt den **Liquid-Glass-Look** der App fort — Verlauf, die beiden
+Länderflaggen weich/subtil links und rechts im Hintergrund, Scrim für sicheren
+Schrift-Kontrast, feine Glanzkante oben. **Folgt automatisch dem System-Modus
+(hell/dunkel)** und nutzt große, wuchtige Schriften.
+
+> Nach Skript-Updates den Inhalt von `wm2026-widget.js` erneut in Scriptable
+> einfügen (das Widget lädt nur Daten, nicht den Skript-Code, aus dem Netz).
 
 ## Was es zeigt
 
