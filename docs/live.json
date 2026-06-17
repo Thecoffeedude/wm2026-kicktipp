@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-17T17:58:18Z",
+  "updated_at": "2026-06-17T18:00:25Z",
   "live": [
     {
       "fd_id": 537397,
@@ -50,16 +50,16 @@
       "away_code": "COD",
       "home_team": "Portugal",
       "away_team": "Congo DR",
-      "status": "IN_PLAY",
-      "status_de": "Live",
-      "is_live": true,
-      "is_halftime": false,
+      "status": "PAUSED",
+      "status_de": "Halbzeit",
+      "is_live": false,
+      "is_halftime": true,
       "is_done": false,
       "minute": null,
       "score_home": 1,
       "score_away": 1,
-      "halftime_home": 0,
-      "halftime_away": 0,
+      "halftime_home": 1,
+      "halftime_away": 1,
       "utc_date": "2026-06-17T17:00:00Z",
       "stage": "Group Stage",
       "goals": []
