@@ -30,7 +30,10 @@ from src.tournament import build_tournament_predictions
 logger = logging.getLogger(__name__)
 
 OUTPUT_PATH = Path(__file__).parent.parent / "docs" / "data.json"
+WIDGET_PATH = Path(__file__).parent.parent / "docs" / "widget.json"
 ODDS_LATEST_PATH = Path(__file__).parent.parent / "docs" / "odds_latest.json"
+
+SITE_URL = "https://thecoffeedude.github.io/wm2026-kicktipp/"
 
 
 def load_odds_latest(mock: bool) -> tuple[list[dict], bool, list[str]]:
@@ -157,6 +160,9 @@ def carry_forward_finished(matches: list[dict], output_path: Path,
         if ko > now:
             continue  # only carry forward matches that have already kicked off
         pm["carried_forward"] = True
+        tip = pm.get("recommended_tip")
+        if tip and isinstance(tip.get("expected_points"), (int, float)):
+            tip["expected_points"] = round(tip["expected_points"], 2)  # legacy 4-dp → 2-dp
         matches.append(pm)
         carried += 1
     return carried
@@ -271,6 +277,68 @@ def _tip_entry(tip: dict, modal: dict, based_on: str) -> tuple[dict, dict]:
             "probability": modal["probability"],
         },
     )
+
+
+def _parse_ko(ct: str) -> datetime | None:
+    """Parse a commence_time (ISO or date-only) into an aware datetime."""
+    try:
+        if "T" in ct:
+            return datetime.fromisoformat(ct.replace("Z", "+00:00"))
+        return datetime.strptime(ct[:10], "%Y-%m-%d").replace(tzinfo=timezone.utc)
+    except (ValueError, TypeError):
+        return None
+
+
+def _favorite(match: dict) -> dict | None:
+    """Most-likely outcome label + percent from the best available 1X2."""
+    src = match.get("sources", {})
+    p = (src.get("blend") or {}).get("p") or (src.get("uanalyse") or {}).get("p") \
+        or (src.get("odds_consensus") or {}).get("p")
+    if not p:
+        return None
+    if p["home"] >= p["draw"] and p["home"] >= p["away"]:
+        return {"label": match["home_team"], "pct": round(p["home"] * 100)}
+    if p["away"] > p["home"] and p["away"] >= p["draw"]:
+        return {"label": match["away_team"], "pct": round(p["away"] * 100)}
+    return {"label": "Unentschieden", "pct": round(p["draw"] * 100)}
+
+
+def build_widget_payload(matches: list[dict], now: datetime, n_next: int = 3) -> dict:
+    """
+    Compact payload for an iOS widget (Scriptable etc.). Carries the recommended
+    tips (so a widget can compute the points balance against the 5-min-fresh
+    results.json itself) plus the next few upcoming fixtures for display. Live
+    scores and the live points total are derived client-side from live.json /
+    results.json, so this file only needs the daily predict refresh.
+    """
+    tips: dict[str, list[int]] = {}
+    for m in matches:
+        tip = m.get("recommended_tip")
+        if tip:
+            tips[f"{m['home_code']}:{m['away_code']}"] = [tip["home"], tip["away"]]
+
+    upcoming = sorted(
+        ((ko, m) for m in matches if (ko := _parse_ko(m["commence_time"])) and ko > now),
+        key=lambda x: x[0],
+    )
+    nxt = []
+    for ko, m in upcoming[:n_next]:
+        tip = m.get("recommended_tip") or {}
+        nxt.append({
+            "home": m["home_team"], "away": m["away_team"],
+            "hc": m["home_code"], "ac": m["away_code"],
+            "kickoff": m["commence_time"],
+            "stage": m.get("stage", ""),
+            "tip": [tip.get("home"), tip.get("away")] if tip else None,
+            "fav": _favorite(m),
+        })
+
+    return {
+        "generated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "site": SITE_URL,
+        "tips": tips,
+        "next": nxt,
+    }
 
 
 def resolve_weighting(events: list[dict]) -> tuple[dict, int]:
@@ -538,6 +606,13 @@ def build(mock: bool = False) -> dict:
     finished = [s for s in (schedule or live_scores) if s.get("is_done")]
     total_results = update_results(finished)
     logger.info("results.json: %d finished matches stored", total_results)
+
+    # ── 6a. Compact widget payload (tips + next fixtures for an iOS widget) ─
+    widget = build_widget_payload(matches_out, datetime.now(timezone.utc))
+    WIDGET_PATH.write_text(
+        json.dumps(widget, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+    logger.info("widget.json: %d tips, %d next", len(widget["tips"]), len(widget["next"]))
 
     # ── 6b. Team artwork (TheSportsDB badges, cached forever) ─────────────
     team_assets: dict[str, dict] = {}

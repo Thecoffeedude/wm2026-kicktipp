@@ -980,7 +980,7 @@ function buildCard(match, index) {
         ${tip ? `
         <div class="tipmeta">
           empfohlener Tipp ·
-          <span class="ev">+${tip.expected_points} Pkt</span>
+          <span class="ev">+${fmtPts(tip.expected_points)} Pkt</span>
           <span class="${srcClass}">${esc(srcLabel)}</span>
           ${modalNote ? `<span style="font-size:11px;color:var(--muted)">${esc(modalNote)}</span>` : ''}
         </div>` : ''}
@@ -1806,7 +1806,7 @@ function renderVerlauf(app) {
         const modal = m.modal_scoreline;
         const srcLabel = tip.based_on === 'blend' ? 'Blend'
           : tip.based_on === 'uanalyse' ? 'uanalyse' : 'Wettbüros';
-        const bits = [`EV +${tip.expected_points} Pkt`, srcLabel];
+        const bits = [`EV +${fmtPts(tip.expected_points)} Pkt`, srcLabel];
         if (modal) bits.push(`Modal ${modal.home}:${modal.away} (${pct(modal.probability)})`);
         predDetail = `<div class="verlauf-pred">
           ${p ? renderMiniBar(p) : ''}
@@ -2099,6 +2099,8 @@ function animateConsensus(el) {
 
 // ── Utilities ─────────────────────────────────────────────────────────────
 function pct(p) { return `${Math.round(p * 100)}%`; }
+// Format a points value with at most 2 decimals, trailing zeros trimmed.
+function fmtPts(x) { return String(Math.round((+x) * 100) / 100); }
 function esc(s) {
   return String(s ?? '')
     .replace(/&/g, '&amp;').replace(/</g, '&lt;')

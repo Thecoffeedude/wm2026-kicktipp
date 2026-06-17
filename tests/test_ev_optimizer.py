@@ -99,13 +99,13 @@ def test_ev_optimal_is_global_max():
     lh, la = 1.5, 1.2
     matrix = poisson_matrix(lh, la)
     tip, _ = ev_optimize(matrix)
-    # ev_optimize rounds to 4 decimal places; use 1e-4 tolerance
+    # ev_optimize rounds expected_points to 2 decimals; allow that tolerance
     optimal_ev = tip["expected_points"]
     n = matrix.shape[0]
     for h in range(n):
         for a in range(n):
             ev = _manual_ev(h, a, matrix)
-            assert ev <= optimal_ev + 1e-4, \
+            assert ev <= optimal_ev + 1e-2, \
                 f"Tip {h}:{a} has EV={ev:.6f} > reported optimal {optimal_ev:.6f}"
 
 
@@ -192,7 +192,7 @@ def test_variance_reports_true_ev():
     matrix = poisson_matrix(1.6, 1.1)
     tip, _ = ev_optimize(matrix, variance_aggression=1.0)
     true_ev = _manual_ev(tip["home"], tip["away"], matrix)
-    assert abs(tip["expected_points"] - true_ev) < 1e-4
+    assert abs(tip["expected_points"] - true_ev) < 1e-2
 
 def test_variance_does_not_increase_ev():
     """A positive variance dial can only trade EV away, never gain it."""

@@ -52,7 +52,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/data.json docs/live.json docs/results.json data/team_artwork.json
+          git add docs/data.json docs/widget.json docs/live.json docs/results.json data/team_artwork.json
           git diff --staged --quiet && echo "Keine Änderungen." || \
             git commit -m "chore: Vorhersagen $(date -u +'%Y-%m-%d %H:%M UTC')"
           git pull --rebase && git push

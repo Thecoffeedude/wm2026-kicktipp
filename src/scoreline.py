@@ -175,7 +175,7 @@ def ev_optimize(matrix: np.ndarray,
         ScoretipResult(
             home=best_tip[0],
             away=best_tip[1],
-            expected_points=round(best_ev, 4),
+            expected_points=round(best_ev, 2),
         ),
         ModalScoreline(
             home=int(modal_idx[0]),
