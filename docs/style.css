@@ -1055,6 +1055,8 @@ header { padding-top: calc(10px + env(safe-area-inset-top)); }
   cursor: pointer;
   transition: transform .15s cubic-bezier(.2,.8,.2,1), opacity .15s;
 }
+/* When collapsing re-anchors a card to the top, rest it below the sticky header. */
+.card, .verlauf-card { scroll-margin-top: calc(80px + env(safe-area-inset-top)); }
 
 /* Press "tap" bounce — fired by JS only when a card opens/closes (not on every
    stray tap). Shared by .card (Heute/Spiele) and .verlauf-card (Verlauf). */

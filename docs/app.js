@@ -1963,6 +1963,19 @@ function pressCard(el) {
   el.addEventListener('animationend', () => el.classList.remove('pressing'), { once: true });
 }
 
+// After collapsing an expandable card, the content below shrinks and the
+// viewport would otherwise land on a different card further down. If this
+// card's top scrolled above the header, bring it back so we land on its start.
+const HEADER_OFFSET = 80;
+function reanchorOnClose(el) {
+  if (!el) return;
+  requestAnimationFrame(() => {
+    if (el.getBoundingClientRect().top < HEADER_OFFSET) {
+      el.scrollIntoView({ block: 'start', behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+    }
+  });
+}
+
 function toggleCard(btn) {
   const card = btn.closest('.card');
   pressCard(card);
@@ -1985,6 +1998,7 @@ function toggleCard(btn) {
       card.querySelectorAll('.xg-fill').forEach(el => el.classList.add('revealed'));
     });
   } else {
+    reanchorOnClose(card);
     card.querySelectorAll('.xg-fill').forEach(el => el.classList.remove('revealed'));
   }
 }
@@ -2020,6 +2034,8 @@ function toggleVerlaufAnalysis(btn) {
   if (open) {
     requestAnimationFrame(() =>
       body.querySelectorAll('.xg-fill').forEach(el => el.classList.add('revealed')));
+  } else {
+    reanchorOnClose(btn.closest('.verlauf-card'));
   }
 }
 window.toggleVerlaufAnalysis = toggleVerlaufAnalysis;
