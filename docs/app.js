@@ -1839,7 +1839,7 @@ function renderVerlauf(app) {
           ${!hasScore && favLabel && favPct !== null ? `<span class="verlauf-fav">${esc(favLabel)} ${favPct}%</span>` : ''}
           ${m.stage ? `<span class="verlauf-stage">${esc(m.stage)}</span>` : ''}
         </div>
-        ${predDetail}
+        ${predDetail ? `<div class="verlauf-detail">${predDetail}</div>` : ''}
       `;
       app.appendChild(card);
     });

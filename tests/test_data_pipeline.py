@@ -6,7 +6,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.build_data import enrich_kickoff_times
+import json
+
+from src.build_data import (carry_forward_finished, enrich_kickoff_times,
+                            reconstruct_history)
 from src.live_update import merge_live, merge_results
 from src.notify_tips import build_message
 
@@ -57,6 +60,100 @@ def test_enrich_keeps_existing_exact_time():
 def test_enrich_no_schedule_entry():
     matches = [_match("MEX", "RSA", "2026-06-11")]
     assert enrich_kickoff_times(matches, []) == 0
+
+
+# ── carry_forward_finished ────────────────────────────────────────────────
+
+NOW = datetime(2026, 6, 17, 12, 0, tzinfo=timezone.utc)
+
+
+def _write_prev(tmp_path, matches):
+    p = tmp_path / "data.json"
+    p.write_text(json.dumps({"matches": matches}), encoding="utf-8")
+    return p
+
+
+def test_carry_forward_appends_past_match(tmp_path):
+    prev = _write_prev(tmp_path, [
+        {"id": "ua_MEX_RSA_2026-06-11", "commence_time": "2026-06-11T19:00:00Z"},
+    ])
+    matches = [{"id": "ua_GER_FRA_2026-06-20", "commence_time": "2026-06-20T19:00:00Z"}]
+    n = carry_forward_finished(matches, prev, NOW)
+    assert n == 1
+    assert any(m["id"] == "ua_MEX_RSA_2026-06-11" for m in matches)
+    assert matches[-1]["carried_forward"] is True
+
+
+def test_carry_forward_skips_future_and_present(tmp_path):
+    prev = _write_prev(tmp_path, [
+        {"id": "ua_GER_FRA_2026-06-20", "commence_time": "2026-06-20T19:00:00Z"},  # future
+        {"id": "ua_MEX_RSA_2026-06-11", "commence_time": "2026-06-11T19:00:00Z"},  # already present
+    ])
+    matches = [{"id": "ua_MEX_RSA_2026-06-11", "commence_time": "2026-06-11T19:00:00Z"}]
+    n = carry_forward_finished(matches, prev, NOW)
+    assert n == 0
+    assert len(matches) == 1
+
+
+def test_carry_forward_no_previous_file(tmp_path):
+    assert carry_forward_finished([], tmp_path / "missing.json", NOW) == 0
+
+
+# ── reconstruct_history ───────────────────────────────────────────────────
+
+def test_reconstruct_blend_match():
+    events = [
+        {"type": "uanalyse", "match_id": "ua_MEX_RSA_2026-06-11",
+         "home_code": "MEX", "away_code": "RSA", "kickoff": "2026-06-11T19:00:00Z",
+         "p": {"home": 0.64, "draw": 0.21, "away": 0.15},
+         "lambda": {"home": 1.9, "away": 0.8}, "captured_at": "2026-06-11T18:36Z"},
+        {"type": "odds", "match_id": "ua_MEX_RSA_2026-06-11",
+         "home_code": "MEX", "away_code": "RSA", "kickoff": "2026-06-11T19:00:00Z",
+         "p": {"home": 0.67, "draw": 0.22, "away": 0.11},
+         "totals_line": 2.5, "totals_over_prob": 0.49, "captured_at": "2026-06-11T18:36Z"},
+        {"type": "result", "match_id": "ua_MEX_RSA_2026-06-11",
+         "home_code": "MEX", "away_code": "RSA",
+         "score_home": 2, "score_away": 0, "outcome": "home"},
+    ]
+    weights = {"market": 0.5, "uanalyse": 0.5}
+    out = reconstruct_history(events, set(), weights, kappa=1.1, rho=-0.1, gamma=0.0)
+    assert len(out) == 1
+    m = out[0]
+    assert m["id"] == "ua_MEX_RSA_2026-06-11"
+    assert m["carried_forward"] is True
+    assert "blend" in m["sources"] and "uanalyse" in m["sources"]
+    assert m["recommended_tip"]["based_on"] == "blend"
+    assert m["expected_goals"]["home"] > 0
+
+
+def test_reconstruct_skips_present_and_unsettled():
+    events = [
+        {"type": "uanalyse", "match_id": "ua_A_B_2026-06-11", "home_code": "A",
+         "away_code": "B", "kickoff": "2026-06-11T19:00:00Z",
+         "p": {"home": 0.5, "draw": 0.3, "away": 0.2},
+         "lambda": {"home": 1.4, "away": 1.0}, "captured_at": "x"},
+        # no result for A_B → unsettled, must be skipped
+        {"type": "result", "match_id": "ua_C_D_2026-06-11", "home_code": "C",
+         "away_code": "D", "score_home": 1, "score_away": 1, "outcome": "draw"},
+        # C_D has a result but no forecast → skipped
+    ]
+    out = reconstruct_history(events, set(), {"market": 0.5, "uanalyse": 0.5},
+                              kappa=1.0, rho=0.0, gamma=0.0)
+    assert out == []
+
+
+def test_reconstruct_respects_present_ids():
+    events = [
+        {"type": "odds", "match_id": "ua_A_B_2026-06-11", "home_code": "A",
+         "away_code": "B", "kickoff": "2026-06-11T19:00:00Z",
+         "p": {"home": 0.5, "draw": 0.3, "away": 0.2},
+         "totals_line": 2.5, "totals_over_prob": 0.5, "captured_at": "x"},
+        {"type": "result", "match_id": "ua_A_B_2026-06-11", "home_code": "A",
+         "away_code": "B", "score_home": 1, "score_away": 0, "outcome": "home"},
+    ]
+    out = reconstruct_history(events, {"ua_A_B_2026-06-11"},
+                              {"market": 0.5, "uanalyse": 0.5}, 1.0, 0.0, 0.0)
+    assert out == []
 
 
 # ── merge_results ─────────────────────────────────────────────────────────

@@ -15,6 +15,7 @@ import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import config
+from src import calibration
 from src import snapshot_store as ss
 from src import weighting
 from src.fetch_live import fetch_live_scores, fetch_schedule
@@ -123,6 +124,139 @@ def enrich_kickoff_times(matches: list[dict], schedule: list[dict]) -> int:
     return enriched
 
 
+def carry_forward_finished(matches: list[dict], output_path: Path,
+                           now: datetime) -> int:
+    """
+    uanalyse drops matches from its feed once they are played, so finished games
+    would vanish from the Verlauf timeline. Re-append previously-built matches
+    whose kickoff is already in the past and that are no longer in the feed,
+    preserving their stored prediction (recommended_tip, sources, modal). The
+    frontend overlays the real score from results.json. Returns the count added.
+    """
+    if not output_path.exists():
+        return 0
+    try:
+        prev = json.loads(output_path.read_text(encoding="utf-8")).get("matches", [])
+    except (json.JSONDecodeError, OSError) as exc:
+        logger.warning("Could not read previous data.json for carry-forward: %s", exc)
+        return 0
+
+    present = {m["id"] for m in matches}
+    carried = 0
+    for pm in prev:
+        if pm.get("id") in present:
+            continue
+        ct = pm.get("commence_time", "")
+        try:
+            if "T" in ct:
+                ko = datetime.fromisoformat(ct.replace("Z", "+00:00"))
+            else:
+                ko = datetime.strptime(ct[:10], "%Y-%m-%d").replace(tzinfo=timezone.utc)
+        except ValueError:
+            continue
+        if ko > now:
+            continue  # only carry forward matches that have already kicked off
+        pm["carried_forward"] = True
+        matches.append(pm)
+        carried += 1
+    return carried
+
+
+def reconstruct_history(events: list[dict], present_ids: set,
+                        weights: dict, kappa: float, rho: float,
+                        gamma: float) -> list[dict]:
+    """
+    Rebuild finished matches that already dropped out of the uanalyse feed BEFORE
+    carry-forward existed, from the append-only snapshot store. Produces the same
+    frontend shape (sources / recommended_tip / modal / expected_goals) using the
+    live blend+calibration path, so the Verlauf history and its ported prediction
+    analysis are restored. Idempotent: skips matches already present.
+    """
+    by: dict[str, dict] = {}
+    for e in events:
+        mid = e.get("match_id")
+        if not mid:
+            continue
+        slot = by.setdefault(mid, {})
+        t = e.get("type")
+        if t == "result":
+            slot["result"] = e
+        elif t in ("uanalyse", "odds"):
+            key = "ua" if t == "uanalyse" else "odds"
+            prev = slot.get(key)
+            if prev is None or e.get("captured_at", "") >= prev.get("captured_at", ""):
+                slot[key] = e
+
+    out: list[dict] = []
+    for mid, slot in by.items():
+        if mid in present_ids or "result" not in slot:
+            continue
+        ua, od, res = slot.get("ua"), slot.get("odds"), slot["result"]
+        if not ua and not od:
+            continue  # no forecast to reconstruct
+
+        hc = res.get("home_code") or (ua or od).get("home_code")
+        ac = res.get("away_code") or (ua or od).get("away_code")
+        commence = (ua or od).get("kickoff") or (mid.split("_")[-1])
+        totals_line = od.get("totals_line") if od else None
+        totals_over = od.get("totals_over_prob") if od else None
+
+        sources: dict = {}
+        if ua:
+            sources["uanalyse"] = {"lambda": ua["lambda"], "p": ua["p"]}
+        if od:
+            sources["odds_consensus"] = {"p": od["p"]}
+
+        if ua and od:
+            lam_hint = ua["lambda"]["home"] + ua["lambda"]["away"]
+            blended, blam = blend_match(
+                ua["p"], od["p"], lam_hint, totals_line, totals_over, weights
+            )
+            bh, ba = calibration.apply_kappa(blam["home"], blam["away"], kappa)
+            tip, modal = ev_optimize(poisson_matrix(bh, ba, rho=rho), variance_aggression=gamma)
+            rec, modal_out = _tip_entry(tip, modal, "blend")
+            lh_out, la_out = bh, ba
+            sources["blend"] = {
+                "p": {k: round(v, 4) for k, v in blended.items()},
+                "lambda": {"home": bh, "away": ba}, "lambda_raw": blam,
+                "weights": {k: round(v, 4) for k, v in weights.items()},
+                "regime": "reconstructed",
+            }
+        elif ua:
+            lam = weighting.calibrate_lambda(
+                ua["p"], None, None,
+                lambda_total_hint=ua["lambda"]["home"] + ua["lambda"]["away"])
+            lh_out, la_out = calibration.apply_kappa(lam["home"], lam["away"], kappa)
+            tip, modal = ev_optimize(poisson_matrix(lh_out, la_out, rho=rho), variance_aggression=gamma)
+            rec, modal_out = _tip_entry(tip, modal, "uanalyse")
+        else:
+            xg = derive_xg(od["p"], totals_line, totals_over)
+            lh_out, la_out = calibration.apply_kappa(xg["home"], xg["away"], kappa)
+            tip, modal = ev_optimize(poisson_matrix(lh_out, la_out, rho=rho), variance_aggression=gamma)
+            rec, modal_out = _tip_entry(tip, modal, "odds_derived")
+
+        out.append({
+            "id": mid,
+            "commence_time": commence,
+            "home_team": canonical_en(hc),
+            "away_team": canonical_en(ac),
+            "home_code": hc,
+            "away_code": ac,
+            "stage": res.get("stage", ""),
+            "sources": sources,
+            "agreement": {"same_tendency": None, "note": "reconstructed from snapshots"},
+            "bookmakers": [],
+            "divergence": {"home": 0.0, "draw": 0.0, "away": 0.0},
+            "totals_line": totals_line,
+            "totals_over_prob": totals_over,
+            "expected_goals": {"home": lh_out, "away": la_out},
+            "recommended_tip": rec,
+            "modal_scoreline": modal_out,
+            "carried_forward": True,
+        })
+    return out
+
+
 def _tip_entry(tip: dict, modal: dict, based_on: str) -> tuple[dict, dict]:
     return (
         {
@@ -139,13 +273,12 @@ def _tip_entry(tip: dict, modal: dict, based_on: str) -> tuple[dict, dict]:
     )
 
 
-def resolve_weighting() -> tuple[dict, int]:
+def resolve_weighting(events: list[dict]) -> tuple[dict, int]:
     """
-    Load the snapshot store and compute rolling forecast skill per source.
+    Compute rolling forecast skill per source from the snapshot store events.
     Returns (rolling_performance, n_settled). The sharp flag + prior/performance
     selection happen at the call site via weighting.effective_weights.
     """
-    events = ss.load_events()
     settled = ss.settled_forecasts(events)
     perf = weighting.rolling_performance(settled)
     n_settled = ss.count_settled_matches(events)
@@ -189,13 +322,22 @@ def build(mock: bool = False) -> dict:
     # ── 2. Load odds from the capture store (no Odds API call here) ────────
     odds_raw, sharp_books, odds_book_keys = load_odds_latest(mock=mock)
 
+    # Snapshot store drives both source weighting and goal-scaling calibration.
+    store_events = ss.load_events()
+
     # Resolve dynamic source weights (prior now; performance once results flow)
-    perf, n_settled = resolve_weighting()
+    perf, n_settled = resolve_weighting(store_events)
     blend_weights, regime = weighting.effective_weights(sharp_books, perf, n_settled)
     logger.info(
         "Weighting: regime=%s sharp=%s weights=%s (settled=%d)",
         regime, sharp_books, blend_weights, n_settled,
     )
+
+    # Resolve scoreline calibration (κ goal-scaling, ρ Dixon-Coles, γ variance)
+    kappa, kappa_meta = calibration.resolve_kappa(store_events)
+    rho = calibration.rho_value()
+    gamma = calibration.variance_value()
+    logger.info("Calibration: κ=%.3f ρ=%.3f γ=%.2f", kappa, rho, gamma)
 
     odds_by_key: dict[tuple, tuple] = {}
     for match in odds_raw:
@@ -221,11 +363,16 @@ def build(mock: bool = False) -> dict:
         la = ua["lambda_away"]
         ua_p = {"home": ua["p_home"], "draw": ua["p_draw"], "away": ua["p_away"]}
 
-        # Default: uanalyse-only tip (used as-is when no odds available)
-        matrix = poisson_matrix(lh, la)
-        tip, modal = ev_optimize(matrix)
+        # Default: uanalyse-only tip (used as-is when no odds available).
+        # Calibrate λ to uanalyse's OWN 1X2 first: the raw uanalyse λ can
+        # contradict its 1X2 (e.g. USA–PAR: 1X2 home-favoured but λ away-heavy),
+        # which would flip the tip to the wrong side. Then apply goal-scaling κ.
+        ua_lam = weighting.calibrate_lambda(ua_p, None, None, lambda_total_hint=lh + la)
+        lh_s, la_s = calibration.apply_kappa(ua_lam["home"], ua_lam["away"], kappa)
+        matrix = poisson_matrix(lh_s, la_s, rho=rho)
+        tip, modal = ev_optimize(matrix, variance_aggression=gamma)
         rec_tip, modal_out = _tip_entry(tip, modal, "uanalyse")
-        lh_out, la_out = lh, la
+        lh_out, la_out = lh_s, la_s
 
         sources: dict = {
             "uanalyse": {
@@ -264,13 +411,15 @@ def build(mock: bool = False) -> dict:
                 blended, blam = blend_match(
                     ua_p, market_p, lh + la, totals_line, totals_over_prob, blend_weights
                 )
-                b_matrix = poisson_matrix(blam["home"], blam["away"])
-                b_tip, b_modal = ev_optimize(b_matrix)
+                bh, ba = calibration.apply_kappa(blam["home"], blam["away"], kappa)
+                b_matrix = poisson_matrix(bh, ba, rho=rho)
+                b_tip, b_modal = ev_optimize(b_matrix, variance_aggression=gamma)
                 rec_tip, modal_out = _tip_entry(b_tip, b_modal, "blend")
-                lh_out, la_out = blam["home"], blam["away"]
+                lh_out, la_out = bh, ba
                 sources["blend"] = {
                     "p": {k: round(v, 4) for k, v in blended.items()},
-                    "lambda": blam,
+                    "lambda": {"home": bh, "away": ba},
+                    "lambda_raw": blam,
                     "weights": {k: round(v, 4) for k, v in blend_weights.items()},
                     "regime": regime,
                 }
@@ -309,9 +458,11 @@ def build(mock: bool = False) -> dict:
             odds_result["totals_line"],
             odds_result["totals_over_prob"],
         )
-        matrix  = poisson_matrix(xg["home"], xg["away"])
-        tip, modal = ev_optimize(matrix)
+        xh, xa = calibration.apply_kappa(xg["home"], xg["away"], kappa)
+        matrix  = poisson_matrix(xh, xa, rho=rho)
+        tip, modal = ev_optimize(matrix, variance_aggression=gamma)
         rec_tip, modal_out = _tip_entry(tip, modal, "odds_derived")
+        xg = {"home": xh, "away": xa}
 
         matches_out.append({
             "id":               match_raw["id"],
@@ -342,6 +493,18 @@ def build(mock: bool = False) -> dict:
     if schedule:
         n = enrich_kickoff_times(matches_out, schedule)
         logger.info("Enriched %d matches with exact kickoff times", n)
+
+    # Keep already-played matches in the timeline even after uanalyse drops them
+    n_cf = carry_forward_finished(matches_out, OUTPUT_PATH, datetime.now(timezone.utc))
+    if n_cf:
+        logger.info("Carried forward %d finished matches no longer in the feed", n_cf)
+
+    # Recover finished matches that dropped out before carry-forward existed
+    present_ids = {m["id"] for m in matches_out}
+    recovered = reconstruct_history(store_events, present_ids, blend_weights, kappa, rho, gamma)
+    if recovered:
+        matches_out.extend(recovered)
+        logger.info("Reconstructed %d finished matches from the snapshot store", len(recovered))
 
     matches_out.sort(key=lambda m: m["commence_time"])
 
@@ -414,6 +577,11 @@ def build(mock: bool = False) -> dict:
                 "weights":             {k: round(v, 4) for k, v in blend_weights.items()},
                 "performance":         perf,
                 "n_settled":           n_settled,
+            },
+            "calibration": {
+                "kappa":               kappa_meta,
+                "dixon_coles_rho":     rho,
+                "variance_aggression": gamma,
             },
         },
         "matches":     matches_out,
