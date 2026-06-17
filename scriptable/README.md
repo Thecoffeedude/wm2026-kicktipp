@@ -5,37 +5,46 @@ PWAs keine nativen Widgets ausliefern, daher läuft das Widget über die
 kostenlose App **Scriptable**, die das öffentliche JSON der GitHub-Pages-Seite
 zieht.
 
+## Zwei feste Varianten (dunkel / hell)
+
+Kein Auto-Umschalten (bei einem gebackenen Hintergrundbild unzuverlässig) —
+stattdessen zwei getrennt speicherbare Skripte. Nimm das, das zu dir passt:
+
+- [`wm2026-widget-dark.js`](wm2026-widget-dark.js) — dunkle Optik
+- [`wm2026-widget-light.js`](wm2026-widget-light.js) — helle Optik
+
 ## Einrichtung
 
 1. **Scriptable** aus dem App Store installieren.
-2. In Scriptable ein neues Skript anlegen und den Inhalt von
-   [`wm2026-widget.js`](wm2026-widget.js) einfügen (Name z. B. „WM 2026").
+2. In Scriptable ein neues Skript anlegen und den Inhalt der gewünschten
+   Variante einfügen (Name z. B. „WM 2026 Dark" / „WM 2026 Light").
 3. Home-Screen lange drücken → **+** → **Scriptable** → Widget-Größe **S** oder
    **M** wählen → platzieren.
-4. Widget antippen und gedrückt halten → **Widget bearbeiten** → Skript
-   „WM 2026" auswählen.
+4. Widget antippen und gedrückt halten → **Widget bearbeiten** → Skript wählen.
 
 Optik: führt den **Liquid-Glass-Look** der App fort — Verlauf, die beiden
-Länderflaggen weich/subtil links und rechts im Hintergrund, Scrim für sicheren
-Schrift-Kontrast, feine Glanzkante oben. **Folgt automatisch dem System-Modus
-(hell/dunkel)** und nutzt große, wuchtige Schriften.
+Länderflaggen subtil im Hintergrund, Scrim für sicheren Schrift-Kontrast, feine
+Glanzkante oben, große/wuchtige Schriften.
 
-> Nach Skript-Updates den Inhalt von `wm2026-widget.js` erneut in Scriptable
-> einfügen (das Widget lädt nur Daten, nicht den Skript-Code, aus dem Netz).
+> Nach Skript-Updates den Inhalt erneut in Scriptable einfügen (das Widget lädt
+> nur Daten, nicht den Skript-Code, aus dem Netz).
 
-Die Flaggen werden mit einer **echten Gauß'schen Unschärfe** (CSS `filter:
-blur` via WebView) weichgezeichnet — volle Auflösung, kein Pixel-Look.
+Die beiden Flaggen liegen je auf einer Hälfte des Hintergrunds (keine
+Überlappung) und werden **global** mit einer **echten Gauß'schen Unschärfe**
+(CSS `filter: blur` via WebView) weichgezeichnet — eine Anwendung über den
+ganzen Hintergrund, daher eine weiche Mittel-Naht statt scharfer Kante.
 
-## Tap öffnet die Home-Screen-App (statt Safari)
+## Tap-Ziel
 
-iOS leitet eine normale `https`-URL **immer** in Safari (neuer Tab) — ein
-direkter Deep-Link in eine installierte PWA ist nicht möglich. Workaround:
+`TAP_URL` (oben im Skript) legt fest, wohin der Tap führt. Standard ist die
+**ARD Mediathek**: die `ardmediathek.de`-URL öffnet per **Universal Link**
+direkt die **ARD-Mediathek-App** (falls installiert), sonst Safari. Alternativen
+liegen als Kommentar bei:
 
-1. **Kurzbefehle**-App öffnen → neuer Kurzbefehl → Aktion **„App öffnen"**.
-2. Als App die zum Home-Screen hinzugefügte **WM-2026-Web-App** wählen.
-3. Kurzbefehl benennen, z. B. „WM 2026 App".
-4. Im Skript oben `SHORTCUT_NAME` auf genau diesen Namen setzen
-   (`const SHORTCUT_NAME = "WM 2026 App";`). Leer lassen = öffnet in Safari.
+- ARD Mediathek Sport: `https://www.ardmediathek.de/sport` (öffnet die App)
+- MagentaTV (App): `magentatv://` (öffnet die App direkt, falls installiert)
+- MagentaTV (Web): `https://web.magentatv.de/`
+- die Prädiktor-App: `SITE`
 
 ## Was es zeigt
 
@@ -43,7 +52,7 @@ direkter Deep-Link in eine installierte PWA ist nicht möglich. Workaround:
 - **Sonst**: nächstes Spiel, Anstoßzeit, empfohlener Tipp, Favorit.
 - **Kopfzeile**: aktueller Punktestand (`Pkt · Spiele`), im Widget selbst aus
   Tipps × Ergebnissen gerechnet — so frisch wie `results.json` (alle 5 Min).
-- **Tap** öffnet die App.
+- **Tap** öffnet das gewählte `TAP_URL`-Ziel (Standard: ARD Mediathek).
 
 ## Datenquellen (öffentlich)
 

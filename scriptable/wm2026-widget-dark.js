@@ -1,30 +1,30 @@
-// WM 2026 Kicktipp-Prädikator — Scriptable Widget (Liquid-Glass, auto Light/Dark)
+// WM 2026 Kicktipp-Prädikator — Scriptable Widget (Liquid-Glass, DUNKEL)
 // ------------------------------------------------------------------
 // 1. App "Scriptable" aus dem App Store laden.
 // 2. Dieses Skript in Scriptable als neues Skript einfügen (Name z. B.
-//    "WM 2026"). 3. Home-Screen → Widget hinzufügen → Scriptable →
-//    Skript "WM 2026" wählen. Größe S oder M.
+//    "WM 2026 Dark"). 3. Home-Screen → Widget hinzufügen → Scriptable →
+//    Skript wählen. Größe S oder M.
+//
+// Feste dunkle Optik (kein Auto-Umschalten). Die helle Variante liegt in
+// wm2026-widget-light.js — beide getrennt speicherbar.
 //
 // Daten kommen live von der GitHub-Pages-Seite der App:
 //   widget.json  – Tipps + nächste Spiele + iso-Map (täglich)
 //   live.json    – laufende Spiele (alle 5 Min)
 //   results.json – Ergebnisse → Punktestand (alle 5 Min)
 // Punktestand wird im Widget selbst aus Tipps × Ergebnissen gerechnet.
-// Optik folgt automatisch dem System-Erscheinungsbild (hell/dunkel).
 // ------------------------------------------------------------------
 
 const SITE = "https://thecoffeedude.github.io/wm2026-kicktipp/";
 
-// Tap-Ziel: Eine https-URL öffnet iOS IMMER in Safari (neuer Tab) — es gibt
-// keinen direkten Deep-Link in eine Home-Screen-PWA. Um stattdessen die
-// installierte PWA-Kopie zu öffnen: in der Kurzbefehle-App einen Kurzbefehl
-// anlegen → Aktion "App öffnen" → deine WM-2026-Web-App wählen → benennen
-// (z. B. "WM 2026 App"). Dann hier den Namen eintragen. Leer = Safari.
-const SHORTCUT_NAME = "";   // z. B. "WM 2026 App"
-
-const TAP_URL = SHORTCUT_NAME
-  ? `shortcuts://run-shortcut?name=${encodeURIComponent(SHORTCUT_NAME)}`
-  : SITE;
+// Wohin der Tap aufs Widget führt. Eine ardmediathek.de-URL öffnet per
+// Universal Link direkt die ARD-Mediathek-App (falls installiert), sonst
+// Safari. Alternativen:
+//   ARD Mediathek Sport: "https://www.ardmediathek.de/sport"
+//   MagentaTV (App):     "magentatv://"   (öffnet die App direkt, falls inst.)
+//   MagentaTV (Web):     "https://web.magentatv.de/"
+//   die Prädiktor-App:   SITE
+const TAP_URL = "https://www.ardmediathek.de/sport";
 
 function rgb(r, g, b, a) {
   const h = x => ("0" + Math.round(Math.max(0, Math.min(1, x)) * 255).toString(16)).slice(-2);
@@ -36,11 +36,14 @@ function mix(c1, c2, t) {
             c1.blue + (c2.blue - c1.blue) * t);
 }
 
-// ── Palette (auto hell/dunkel) ─────────────────────────────────────
-const INK = Color.dynamic(new Color("#0A0C12"), new Color("#FFFFFF"));
-const MUTED = Color.dynamic(new Color("#52607A"), new Color("#B8BECB"));
-const ACCENT = Color.dynamic(new Color("#138A48"), new Color("#46DC80"));
-const LIVE = Color.dynamic(new Color("#D8362C"), new Color("#FF5247"));
+// ── Modus (festes Erscheinungsbild dieses Skripts) ─────────────────
+const DARK = true;   // dunkle Variante
+
+// ── Palette ────────────────────────────────────────────────────────
+const INK = DARK ? new Color("#FFFFFF") : new Color("#0A0C12");
+const MUTED = DARK ? new Color("#B8BECB") : new Color("#52607A");
+const ACCENT = DARK ? new Color("#46DC80") : new Color("#138A48");
+const LIVE = DARK ? new Color("#FF5247") : new Color("#D8362C");
 
 // Hintergrund-Verläufe je Modus
 const BG = {
@@ -122,45 +125,46 @@ async function gaussianBlur(img, radius) {
   } catch (e) { return img; }
 }
 
-// Flagge seitenverhältnis-erhaltend als Seiten-Wash zeichnen (über die Kante).
-function drawFlagWash(ctx, img, W, H, side) {
-  const ar = img.size.width / img.size.height;
-  const fh = H * 1.3;
-  const fw = fh * ar;
-  const y = (H - fh) / 2;
-  const x = side === "left" ? W * 0.52 - fw : W * 0.48;
-  ctx.drawImageInRect(img, new Rect(x, y, fw, fh));
-}
-
-// Glas-Hintergrund: Verlauf + Flaggen-Wash links/rechts + Scrim + Glanz.
-function glassBackground(W, H, homeImg, awayImg, dark) {
+// Basis-Layer (wird danach GLOBAL weichgezeichnet): Verlauf + je eine Flaggen-
+// Hälfte, ohne Überlappung. Die Mittel-Naht verschwimmt durch den globalen Blur.
+function composeBase(W, H, homeImg, awayImg, dark) {
   const pal = dark ? BG.dark : BG.light;
   const ctx = new DrawContext();
   ctx.size = new Size(W, H);
   ctx.opaque = true;
-  ctx.respectScreenScale = true;
-
-  // 1) vertikaler Verlauf
+  ctx.respectScreenScale = false;
   for (let y = 0; y < H; y++) {
     ctx.setFillColor(mix(pal.top, pal.bot, y / (H - 1)));
     ctx.fillRect(new Rect(0, y, W, 1));
   }
-  // 2) Flaggen als weicher Wash, links/rechts über die Kante hinaus
-  if (homeImg) drawFlagWash(ctx, homeImg, W, H, "left");
-  if (awayImg) drawFlagWash(ctx, awayImg, W, H, "right");
-  // 3) Scrim → Flaggen subtil + Schrift-Kontrast (hell: weiß, dunkel: schwarz)
-  ctx.setFillColor(dark ? rgb(0.05, 0.06, 0.09, 0.70) : rgb(0.96, 0.97, 0.99, 0.66));
+  // linke Hälfte Heim, rechte Hälfte Gast — sie berühren sich nur mittig.
+  if (homeImg) ctx.drawImageInRect(homeImg, new Rect(0, 0, W / 2, H));
+  if (awayImg) ctx.drawImageInRect(awayImg, new Rect(W / 2, 0, W / 2, H));
+  return ctx.getImage();
+}
+
+// Scrim/Tunnel/Glanz NACH dem globalen Blur — sichert Schrift-Kontrast und
+// kaschiert die Mittel-Naht zusätzlich. blurredBase ist bereits weichgezeichnet.
+function applyScrim(blurredBase, W, H, dark) {
+  const ctx = new DrawContext();
+  ctx.size = new Size(W, H);
+  ctx.opaque = true;
+  ctx.respectScreenScale = false;
+  ctx.drawImageInRect(blurredBase, new Rect(0, 0, W, H));
+  // Scrim → Flaggen subtil + Kontrast (hell: weiß, dunkel: schwarz)
+  ctx.setFillColor(dark ? rgb(0.05, 0.06, 0.09, 0.60) : rgb(0.96, 0.97, 0.99, 0.58));
   ctx.fillRect(new Rect(0, 0, W, H));
-  // 4) zentraler Tunnel hebt die Textspalte ab
-  ctx.setFillColor(dark ? rgb(0.05, 0.06, 0.09, 0.18) : rgb(1, 1, 1, 0.22));
-  ctx.fillRect(new Rect(W * 0.20, 0, W * 0.60, H));
-  // 5) Glas-Glanz oben + feine Bodenlinie
+  // zentraler Tunnel hebt die Textspalte ab + überdeckt die Naht
+  ctx.setFillColor(dark ? rgb(0.05, 0.06, 0.09, 0.24) : rgb(1, 1, 1, 0.26));
+  ctx.fillRect(new Rect(W * 0.16, 0, W * 0.68, H));
+  // Glas-Glanz oben + feine Bodenlinie
+  const edge = Math.max(2, Math.round(H * 0.012));
   ctx.setFillColor(rgb(1, 1, 1, dark ? 0.10 : 0.30));
-  ctx.fillRect(new Rect(0, 0, W, 2));
+  ctx.fillRect(new Rect(0, 0, W, edge));
   ctx.setFillColor(rgb(1, 1, 1, dark ? 0.05 : 0.12));
   ctx.fillRect(new Rect(0, 0, W, Math.round(H * 0.4)));
   ctx.setFillColor(rgb(0, 0, 0, dark ? 0.18 : 0.08));
-  ctx.fillRect(new Rect(0, H - 2, W, 2));
+  ctx.fillRect(new Rect(0, H - edge, W, edge));
   return ctx.getImage();
 }
 
@@ -177,7 +181,7 @@ async function build() {
     getJSON("widget.json"), getJSON("live.json"), getJSON("results.json"),
   ]);
 
-  const dark = Device.isUsingDarkAppearance();
+  const dark = DARK;
   const fam = config.widgetFamily || "medium";
   const f = FONTS[fam] || FONTS.medium;
 
@@ -202,17 +206,18 @@ async function build() {
     ? { hc: live.home_code, ac: live.away_code }
     : next ? { hc: next.hc, ac: next.ac } : null;
 
-  const dims = fam === "small" ? [170, 170] : fam === "large" ? [360, 360] : [360, 170];
+  // Hintergrund-Canvas (2× für Schärfe). Flaggen je eine Hälfte, dann GLOBAL
+  // gaußsch weichgezeichnet (eine Anwendung über beide Flaggen → weiche Naht).
+  const base = fam === "small" ? [340, 340] : fam === "large" ? [720, 720] : [720, 340];
   let homeImg = null, awayImg = null;
   if (feat) {
     [homeImg, awayImg] = await Promise.all([
       getImage(flagURL(iso, feat.hc)), getImage(flagURL(iso, feat.ac)),
     ]);
-    // Echte Gauß-Unschärfe (Radius ~ 4 % der Flaggenbreite)
-    if (homeImg) homeImg = await gaussianBlur(homeImg, Math.round(homeImg.size.width * 0.04));
-    if (awayImg) awayImg = await gaussianBlur(awayImg, Math.round(awayImg.size.width * 0.04));
   }
-  w.backgroundImage = glassBackground(dims[0], dims[1], homeImg, awayImg, dark);
+  let bg = composeBase(base[0], base[1], homeImg, awayImg, dark);
+  bg = await gaussianBlur(bg, Math.round(base[0] * 0.05));   // globaler Blur
+  w.backgroundImage = applyScrim(bg, base[0], base[1], dark);
 
   // Kopf: Titel + Punktestand
   const head = w.addStack();
