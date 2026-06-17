@@ -11800,5 +11800,429 @@
     ]
    }
   }
+ },
+ "ua_POR_COD_2026-06-17": {
+  "hl_id": 1309692337,
+  "fetched_at": "2026-06-17T19:38:02Z",
+  "stats": {
+   "home": {
+    "xg": 0.64,
+    "possession": 75,
+    "shots_on_target": 1,
+    "corners": 5,
+    "passes": 783,
+    "saves": 1,
+    "fouls": 9,
+    "shots": 7
+   },
+   "away": {
+    "xg": 0.82,
+    "possession": 25,
+    "shots_on_target": 2,
+    "corners": 4,
+    "passes": 251,
+    "saves": 0,
+    "fouls": 10,
+    "shots": 8
+   }
+  },
+  "events": [
+   {
+    "time": "6",
+    "type": "Goal",
+    "player": "J. Neves",
+    "assist": "P. Neto",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "13",
+    "type": "Yellow Card",
+    "player": "B. Silva",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "32",
+    "type": "Yellow Card",
+    "player": "C. Mbemba",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "45+5",
+    "type": "Goal",
+    "player": "Y. Wissa",
+    "assist": "A. Masuaku",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "B. Silva",
+    "assist": null,
+    "sub_in": "F. Conceicao",
+    "side": "home"
+   },
+   {
+    "time": "57",
+    "type": "Substitution",
+    "player": "N. Mukau",
+    "assist": null,
+    "sub_in": "N. Sadiki",
+    "side": "away"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "P. Neto",
+    "assist": null,
+    "sub_in": "R. Leao",
+    "side": "home"
+   },
+   {
+    "time": "72",
+    "type": "Substitution",
+    "player": "N. Mendes",
+    "assist": null,
+    "sub_in": "N. Semedo",
+    "side": "home"
+   },
+   {
+    "time": "74",
+    "type": "Substitution",
+    "player": "E. Kayembe",
+    "assist": null,
+    "sub_in": "C. Pickel",
+    "side": "away"
+   },
+   {
+    "time": "74",
+    "type": "Substitution",
+    "player": "A. Masuaku",
+    "assist": null,
+    "sub_in": "J. Kayembe",
+    "side": "away"
+   },
+   {
+    "time": "83",
+    "type": "Substitution",
+    "player": "Vitinha",
+    "assist": null,
+    "sub_in": "G. Ramos",
+    "side": "home"
+   },
+   {
+    "time": "85",
+    "type": "Substitution",
+    "player": "C. Bakambu",
+    "assist": null,
+    "sub_in": "S. Banza",
+    "side": "away"
+   },
+   {
+    "time": "85",
+    "type": "Substitution",
+    "player": "A. Wan-Bissaka",
+    "assist": null,
+    "sub_in": "G. Kalulu",
+    "side": "away"
+   },
+   {
+    "time": "88",
+    "type": "Yellow Card",
+    "player": "N. Semedo",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "90+2",
+    "type": "Yellow Card",
+    "player": "T. Araujo",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Diogo Costa",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Nuno Mendes",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Renato Veiga",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tomás Araújo",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "João Cancelo",
+      "number": 20,
+      "pos": "Defender"
+     },
+     {
+      "name": "Vitinha",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "João Neves",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Pedro Neto",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Bruno Fernandes",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Bernardo Silva",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Cristiano Ronaldo",
+      "number": 7,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "José Sá",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Rui Silva",
+      "number": 22,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Nélson Semedo",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Rúben Dias",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Diogo Dalot",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gonçalo Inácio",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Matheus Nunes",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Samú Costa",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Rúben Neves",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Francisco Trincão",
+      "number": 16,
+      "pos": "Forward"
+     },
+     {
+      "name": "Gonçalo Guedes",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Gonçalo Ramos",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "João Félix",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Rafael Leão",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Francisco Conceição",
+      "number": 26,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "5-3-2",
+    "xi": [
+     {
+      "name": "Lionel Mpasi Nzau",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Arthur Masuaku",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Steve Kapuadi",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Axel Tuanzebe",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Chancel Mbemba",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Aaron Wan-Bissaka",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Edo Kayembe",
+      "number": 25,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ngal'ayel Mukau",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Samuel Moutoussamy",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Yoane Wissa",
+      "number": 20,
+      "pos": "Forward"
+     },
+     {
+      "name": "Cédric Bakambu",
+      "number": 17,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Timothy Fayulu",
+      "number": 16,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Matthieu Epolo",
+      "number": 21,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Dylan Batubinsika",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Joris Kayembe",
+      "number": 12,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gedeon Kalulu",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nathanaël Mbuku",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Théo Bongonda",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Noah Sadiki",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Aaron Tshibola",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Charles Pickel",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Brian Cipenga",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Gaël Kakuta",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Meschak Elia",
+      "number": 13,
+      "pos": "Forward"
+     },
+     {
+      "name": "Fiston Mayele",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Simon Banza",
+      "number": 23,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
