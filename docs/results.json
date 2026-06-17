@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-17T10:17:29Z",
+  "updated_at": "2026-06-17T10:57:41Z",
   "results": [
     {
       "fd_id": 537327,
@@ -319,8 +319,7 @@
       "halftime_home": 1,
       "halftime_away": 1,
       "utc_date": "2026-06-16T01:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537391,
@@ -340,10 +339,11 @@
       "halftime_home": 0,
       "halftime_away": 0,
       "utc_date": "2026-06-16T19:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
+      "fd_id": 537392,
+      "fd_home_id": 8062,
       "home_code": "IRQ",
       "away_code": "NOR",
       "home_team": "Iraq",
@@ -356,11 +356,10 @@
       "minute": null,
       "score_home": 1,
       "score_away": 4,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 1,
+      "halftime_away": 2,
       "utc_date": "2026-06-16T22:00:00Z",
-      "stage": "Group Stage - 1",
-      "score_source": "highlightly"
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537397,
@@ -380,8 +379,7 @@
       "halftime_home": 1,
       "halftime_away": 0,
       "utc_date": "2026-06-17T01:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537398,
@@ -401,8 +399,7 @@
       "halftime_home": 1,
       "halftime_away": 0,
       "utc_date": "2026-06-17T04:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     }
   ]
 }
