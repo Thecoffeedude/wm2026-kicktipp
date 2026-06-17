@@ -1974,14 +1974,11 @@ function reanchorOnClose(el) {
   if (!el) return;
   // Card's distance from the top of the document — stable across its own
   // collapse (content above it doesn't change), so the target stays valid.
-  const target = Math.max(0, window.scrollY + el.getBoundingClientRect().top - HEADER_OFFSET);
-  if (window.scrollY <= target + 1) return;     // card top already visible below header
-  const apply = () => window.scrollTo(0, target);
-  apply();                                       // immediately
-  // Re-assert once the collapse settles, in case the height change moved us.
-  const drawer = el.querySelector('.drawer');
-  if (drawer) drawer.addEventListener('transitionend', apply, { once: true });
-  setTimeout(apply, 450);                        // fallback when there is no transition
+  const target = window.scrollY + el.getBoundingClientRect().top - HEADER_OFFSET;
+  // Only when scrolled past the card's top (header above the bar). Never move a
+  // card that's already visible. One instant jump — no smooth, no re-asserts
+  // (those raced the collapse animation and could fling the page).
+  if (window.scrollY > target + 1) window.scrollTo(0, Math.max(0, target));
 }
 
 function toggleCard(btn) {
@@ -1998,14 +1995,19 @@ function toggleCard(btn) {
     }
   }
 
-  const open = card.classList.toggle('open');
-  btn.setAttribute('aria-expanded', String(open));
-  // Animate xG fills on open (scaleX)
-  if (open) {
+  if (!card.classList.contains('open')) {
+    // Open on the NEXT frame so the browser first paints the collapsed drawer
+    // WITH its freshly built content. Toggling open in the same frame as the
+    // heavy first build skips the 0fr→1fr transition (content just pops in).
+    btn.setAttribute('aria-expanded', 'true');
     requestAnimationFrame(() => {
-      card.querySelectorAll('.xg-fill').forEach(el => el.classList.add('revealed'));
+      card.classList.add('open');
+      requestAnimationFrame(() =>
+        card.querySelectorAll('.xg-fill').forEach(el => el.classList.add('revealed')));
     });
   } else {
+    card.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
     reanchorOnClose(card);
     card.querySelectorAll('.xg-fill').forEach(el => el.classList.remove('revealed'));
   }
