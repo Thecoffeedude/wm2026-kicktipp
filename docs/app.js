@@ -1965,15 +1965,15 @@ function pressCard(el) {
 
 // After collapsing an expandable card, the content below shrinks and the
 // viewport would otherwise land on a different card further down. If this
-// card's top scrolled above the header, bring it back so we land on its start.
+// card's top scrolled above the header, snap it back to just under the header.
+// Done INSTANTLY (computed from the card's stable header position) so it can't
+// fight the 0.4s collapse animation — a smooth scroll mid-collapse overshoots
+// as the page height changes and leaves the card off-screen with a gap.
 const HEADER_OFFSET = 80;
 function reanchorOnClose(el) {
   if (!el) return;
-  requestAnimationFrame(() => {
-    if (el.getBoundingClientRect().top < HEADER_OFFSET) {
-      el.scrollIntoView({ block: 'start', behavior: prefersReducedMotion ? 'auto' : 'smooth' });
-    }
-  });
+  const top = el.getBoundingClientRect().top;
+  if (top < HEADER_OFFSET) window.scrollBy(0, top - HEADER_OFFSET);
 }
 
 function toggleCard(btn) {
