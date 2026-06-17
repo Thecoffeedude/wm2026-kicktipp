@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-17T20:26:31Z",
+  "updated_at": "2026-06-17T20:27:35Z",
   "live": [
     {
       "fd_id": 537397,
@@ -61,7 +61,8 @@
       "halftime_home": 1,
       "halftime_away": 1,
       "utc_date": "2026-06-17T17:00:00Z",
-      "stage": "Group Stage"
+      "stage": "Group Stage",
+      "goals": []
     },
     {
       "fd_id": 537409,
