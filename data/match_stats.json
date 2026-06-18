@@ -12651,5 +12651,840 @@
     ]
    }
   }
+ },
+ "ua_GHA_PAN_2026-06-17": {
+  "hl_id": 1267467419,
+  "fetched_at": "2026-06-18T04:17:13Z",
+  "stats": {
+   "home": {
+    "xg": 1.31,
+    "possession": 38,
+    "shots_on_target": 2,
+    "corners": 2,
+    "passes": 353,
+    "saves": 4,
+    "fouls": 9,
+    "shots": 8
+   },
+   "away": {
+    "xg": 0.75,
+    "possession": 62,
+    "shots_on_target": 4,
+    "corners": 2,
+    "passes": 582,
+    "saves": 2,
+    "fouls": 11,
+    "shots": 11
+   }
+  },
+  "events": [
+   {
+    "time": "16",
+    "type": "Yellow Card",
+    "player": "C. Yirenkyi",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "L. Ati Zigi",
+    "assist": null,
+    "sub_in": "B. Asare",
+    "side": "home"
+   },
+   {
+    "time": "58",
+    "type": "Substitution",
+    "player": "E. Nuamah",
+    "assist": null,
+    "sub_in": "I. Fatawu",
+    "side": "home"
+   },
+   {
+    "time": "58",
+    "type": "Substitution",
+    "player": "K. Sulemana",
+    "assist": null,
+    "sub_in": "B. Thomas-Asante",
+    "side": "home"
+   },
+   {
+    "time": "63",
+    "type": "Substitution",
+    "player": "C. Waterman",
+    "assist": null,
+    "sub_in": "J. Fajardo",
+    "side": "away"
+   },
+   {
+    "time": "63",
+    "type": "Substitution",
+    "player": "C. Martinez",
+    "assist": null,
+    "sub_in": "A. Londono",
+    "side": "away"
+   },
+   {
+    "time": "73",
+    "type": "Yellow Card",
+    "player": "C. Blackman",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "74",
+    "type": "Substitution",
+    "player": "J. Rodriguez",
+    "assist": null,
+    "sub_in": "I. Diaz",
+    "side": "away"
+   },
+   {
+    "time": "78",
+    "type": "Substitution",
+    "player": "E. Owusu",
+    "assist": null,
+    "sub_in": "K. Sibo",
+    "side": "home"
+   },
+   {
+    "time": "87",
+    "type": "Substitution",
+    "player": "J. Ayew",
+    "assist": null,
+    "sub_in": "P. Adu",
+    "side": "home"
+   },
+   {
+    "time": "90",
+    "type": "Substitution",
+    "player": "C. Blackman",
+    "assist": null,
+    "sub_in": "A. Godoy",
+    "side": "away"
+   },
+   {
+    "time": "90+5",
+    "type": "Goal",
+    "player": "C. Yirenkyi",
+    "assist": "B. Thomas-Asante",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "90+10",
+    "type": "Yellow Card",
+    "player": "C. Harvey",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-4-1-1",
+    "xi": [
+     {
+      "name": "Lawrence Ati Zigi",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Gideon Mensah",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jerome Opoku",
+      "number": 18,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jonas Adjei Adjetey",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marvin Senaya",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ernest Nuamah",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Caleb Yirenkyi",
+      "number": 3,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Elisha Owusu",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Antoine Semenyo",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kamaldeen Sulemana",
+      "number": 22,
+      "pos": "Forward"
+     },
+     {
+      "name": "Jordan Ayew",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Joseph Anang",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Benjamin Asare",
+      "number": 16,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Alidu Seidu",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Abdul Mumin",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Rahman Baba",
+      "number": 17,
+      "pos": "Defender"
+     },
+     {
+      "name": "Kojo Peprah Oppong",
+      "number": 21,
+      "pos": "Defender"
+     },
+     {
+      "name": "Derrick Luckassen",
+      "number": 23,
+      "pos": "Defender"
+     },
+     {
+      "name": "Kwasi Sibo",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Abdul Fatawu Issahaku",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Christopher Baah",
+      "number": 13,
+      "pos": "Forward"
+     },
+     {
+      "name": "Iñaki Williams",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Augustine Boakye",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Brandon Thomas-Asante",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "Prince Kwabena Adu",
+      "number": 25,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-4-2",
+    "xi": [
+     {
+      "name": "Orlando Mosquera",
+      "number": 22,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Andrés Andrade",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "José Córdoba",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jiovany Ramos",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "César Blackman",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "José Luis Rodríguez",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Cristian Martínez",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Carlos Harvey",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Amir Murillo",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Cecilio Waterman",
+      "number": 18,
+      "pos": "Forward"
+     },
+     {
+      "name": "Yoel Bárcenas",
+      "number": 11,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "César Samudio",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Luis Mejía",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Fidel Escobar",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Edgardo Fariña",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Éric Davis",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Roderick Miller",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jorge Gutiérrez",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Adalberto Carrasquilla",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ismael Díaz",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "Alberto Quintero",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Aníbal Godoy",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "César Yanis",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "Azarias Londoño",
+      "number": 24,
+      "pos": "Forward"
+     },
+     {
+      "name": "Tomás Rodríguez",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "José Fajardo",
+      "number": 17,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
+ },
+ "ua_UZB_COL_2026-06-18": {
+  "hl_id": 1267468270,
+  "fetched_at": "2026-06-18T04:17:14Z",
+  "stats": {
+   "home": {
+    "xg": 1.16,
+    "possession": 38,
+    "shots_on_target": 2,
+    "corners": 3,
+    "passes": 318,
+    "saves": 1,
+    "fouls": 14,
+    "shots": 8
+   },
+   "away": {
+    "xg": 1.62,
+    "possession": 62,
+    "shots_on_target": 4,
+    "corners": 4,
+    "passes": 521,
+    "saves": 1,
+    "fouls": 11,
+    "shots": 15
+   }
+  },
+  "events": [
+   {
+    "time": "7",
+    "type": "Yellow Card",
+    "player": "J. Mojica",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "34",
+    "type": "Yellow Card",
+    "player": "A. Khusanov",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "40",
+    "type": "Goal",
+    "player": "D. Munoz",
+    "assist": "L. Diaz",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "O. Urunov",
+    "assist": null,
+    "sub_in": "D. Khamdamov",
+    "side": "home"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "S. Nasrullaev",
+    "assist": null,
+    "sub_in": "F. Sayfiev",
+    "side": "home"
+   },
+   {
+    "time": "60",
+    "type": "Goal",
+    "player": "A. Fayzullaev",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "65",
+    "type": "Goal",
+    "player": "L. Diaz",
+    "assist": "G. Puerta",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "72",
+    "type": "Substitution",
+    "player": "J. Rodriguez",
+    "assist": null,
+    "sub_in": "J. Campaz",
+    "side": "away"
+   },
+   {
+    "time": "77",
+    "type": "Substitution",
+    "player": "A. Fayzullaev",
+    "assist": null,
+    "sub_in": "A. Amonov",
+    "side": "home"
+   },
+   {
+    "time": "77",
+    "type": "Substitution",
+    "player": "R. Ashurmatov",
+    "assist": null,
+    "sub_in": "J. Urozov",
+    "side": "home"
+   },
+   {
+    "time": "80",
+    "type": "Substitution",
+    "player": "L. Suarez",
+    "assist": null,
+    "sub_in": "C. Hernandez",
+    "side": "away"
+   },
+   {
+    "time": "80",
+    "type": "Substitution",
+    "player": "G. Puerta",
+    "assist": null,
+    "sub_in": "R. Rios",
+    "side": "away"
+   },
+   {
+    "time": "90+3",
+    "type": "Substitution",
+    "player": "L. Diaz",
+    "assist": null,
+    "sub_in": "A. Gomez",
+    "side": "away"
+   },
+   {
+    "time": "90+3",
+    "type": "Substitution",
+    "player": "J. Arias",
+    "assist": null,
+    "sub_in": "K. Castano",
+    "side": "away"
+   },
+   {
+    "time": "90+3",
+    "type": "Substitution",
+    "player": "E. Shomurodov",
+    "assist": null,
+    "sub_in": "I. Sergeev",
+    "side": "home"
+   },
+   {
+    "time": "90+9",
+    "type": "Goal",
+    "player": "J. Campaz",
+    "assist": "C. Hernandez",
+    "sub_in": null,
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "3-4-2-1",
+    "xi": [
+     {
+      "name": "Utkir Yusupov",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Abdulla Abdullaev",
+      "number": 18,
+      "pos": "Defender"
+     },
+     {
+      "name": "Abdukodir Khusanov",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Rustam Ashurmatov",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Sherzod Nasrullaev",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Otabek Shukurov",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Akmal Mozgovoy",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Bekhruz Karimov",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Oston Urunov",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Abbosbek Fayzullaev",
+      "number": 22,
+      "pos": "Forward"
+     },
+     {
+      "name": "Eldor Shomurodov",
+      "number": 14,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Abduvokhid Nematov",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Botirali Ergashev",
+      "number": 16,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Khozhiakbar Alizhonov",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Farrukh Sayfiev",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Umarbek Eshmuradov",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Avazbek Ulmasaliyev",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jakhongir Urozov",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jamshid Iskandarov",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Odiljon Khamrobekov",
+      "number": 9,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ruslanbek Jiyanov",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Dostonbek Khamdamov",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Azizjon Ganiev",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Sherzod Esanov",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Azizbek Amanov",
+      "number": 20,
+      "pos": "Forward"
+     },
+     {
+      "name": "Igor Sergeev",
+      "number": 21,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Camilo Vargas",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Johan Mojica",
+      "number": 17,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jhon Lucumí",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Davinson Sánchez",
+      "number": 23,
+      "pos": "Defender"
+     },
+     {
+      "name": "Daniel Muñoz",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gustavo Puerta",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jefferson Lerma",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Luis Díaz",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "James Rodríguez",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jhon Arias",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Luis Javier Suárez",
+      "number": 25,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Álvaro Montero",
+      "number": 24,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "David Ospina",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Deiver Machado",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Santiago Arias",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Willer Ditta",
+      "number": 18,
+      "pos": "Defender"
+     },
+     {
+      "name": "Yerry Mina",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Kevin Castaño",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Richard Ríos",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jorge Carrascal",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Juan Portilla",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Juan Fernando Quintero",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jaminton Campaz",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Andrés Gómez",
+      "number": 26,
+      "pos": "Forward"
+     },
+     {
+      "name": "Jhon Córdoba",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Cucho Hernández",
+      "number": 19,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
