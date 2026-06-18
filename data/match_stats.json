@@ -13879,5 +13879,456 @@
     ]
    }
   }
+ },
+ "ua_SUI_BIH_2026-06-18": {
+  "hl_id": 1309694039,
+  "fetched_at": "2026-06-18T22:20:38Z",
+  "stats": {
+   "home": {
+    "xg": 2.01,
+    "possession": 62,
+    "shots_on_target": 7,
+    "corners": 7,
+    "passes": 587,
+    "saves": 2,
+    "fouls": 7,
+    "shots": 13
+   },
+   "away": {
+    "xg": 0.24,
+    "possession": 38,
+    "shots_on_target": 3,
+    "corners": 3,
+    "passes": 353,
+    "saves": 3,
+    "fouls": 18,
+    "shots": 5
+   }
+  },
+  "events": [
+   {
+    "time": "59",
+    "type": "Yellow Card",
+    "player": "A. Dedic",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "61",
+    "type": "Yellow Card",
+    "player": "E. Dzeko",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "63",
+    "type": "Substitution",
+    "player": "B. Tahirovic",
+    "assist": null,
+    "sub_in": "I. Basic",
+    "side": "away"
+   },
+   {
+    "time": "64",
+    "type": "Substitution",
+    "player": "E. Dzeko",
+    "assist": null,
+    "sub_in": "E. Bajraktarevic",
+    "side": "away"
+   },
+   {
+    "time": "65",
+    "type": "Yellow Card",
+    "player": "N. Elvedi",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "D. Ndoye",
+    "assist": null,
+    "sub_in": "J. Manzambi",
+    "side": "home"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "F. Rieder",
+    "assist": null,
+    "sub_in": "R. Vargas",
+    "side": "home"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "M. Aebischer",
+    "assist": null,
+    "sub_in": "D. Sow",
+    "side": "home"
+   },
+   {
+    "time": "74",
+    "type": "Goal",
+    "player": "J. Manzambi",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "80",
+    "type": "Red Card",
+    "player": "T. Muharemovic",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "84",
+    "type": "Goal",
+    "player": "R. Vargas",
+    "assist": "B. Embolo",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "86",
+    "type": "Substitution",
+    "player": "E. Demirovic",
+    "assist": null,
+    "sub_in": "J. Lukic",
+    "side": "away"
+   },
+   {
+    "time": "86",
+    "type": "Substitution",
+    "player": "I. Sunjic",
+    "assist": null,
+    "sub_in": "A. Hadziahmetovic",
+    "side": "away"
+   },
+   {
+    "time": "86",
+    "type": "Substitution",
+    "player": "S. Widmer",
+    "assist": null,
+    "sub_in": "L. Jaquez",
+    "side": "home"
+   },
+   {
+    "time": "89",
+    "type": "Substitution",
+    "player": "B. Embolo",
+    "assist": null,
+    "sub_in": "C. Itten",
+    "side": "home"
+   },
+   {
+    "time": "90",
+    "type": "Goal",
+    "player": "J. Manzambi",
+    "assist": "R. Vargas",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "90+1",
+    "type": "Substitution",
+    "player": "K. Alajbegovic",
+    "assist": null,
+    "sub_in": "E. Mahmic",
+    "side": "away"
+   },
+   {
+    "time": "90+3",
+    "type": "Goal",
+    "player": "E. Mahmic",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "90+6",
+    "type": "Penalty",
+    "player": "G. Xhaka",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-3-3",
+    "xi": [
+     {
+      "name": "Gregor Kobel",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Ricardo Rodríguez",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Manuel Akanji",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nico Elvedi",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Silvan Widmer",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Remo Freuler",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Granit Xhaka",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Michel Aebischer",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Dan Ndoye",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Breel Embolo",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Fabian Rieder",
+      "number": 22,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Yvon Mvogo",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Marvin Keller",
+      "number": 21,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Eray Cömert",
+      "number": 18,
+      "pos": "Defender"
+     },
+     {
+      "name": "Aurèle Amenda",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Luca Jaquez",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Denis Zakaria",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Johan Manzambi",
+      "number": 9,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ardon Jashari",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Djibril Sow",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Christian Fassnacht",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Rubén Vargas",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Noah Okafor",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Zeki Amdouni",
+      "number": 23,
+      "pos": "Forward"
+     },
+     {
+      "name": "Cédric Itten",
+      "number": 26,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-4-2",
+    "xi": [
+     {
+      "name": "Nikola Vasilj",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Sead Kolašinac",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nikola Katić",
+      "number": 18,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tarik Muharemović",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Amar Dedić",
+      "number": 7,
+      "pos": "Defender"
+     },
+     {
+      "name": "Kerim Alajbegović",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ivan Šunjić",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Benjamin Tahirović",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Amar Memić",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Edin Džeko",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ermedin Demirović",
+      "number": 10,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Martin Zlomislić",
+      "number": 22,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Mladen Jurkas",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Arjan Malić",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Dennis Hadžikadunić",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nihad Mujakić",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Stjepan Radeljić",
+      "number": 21,
+      "pos": "Defender"
+     },
+     {
+      "name": "Amir Hadžiahmetović",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Armin Gigović",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Dženis Burnić",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ermin Mahmic",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ivan Bašić",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Esmir Bajraktarević",
+      "number": 20,
+      "pos": "Forward"
+     },
+     {
+      "name": "Haris Tabaković",
+      "number": 23,
+      "pos": "Forward"
+     },
+     {
+      "name": "Jovo Lukić",
+      "number": 25,
+      "pos": "Forward"
+     },
+     {
+      "name": "Samed Baždar",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
