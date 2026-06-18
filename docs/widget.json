@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T19:36:36Z",
+  "generated_at": "2026-06-18T10:21:41Z",
   "site": "https://thecoffeedude.github.io/wm2026-kicktipp/",
   "iso": {
     "ALG": "dz",
@@ -154,15 +154,15 @@
     ],
     "SUI:BIH": [
       2,
-      1
+      0
     ],
     "CAN:QAT": [
       2,
       0
     ],
     "MEX:KOR": [
-      1,
-      0
+      2,
+      1
     ],
     "USA:AUS": [
       2,
@@ -213,7 +213,7 @@
       1
     ],
     "ARG:AUT": [
-      1,
+      2,
       0
     ],
     "FRA:IRQ": [
@@ -245,35 +245,35 @@
       0
     ],
     "BIH:QAT": [
-      1,
-      0
+      2,
+      1
     ],
     "SUI:CAN": [
       2,
       1
     ],
+    "MAR:HAI": [
+      2,
+      0
+    ],
     "SCO:BRA": [
       0,
       2
     ],
-    "MAR:HAI": [
-      2,
-      0
+    "CZE:MEX": [
+      1,
+      2
     ],
     "RSA:KOR": [
       1,
       2
     ],
-    "CZE:MEX": [
-      0,
-      1
+    "CUW:CIV": [
+      1,
+      3
     ],
     "ECU:GER": [
       1,
-      2
-    ],
-    "CUW:CIV": [
-      0,
       2
     ],
     "JPN:SWE": [
@@ -285,36 +285,36 @@
       2
     ],
     "PAR:AUS": [
-      1,
-      0
+      2,
+      1
     ],
     "TUR:USA": [
       1,
       2
     ],
+    "SEN:IRQ": [
+      2,
+      1
+    ],
     "NOR:FRA": [
       1,
       2
-    ],
-    "SEN:IRQ": [
-      1,
-      0
     ],
     "CPV:KSA": [
       1,
       2
     ],
     "URU:ESP": [
-      0,
-      1
-    ],
-    "EGY:IRN": [
       1,
-      0
+      2
     ],
     "NZL:BEL": [
       0,
       2
+    ],
+    "EGY:IRN": [
+      1,
+      0
     ],
     "CRO:GHA": [
       2,
@@ -324,17 +324,17 @@
       0,
       2
     ],
+    "COD:UZB": [
+      1,
+      2
+    ],
     "COL:POR": [
       1,
       2
     ],
-    "COD:UZB": [
-      0,
-      1
-    ],
     "ALG:AUT": [
       1,
-      1
+      2
     ],
     "JOR:ARG": [
       0,
@@ -343,51 +343,51 @@
   },
   "next": [
     {
-      "home": "England",
-      "away": "Croatia",
-      "hc": "ENG",
-      "ac": "CRO",
-      "kickoff": "2026-06-17T20:00:00Z",
+      "home": "Czechia",
+      "away": "South Africa",
+      "hc": "CZE",
+      "ac": "RSA",
+      "kickoff": "2026-06-18T16:00:00Z",
       "stage": "Group stage",
       "tip": [
         2,
         1
       ],
       "fav": {
-        "label": "England",
-        "pct": 54
+        "label": "Czechia",
+        "pct": 46
       }
     },
     {
-      "home": "Ghana",
-      "away": "Panama",
-      "hc": "GHA",
-      "ac": "PAN",
-      "kickoff": "2026-06-17T23:00:00Z",
+      "home": "Switzerland",
+      "away": "Bosnia-Herzegovina",
+      "hc": "SUI",
+      "ac": "BIH",
+      "kickoff": "2026-06-18T19:00:00Z",
       "stage": "Group stage",
       "tip": [
-        1,
-        2
+        2,
+        0
       ],
       "fav": {
-        "label": "Panama",
-        "pct": 38
-      }
-    },
-    {
-      "home": "Uzbekistan",
-      "away": "Colombia",
-      "hc": "UZB",
-      "ac": "COL",
-      "kickoff": "2026-06-18T02:00:00Z",
-      "stage": "Group stage",
-      "tip": [
-        0,
-        2
-      ],
-      "fav": {
-        "label": "Colombia",
+        "label": "Switzerland",
         "pct": 64
+      }
+    },
+    {
+      "home": "Canada",
+      "away": "Qatar",
+      "hc": "CAN",
+      "ac": "QAT",
+      "kickoff": "2026-06-18T22:00:00Z",
+      "stage": "Group stage",
+      "tip": [
+        2,
+        0
+      ],
+      "fav": {
+        "label": "Canada",
+        "pct": 71
       }
     }
   ]
