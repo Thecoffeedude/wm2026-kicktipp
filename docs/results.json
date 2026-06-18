@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-18T22:20:38Z",
+  "updated_at": "2026-06-18T22:30:23Z",
   "results": [
     {
       "fd_id": 537327,
@@ -503,10 +503,12 @@
       "goals": []
     },
     {
+      "fd_id": 537335,
+      "fd_home_id": 788,
       "home_code": "SUI",
       "away_code": "BIH",
       "home_team": "Switzerland",
-      "away_team": "Bosnia & Herzegovina",
+      "away_team": "Bosnia-Herzegovina",
       "status": "FINISHED",
       "status_de": "Beendet",
       "is_live": false,
@@ -515,11 +517,11 @@
       "minute": null,
       "score_home": 4,
       "score_away": 1,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 0,
       "utc_date": "2026-06-18T19:00:00Z",
-      "stage": "Group Stage - 2",
-      "score_source": "highlightly"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
