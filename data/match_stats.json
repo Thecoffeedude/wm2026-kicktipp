@@ -13486,5 +13486,398 @@
     ]
    }
   }
+ },
+ "ua_CZE_RSA_2026-06-18": {
+  "hl_id": 1309693188,
+  "fetched_at": "2026-06-18T19:40:39Z",
+  "stats": {
+   "home": {
+    "xg": 1.02,
+    "possession": 38,
+    "shots_on_target": 3,
+    "corners": 5,
+    "passes": 339,
+    "saves": 3,
+    "fouls": 12,
+    "shots": 14
+   },
+   "away": {
+    "xg": 1.35,
+    "possession": 62,
+    "shots_on_target": 4,
+    "corners": 5,
+    "passes": 563,
+    "saves": 2,
+    "fouls": 10,
+    "shots": 17
+   }
+  },
+  "events": [
+   {
+    "time": "6",
+    "type": "Goal",
+    "player": "M. Sadilek",
+    "assist": "A. Sojka",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "33",
+    "type": "Yellow Card",
+    "player": "T. Mokoena",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "40",
+    "type": "Yellow Card",
+    "player": "T. Mbatha",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "J. Adams",
+    "assist": null,
+    "sub_in": "R. Mofokeng",
+    "side": "away"
+   },
+   {
+    "time": "55",
+    "type": "Substitution",
+    "player": "V. Darida",
+    "assist": null,
+    "sub_in": "P. Sulc",
+    "side": "home"
+   },
+   {
+    "time": "55",
+    "type": "Substitution",
+    "player": "A. Sojka",
+    "assist": null,
+    "sub_in": "J. Zeleny",
+    "side": "home"
+   },
+   {
+    "time": "66",
+    "type": "Substitution",
+    "player": "I. Rayners",
+    "assist": null,
+    "sub_in": "E. Makgopa",
+    "side": "away"
+   },
+   {
+    "time": "67",
+    "type": "Substitution",
+    "player": "A. Hlozek",
+    "assist": null,
+    "sub_in": "L. Provod",
+    "side": "home"
+   },
+   {
+    "time": "67",
+    "type": "Substitution",
+    "player": "M. Sadilek",
+    "assist": null,
+    "sub_in": "T. Soucek",
+    "side": "home"
+   },
+   {
+    "time": "75",
+    "type": "Yellow Card",
+    "player": "L. Krejci",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "78",
+    "type": "Substitution",
+    "player": "L. Cerv",
+    "assist": null,
+    "sub_in": "D. Zima",
+    "side": "home"
+   },
+   {
+    "time": "83",
+    "type": "Penalty",
+    "player": "T. Mokoena",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "84",
+    "type": "Substitution",
+    "player": "T. Maseko",
+    "assist": null,
+    "sub_in": "K. Sebelebele",
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "3-4-2-1",
+    "xi": [
+     {
+      "name": "Matěj Kovář",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Ladislav Krejčí",
+      "number": 7,
+      "pos": "Defender"
+     },
+     {
+      "name": "Robin Hranáč",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tomáš Holeš",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Alexandr Sojka",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Lukáš Červ",
+      "number": 12,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Michal Sadílek",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Vladimír Coufal",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Vladimír Darida",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Adam Hložek",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Patrik Schick",
+      "number": 10,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Jindřich Staněk",
+      "number": 16,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Lukáš Horníček",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "David Zima",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Štěpán Chaloupek",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jaroslav Zelený",
+      "number": 20,
+      "pos": "Defender"
+     },
+     {
+      "name": "David Douděra",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Tomáš Souček",
+      "number": 22,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Hugo Sochurek",
+      "number": 25,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Denis Višinský",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Lukáš Provod",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jan Kuchta",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Mojmír Chytil",
+      "number": 13,
+      "pos": "Forward"
+     },
+     {
+      "name": "Pavel Šulc",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Tomáš Chorý",
+      "number": 19,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Ronwen Williams",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Aubrey Modiba",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mbekezeli Mbokazi",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ime Okon",
+      "number": 21,
+      "pos": "Defender"
+     },
+     {
+      "name": "Khuliso Mudau",
+      "number": 20,
+      "pos": "Defender"
+     },
+     {
+      "name": "Teboho Mokoena",
+      "number": 4,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Thalente Mbatha",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Thapelo Maseko",
+      "number": 12,
+      "pos": "Forward"
+     },
+     {
+      "name": "Jayden Adams",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Oswin Appollis",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Iqraam Rayners",
+      "number": 15,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Sipho Chaine",
+      "number": 16,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Ricardo Goss",
+      "number": 22,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Tholo Thabang Matuludi",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Khulumani Ndamane",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Samukelo Kabini",
+      "number": 18,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nkosinathi Sibisi",
+      "number": 19,
+      "pos": "Defender"
+     },
+     {
+      "name": "Olwethu Makhanya",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Bradley Cross",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tshepang Moremi",
+      "number": 8,
+      "pos": "Forward"
+     },
+     {
+      "name": "Relebohile Mofokeng",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "Kamogelo Sebelebele",
+      "number": 25,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Lyle Foster",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Evidence Makgopa",
+      "number": 17,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
