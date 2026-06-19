@@ -15192,5 +15192,456 @@
     ]
    }
   }
+ },
+ "ua_USA_AUS_2026-06-19": {
+  "hl_id": 1267472525,
+  "fetched_at": "2026-06-19T22:10:27Z",
+  "stats": {
+   "home": {
+    "xg": 1.3,
+    "possession": 62,
+    "shots_on_target": 2,
+    "corners": 7,
+    "passes": 524,
+    "saves": 2,
+    "fouls": 12,
+    "shots": 10
+   },
+   "away": {
+    "xg": 0.44,
+    "possession": 38,
+    "shots_on_target": 2,
+    "corners": 4,
+    "passes": 308,
+    "saves": 1,
+    "fouls": 16,
+    "shots": 5
+   }
+  },
+  "events": [
+   {
+    "time": "11",
+    "type": "Own Goal",
+    "player": "C. Burgess",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "16",
+    "type": "Yellow Card",
+    "player": "J. Bos",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "32",
+    "type": "Yellow Card",
+    "player": "A. Circati",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "43",
+    "type": "Goal",
+    "player": "A. Freeman",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "C. Burgess",
+    "assist": null,
+    "sub_in": "J. Geria",
+    "side": "away"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "N. Velupillay",
+    "assist": null,
+    "sub_in": "C. Metcalfe",
+    "side": "away"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "M. Toure",
+    "assist": null,
+    "sub_in": "N. Irankunda",
+    "side": "away"
+   },
+   {
+    "time": "56",
+    "type": "Yellow Card",
+    "player": "A. Robinson",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "61",
+    "type": "Substitution",
+    "player": "M. Leckie",
+    "assist": null,
+    "sub_in": "C. Volpato",
+    "side": "away"
+   },
+   {
+    "time": "74",
+    "type": "Substitution",
+    "player": "R. Pepi",
+    "assist": null,
+    "sub_in": "S. Berhalter",
+    "side": "home"
+   },
+   {
+    "time": "78",
+    "type": "Substitution",
+    "player": "P. Okon-Engstler",
+    "assist": null,
+    "sub_in": "J. Irvine",
+    "side": "away"
+   },
+   {
+    "time": "80",
+    "type": "Substitution",
+    "player": "S. Dest",
+    "assist": null,
+    "sub_in": "J. Scally",
+    "side": "home"
+   },
+   {
+    "time": "80",
+    "type": "Substitution",
+    "player": "A. Robinson",
+    "assist": null,
+    "sub_in": "A. Trusty",
+    "side": "home"
+   },
+   {
+    "time": "88",
+    "type": "Yellow Card",
+    "player": "H. Souttar",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "89",
+    "type": "Yellow Card",
+    "player": "F. Balogun",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "89",
+    "type": "Yellow Card",
+    "player": "J. Italiano",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "90+3",
+    "type": "Yellow Card",
+    "player": "C. Richards",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "90+6",
+    "type": "Substitution",
+    "player": "F. Balogun",
+    "assist": null,
+    "sub_in": "H. Wright",
+    "side": "home"
+   },
+   {
+    "time": "90+6",
+    "type": "Substitution",
+    "player": "W. McKennie",
+    "assist": null,
+    "sub_in": "G. Reyna",
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Matthew Freese",
+      "number": 24,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Antonee Robinson",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tim Ream",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Chris Richards",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Alexander Freeman",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tyler Adams",
+      "number": 4,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Malik Tillman",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ricardo Pepi",
+      "number": 9,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Weston McKennie",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Sergiño Dest",
+      "number": 2,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Folarin Balogun",
+      "number": 20,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Matt Turner",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Chris Brady",
+      "number": 25,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Auston Trusty",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Miles Robinson",
+      "number": 12,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mark McKenzie",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Joe Scally",
+      "number": 23,
+      "pos": "Defender"
+     },
+     {
+      "name": "Maximilian Arfsten",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Giovanni Reyna",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Sebastian Berhalter",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Cristian Roldán",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Brenden Aaronson",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Tim Weah",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "Alex Zendejas",
+      "number": 26,
+      "pos": "Forward"
+     },
+     {
+      "name": "Haji Wright",
+      "number": 19,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "5-4-1",
+    "xi": [
+     {
+      "name": "Patrick Beach",
+      "number": 18,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Jordan Bos",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Cameron Burgess",
+      "number": 21,
+      "pos": "Defender"
+     },
+     {
+      "name": "Harry Souttar",
+      "number": 19,
+      "pos": "Defender"
+     },
+     {
+      "name": "Alessandro Circati",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jacob Italiano",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nishan Velupillay",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Paul Okon-Engstler",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Aiden O'Neill",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mathew Leckie",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mohamed Touré",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Mathew Ryan",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Paul Izzo",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Miloš Degenek",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jason Geria",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Aziz Behich",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "Lucas Herrington",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Kai Trewin",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Connor Metcalfe",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Cameron Devlin",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jackson Irvine",
+      "number": 22,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ajdin Hrustić",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Awer Mabil",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Cristian Volpato",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nestory Irankunda",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Tete Yengi",
+      "number": 26,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
