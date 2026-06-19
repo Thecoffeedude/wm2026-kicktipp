@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-19T17:17:25Z",
+  "updated_at": "2026-06-19T21:11:03Z",
   "results": [
     {
       "fd_id": 537327,
@@ -559,6 +559,27 @@
       "halftime_home": 0,
       "halftime_away": 0,
       "utc_date": "2026-06-19T01:00:00Z",
+      "stage": "Group Stage",
+      "goals": []
+    },
+    {
+      "fd_id": 537348,
+      "fd_home_id": 771,
+      "home_code": "USA",
+      "away_code": "AUS",
+      "home_team": "United States",
+      "away_team": "Australia",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 2,
+      "score_away": 0,
+      "halftime_home": 2,
+      "halftime_away": 0,
+      "utc_date": "2026-06-19T19:00:00Z",
       "stage": "Group Stage",
       "goals": []
     }
