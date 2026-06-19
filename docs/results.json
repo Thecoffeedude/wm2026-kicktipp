@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-19T05:18:36Z",
+  "updated_at": "2026-06-19T10:27:27Z",
   "results": [
     {
       "fd_id": 537327,
@@ -442,6 +442,8 @@
       "stage": "Group Stage"
     },
     {
+      "fd_id": 537410,
+      "fd_home_id": 763,
       "home_code": "GHA",
       "away_code": "PAN",
       "home_team": "Ghana",
@@ -454,11 +456,10 @@
       "minute": null,
       "score_home": 1,
       "score_away": 0,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 0,
       "utc_date": "2026-06-17T23:00:00Z",
-      "stage": "Group Stage - 1",
-      "score_source": "highlightly"
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537404,
@@ -478,8 +479,7 @@
       "halftime_home": 0,
       "halftime_away": 1,
       "utc_date": "2026-06-18T02:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537329,
@@ -499,8 +499,7 @@
       "halftime_home": 1,
       "halftime_away": 0,
       "utc_date": "2026-06-18T16:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537335,
@@ -520,10 +519,11 @@
       "halftime_home": 0,
       "halftime_away": 0,
       "utc_date": "2026-06-18T19:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
+      "fd_id": 537336,
+      "fd_home_id": 828,
       "home_code": "CAN",
       "away_code": "QAT",
       "home_team": "Canada",
@@ -536,11 +536,10 @@
       "minute": null,
       "score_home": 6,
       "score_away": 0,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 3,
+      "halftime_away": 0,
       "utc_date": "2026-06-18T22:00:00Z",
-      "stage": "Group Stage - 2",
-      "score_source": "highlightly"
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537330,
@@ -560,8 +559,7 @@
       "halftime_home": 0,
       "halftime_away": 0,
       "utc_date": "2026-06-19T01:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     }
   ]
 }

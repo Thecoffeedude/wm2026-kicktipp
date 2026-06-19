@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T10:21:41Z",
+  "generated_at": "2026-06-19T10:27:27Z",
   "site": "https://thecoffeedude.github.io/wm2026-kicktipp/",
   "iso": {
     "ALG": "dz",
@@ -205,12 +205,12 @@
       1
     ],
     "URU:CPV": [
-      1,
-      0
+      2,
+      1
     ],
     "NZL:EGY": [
-      0,
-      1
+      1,
+      2
     ],
     "ARG:AUT": [
       2,
@@ -244,37 +244,37 @@
       2,
       0
     ],
+    "SUI:CAN": [
+      2,
+      1
+    ],
     "BIH:QAT": [
       2,
       1
     ],
-    "SUI:CAN": [
-      2,
-      1
+    "SCO:BRA": [
+      0,
+      2
     ],
     "MAR:HAI": [
       2,
       0
     ],
-    "SCO:BRA": [
-      0,
+    "RSA:KOR": [
+      1,
       2
     ],
     "CZE:MEX": [
       1,
       2
     ],
-    "RSA:KOR": [
+    "ECU:GER": [
       1,
       2
     ],
     "CUW:CIV": [
       1,
       3
-    ],
-    "ECU:GER": [
-      1,
-      2
     ],
     "JPN:SWE": [
       2,
@@ -292,13 +292,13 @@
       1,
       2
     ],
-    "SEN:IRQ": [
-      2,
-      1
-    ],
     "NOR:FRA": [
       1,
       2
+    ],
+    "SEN:IRQ": [
+      2,
+      1
     ],
     "CPV:KSA": [
       1,
@@ -308,13 +308,13 @@
       1,
       2
     ],
-    "NZL:BEL": [
-      0,
-      2
-    ],
     "EGY:IRN": [
       1,
       0
+    ],
+    "NZL:BEL": [
+      0,
+      2
     ],
     "CRO:GHA": [
       2,
@@ -324,70 +324,70 @@
       0,
       2
     ],
-    "COD:UZB": [
-      1,
-      2
-    ],
     "COL:POR": [
       1,
       2
+    ],
+    "COD:UZB": [
+      2,
+      1
     ],
     "ALG:AUT": [
       1,
       2
     ],
     "JOR:ARG": [
-      0,
-      2
+      1,
+      3
     ]
   },
   "next": [
     {
-      "home": "Czechia",
-      "away": "South Africa",
-      "hc": "CZE",
-      "ac": "RSA",
-      "kickoff": "2026-06-18T16:00:00Z",
+      "home": "United States",
+      "away": "Australia",
+      "hc": "USA",
+      "ac": "AUS",
+      "kickoff": "2026-06-19T19:00:00Z",
       "stage": "Group stage",
       "tip": [
         2,
         1
       ],
       "fav": {
-        "label": "Czechia",
-        "pct": 46
+        "label": "United States",
+        "pct": 55
       }
     },
     {
-      "home": "Switzerland",
-      "away": "Bosnia-Herzegovina",
-      "hc": "SUI",
-      "ac": "BIH",
-      "kickoff": "2026-06-18T19:00:00Z",
+      "home": "Scotland",
+      "away": "Morocco",
+      "hc": "SCO",
+      "ac": "MAR",
+      "kickoff": "2026-06-19T22:00:00Z",
+      "stage": "Group stage",
+      "tip": [
+        1,
+        2
+      ],
+      "fav": {
+        "label": "Morocco",
+        "pct": 56
+      }
+    },
+    {
+      "home": "Brazil",
+      "away": "Haiti",
+      "hc": "BRA",
+      "ac": "HAI",
+      "kickoff": "2026-06-20T00:30:00Z",
       "stage": "Group stage",
       "tip": [
         2,
         0
       ],
       "fav": {
-        "label": "Switzerland",
-        "pct": 64
-      }
-    },
-    {
-      "home": "Canada",
-      "away": "Qatar",
-      "hc": "CAN",
-      "ac": "QAT",
-      "kickoff": "2026-06-18T22:00:00Z",
-      "stage": "Group stage",
-      "tip": [
-        2,
-        0
-      ],
-      "fav": {
-        "label": "Canada",
-        "pct": 71
+        "label": "Brazil",
+        "pct": 81
       }
     }
   ]
