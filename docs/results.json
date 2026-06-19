@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-18T22:30:23Z",
+  "updated_at": "2026-06-19T00:11:47Z",
   "results": [
     {
       "fd_id": 537327,
@@ -522,6 +522,25 @@
       "utc_date": "2026-06-18T19:00:00Z",
       "stage": "Group Stage",
       "goals": []
+    },
+    {
+      "home_code": "CAN",
+      "away_code": "QAT",
+      "home_team": "Canada",
+      "away_team": "Qatar",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 6,
+      "score_away": 0,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-06-18T22:00:00Z",
+      "stage": "Group Stage - 2",
+      "score_source": "highlightly"
     }
   ]
 }
