@@ -14789,5 +14789,408 @@
     ]
    }
   }
+ },
+ "ua_MEX_KOR_2026-06-19": {
+  "hl_id": 1267469972,
+  "fetched_at": "2026-06-19T04:45:22Z",
+  "stats": {
+   "home": {
+    "xg": 0.48,
+    "possession": 42,
+    "shots_on_target": 4,
+    "corners": 0,
+    "passes": 428,
+    "saves": 2,
+    "fouls": 9,
+    "shots": 8
+   },
+   "away": {
+    "xg": 0.69,
+    "possession": 58,
+    "shots_on_target": 2,
+    "corners": 2,
+    "passes": 580,
+    "saves": 3,
+    "fouls": 7,
+    "shots": 9
+   }
+  },
+  "events": [
+   {
+    "time": "4",
+    "type": "Yellow Card",
+    "player": "Lee Kang-In",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "50",
+    "type": "Goal",
+    "player": "L. Romo",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "57",
+    "type": "Substitution",
+    "player": "Lee Jae-Sung",
+    "assist": null,
+    "sub_in": "Hwang Hee-Chan",
+    "side": "away"
+   },
+   {
+    "time": "57",
+    "type": "Substitution",
+    "player": "Son Heung-Min",
+    "assist": null,
+    "sub_in": "Oh Hyeon-Gyu",
+    "side": "away"
+   },
+   {
+    "time": "58",
+    "type": "Yellow Card",
+    "player": "Paik Seung-Ho",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "B. Gutierrez",
+    "assist": null,
+    "sub_in": "O. Pineda",
+    "side": "home"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "L. Romo",
+    "assist": null,
+    "sub_in": "O. Vargas",
+    "side": "home"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "Seol Young-Woo",
+    "assist": null,
+    "sub_in": "Yang Hyun-Jun",
+    "side": "away"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "Kim Moon-Hwan",
+    "assist": null,
+    "sub_in": "Eom Ji-Sung",
+    "side": "away"
+   },
+   {
+    "time": "77",
+    "type": "Substitution",
+    "player": "Paik Seung-Ho",
+    "assist": null,
+    "sub_in": "Cho Gue-Sung",
+    "side": "away"
+   },
+   {
+    "time": "80",
+    "type": "Substitution",
+    "player": "R. Jimenez",
+    "assist": null,
+    "sub_in": "S. Gimenez",
+    "side": "home"
+   },
+   {
+    "time": "80",
+    "type": "Substitution",
+    "player": "R. Alvarado",
+    "assist": null,
+    "sub_in": "I. Reyes",
+    "side": "home"
+   },
+   {
+    "time": "84",
+    "type": "Substitution",
+    "player": "J. Quinones",
+    "assist": null,
+    "sub_in": "C. S. Huerta Valera",
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-3-3",
+    "xi": [
+     {
+      "name": "Raúl Rangel",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Jesús Gallardo",
+      "number": 23,
+      "pos": "Defender"
+     },
+     {
+      "name": "Johan Vásquez",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Edson Álvarez",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jorge Sánchez",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Brian Gutiérrez",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Erik Lira",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Luis Romo",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Julián Quiñones",
+      "number": 16,
+      "pos": "Forward"
+     },
+     {
+      "name": "Raúl Jiménez",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Roberto Alvarado",
+      "number": 25,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Carlos Acevedo",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Guillermo Ochoa",
+      "number": 13,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Israel Reyes",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mateo Chávez",
+      "number": 20,
+      "pos": "Defender"
+     },
+     {
+      "name": "Álvaro Fidalgo",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Orbelín Pineda",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Obed Vargas",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Gilberto Mora",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Luis Chávez",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Alexis Vega",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "César Huerta",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Santiago Giménez",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Armando González",
+      "number": 14,
+      "pos": "Forward"
+     },
+     {
+      "name": "Guillermo Martínez",
+      "number": 22,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "3-4-2-1",
+    "xi": [
+     {
+      "name": "Kim Seung-gyu",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Gi-Hyuk Lee",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Kim Min-jae",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Han-Beom Lee",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Kim Moon-hwan",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Seung Ho Paik",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Hwang In-beom",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Young-woo Seol",
+      "number": 22,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jae-sung Lee",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "Kang-in Lee",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Son Heung-min",
+      "number": 7,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Song Bum-keun",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Jo Hyeonwoo",
+      "number": 21,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Kim Tae-hyeon",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Wi-je Cho",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Lee Tae-seok",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jin-seob Park",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jens Castrop",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jun-Ho Bae",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jin-gyu Kim",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ji-sung Eom",
+      "number": 25,
+      "pos": "Forward"
+     },
+     {
+      "name": "Dong-gyeong Lee",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Hwang Hee-chan",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Yang Hyun-Jun",
+      "number": 20,
+      "pos": "Forward"
+     },
+     {
+      "name": "Gue-sung Cho",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Hyeon-gyu Oh",
+      "number": 18,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
