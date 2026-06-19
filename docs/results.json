@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-19T04:45:22Z",
+  "updated_at": "2026-06-19T05:18:36Z",
   "results": [
     {
       "fd_id": 537327,
@@ -543,6 +543,8 @@
       "score_source": "highlightly"
     },
     {
+      "fd_id": 537330,
+      "fd_home_id": 769,
       "home_code": "MEX",
       "away_code": "KOR",
       "home_team": "Mexico",
@@ -555,11 +557,11 @@
       "minute": null,
       "score_home": 1,
       "score_away": 0,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 0,
       "utc_date": "2026-06-19T01:00:00Z",
-      "stage": "Group Stage - 2",
-      "score_source": "highlightly"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
