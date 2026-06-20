@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-20T08:04:10Z",
+  "updated_at": "2026-06-20T08:57:37Z",
   "results": [
     {
       "fd_id": 537327,
@@ -559,8 +559,7 @@
       "halftime_home": 0,
       "halftime_away": 0,
       "utc_date": "2026-06-19T01:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537348,
@@ -580,10 +579,11 @@
       "halftime_home": 2,
       "halftime_away": 0,
       "utc_date": "2026-06-19T19:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
+      "fd_id": 537342,
+      "fd_home_id": 8873,
       "home_code": "SCO",
       "away_code": "MAR",
       "home_team": "Scotland",
@@ -596,11 +596,10 @@
       "minute": null,
       "score_home": 0,
       "score_away": 1,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 1,
       "utc_date": "2026-06-19T22:00:00Z",
-      "stage": "Group Stage - 2",
-      "score_source": "highlightly"
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537341,
@@ -620,8 +619,7 @@
       "halftime_home": 3,
       "halftime_away": 0,
       "utc_date": "2026-06-20T00:30:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537347,
@@ -641,8 +639,7 @@
       "halftime_home": 0,
       "halftime_away": 1,
       "utc_date": "2026-06-20T03:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     }
   ]
 }
