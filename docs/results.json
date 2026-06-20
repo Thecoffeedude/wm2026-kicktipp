@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-20T04:26:39Z",
+  "updated_at": "2026-06-20T07:55:56Z",
   "results": [
     {
       "fd_id": 537327,
@@ -622,6 +622,25 @@
       "utc_date": "2026-06-20T00:30:00Z",
       "stage": "Group Stage",
       "goals": []
+    },
+    {
+      "home_code": "TUR",
+      "away_code": "PAR",
+      "home_team": "Turkey",
+      "away_team": "Paraguay",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 0,
+      "score_away": 1,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-06-20T03:00:00Z",
+      "stage": "Group Stage - 2",
+      "score_source": "highlightly"
     }
   ]
 }
