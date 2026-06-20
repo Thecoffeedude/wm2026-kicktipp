@@ -16902,5 +16902,456 @@
     ]
    }
   }
+ },
+ "ua_NED_SWE_2026-06-20": {
+  "hl_id": 1309695741,
+  "fetched_at": "2026-06-20T19:49:22Z",
+  "stats": {
+   "home": {
+    "xg": 2.47,
+    "possession": 51,
+    "shots_on_target": 7,
+    "corners": 2,
+    "passes": 450,
+    "saves": 7,
+    "fouls": 9,
+    "shots": 10
+   },
+   "away": {
+    "xg": 0.99,
+    "possession": 49,
+    "shots_on_target": 8,
+    "corners": 5,
+    "passes": 424,
+    "saves": 2,
+    "fouls": 12,
+    "shots": 16
+   }
+  },
+  "events": [
+   {
+    "time": "5",
+    "type": "Goal",
+    "player": "B. Brobbey",
+    "assist": "C. Gakpo",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "17",
+    "type": "Goal",
+    "player": "B. Brobbey",
+    "assist": "D. Dumfries",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "D. Malen",
+    "assist": null,
+    "sub_in": "C. Summerville",
+    "side": "home"
+   },
+   {
+    "time": "47",
+    "type": "Goal",
+    "player": "C. Gakpo",
+    "assist": "D. Dumfries",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "53",
+    "type": "Yellow Card",
+    "player": "G. Gudmundsson",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "54",
+    "type": "Goal",
+    "player": "C. Gakpo",
+    "assist": "C. Summerville",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "55",
+    "type": "Substitution",
+    "player": "A. Bernhardsson",
+    "assist": null,
+    "sub_in": "A. Elanga",
+    "side": "away"
+   },
+   {
+    "time": "56",
+    "type": "Substitution",
+    "player": "J. Karlstrom",
+    "assist": null,
+    "sub_in": "B. Zeneli",
+    "side": "away"
+   },
+   {
+    "time": "56",
+    "type": "Substitution",
+    "player": "B. Nygren",
+    "assist": null,
+    "sub_in": "L. Bergvall",
+    "side": "away"
+   },
+   {
+    "time": "59",
+    "type": "Goal",
+    "player": "A. Elanga",
+    "assist": "A. Isak",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "59",
+    "type": "Substitution",
+    "player": "F. de Jong",
+    "assist": null,
+    "sub_in": "T. Koopmeiners",
+    "side": "home"
+   },
+   {
+    "time": "59",
+    "type": "Substitution",
+    "player": "T. Reijnders",
+    "assist": null,
+    "sub_in": "G. Til",
+    "side": "home"
+   },
+   {
+    "time": "72",
+    "type": "Substitution",
+    "player": "B. Brobbey",
+    "assist": null,
+    "sub_in": "M. Depay",
+    "side": "home"
+   },
+   {
+    "time": "75",
+    "type": "Yellow Card",
+    "player": "Y. Ayari",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "79",
+    "type": "Substitution",
+    "player": "Y. Ayari",
+    "assist": null,
+    "sub_in": "T. Ali",
+    "side": "away"
+   },
+   {
+    "time": "80",
+    "type": "Yellow Card",
+    "player": "L. Bergvall",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "89",
+    "type": "Goal",
+    "player": "C. Summerville",
+    "assist": "M. Depay",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "90",
+    "type": "Substitution",
+    "player": "C. Gakpo",
+    "assist": null,
+    "sub_in": "N. Lang",
+    "side": "home"
+   },
+   {
+    "time": "90+3",
+    "type": "Substitution",
+    "player": "G. Gudmundsson",
+    "assist": null,
+    "sub_in": "E. Stroud",
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-3-3",
+    "xi": [
+     {
+      "name": "Bart Verbruggen",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Micky van de Ven",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jan Paul van Hecke",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Virgil van Dijk",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Denzel Dumfries",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tijjani Reijnders",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Frenkie de Jong",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ryan Gravenberch",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Cody Gakpo",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Brian Brobbey",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Donyell Malen",
+      "number": 18,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Mark Flekken",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Robin Roefs",
+      "number": 13,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Jorrel Hato",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nathan Aké",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Lutsharel Geertruida",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mats Wieffer",
+      "number": 12,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Guus Til",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Justin Kluivert",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Marten de Roon",
+      "number": 3,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Teun Koopmeiners",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Crysencio Summerville",
+      "number": 24,
+      "pos": "Forward"
+     },
+     {
+      "name": "Memphis Depay",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "Noa Lang",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Wout Weghorst",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "3-1-4-2",
+    "xi": [
+     {
+      "name": "Kristoffer Nordfeldt",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Victor Lindelöf",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Isak Hien",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gustaf Lagerbielke",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jesper Karlström",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Gabriel Gudmundsson",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Yasin Ayari",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Benjamin Nygren",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Alexander Bernhardsson",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Alexander Isak",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Viktor Gyökeres",
+      "number": 17,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Jacob Widell Zetterström",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Viktor Johansson",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Carl Starfelt",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Hjalmar Ekdal",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Eric Smith",
+      "number": 20,
+      "pos": "Defender"
+     },
+     {
+      "name": "Besfort Zeneli",
+      "number": 22,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Daniel Svensson",
+      "number": 8,
+      "pos": "Defender"
+     },
+     {
+      "name": "Elliot Stroud",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Herman Johansson",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ken Sema",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Lucas Bergvall",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mattias Svanberg",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Taha Abdi Ali",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Anthony Elanga",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Gustaf Nilsson",
+      "number": 25,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
