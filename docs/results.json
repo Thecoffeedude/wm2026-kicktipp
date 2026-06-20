@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-20T03:59:32Z",
+  "updated_at": "2026-06-20T04:26:39Z",
   "results": [
     {
       "fd_id": 537327,
@@ -603,6 +603,8 @@
       "score_source": "highlightly"
     },
     {
+      "fd_id": 537341,
+      "fd_home_id": 764,
       "home_code": "BRA",
       "away_code": "HAI",
       "home_team": "Brazil",
@@ -615,11 +617,11 @@
       "minute": null,
       "score_home": 3,
       "score_away": 0,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 3,
+      "halftime_away": 0,
       "utc_date": "2026-06-20T00:30:00Z",
-      "stage": "Group Stage - 2",
-      "score_source": "highlightly"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
