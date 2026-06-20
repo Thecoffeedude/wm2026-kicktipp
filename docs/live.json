@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-20T16:15:24Z",
+  "updated_at": "2026-06-20T17:54:15Z",
   "live": [
     {
       "fd_id": 537341,
@@ -50,18 +50,19 @@
       "away_code": "SWE",
       "home_team": "Netherlands",
       "away_team": "Sweden",
-      "status": "TIMED",
-      "status_de": "Bald",
-      "is_live": false,
+      "status": "IN_PLAY",
+      "status_de": "Live",
+      "is_live": true,
       "is_halftime": false,
       "is_done": false,
       "minute": null,
-      "score_home": null,
-      "score_away": null,
+      "score_home": 2,
+      "score_away": 0,
       "halftime_home": null,
       "halftime_away": null,
       "utc_date": "2026-06-20T17:00:00Z",
-      "stage": "Group Stage"
+      "stage": "Group Stage",
+      "goals": []
     },
     {
       "fd_id": 537353,
