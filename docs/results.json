@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-20T18:12:15Z",
+  "updated_at": "2026-06-20T19:21:53Z",
   "results": [
     {
       "fd_id": 537327,
@@ -640,6 +640,27 @@
       "halftime_home": 0,
       "halftime_away": 1,
       "utc_date": "2026-06-20T03:00:00Z",
+      "stage": "Group Stage",
+      "goals": []
+    },
+    {
+      "fd_id": 537359,
+      "fd_home_id": 8601,
+      "home_code": "NED",
+      "away_code": "SWE",
+      "home_team": "Netherlands",
+      "away_team": "Sweden",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 5,
+      "score_away": 1,
+      "halftime_home": 2,
+      "halftime_away": 0,
+      "utc_date": "2026-06-20T17:00:00Z",
       "stage": "Group Stage",
       "goals": []
     }
