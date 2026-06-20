@@ -17353,5 +17353,413 @@
     ]
    }
   }
+ },
+ "ua_GER_CIV_2026-06-20": {
+  "hl_id": 1267474227,
+  "fetched_at": "2026-06-20T22:45:06Z",
+  "stats": {
+   "home": {
+    "xg": 1.83,
+    "possession": 59,
+    "shots_on_target": 7,
+    "corners": 8,
+    "passes": 622,
+    "saves": 1,
+    "fouls": 5,
+    "shots": 16
+   },
+   "away": {
+    "xg": 1.23,
+    "possession": 41,
+    "shots_on_target": 2,
+    "corners": 3,
+    "passes": 431,
+    "saves": 5,
+    "fouls": 7,
+    "shots": 9
+   }
+  },
+  "events": [
+   {
+    "time": "30",
+    "type": "Goal",
+    "player": "F. Kessie",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "N. Schlotterbeck",
+    "assist": null,
+    "sub_in": "A. Rudiger",
+    "side": "home"
+   },
+   {
+    "time": "60",
+    "type": "Substitution",
+    "player": "L. Sane",
+    "assist": null,
+    "sub_in": "J. Leweling",
+    "side": "home"
+   },
+   {
+    "time": "60",
+    "type": "Substitution",
+    "player": "J. Musiala",
+    "assist": null,
+    "sub_in": "D. Undav",
+    "side": "home"
+   },
+   {
+    "time": "60",
+    "type": "Substitution",
+    "player": "A. Pavlovic",
+    "assist": null,
+    "sub_in": "N. Amiri",
+    "side": "home"
+   },
+   {
+    "time": "68",
+    "type": "Goal",
+    "player": "D. Undav",
+    "assist": "N. Amiri",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "75",
+    "type": "Substitution",
+    "player": "A. Bonny",
+    "assist": null,
+    "sub_in": "E. Guessand",
+    "side": "away"
+   },
+   {
+    "time": "75",
+    "type": "Substitution",
+    "player": "I. Sangare",
+    "assist": null,
+    "sub_in": "S. Fofana",
+    "side": "away"
+   },
+   {
+    "time": "75",
+    "type": "Substitution",
+    "player": "A. Diallo",
+    "assist": null,
+    "sub_in": "S. Adingra",
+    "side": "away"
+   },
+   {
+    "time": "82",
+    "type": "Substitution",
+    "player": "W. Singo",
+    "assist": null,
+    "sub_in": "G. Doue",
+    "side": "away"
+   },
+   {
+    "time": "85",
+    "type": "Substitution",
+    "player": "Y. Diomande",
+    "assist": null,
+    "sub_in": "N. Pepe",
+    "side": "away"
+   },
+   {
+    "time": "85",
+    "type": "Substitution",
+    "player": "K. Havertz",
+    "assist": null,
+    "sub_in": "L. Goretzka",
+    "side": "home"
+   },
+   {
+    "time": "90+4",
+    "type": "Goal",
+    "player": "D. Undav",
+    "assist": "F. Nmecha",
+    "sub_in": null,
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Manuel Neuer",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Nathaniel Brown",
+      "number": 18,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nico Schlotterbeck",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jonathan Tah",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Joshua Kimmich",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Aleksandar Pavlović",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Felix Nmecha",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Florian Wirtz",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jamal Musiala",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Leroy Sané",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kai Havertz",
+      "number": 7,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Alexander Nübel",
+      "number": 21,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Oliver Baumann",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Malick Thiaw",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Waldemar Anton",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Antonio Rüdiger",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "David Raum",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Assan Ouédraogo",
+      "number": 25,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jamie Leweling",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Nadiem Amiri",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Pascal Groß",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Leon Goretzka",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Angelo Stiller",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Maximilian Beier",
+      "number": 14,
+      "pos": "Forward"
+     },
+     {
+      "name": "Nick Woltemade",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Deniz Undav",
+      "number": 26,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-4-2",
+    "xi": [
+     {
+      "name": "Yahia Fofana",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Ghislain Konan",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Emmanuel Agbadou",
+      "number": 20,
+      "pos": "Defender"
+     },
+     {
+      "name": "Odilon Kossounou",
+      "number": 7,
+      "pos": "Defender"
+     },
+     {
+      "name": "Wilfried Singo",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Yan Diomande",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ibrahim Sangaré",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Franck Kessié",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Amad Diallo",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Christ Inao Oulaï",
+      "number": 26,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ange-Yoan Bonny",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Alban Lafont",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Mohamed Koné",
+      "number": 16,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Christopher Operi",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ousmane Diomande",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Guéla Doué",
+      "number": 17,
+      "pos": "Defender"
+     },
+     {
+      "name": "Evan Ndicka",
+      "number": 21,
+      "pos": "Defender"
+     },
+     {
+      "name": "Bazoumana Touré",
+      "number": 24,
+      "pos": "Forward"
+     },
+     {
+      "name": "Jean Michaël Seri",
+      "number": 4,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Parfait Guiagon",
+      "number": 25,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Seko Fofana",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Simon Adingra",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "Oumar Diakité",
+      "number": 14,
+      "pos": "Forward"
+     },
+     {
+      "name": "Elye Wahi",
+      "number": 12,
+      "pos": "Forward"
+     },
+     {
+      "name": "Nicolas Pépé",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Evann Guessand",
+      "number": 22,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
