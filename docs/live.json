@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-20T04:26:39Z",
+  "updated_at": "2026-06-20T08:04:10Z",
   "live": [
     {
       "fd_id": 537341,
@@ -29,11 +29,11 @@
       "away_code": "PAR",
       "home_team": "Türkiye",
       "away_team": "Paraguay",
-      "status": "IN_PLAY",
-      "status_de": "Live",
-      "is_live": true,
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
       "is_halftime": false,
-      "is_done": false,
+      "is_done": true,
       "minute": null,
       "score_home": 0,
       "score_away": 1,
