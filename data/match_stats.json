@@ -18591,5 +18591,445 @@
     ]
    }
   }
+ },
+ "ua_ESP_KSA_2026-06-21": {
+  "hl_id": 1267477631,
+  "fetched_at": "2026-06-21T18:23:15Z",
+  "stats": {
+   "home": {
+    "xg": 2.85,
+    "possession": 67,
+    "shots_on_target": 8,
+    "corners": 6,
+    "passes": 725,
+    "saves": 1,
+    "fouls": 10,
+    "shots": 22
+   },
+   "away": {
+    "xg": 0.14,
+    "possession": 33,
+    "shots_on_target": 1,
+    "corners": 1,
+    "passes": 364,
+    "saves": 5,
+    "fouls": 2,
+    "shots": 3
+   }
+  },
+  "events": [
+   {
+    "time": "10",
+    "type": "Goal",
+    "player": "Lamine Yamal",
+    "assist": "M. Oyarzabal",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "21",
+    "type": "Goal",
+    "player": "M. Oyarzabal",
+    "assist": "A. Laporte",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "24",
+    "type": "Goal",
+    "player": "M. Oyarzabal",
+    "assist": "D. Olmo",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "30",
+    "type": "Yellow Card",
+    "player": "S. Al Dawsari",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "Lamine Yamal",
+    "assist": null,
+    "sub_in": "Y. Pino",
+    "side": "home"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "M. Oyarzabal",
+    "assist": null,
+    "sub_in": "F. Torres",
+    "side": "home"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "A. Al Khaibari",
+    "assist": null,
+    "sub_in": "M. Kanno",
+    "side": "away"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "M. Al Juwayr",
+    "assist": null,
+    "sub_in": "A. Al Hamdan",
+    "side": "away"
+   },
+   {
+    "time": "49",
+    "type": "Own Goal",
+    "player": "H. Tambakti",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "60",
+    "type": "Yellow Card",
+    "player": "M. Kanno",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "60",
+    "type": "Substitution",
+    "player": "A. Al Amri",
+    "assist": null,
+    "sub_in": "A. Hejji",
+    "side": "away"
+   },
+   {
+    "time": "60",
+    "type": "Substitution",
+    "player": "F. Al Buraikan",
+    "assist": null,
+    "sub_in": "M. Abu Al Shamat",
+    "side": "away"
+   },
+   {
+    "time": "61",
+    "type": "Substitution",
+    "player": "D. Olmo",
+    "assist": null,
+    "sub_in": "M. Merino",
+    "side": "home"
+   },
+   {
+    "time": "61",
+    "type": "Substitution",
+    "player": "A. Baena",
+    "assist": null,
+    "sub_in": "N. Williams",
+    "side": "home"
+   },
+   {
+    "time": "70",
+    "type": "Substitution",
+    "player": "Pedri",
+    "assist": null,
+    "sub_in": "F. Ruiz",
+    "side": "home"
+   },
+   {
+    "time": "90",
+    "type": "Substitution",
+    "player": "N. Al Dawsari",
+    "assist": null,
+    "sub_in": "K. Al Ghannam",
+    "side": "away"
+   },
+   {
+    "time": "90+2",
+    "type": "VAR Goal Cancelled - Offside",
+    "player": "F. Torres",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Unai Simón",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Marc Cucurella",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Aymeric Laporte",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Pau Cubarsí",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Pedro Porro",
+      "number": 12,
+      "pos": "Defender"
+     },
+     {
+      "name": "Rodri",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Pedri",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Alex Baena",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Dani Olmo",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Lamine Yamal",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mikel Oyarzabal",
+      "number": 21,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "David Raya",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Joan García",
+      "number": 13,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Marc Pubill",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Eric García",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marcos Llorente",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Alejandro Grimaldo",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mikel Merino",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Fabián Ruiz",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Pablo Gavi",
+      "number": 9,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Martín Zubimendi",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nico Williams",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ferran Torres",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Yéremy Pino",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Víctor Muñoz",
+      "number": 25,
+      "pos": "Forward"
+     },
+     {
+      "name": "Borja Iglesias",
+      "number": 26,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "5-3-2",
+    "xi": [
+     {
+      "name": "Mohammed Al-Owais",
+      "number": 21,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Moteb Al-Harbi",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Abdulelah Al-Amri",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ali Lajami",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Hassan Altambakti",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Saud Abdulhamid",
+      "number": 12,
+      "pos": "Defender"
+     },
+     {
+      "name": "Musab Al Juwayr",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Abdullah Al-Khaibari",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nasser Al-Dawsari",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Salem Al-Dawsari",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "Firas Al-Buraikan",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Nawaf Al-Aqidi",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Ahmed Al-Kassar",
+      "number": 22,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Ali Majrashi",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nawaf Boushal",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Hassan Kadesh",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jehad Thakri",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mohammed Abu Al-Shamat",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ziyad Aljohani",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ala'a Al-Hejji",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mohamed Kanno",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ayman Yahya",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Saleh Al-Shehri",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Khalid Al-Ghannam",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Abdullah Al-Hamdan",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Sultan Mandash",
+      "number": 20,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
