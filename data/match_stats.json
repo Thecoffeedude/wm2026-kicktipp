@@ -17761,5 +17761,429 @@
     ]
    }
   }
+ },
+ "ua_ECU_CUW_2026-06-21": {
+  "hl_id": 1267473376,
+  "fetched_at": "2026-06-21T04:41:13Z",
+  "stats": {
+   "home": {
+    "xg": 3.05,
+    "possession": 75,
+    "shots_on_target": 15,
+    "corners": 9,
+    "passes": 645,
+    "saves": 3,
+    "fouls": 7,
+    "shots": 27
+   },
+   "away": {
+    "xg": 0.48,
+    "possession": 25,
+    "shots_on_target": 3,
+    "corners": 0,
+    "passes": 225,
+    "saves": 15,
+    "fouls": 10,
+    "shots": 10
+   }
+  },
+  "events": [
+   {
+    "time": "38",
+    "type": "Yellow Card",
+    "player": "J. Alcivar",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "39",
+    "type": "Yellow Card",
+    "player": "L. Bacuna",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "J. Alcivar",
+    "assist": null,
+    "sub_in": "K. Rodriguez",
+    "side": "home"
+   },
+   {
+    "time": "53",
+    "type": "Yellow Card",
+    "player": "J. Bacuna",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "56",
+    "type": "Yellow Card",
+    "player": "L. Comenencia",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "70",
+    "type": "Substitution",
+    "player": "P. Estupinan",
+    "assist": null,
+    "sub_in": "N. Angulo",
+    "side": "home"
+   },
+   {
+    "time": "75",
+    "type": "Yellow Card",
+    "player": "J. Gaari",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "75",
+    "type": "Substitution",
+    "player": "J. Bacuna",
+    "assist": null,
+    "sub_in": "K. Gorre",
+    "side": "away"
+   },
+   {
+    "time": "76",
+    "type": "Substitution",
+    "player": "D. Fonville",
+    "assist": null,
+    "sub_in": "R. van Eijma",
+    "side": "away"
+   },
+   {
+    "time": "76",
+    "type": "Substitution",
+    "player": "T. Chong",
+    "assist": null,
+    "sub_in": "J. Margaritha",
+    "side": "away"
+   },
+   {
+    "time": "83",
+    "type": "Substitution",
+    "player": "A. Franco",
+    "assist": null,
+    "sub_in": "A. Preciado",
+    "side": "home"
+   },
+   {
+    "time": "83",
+    "type": "Substitution",
+    "player": "J. Locadia",
+    "assist": null,
+    "sub_in": "G. Kastaneer",
+    "side": "away"
+   },
+   {
+    "time": "84",
+    "type": "Substitution",
+    "player": "L. Comenencia",
+    "assist": null,
+    "sub_in": "G. Roemeratoe",
+    "side": "away"
+   },
+   {
+    "time": "89",
+    "type": "Substitution",
+    "player": "J. Yeboah",
+    "assist": null,
+    "sub_in": "J. Caicedo",
+    "side": "home"
+   },
+   {
+    "time": "90+1",
+    "type": "Yellow Card",
+    "player": "G. Kastaneer",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "3-1-4-2",
+    "xi": [
+     {
+      "name": "Hernán Galíndez",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Piero Hincapié",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Willian Pacho",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Alan Franco",
+      "number": 21,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jordy Alcivar",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Pervis Estupiñán",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Moisés Caicedo",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Pedro Vite",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "John Yeboah",
+      "number": 9,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Enner Valencia",
+      "number": 13,
+      "pos": "Forward"
+     },
+     {
+      "name": "Gonzalo Plata",
+      "number": 19,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Moisés Ramírez",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Gonzalo Valle",
+      "number": 22,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Yaimar Medina",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Joel Ordóñez",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jackson Porozo",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Félix Torres",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ángelo Preciado",
+      "number": 17,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nilson Angulo",
+      "number": 20,
+      "pos": "Forward"
+     },
+     {
+      "name": "Kendry Páez",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Denil Castillo",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kevin Rodriguez",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Jordy Caicedo",
+      "number": 16,
+      "pos": "Forward"
+     },
+     {
+      "name": "Jeremy Arevalo",
+      "number": 24,
+      "pos": "Forward"
+     },
+     {
+      "name": "Anthony Valencia",
+      "number": 8,
+      "pos": "Forward"
+     },
+     {
+      "name": "Alan Minda",
+      "number": 14,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "5-4-1",
+    "xi": [
+     {
+      "name": "Eloy Room",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Deveron Fonville",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Sherel Constancio Floranus",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Armando Obispo",
+      "number": 18,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jurien Gaari",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Joshua Brenet",
+      "number": 20,
+      "pos": "Defender"
+     },
+     {
+      "name": "Juninho Bacuna",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Leandro Bacuna",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Livano Comenencia",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Tahith Chong",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jürgen Locadia",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Tyrick Bodak",
+      "number": 25,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Trevor Iriving Doornbusch",
+      "number": 26,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Shurandy Sambo",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Roshon van Eijma",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Riechedly Bazoer",
+      "number": 23,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ar'Jany Martha",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jearl Margaritha",
+      "number": 16,
+      "pos": "Forward"
+     },
+     {
+      "name": "Kenji Gorré",
+      "number": 14,
+      "pos": "Forward"
+     },
+     {
+      "name": "Tyrese Noslin",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jeremy Antonisse",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Kevin Felida",
+      "number": 22,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Godfried Roemeratoe",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Gervane Kastaneer",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Brandley Kuwas",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Sontje Hansen",
+      "number": 12,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
