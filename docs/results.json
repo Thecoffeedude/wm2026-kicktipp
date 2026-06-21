@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-21T05:10:33Z",
+  "updated_at": "2026-06-21T08:58:27Z",
   "results": [
     {
       "fd_id": 537327,
@@ -705,6 +705,25 @@
       "utc_date": "2026-06-21T00:00:00Z",
       "stage": "Group Stage",
       "goals": []
+    },
+    {
+      "home_code": "TUN",
+      "away_code": "JPN",
+      "home_team": "Tunisia",
+      "away_team": "Japan",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 0,
+      "score_away": 4,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-06-21T04:00:00Z",
+      "stage": "Group Stage - 2",
+      "score_source": "highlightly"
     }
   ]
 }

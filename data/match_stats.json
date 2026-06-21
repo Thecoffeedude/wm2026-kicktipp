@@ -18185,5 +18185,411 @@
     ]
    }
   }
+ },
+ "ua_TUN_JPN_2026-06-21": {
+  "hl_id": 1267475078,
+  "fetched_at": "2026-06-21T08:58:27Z",
+  "stats": {
+   "home": {
+    "xg": 0.05,
+    "possession": 38,
+    "shots_on_target": 0,
+    "corners": 3,
+    "passes": 353,
+    "saves": 1,
+    "fouls": 8,
+    "shots": 2
+   },
+   "away": {
+    "xg": 2.07,
+    "possession": 62,
+    "shots_on_target": 5,
+    "corners": 5,
+    "passes": 582,
+    "saves": 0,
+    "fouls": 15,
+    "shots": 11
+   }
+  },
+  "events": [
+   {
+    "time": "4",
+    "type": "Goal",
+    "player": "D. Kamada",
+    "assist": "K. Nakamura",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "31",
+    "type": "Goal",
+    "player": "A. Ueda",
+    "assist": "K. Itakura",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "E. Saad",
+    "assist": null,
+    "sub_in": "I. Gharbi",
+    "side": "home"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "D. Bronn",
+    "assist": null,
+    "sub_in": "M. Ben Hamida",
+    "side": "home"
+   },
+   {
+    "time": "65",
+    "type": "Substitution",
+    "player": "S. Tounekti",
+    "assist": null,
+    "sub_in": "F. Chaouat",
+    "side": "home"
+   },
+   {
+    "time": "69",
+    "type": "Goal",
+    "player": "J. Ito",
+    "assist": "A. Ueda",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "73",
+    "type": "Substitution",
+    "player": "D. Kamada",
+    "assist": null,
+    "sub_in": "J. Suzuki",
+    "side": "away"
+   },
+   {
+    "time": "74",
+    "type": "Substitution",
+    "player": "R. Doan",
+    "assist": null,
+    "sub_in": "Y. Sugawara",
+    "side": "away"
+   },
+   {
+    "time": "79",
+    "type": "Substitution",
+    "player": "K. Nakamura",
+    "assist": null,
+    "sub_in": "Y. Suzuki",
+    "side": "away"
+   },
+   {
+    "time": "79",
+    "type": "Substitution",
+    "player": "T. Tomiyasu",
+    "assist": null,
+    "sub_in": "A. Seko",
+    "side": "away"
+   },
+   {
+    "time": "83",
+    "type": "Goal",
+    "player": "A. Ueda",
+    "assist": "K. Sano",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "84",
+    "type": "Substitution",
+    "player": "A. Ueda",
+    "assist": null,
+    "sub_in": "K. Goto",
+    "side": "away"
+   },
+   {
+    "time": "90+1",
+    "type": "Substitution",
+    "player": "A. Abdi",
+    "assist": null,
+    "sub_in": "E. Achouri",
+    "side": "home"
+   },
+   {
+    "time": "90+1",
+    "type": "Substitution",
+    "player": "E. Skhiri",
+    "assist": null,
+    "sub_in": "R. Khedira",
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "3-4-2-1",
+    "xi": [
+     {
+      "name": "Aymen Dahmen",
+      "number": 16,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Dylan Bronn",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Montassar Talbi",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Omar Rekik",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ali Abdi",
+      "number": 2,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Hannibal Mejbri",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ellyes Skhiri",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Yan Valery",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Sebastian Tounekti",
+      "number": 26,
+      "pos": "Forward"
+     },
+     {
+      "name": "Elias Saad",
+      "number": 8,
+      "pos": "Forward"
+     },
+     {
+      "name": "Anis Ben Slimane",
+      "number": 25,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Abdelmouhib Chamakh",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Sabri Ben Hessen",
+      "number": 22,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Adem Arous",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Amine Ben Hmida",
+      "number": 21,
+      "pos": "Defender"
+     },
+     {
+      "name": "Moataz Nefati",
+      "number": 23,
+      "pos": "Defender"
+     },
+     {
+      "name": "Raed Chikhaoui",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Elias Achouri",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ismael Gharbi",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Mohamed Belhadj Mahmoud",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mortadha Ben Ouanes",
+      "number": 12,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Rani Khedira",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Hazem Mastouri",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Firas Chaouat",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Khalil Ayari",
+      "number": 14,
+      "pos": "Forward"
+     },
+     {
+      "name": "Rayan Elloumi",
+      "number": 18,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "3-4-2-1",
+    "xi": [
+     {
+      "name": "Zion Suzuki",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Hiroki Itō",
+      "number": 21,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ko Itakura",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Takehiro Tomiyasu",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Keito Nakamura",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Daichi Kamada",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kaishu Sano",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ritsu Doan",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ao Tanaka",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Junya Ito",
+      "number": 14,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ayase Ueda",
+      "number": 18,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Keisuke Osako",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Tomoki Hayakawa",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Ayumu Seko",
+      "number": 20,
+      "pos": "Defender"
+     },
+     {
+      "name": "Junnosuke Suzuki",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Shogo Taniguchi",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tsuyoshi Watanabe",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "Yukinari Sugawara",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Yuto Nagatomo",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Yuito Suzuki",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Daizen Maeda",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Keisuke Goto",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Kento Shiogai",
+      "number": 26,
+      "pos": "Forward"
+     },
+     {
+      "name": "Koki Ogawa",
+      "number": 19,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
