@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-21T22:02:33Z",
+  "updated_at": "2026-06-21T23:10:36Z",
   "live": [
     {
       "fd_id": 537354,
@@ -92,16 +92,16 @@
       "away_code": "CPV",
       "home_team": "Uruguay",
       "away_team": "Cape Verde",
-      "status": "IN_PLAY",
-      "status_de": "Live",
-      "is_live": true,
-      "is_halftime": false,
+      "status": "PAUSED",
+      "status_de": "Halbzeit",
+      "is_live": false,
+      "is_halftime": true,
       "is_done": false,
       "minute": null,
-      "score_home": 0,
-      "score_away": 0,
-      "halftime_home": null,
-      "halftime_away": null,
+      "score_home": 2,
+      "score_away": 1,
+      "halftime_home": 2,
+      "halftime_away": 1,
       "utc_date": "2026-06-21T22:00:00Z",
       "stage": "Group Stage",
       "goals": []
