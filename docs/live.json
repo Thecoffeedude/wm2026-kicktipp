@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-21T18:31:05Z",
+  "updated_at": "2026-06-21T20:12:04Z",
   "live": [
     {
       "fd_id": 537354,
@@ -71,18 +71,19 @@
       "away_code": "IRN",
       "home_team": "Belgium",
       "away_team": "Iran",
-      "status": "TIMED",
-      "status_de": "Bald",
+      "status": "PAUSED",
+      "status_de": "Halbzeit",
       "is_live": false,
-      "is_halftime": false,
+      "is_halftime": true,
       "is_done": false,
       "minute": null,
-      "score_home": null,
-      "score_away": null,
-      "halftime_home": null,
-      "halftime_away": null,
+      "score_home": 0,
+      "score_away": 0,
+      "halftime_home": 0,
+      "halftime_away": 0,
       "utc_date": "2026-06-21T19:00:00Z",
-      "stage": "Group Stage"
+      "stage": "Group Stage",
+      "goals": []
     },
     {
       "fd_id": 537372,
