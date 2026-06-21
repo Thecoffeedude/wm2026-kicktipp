@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-21T16:28:50Z",
+  "updated_at": "2026-06-21T18:08:19Z",
   "results": [
     {
       "fd_id": 537327,
@@ -720,6 +720,27 @@
       "halftime_home": 0,
       "halftime_away": 2,
       "utc_date": "2026-06-21T04:00:00Z",
+      "stage": "Group Stage",
+      "goals": []
+    },
+    {
+      "fd_id": 537371,
+      "fd_home_id": 760,
+      "home_code": "ESP",
+      "away_code": "KSA",
+      "home_team": "Spain",
+      "away_team": "Saudi Arabia",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 5,
+      "score_away": 0,
+      "halftime_home": 3,
+      "halftime_away": 0,
+      "utc_date": "2026-06-21T16:00:00Z",
       "stage": "Group Stage",
       "goals": []
     }
