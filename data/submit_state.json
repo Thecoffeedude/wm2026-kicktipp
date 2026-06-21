@@ -171,22 +171,22 @@
   },
   "ESP:KSA": {
     "tipped": true,
-    "last_tip": null,
-    "updated_at": "2026-06-20T23:15:09Z"
+    "last_tip": "2:0",
+    "updated_at": "2026-06-21T14:59:16Z"
   },
   "BEL:IRN": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-06-20T23:15:09Z"
+    "updated_at": "2026-06-21T14:59:16Z"
   },
   "URU:CPV": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-06-20T23:15:09Z"
+    "updated_at": "2026-06-21T14:59:16Z"
   },
   "NZL:EGY": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-06-20T23:15:09Z"
+    "updated_at": "2026-06-21T14:59:16Z"
   }
 }
