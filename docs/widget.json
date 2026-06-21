@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-20T08:57:37Z",
+  "generated_at": "2026-06-21T09:51:21Z",
   "site": "https://thecoffeedude.github.io/wm2026-kicktipp/",
   "iso": {
     "ALG": "dz",
@@ -244,31 +244,27 @@
       2,
       0
     ],
-    "SUI:CAN": [
-      2,
-      1
-    ],
     "BIH:QAT": [
       2,
       1
     ],
-    "MAR:HAI": [
+    "SUI:CAN": [
       2,
-      0
+      1
     ],
     "SCO:BRA": [
       0,
       2
     ],
-    "RSA:KOR": [
+    "MAR:HAI": [
+      2,
+      0
+    ],
+    "CZE:MEX": [
       1,
       2
     ],
-    "CZE:MEX": [
-      0,
-      1
-    ],
-    "ECU:GER": [
+    "RSA:KOR": [
       1,
       2
     ],
@@ -276,29 +272,33 @@
       0,
       2
     ],
+    "ECU:GER": [
+      1,
+      2
+    ],
+    "TUN:NED": [
+      0,
+      2
+    ],
     "JPN:SWE": [
       2,
       1
     ],
-    "TUN:NED": [
-      0,
+    "TUR:USA": [
+      1,
       2
     ],
     "PAR:AUS": [
       1,
       0
     ],
-    "TUR:USA": [
-      1,
-      2
+    "SEN:IRQ": [
+      2,
+      0
     ],
     "NOR:FRA": [
       1,
       2
-    ],
-    "SEN:IRQ": [
-      2,
-      0
     ],
     "CPV:KSA": [
       1,
@@ -329,7 +329,7 @@
       2
     ],
     "COD:UZB": [
-      1,
+      2,
       1
     ],
     "ALG:AUT": [
@@ -343,51 +343,51 @@
   },
   "next": [
     {
-      "home": "Netherlands",
-      "away": "Sweden",
-      "hc": "NED",
-      "ac": "SWE",
-      "kickoff": "2026-06-20T17:00:00Z",
-      "stage": "Group stage",
-      "tip": [
-        2,
-        1
-      ],
-      "fav": {
-        "label": "Netherlands",
-        "pct": 54
-      }
-    },
-    {
-      "home": "Germany",
-      "away": "Ivory Coast",
-      "hc": "GER",
-      "ac": "CIV",
-      "kickoff": "2026-06-20T20:00:00Z",
-      "stage": "Group stage",
-      "tip": [
-        2,
-        1
-      ],
-      "fav": {
-        "label": "Germany",
-        "pct": 59
-      }
-    },
-    {
-      "home": "Ecuador",
-      "away": "Curaçao",
-      "hc": "ECU",
-      "ac": "CUW",
-      "kickoff": "2026-06-21T00:00:00Z",
+      "home": "Spain",
+      "away": "Saudi Arabia",
+      "hc": "ESP",
+      "ac": "KSA",
+      "kickoff": "2026-06-21T16:00:00Z",
       "stage": "Group stage",
       "tip": [
         2,
         0
       ],
       "fav": {
-        "label": "Ecuador",
-        "pct": 81
+        "label": "Spain",
+        "pct": 80
+      }
+    },
+    {
+      "home": "Belgium",
+      "away": "Iran",
+      "hc": "BEL",
+      "ac": "IRN",
+      "kickoff": "2026-06-21T19:00:00Z",
+      "stage": "Group stage",
+      "tip": [
+        2,
+        1
+      ],
+      "fav": {
+        "label": "Belgium",
+        "pct": 56
+      }
+    },
+    {
+      "home": "Uruguay",
+      "away": "Cape Verde",
+      "hc": "URU",
+      "ac": "CPV",
+      "kickoff": "2026-06-21T22:00:00Z",
+      "stage": "Group stage",
+      "tip": [
+        1,
+        0
+      ],
+      "fav": {
+        "label": "Uruguay",
+        "pct": 60
       }
     }
   ]

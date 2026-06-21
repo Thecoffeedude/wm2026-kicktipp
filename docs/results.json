@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-21T09:09:48Z",
+  "updated_at": "2026-06-21T09:51:21Z",
   "results": [
     {
       "fd_id": 537327,
@@ -619,8 +619,7 @@
       "halftime_home": 3,
       "halftime_away": 0,
       "utc_date": "2026-06-20T00:30:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537347,
@@ -640,8 +639,7 @@
       "halftime_home": 0,
       "halftime_away": 1,
       "utc_date": "2026-06-20T03:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537359,
@@ -661,8 +659,7 @@
       "halftime_home": 2,
       "halftime_away": 0,
       "utc_date": "2026-06-20T17:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537353,
@@ -682,8 +679,7 @@
       "halftime_home": 0,
       "halftime_away": 1,
       "utc_date": "2026-06-20T20:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537354,
@@ -703,8 +699,7 @@
       "halftime_home": 0,
       "halftime_away": 0,
       "utc_date": "2026-06-21T00:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537360,
@@ -724,8 +719,7 @@
       "halftime_home": 0,
       "halftime_away": 2,
       "utc_date": "2026-06-21T04:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     }
   ]
 }
