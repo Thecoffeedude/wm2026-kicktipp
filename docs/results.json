@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-21T04:41:13Z",
+  "updated_at": "2026-06-21T05:10:33Z",
   "results": [
     {
       "fd_id": 537327,
@@ -686,6 +686,8 @@
       "goals": []
     },
     {
+      "fd_id": 537354,
+      "fd_home_id": 791,
       "home_code": "ECU",
       "away_code": "CUW",
       "home_team": "Ecuador",
@@ -698,11 +700,11 @@
       "minute": null,
       "score_home": 0,
       "score_away": 0,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 0,
       "utc_date": "2026-06-21T00:00:00Z",
-      "stage": "Group Stage - 2",
-      "score_source": "highlightly"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
