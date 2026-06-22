@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-21T21:53:12Z",
+  "updated_at": "2026-06-22T02:05:10Z",
   "results": [
     {
       "fd_id": 537327,
@@ -764,6 +764,25 @@
       "utc_date": "2026-06-21T19:00:00Z",
       "stage": "Group Stage",
       "goals": []
+    },
+    {
+      "home_code": "URU",
+      "away_code": "CPV",
+      "home_team": "Uruguay",
+      "away_team": "Cape Verde",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 2,
+      "score_away": 2,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-06-21T22:00:00Z",
+      "stage": "Group Stage - 2",
+      "score_source": "highlightly"
     }
   ]
 }

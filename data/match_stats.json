@@ -19437,5 +19437,435 @@
     ]
    }
   }
+ },
+ "ua_URU_CPV_2026-06-21": {
+  "hl_id": 1267478482,
+  "fetched_at": "2026-06-22T02:05:10Z",
+  "stats": {
+   "home": {
+    "xg": 2.34,
+    "possession": 65,
+    "shots_on_target": 2,
+    "corners": 11,
+    "passes": 511,
+    "saves": 2,
+    "fouls": 11,
+    "shots": 17
+   },
+   "away": {
+    "xg": 0.86,
+    "possession": 35,
+    "shots_on_target": 4,
+    "corners": 4,
+    "passes": 277,
+    "saves": 0,
+    "fouls": 4,
+    "shots": 12
+   }
+  },
+  "events": [
+   {
+    "time": "5",
+    "type": "Yellow Card",
+    "player": "S. Lopes Cabral",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "20",
+    "type": "Yellow Card",
+    "player": "R. Bentancur",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "21",
+    "type": "Goal",
+    "player": "K. Lenini",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "44",
+    "type": "Goal",
+    "player": "M. Araujo",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "45+6",
+    "type": "Goal",
+    "player": "A. Canobbio",
+    "assist": "M. Araujo",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "T. Arcanjo",
+    "assist": null,
+    "sub_in": "D. Duarte",
+    "side": "away"
+   },
+   {
+    "time": "58",
+    "type": "Yellow Card",
+    "player": "M. Olivera",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "58",
+    "type": "Substitution",
+    "player": "Benchimol",
+    "assist": null,
+    "sub_in": "N. Da Costa",
+    "side": "away"
+   },
+   {
+    "time": "58",
+    "type": "Substitution",
+    "player": "G. Rodrigues",
+    "assist": null,
+    "sub_in": "H. Varela",
+    "side": "away"
+   },
+   {
+    "time": "61",
+    "type": "Goal",
+    "player": "H. Varela",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "68",
+    "type": "VAR Goal Cancelled - Offside",
+    "player": "M. Araujo",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "70",
+    "type": "Substitution",
+    "player": "M. Ugarte",
+    "assist": null,
+    "sub_in": "N. de la Cruz",
+    "side": "home"
+   },
+   {
+    "time": "70",
+    "type": "Substitution",
+    "player": "F. Vinas",
+    "assist": null,
+    "sub_in": "D. Nunez",
+    "side": "home"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "K. Lenini",
+    "assist": null,
+    "sub_in": "L. Duarte",
+    "side": "away"
+   },
+   {
+    "time": "80",
+    "type": "Substitution",
+    "player": "J. Monteiro",
+    "assist": null,
+    "sub_in": "Y. Semedo",
+    "side": "away"
+   },
+   {
+    "time": "81",
+    "type": "Substitution",
+    "player": "M. Araujo",
+    "assist": null,
+    "sub_in": "B. Rodriguez",
+    "side": "home"
+   },
+   {
+    "time": "90+3",
+    "type": "Yellow Card",
+    "player": "D. Borges",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Fernando Muslera",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Juan Sanabria",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mathías Olivera",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "Sebastián Cáceres",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Guillermo Varela",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Rodrigo Bentancur",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Manuel Ugarte",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Maximiliano Araújo",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Federico Valverde",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Agustín Canobbio",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Federico Viñas",
+      "number": 21,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Santiago Mele",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Sergio Rochet",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "José María Giménez",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Matías Viña",
+      "number": 17,
+      "pos": "Defender"
+     },
+     {
+      "name": "Santiago Bueno",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Joaquín Piquerez",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nicolás de la Cruz",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Facundo Pellistri",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Brian Rodríguez",
+      "number": 18,
+      "pos": "Forward"
+     },
+     {
+      "name": "Emiliano Martínez",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Darwin Núñez",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Rodrigo Zalazar",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Rodrigo Aguirre",
+      "number": 19,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-1-4-1",
+    "xi": [
+     {
+      "name": "Vozinha",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Sidny Lopes Cabral",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Diney Borges",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Pico",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Steven Moreira",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Kevin Lenini",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Garry Rodrigues",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jamiro Monteiro",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ryan Mendes",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Telmo Arcanjo",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Gilson Tavares",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Márcio Rosa",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "CJ Dos Santos",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Stopira",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Logan Costa",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Wagner Pina",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Kelvin Pires",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "João Paulo",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Laros Duarte",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Willy Semedo",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Yannick Semedo",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Hélio Varela",
+      "number": 26,
+      "pos": "Forward"
+     },
+     {
+      "name": "Deroy Duarte",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jovane Cabral",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Nuno Da Costa",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "Dailon Rocha Livramento",
+      "number": 19,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
