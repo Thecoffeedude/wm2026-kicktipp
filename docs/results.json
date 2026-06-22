@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-22T04:46:24Z",
+  "updated_at": "2026-06-22T05:23:36Z",
   "results": [
     {
       "fd_id": 537327,
@@ -785,6 +785,8 @@
       "score_source": "highlightly"
     },
     {
+      "fd_id": 537366,
+      "fd_home_id": 783,
       "home_code": "NZL",
       "away_code": "EGY",
       "home_team": "New Zealand",
@@ -797,11 +799,11 @@
       "minute": null,
       "score_home": 1,
       "score_away": 3,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 1,
+      "halftime_away": 0,
       "utc_date": "2026-06-22T01:00:00Z",
-      "stage": "Group Stage - 2",
-      "score_source": "highlightly"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
