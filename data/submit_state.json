@@ -191,42 +191,42 @@
   },
   "ARG:AUT": {
     "tipped": true,
-    "last_tip": "2:0",
-    "updated_at": "2026-06-21T18:22:03Z"
+    "last_tip": null,
+    "updated_at": "2026-06-22T16:12:30Z"
   },
   "FRA:IRQ": {
     "tipped": true,
-    "last_tip": "2:0",
-    "updated_at": "2026-06-21T18:22:03Z"
+    "last_tip": null,
+    "updated_at": "2026-06-22T16:12:30Z"
   },
   "NOR:SEN": {
     "tipped": true,
-    "last_tip": "2:1",
-    "updated_at": "2026-06-21T18:22:03Z"
+    "last_tip": null,
+    "updated_at": "2026-06-22T16:12:30Z"
   },
   "JOR:ALG": {
     "tipped": true,
-    "last_tip": "1:2",
-    "updated_at": "2026-06-21T18:22:03Z"
+    "last_tip": null,
+    "updated_at": "2026-06-22T16:12:30Z"
   },
   "POR:UZB": {
     "tipped": true,
-    "last_tip": "2:0",
-    "updated_at": "2026-06-21T18:22:03Z"
+    "last_tip": null,
+    "updated_at": "2026-06-22T16:12:30Z"
   },
   "ENG:GHA": {
     "tipped": true,
-    "last_tip": "2:0",
-    "updated_at": "2026-06-21T18:22:03Z"
+    "last_tip": null,
+    "updated_at": "2026-06-22T16:12:30Z"
   },
   "PAN:CRO": {
     "tipped": true,
-    "last_tip": "1:2",
-    "updated_at": "2026-06-21T18:22:03Z"
+    "last_tip": null,
+    "updated_at": "2026-06-22T16:12:30Z"
   },
   "COL:COD": {
     "tipped": true,
-    "last_tip": "2:0",
-    "updated_at": "2026-06-21T18:22:03Z"
+    "last_tip": null,
+    "updated_at": "2026-06-22T16:12:30Z"
   }
 }
