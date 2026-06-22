@@ -19867,5 +19867,453 @@
     ]
    }
   }
+ },
+ "ua_NZL_EGY_2026-06-22": {
+  "hl_id": 1267476780,
+  "fetched_at": "2026-06-22T04:46:24Z",
+  "stats": {
+   "home": {
+    "xg": 1.21,
+    "possession": 44,
+    "shots_on_target": 5,
+    "corners": 4,
+    "passes": 420,
+    "saves": 4,
+    "fouls": 14,
+    "shots": 11
+   },
+   "away": {
+    "xg": 1.96,
+    "possession": 56,
+    "shots_on_target": 7,
+    "corners": 3,
+    "passes": 528,
+    "saves": 4,
+    "fouls": 8,
+    "shots": 19
+   }
+  },
+  "events": [
+   {
+    "time": "15",
+    "type": "Goal",
+    "player": "F. Surman",
+    "assist": "T. Payne",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "17",
+    "type": "Yellow Card",
+    "player": "M. Lasheen",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "20",
+    "type": "Yellow Card",
+    "player": "S. Singh",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "34",
+    "type": "Yellow Card",
+    "player": "C. McCowatt",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "41",
+    "type": "Substitution",
+    "player": "H. Fathy",
+    "assist": null,
+    "sub_in": "R. Rabia",
+    "side": "away"
+   },
+   {
+    "time": "58",
+    "type": "Goal",
+    "player": "M. Ziko",
+    "assist": "M. Hany",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "66",
+    "type": "Substitution",
+    "player": "C. McCowatt",
+    "assist": null,
+    "sub_in": "B. Old",
+    "side": "home"
+   },
+   {
+    "time": "67",
+    "type": "Goal",
+    "player": "M. Salah",
+    "assist": "M. Ziko",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "76",
+    "type": "Substitution",
+    "player": "S. Singh",
+    "assist": null,
+    "sub_in": "R. Thomas",
+    "side": "home"
+   },
+   {
+    "time": "76",
+    "type": "Substitution",
+    "player": "L. Cacace",
+    "assist": null,
+    "sub_in": "J. Randall",
+    "side": "home"
+   },
+   {
+    "time": "76",
+    "type": "Substitution",
+    "player": "O. Marmoush",
+    "assist": null,
+    "sub_in": "Trezeguet",
+    "side": "away"
+   },
+   {
+    "time": "76",
+    "type": "Substitution",
+    "player": "M. Ziko",
+    "assist": null,
+    "sub_in": "H. Abdelkarim",
+    "side": "away"
+   },
+   {
+    "time": "82",
+    "type": "Goal",
+    "player": "Trezeguet",
+    "assist": "M. Salah",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "85",
+    "type": "Substitution",
+    "player": "E. Ashour",
+    "assist": null,
+    "sub_in": "Zizo",
+    "side": "away"
+   },
+   {
+    "time": "85",
+    "type": "Substitution",
+    "player": "M. Salah",
+    "assist": null,
+    "sub_in": "H. Abdelmaguid",
+    "side": "away"
+   },
+   {
+    "time": "85",
+    "type": "Substitution",
+    "player": "T. Payne",
+    "assist": null,
+    "sub_in": "T. Bindon",
+    "side": "home"
+   },
+   {
+    "time": "85",
+    "type": "Substitution",
+    "player": "E. Just",
+    "assist": null,
+    "sub_in": "F. De Vries",
+    "side": "home"
+   },
+   {
+    "time": "90+9",
+    "type": "Substitution",
+    "player": "H. Abdelmaguid",
+    "assist": null,
+    "sub_in": "M. Abdelmonem",
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Max Crocombe",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Liberato Cacace",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Michael Boxall",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Finn Surman",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tim Payne",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marko Stamenić",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Joe Bell",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Elijah Just",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Sarpreet Singh",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Callum McCowatt",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Chris Wood",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Alex Paulsen",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Michael Woud",
+      "number": 22,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Tommy Smith",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tyler Bindon",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nando Pijnaker",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Francis De Vries",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Callan Elliot",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ryan Thomas",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Benjamin Old",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Alex Rufer",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Lachlan Bayliss",
+      "number": 25,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Logan Rogerson",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Jesse Randall",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "Kosta Barbarouses",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ben Waine",
+      "number": 18,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Mostafa Shobeir",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Ahmed Fatouh",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Hamdy Fathy",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Yasser Ibrahim",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mohamed Hany",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mohanad Lasheen",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Marwan Attia",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Emam Ashour",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mohamed Salah",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mostafa Ziko",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Omar Marmoush",
+      "number": 22,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Mohamed Alaa",
+      "number": 26,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Mahdi Soliman",
+      "number": 16,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Mohamed El-Shenawy",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Hossam Abdelmaguid",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tarek Alaa",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mohamed Abdelmonem",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Rami Rabia",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Karim Hafez",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Zizo",
+      "number": 25,
+      "pos": "Forward"
+     },
+     {
+      "name": "Mahmoud Saber",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ibrahim Adel",
+      "number": 20,
+      "pos": "Forward"
+     },
+     {
+      "name": "Mahmoud Trézéguet",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Haissem Hassan",
+      "number": 12,
+      "pos": "Forward"
+     },
+     {
+      "name": "Nabil Donga",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Hamza Abdelkarim",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
