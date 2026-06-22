@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-22T05:23:36Z",
+  "updated_at": "2026-06-22T11:56:09Z",
   "live": [
     {
       "fd_id": 537366,
@@ -19,8 +19,7 @@
       "halftime_home": 1,
       "halftime_away": 0,
       "utc_date": "2026-06-22T01:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537399,
@@ -60,26 +59,6 @@
       "halftime_home": null,
       "halftime_away": null,
       "utc_date": "2026-06-22T21:00:00Z",
-      "stage": "Group Stage"
-    },
-    {
-      "fd_id": 537394,
-      "fd_home_id": 8872,
-      "home_code": "NOR",
-      "away_code": "SEN",
-      "home_team": "Norway",
-      "away_team": "Senegal",
-      "status": "TIMED",
-      "status_de": "Bald",
-      "is_live": false,
-      "is_halftime": false,
-      "is_done": false,
-      "minute": null,
-      "score_home": null,
-      "score_away": null,
-      "halftime_home": null,
-      "halftime_away": null,
-      "utc_date": "2026-06-23T00:00:00Z",
       "stage": "Group Stage"
     }
   ]
