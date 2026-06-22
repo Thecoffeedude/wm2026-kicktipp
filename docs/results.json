@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-22T18:44:00Z",
+  "updated_at": "2026-06-22T19:07:45Z",
   "results": [
     {
       "fd_id": 537327,
@@ -799,6 +799,27 @@
       "halftime_home": 1,
       "halftime_away": 0,
       "utc_date": "2026-06-22T01:00:00Z",
+      "stage": "Group Stage",
+      "goals": []
+    },
+    {
+      "fd_id": 537399,
+      "fd_home_id": 762,
+      "home_code": "ARG",
+      "away_code": "AUT",
+      "home_team": "Argentina",
+      "away_team": "Austria",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 2,
+      "score_away": 0,
+      "halftime_home": 1,
+      "halftime_away": 0,
+      "utc_date": "2026-06-22T17:00:00Z",
       "stage": "Group Stage",
       "goals": []
     }
