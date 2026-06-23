@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-23T21:13:54Z",
+  "updated_at": "2026-06-23T22:45:40Z",
   "live": [
     {
       "fd_id": 537394,
@@ -71,11 +71,11 @@
       "away_code": "GHA",
       "home_team": "England",
       "away_team": "Ghana",
-      "status": "PAUSED",
-      "status_de": "Halbzeit",
+      "status": "FINISHED",
+      "status_de": "Beendet",
       "is_live": false,
-      "is_halftime": true,
-      "is_done": false,
+      "is_halftime": false,
+      "is_done": true,
       "minute": null,
       "score_home": 0,
       "score_away": 0,

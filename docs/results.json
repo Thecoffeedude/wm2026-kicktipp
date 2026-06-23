@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-23T22:19:17Z",
+  "updated_at": "2026-06-23T22:45:40Z",
   "results": [
     {
       "fd_id": 537327,
@@ -905,6 +905,8 @@
       "goals": []
     },
     {
+      "fd_id": 537411,
+      "fd_home_id": 770,
       "home_code": "ENG",
       "away_code": "GHA",
       "home_team": "England",
@@ -917,11 +919,11 @@
       "minute": null,
       "score_home": 0,
       "score_away": 0,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 0,
       "utc_date": "2026-06-23T20:00:00Z",
-      "stage": "Group Stage - 2",
-      "score_source": "highlightly"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
