@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-23T23:05:34Z",
+  "updated_at": "2026-06-23T23:54:06Z",
   "live": [
     {
       "fd_id": 537394,
@@ -92,18 +92,19 @@
       "away_code": "CRO",
       "home_team": "Panama",
       "away_team": "Croatia",
-      "status": "LIVE",
-      "status_de": "LIVE",
+      "status": "PAUSED",
+      "status_de": "Halbzeit",
       "is_live": false,
-      "is_halftime": false,
+      "is_halftime": true,
       "is_done": false,
       "minute": null,
       "score_home": 0,
       "score_away": 0,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 0,
       "utc_date": "2026-06-23T23:00:00Z",
-      "stage": "Group Stage"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
