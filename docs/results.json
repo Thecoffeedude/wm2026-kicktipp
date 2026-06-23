@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-23T08:05:33Z",
+  "updated_at": "2026-06-23T09:40:09Z",
   "results": [
     {
       "fd_id": 537327,
@@ -799,8 +799,7 @@
       "halftime_home": 1,
       "halftime_away": 0,
       "utc_date": "2026-06-22T01:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537399,
@@ -820,10 +819,11 @@
       "halftime_home": 1,
       "halftime_away": 0,
       "utc_date": "2026-06-22T17:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
+      "fd_id": 537393,
+      "fd_home_id": 773,
       "home_code": "FRA",
       "away_code": "IRQ",
       "home_team": "France",
@@ -836,11 +836,10 @@
       "minute": null,
       "score_home": 3,
       "score_away": 0,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 1,
+      "halftime_away": 0,
       "utc_date": "2026-06-22T21:00:00Z",
-      "stage": "Group Stage - 2",
-      "score_source": "highlightly"
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537394,
@@ -860,8 +859,7 @@
       "halftime_home": 1,
       "halftime_away": 0,
       "utc_date": "2026-06-23T00:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537400,
@@ -881,8 +879,7 @@
       "halftime_home": 1,
       "halftime_away": 0,
       "utc_date": "2026-06-23T03:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     }
   ]
 }
