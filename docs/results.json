@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-23T04:16:02Z",
+  "updated_at": "2026-06-23T07:52:59Z",
   "results": [
     {
       "fd_id": 537327,
@@ -862,6 +862,25 @@
       "utc_date": "2026-06-23T00:00:00Z",
       "stage": "Group Stage",
       "goals": []
+    },
+    {
+      "home_code": "JOR",
+      "away_code": "ALG",
+      "home_team": "Jordan",
+      "away_team": "Algeria",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 1,
+      "score_away": 2,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-06-23T03:00:00Z",
+      "stage": "Group Stage - 2",
+      "score_source": "highlightly"
     }
   ]
 }
