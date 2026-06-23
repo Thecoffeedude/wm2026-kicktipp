@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-23T19:25:36Z",
+  "updated_at": "2026-06-23T22:19:17Z",
   "results": [
     {
       "fd_id": 537327,
@@ -903,6 +903,25 @@
       "utc_date": "2026-06-23T17:00:00Z",
       "stage": "Group Stage",
       "goals": []
+    },
+    {
+      "home_code": "ENG",
+      "away_code": "GHA",
+      "home_team": "England",
+      "away_team": "Ghana",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 0,
+      "score_away": 0,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-06-23T20:00:00Z",
+      "stage": "Group Stage - 2",
+      "score_source": "highlightly"
     }
   ]
 }
