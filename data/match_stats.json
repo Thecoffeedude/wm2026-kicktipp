@@ -22014,5 +22014,453 @@
     ]
    }
   }
+ },
+ "ua_POR_UZB_2026-06-23": {
+  "hl_id": 1267483588,
+  "fetched_at": "2026-06-23T20:35:50Z",
+  "stats": {
+   "home": {
+    "xg": 2.41,
+    "possession": 66,
+    "shots_on_target": 9,
+    "corners": 3,
+    "passes": 624,
+    "saves": 2,
+    "fouls": 14,
+    "shots": 17
+   },
+   "away": {
+    "xg": 0.25,
+    "possession": 34,
+    "shots_on_target": 2,
+    "corners": 2,
+    "passes": 325,
+    "saves": 4,
+    "fouls": 15,
+    "shots": 7
+   }
+  },
+  "events": [
+   {
+    "time": "6",
+    "type": "Goal",
+    "player": "C. Ronaldo",
+    "assist": "J. Cancelo",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "14",
+    "type": "Yellow Card",
+    "player": "O. Khamrobekov",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "17",
+    "type": "Goal",
+    "player": "N. Mendes",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "29",
+    "type": "VAR Goal Cancelled",
+    "player": "A. Ganiev",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "39",
+    "type": "Goal",
+    "player": "C. Ronaldo",
+    "assist": "B. Fernandes",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "J. Cancelo",
+    "assist": null,
+    "sub_in": "N. Semedo",
+    "side": "home"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "P. Neto",
+    "assist": null,
+    "sub_in": "F. Conceicao",
+    "side": "home"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "S. Nasrullaev",
+    "assist": null,
+    "sub_in": "K. Alizhonov",
+    "side": "away"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "O. Khamrobekov",
+    "assist": null,
+    "sub_in": "A. Mozgovoy",
+    "side": "away"
+   },
+   {
+    "time": "60",
+    "type": "Own Goal",
+    "player": "A. Nematov",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "64",
+    "type": "Substitution",
+    "player": "Joao Felix",
+    "assist": null,
+    "sub_in": "Trincao",
+    "side": "home"
+   },
+   {
+    "time": "68",
+    "type": "Yellow Card",
+    "player": "R. Veiga",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "73",
+    "type": "Substitution",
+    "player": "A. Fayzullaev",
+    "assist": null,
+    "sub_in": "I. Sergeev",
+    "side": "away"
+   },
+   {
+    "time": "76",
+    "type": "Substitution",
+    "player": "J. Neves",
+    "assist": null,
+    "sub_in": "B. Silva",
+    "side": "home"
+   },
+   {
+    "time": "83",
+    "type": "Substitution",
+    "player": "Vitinha",
+    "assist": null,
+    "sub_in": "R. Leao",
+    "side": "home"
+   },
+   {
+    "time": "87",
+    "type": "Goal",
+    "player": "R. Leao",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "90+2",
+    "type": "Substitution",
+    "player": "B. Karimov",
+    "assist": null,
+    "sub_in": "R. Jiyanov",
+    "side": "away"
+   },
+   {
+    "time": "90+2",
+    "type": "Substitution",
+    "player": "O. Shukurov",
+    "assist": null,
+    "sub_in": "S. Esanov",
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Diogo Costa",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Nuno Mendes",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Renato Veiga",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Rúben Dias",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "João Cancelo",
+      "number": 20,
+      "pos": "Defender"
+     },
+     {
+      "name": "Vitinha",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "João Neves",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "João Félix",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Bruno Fernandes",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Pedro Neto",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Cristiano Ronaldo",
+      "number": 7,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "José Sá",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Rui Silva",
+      "number": 22,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Nélson Semedo",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tomás Araújo",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Diogo Dalot",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gonçalo Inácio",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Matheus Nunes",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Samú Costa",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Bernardo Silva",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Rúben Neves",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Gonçalo Guedes",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Francisco Trincão",
+      "number": 16,
+      "pos": "Forward"
+     },
+     {
+      "name": "Gonçalo Ramos",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Rafael Leão",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Francisco Conceição",
+      "number": 26,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "3-4-2-1",
+    "xi": [
+     {
+      "name": "Abduvokhid Nematov",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Rustam Ashurmatov",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Abdulla Abdullaev",
+      "number": 18,
+      "pos": "Defender"
+     },
+     {
+      "name": "Abdukodir Khusanov",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Sherzod Nasrullaev",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Otabek Shukurov",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Odiljon Khamrobekov",
+      "number": 9,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Bekhruz Karimov",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Azizjon Ganiev",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Abbosbek Fayzullaev",
+      "number": 22,
+      "pos": "Forward"
+     },
+     {
+      "name": "Eldor Shomurodov",
+      "number": 14,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Botirali Ergashev",
+      "number": 16,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Utkir Yusupov",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Avazbek Ulmasaliyev",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Farrukh Sayfiev",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Khozhiakbar Alizhonov",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jakhongir Urozov",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Umarbek Eshmuradov",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Akmal Mozgovoy",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Azizbek Amanov",
+      "number": 20,
+      "pos": "Forward"
+     },
+     {
+      "name": "Jamshid Iskandarov",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Dostonbek Khamdamov",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Oston Urunov",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ruslanbek Jiyanov",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Sherzod Esanov",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Igor Sergeev",
+      "number": 21,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
