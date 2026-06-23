@@ -228,5 +228,35 @@
     "tipped": true,
     "last_tip": null,
     "updated_at": "2026-06-23T15:56:24Z"
+  },
+  "BIH:QAT": {
+    "tipped": true,
+    "last_tip": "2:1",
+    "updated_at": "2026-06-23T21:58:58Z"
+  },
+  "SUI:CAN": {
+    "tipped": true,
+    "last_tip": "2:1",
+    "updated_at": "2026-06-23T21:58:58Z"
+  },
+  "MAR:HAI": {
+    "tipped": true,
+    "last_tip": "2:0",
+    "updated_at": "2026-06-23T21:58:58Z"
+  },
+  "SCO:BRA": {
+    "tipped": true,
+    "last_tip": "0:2",
+    "updated_at": "2026-06-23T21:58:58Z"
+  },
+  "RSA:KOR": {
+    "tipped": true,
+    "last_tip": "1:2",
+    "updated_at": "2026-06-23T21:58:58Z"
+  },
+  "CZE:MEX": {
+    "tipped": true,
+    "last_tip": "1:2",
+    "updated_at": "2026-06-23T21:58:58Z"
   }
 }
