@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-23T17:15:51Z",
+  "updated_at": "2026-06-23T19:25:36Z",
   "results": [
     {
       "fd_id": 537327,
@@ -880,6 +880,27 @@
       "halftime_home": 1,
       "halftime_away": 0,
       "utc_date": "2026-06-23T03:00:00Z",
+      "stage": "Group Stage",
+      "goals": []
+    },
+    {
+      "fd_id": 537405,
+      "fd_home_id": 765,
+      "home_code": "POR",
+      "away_code": "UZB",
+      "home_team": "Portugal",
+      "away_team": "Uzbekistan",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 5,
+      "score_away": 0,
+      "halftime_home": 3,
+      "halftime_away": 0,
+      "utc_date": "2026-06-23T17:00:00Z",
       "stage": "Group Stage",
       "goals": []
     }
