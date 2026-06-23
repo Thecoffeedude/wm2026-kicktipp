@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-23T03:51:50Z",
+  "updated_at": "2026-06-23T04:16:02Z",
   "results": [
     {
       "fd_id": 537327,
@@ -843,6 +843,8 @@
       "score_source": "highlightly"
     },
     {
+      "fd_id": 537394,
+      "fd_home_id": 8872,
       "home_code": "NOR",
       "away_code": "SEN",
       "home_team": "Norway",
@@ -855,11 +857,11 @@
       "minute": null,
       "score_home": 3,
       "score_away": 2,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 1,
+      "halftime_away": 0,
       "utc_date": "2026-06-23T00:00:00Z",
-      "stage": "Group Stage - 2",
-      "score_source": "highlightly"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
