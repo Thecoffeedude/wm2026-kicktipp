@@ -22854,5 +22854,405 @@
     ]
    }
   }
+ },
+ "ua_PAN_CRO_2026-06-23": {
+  "hl_id": 1267482737,
+  "fetched_at": "2026-06-24T03:52:59Z",
+  "stats": {
+   "home": {
+    "xg": 0.62,
+    "possession": 42,
+    "shots_on_target": 1,
+    "corners": 7,
+    "passes": 356,
+    "saves": 1,
+    "fouls": 19,
+    "shots": 8
+   },
+   "away": {
+    "xg": 1.66,
+    "possession": 58,
+    "shots_on_target": 2,
+    "corners": 2,
+    "passes": 515,
+    "saves": 1,
+    "fouls": 12,
+    "shots": 6
+   }
+  },
+  "events": [
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "P. Musa",
+    "assist": null,
+    "sub_in": "A. Budimir",
+    "side": "away"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "J. Gvardiol",
+    "assist": null,
+    "sub_in": "A. Kramaric",
+    "side": "away"
+   },
+   {
+    "time": "54",
+    "type": "Goal",
+    "player": "A. Budimir",
+    "assist": "J. Stanisic",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "61",
+    "type": "Yellow Card",
+    "player": "Y. Barcenas",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "72",
+    "type": "Substitution",
+    "player": "M. Pasalic",
+    "assist": null,
+    "sub_in": "L. Sucic",
+    "side": "away"
+   },
+   {
+    "time": "72",
+    "type": "Substitution",
+    "player": "M. Kovacic",
+    "assist": null,
+    "sub_in": "P. Sucic",
+    "side": "away"
+   },
+   {
+    "time": "77",
+    "type": "Substitution",
+    "player": "J. Ramos",
+    "assist": null,
+    "sub_in": "C. Waterman",
+    "side": "home"
+   },
+   {
+    "time": "81",
+    "type": "Substitution",
+    "player": "L. Modric",
+    "assist": null,
+    "sub_in": "M. Pasalic",
+    "side": "away"
+   },
+   {
+    "time": "83",
+    "type": "Substitution",
+    "player": "J. Fajardo",
+    "assist": null,
+    "sub_in": "A. Londono",
+    "side": "home"
+   },
+   {
+    "time": "90",
+    "type": "Substitution",
+    "player": "Y. Barcenas",
+    "assist": null,
+    "sub_in": "T. Rodriguez",
+    "side": "home"
+   },
+   {
+    "time": "90",
+    "type": "Substitution",
+    "player": "C. Blackman",
+    "assist": null,
+    "sub_in": "E. Davis",
+    "side": "home"
+   },
+   {
+    "time": "90+2",
+    "type": "Yellow Card",
+    "player": "P. Sucic",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "3-4-3",
+    "xi": [
+     {
+      "name": "Orlando Mosquera",
+      "number": 22,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Andrés Andrade",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "José Córdoba",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jiovany Ramos",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "César Blackman",
+      "number": 2,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Yoel Bárcenas",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Carlos Harvey",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Amir Murillo",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "José Luis Rodríguez",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "José Fajardo",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Cristian Martínez",
+      "number": 6,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Luis Mejía",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "César Samudio",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Fidel Escobar",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Edgardo Fariña",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Éric Davis",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Roderick Miller",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jorge Gutiérrez",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Adalberto Carrasquilla",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ismael Díaz",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "Alberto Quintero",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Aníbal Godoy",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "César Yanis",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "Azarias Londoño",
+      "number": 24,
+      "pos": "Forward"
+     },
+     {
+      "name": "Tomás Rodríguez",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Cecilio Waterman",
+      "number": 18,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Dominik Livaković",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Joško Gvardiol",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marin Pongračić",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Josip Šutalo",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Josip Stanišić",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mateo Kovačić",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Luka Modrić",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ivan Perišić",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Martin Baturina",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Marco Pašalić",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Petar Musa",
+      "number": 26,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Ivor Pandur",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Dominik Kotarski",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Duje Ćaleta-Car",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Luka Vušković",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Martin Erlić",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Kristijan Jakić",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nikola Moro",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nikola Vlašić",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mario Pašalić",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Petar Sučić",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Toni Fruk",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Luka Sučić",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Andrej Kramarić",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ante Budimir",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Igor Matanović",
+      "number": 20,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
