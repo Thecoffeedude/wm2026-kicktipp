@@ -258,5 +258,35 @@
     "tipped": true,
     "last_tip": "1:2",
     "updated_at": "2026-06-23T21:58:58Z"
+  },
+  "CUW:CIV": {
+    "tipped": true,
+    "last_tip": "0:2",
+    "updated_at": "2026-06-24T21:00:45Z"
+  },
+  "ECU:GER": {
+    "tipped": true,
+    "last_tip": "1:2",
+    "updated_at": "2026-06-24T21:00:45Z"
+  },
+  "JPN:SWE": {
+    "tipped": true,
+    "last_tip": "2:1",
+    "updated_at": "2026-06-24T21:00:45Z"
+  },
+  "TUN:NED": {
+    "tipped": true,
+    "last_tip": "0:2",
+    "updated_at": "2026-06-24T21:00:45Z"
+  },
+  "PAR:AUS": {
+    "tipped": true,
+    "last_tip": "1:0",
+    "updated_at": "2026-06-24T21:00:45Z"
+  },
+  "TUR:USA": {
+    "tipped": true,
+    "last_tip": "1:2",
+    "updated_at": "2026-06-24T21:00:45Z"
   }
 }
