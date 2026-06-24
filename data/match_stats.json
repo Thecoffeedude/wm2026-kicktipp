@@ -23254,5 +23254,400 @@
     ]
    }
   }
+ },
+ "ua_COL_COD_2026-06-24": {
+  "hl_id": 1309696592,
+  "fetched_at": "2026-06-24T07:43:59Z",
+  "stats": {
+   "home": {
+    "xg": 1.03,
+    "possession": 64,
+    "shots_on_target": 9,
+    "corners": 5,
+    "passes": 540,
+    "saves": 1,
+    "fouls": 12,
+    "shots": 20
+   },
+   "away": {
+    "xg": 0.35,
+    "possession": 36,
+    "shots_on_target": 1,
+    "corners": 4,
+    "passes": 299,
+    "saves": 8,
+    "fouls": 16,
+    "shots": 7
+   }
+  },
+  "events": [
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "N. Mukau",
+    "assist": null,
+    "sub_in": "N. Sadiki",
+    "side": "away"
+   },
+   {
+    "time": "56",
+    "type": "Yellow Card",
+    "player": "J. Lucumi",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "57",
+    "type": "Substitution",
+    "player": "C. Bakambu",
+    "assist": null,
+    "sub_in": "S. Banza",
+    "side": "away"
+   },
+   {
+    "time": "58",
+    "type": "Substitution",
+    "player": "L. Suarez",
+    "assist": null,
+    "sub_in": "J. Cordoba",
+    "side": "home"
+   },
+   {
+    "time": "58",
+    "type": "Substitution",
+    "player": "J. Rodriguez",
+    "assist": null,
+    "sub_in": "J. Quintero",
+    "side": "home"
+   },
+   {
+    "time": "72",
+    "type": "Substitution",
+    "player": "A. Masuaku",
+    "assist": null,
+    "sub_in": "J. Kayembe",
+    "side": "away"
+   },
+   {
+    "time": "72",
+    "type": "Substitution",
+    "player": "E. Kayembe",
+    "assist": null,
+    "sub_in": "C. Pickel",
+    "side": "away"
+   },
+   {
+    "time": "76",
+    "type": "Goal",
+    "player": "D. Munoz",
+    "assist": "J. Quintero",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "77",
+    "type": "Substitution",
+    "player": "J. Arias",
+    "assist": null,
+    "sub_in": "R. Rios",
+    "side": "home"
+   },
+   {
+    "time": "82",
+    "type": "Substitution",
+    "player": "S. Moutoussamy",
+    "assist": null,
+    "sub_in": "N. Mbuku",
+    "side": "away"
+   },
+   {
+    "time": "90+3",
+    "type": "Yellow Card",
+    "player": "C. Pickel",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "90+4",
+    "type": "Yellow Card",
+    "player": "J. Lerma",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Camilo Vargas",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Johan Mojica",
+      "number": 17,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jhon Lucumí",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Davinson Sánchez",
+      "number": 23,
+      "pos": "Defender"
+     },
+     {
+      "name": "Daniel Muñoz",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gustavo Puerta",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jefferson Lerma",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Luis Díaz",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "James Rodríguez",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "Jhon Arias",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Luis Javier Suárez",
+      "number": 25,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Álvaro Montero",
+      "number": 24,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "David Ospina",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Yerry Mina",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Willer Ditta",
+      "number": 18,
+      "pos": "Defender"
+     },
+     {
+      "name": "Deiver Machado",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Santiago Arias",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jaminton Campaz",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Richard Ríos",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jorge Carrascal",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Andrés Gómez",
+      "number": 26,
+      "pos": "Forward"
+     },
+     {
+      "name": "Juan Portilla",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Juan Fernando Quintero",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kevin Castaño",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Cucho Hernández",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Jhon Córdoba",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "5-3-2",
+    "xi": [
+     {
+      "name": "Lionel Mpasi Nzau",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Arthur Masuaku",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Steve Kapuadi",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Axel Tuanzebe",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Chancel Mbemba",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Aaron Wan-Bissaka",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Edo Kayembe",
+      "number": 25,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Samuel Moutoussamy",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ngal'ayel Mukau",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Yoane Wissa",
+      "number": 20,
+      "pos": "Forward"
+     },
+     {
+      "name": "Cédric Bakambu",
+      "number": 17,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Matthieu Epolo",
+      "number": 21,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Timothy Fayulu",
+      "number": 16,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Gedeon Kalulu",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Joris Kayembe",
+      "number": 12,
+      "pos": "Defender"
+     },
+     {
+      "name": "Dylan Batubinsika",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Aaron Tshibola",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Gaël Kakuta",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Charles Pickel",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Brian Cipenga",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Noah Sadiki",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nathanaël Mbuku",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Simon Banza",
+      "number": 23,
+      "pos": "Forward"
+     },
+     {
+      "name": "Meschak Elia",
+      "number": 13,
+      "pos": "Forward"
+     },
+     {
+      "name": "Fiston Mayele",
+      "number": 19,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
