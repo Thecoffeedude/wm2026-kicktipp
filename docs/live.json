@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-24T19:05:28Z",
+  "updated_at": "2026-06-24T19:06:32Z",
   "live": [
     {
       "fd_id": 537406,
@@ -29,9 +29,9 @@
       "away_code": "CAN",
       "home_team": "Switzerland",
       "away_team": "Canada",
-      "status": "LIVE",
-      "status_de": "LIVE",
-      "is_live": false,
+      "status": "IN_PLAY",
+      "status_de": "Live",
+      "is_live": true,
       "is_halftime": false,
       "is_done": false,
       "minute": null,
@@ -40,7 +40,8 @@
       "halftime_home": null,
       "halftime_away": null,
       "utc_date": "2026-06-24T19:00:00Z",
-      "stage": "Group Stage"
+      "stage": "Group Stage",
+      "goals": []
     },
     {
       "fd_id": 537338,
@@ -49,18 +50,19 @@
       "away_code": "QAT",
       "home_team": "Bosnia-Herzegovina",
       "away_team": "Qatar",
-      "status": "TIMED",
-      "status_de": "Bald",
-      "is_live": false,
+      "status": "IN_PLAY",
+      "status_de": "Live",
+      "is_live": true,
       "is_halftime": false,
       "is_done": false,
       "minute": null,
-      "score_home": null,
-      "score_away": null,
+      "score_home": 0,
+      "score_away": 0,
       "halftime_home": null,
       "halftime_away": null,
       "utc_date": "2026-06-24T19:00:00Z",
-      "stage": "Group Stage"
+      "stage": "Group Stage",
+      "goals": []
     },
     {
       "fd_id": 537344,
