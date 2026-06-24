@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-24T21:01:23Z",
+  "updated_at": "2026-06-24T21:04:31Z",
   "live": [
     {
       "fd_id": 537406,
@@ -50,11 +50,11 @@
       "away_code": "QAT",
       "home_team": "Bosnia-Herzegovina",
       "away_team": "Qatar",
-      "status": "IN_PLAY",
-      "status_de": "Live",
-      "is_live": true,
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
       "is_halftime": false,
-      "is_done": false,
+      "is_done": true,
       "minute": null,
       "score_home": 3,
       "score_away": 1,

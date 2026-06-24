@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-24T21:01:23Z",
+  "updated_at": "2026-06-24T21:04:31Z",
   "results": [
     {
       "fd_id": 537327,
@@ -979,6 +979,27 @@
       "score_away": 1,
       "halftime_home": 0,
       "halftime_away": 0,
+      "utc_date": "2026-06-24T19:00:00Z",
+      "stage": "Group Stage",
+      "goals": []
+    },
+    {
+      "fd_id": 537338,
+      "fd_home_id": 1060,
+      "home_code": "BIH",
+      "away_code": "QAT",
+      "home_team": "Bosnia-Herzegovina",
+      "away_team": "Qatar",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 3,
+      "score_away": 1,
+      "halftime_home": 2,
+      "halftime_away": 1,
       "utc_date": "2026-06-24T19:00:00Z",
       "stage": "Group Stage",
       "goals": []
