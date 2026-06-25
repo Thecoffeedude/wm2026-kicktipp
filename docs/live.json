@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-25T23:07:33Z",
+  "updated_at": "2026-06-25T23:08:37Z",
   "live": [
     {
       "fd_id": 537331,
@@ -99,7 +99,7 @@
       "is_done": false,
       "minute": null,
       "score_home": 0,
-      "score_away": 0,
+      "score_away": 1,
       "halftime_home": null,
       "halftime_away": null,
       "utc_date": "2026-06-25T23:00:00Z",
