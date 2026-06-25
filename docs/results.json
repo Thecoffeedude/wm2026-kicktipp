@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-25T22:05:47Z",
+  "updated_at": "2026-06-25T22:55:04Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1084,6 +1084,8 @@
       "goals": []
     },
     {
+      "fd_id": 537356,
+      "fd_home_id": 9460,
       "home_code": "CUW",
       "away_code": "CIV",
       "home_team": "Curaçao",
@@ -1096,13 +1098,15 @@
       "minute": null,
       "score_home": 0,
       "score_away": 2,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 1,
       "utc_date": "2026-06-25T20:00:00Z",
-      "stage": "Group Stage - 3",
-      "score_source": "highlightly"
+      "stage": "Group Stage",
+      "goals": []
     },
     {
+      "fd_id": 537355,
+      "fd_home_id": 791,
       "home_code": "ECU",
       "away_code": "GER",
       "home_team": "Ecuador",
@@ -1115,11 +1119,11 @@
       "minute": null,
       "score_home": 2,
       "score_away": 1,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 1,
+      "halftime_away": 1,
       "utc_date": "2026-06-25T20:00:00Z",
-      "stage": "Group Stage - 3",
-      "score_source": "highlightly"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
