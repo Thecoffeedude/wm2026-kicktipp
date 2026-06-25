@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-25T00:00:30Z",
+  "updated_at": "2026-06-25T04:18:57Z",
   "live": [
     {
       "fd_id": 537331,
@@ -8,18 +8,19 @@
       "away_code": "MEX",
       "home_team": "Czechia",
       "away_team": "Mexico",
-      "status": "TIMED",
-      "status_de": "Bald",
+      "status": "FINISHED",
+      "status_de": "Beendet",
       "is_live": false,
       "is_halftime": false,
-      "is_done": false,
+      "is_done": true,
       "minute": null,
-      "score_home": null,
-      "score_away": null,
-      "halftime_home": null,
-      "halftime_away": null,
+      "score_home": 0,
+      "score_away": 3,
+      "halftime_home": 0,
+      "halftime_away": 0,
       "utc_date": "2026-06-25T01:00:00Z",
-      "stage": "Group Stage"
+      "stage": "Group Stage",
+      "goals": []
     },
     {
       "fd_id": 537332,
@@ -28,18 +29,19 @@
       "away_code": "KOR",
       "home_team": "South Africa",
       "away_team": "South Korea",
-      "status": "TIMED",
-      "status_de": "Bald",
+      "status": "FINISHED",
+      "status_de": "Beendet",
       "is_live": false,
       "is_halftime": false,
-      "is_done": false,
+      "is_done": true,
       "minute": null,
-      "score_home": null,
-      "score_away": null,
-      "halftime_home": null,
-      "halftime_away": null,
+      "score_home": 1,
+      "score_away": 0,
+      "halftime_home": 0,
+      "halftime_away": 0,
       "utc_date": "2026-06-25T01:00:00Z",
-      "stage": "Group Stage"
+      "stage": "Group Stage",
+      "goals": []
     },
     {
       "fd_id": 537355,

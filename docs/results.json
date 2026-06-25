@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-25T03:54:02Z",
+  "updated_at": "2026-06-25T04:18:57Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1043,6 +1043,8 @@
       "score_source": "highlightly"
     },
     {
+      "fd_id": 537332,
+      "fd_home_id": 774,
       "home_code": "RSA",
       "away_code": "KOR",
       "home_team": "South Africa",
@@ -1055,16 +1057,18 @@
       "minute": null,
       "score_home": 1,
       "score_away": 0,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 0,
       "utc_date": "2026-06-25T01:00:00Z",
-      "stage": "Group Stage - 3",
-      "score_source": "highlightly"
+      "stage": "Group Stage",
+      "goals": []
     },
     {
+      "fd_id": 537331,
+      "fd_home_id": 798,
       "home_code": "CZE",
       "away_code": "MEX",
-      "home_team": "Czech Republic",
+      "home_team": "Czechia",
       "away_team": "Mexico",
       "status": "FINISHED",
       "status_de": "Beendet",
@@ -1074,11 +1078,11 @@
       "minute": null,
       "score_home": 0,
       "score_away": 3,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 0,
       "utc_date": "2026-06-25T01:00:00Z",
-      "stage": "Group Stage - 3",
-      "score_source": "highlightly"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
