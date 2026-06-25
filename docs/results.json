@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-25T00:18:46Z",
+  "updated_at": "2026-06-25T03:54:02Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1039,6 +1039,44 @@
       "halftime_home": null,
       "halftime_away": null,
       "utc_date": "2026-06-24T22:00:00Z",
+      "stage": "Group Stage - 3",
+      "score_source": "highlightly"
+    },
+    {
+      "home_code": "RSA",
+      "away_code": "KOR",
+      "home_team": "South Africa",
+      "away_team": "South Korea",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 1,
+      "score_away": 0,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-06-25T01:00:00Z",
+      "stage": "Group Stage - 3",
+      "score_source": "highlightly"
+    },
+    {
+      "home_code": "CZE",
+      "away_code": "MEX",
+      "home_team": "Czech Republic",
+      "away_team": "Mexico",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 0,
+      "score_away": 3,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-06-25T01:00:00Z",
       "stage": "Group Stage - 3",
       "score_source": "highlightly"
     }
