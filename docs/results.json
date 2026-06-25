@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-25T04:18:57Z",
+  "updated_at": "2026-06-25T09:22:33Z",
   "results": [
     {
       "fd_id": 537327,
@@ -959,8 +959,7 @@
       "halftime_home": 0,
       "halftime_away": 0,
       "utc_date": "2026-06-24T02:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537337,
@@ -980,8 +979,7 @@
       "halftime_home": 0,
       "halftime_away": 0,
       "utc_date": "2026-06-24T19:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537338,
@@ -1001,10 +999,11 @@
       "halftime_home": 2,
       "halftime_away": 1,
       "utc_date": "2026-06-24T19:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
+      "fd_id": 537343,
+      "fd_home_id": 8873,
       "home_code": "SCO",
       "away_code": "BRA",
       "home_team": "Scotland",
@@ -1017,13 +1016,14 @@
       "minute": null,
       "score_home": 0,
       "score_away": 3,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 2,
       "utc_date": "2026-06-24T22:00:00Z",
-      "stage": "Group Stage - 3",
-      "score_source": "highlightly"
+      "stage": "Group Stage"
     },
     {
+      "fd_id": 537344,
+      "fd_home_id": 815,
       "home_code": "MAR",
       "away_code": "HAI",
       "home_team": "Morocco",
@@ -1036,11 +1036,10 @@
       "minute": null,
       "score_home": 4,
       "score_away": 2,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 2,
+      "halftime_away": 2,
       "utc_date": "2026-06-24T22:00:00Z",
-      "stage": "Group Stage - 3",
-      "score_source": "highlightly"
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537332,
@@ -1060,8 +1059,7 @@
       "halftime_home": 0,
       "halftime_away": 0,
       "utc_date": "2026-06-25T01:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537331,
@@ -1081,8 +1079,7 @@
       "halftime_home": 0,
       "halftime_away": 0,
       "utc_date": "2026-06-25T01:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     }
   ]
 }
