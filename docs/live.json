@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-25T21:11:00Z",
+  "updated_at": "2026-06-25T21:13:05Z",
   "live": [
     {
       "fd_id": 537331,
@@ -50,9 +50,9 @@
       "away_code": "GER",
       "home_team": "Ecuador",
       "away_team": "Germany",
-      "status": "LIVE",
-      "status_de": "LIVE",
-      "is_live": false,
+      "status": "IN_PLAY",
+      "status_de": "Live",
+      "is_live": true,
       "is_halftime": false,
       "is_done": false,
       "minute": null,
@@ -61,7 +61,8 @@
       "halftime_home": 1,
       "halftime_away": 1,
       "utc_date": "2026-06-25T20:00:00Z",
-      "stage": "Group Stage"
+      "stage": "Group Stage",
+      "goals": []
     },
     {
       "fd_id": 537356,
@@ -70,10 +71,10 @@
       "away_code": "CIV",
       "home_team": "Curaçao",
       "away_team": "Ivory Coast",
-      "status": "PAUSED",
-      "status_de": "Halbzeit",
-      "is_live": false,
-      "is_halftime": true,
+      "status": "IN_PLAY",
+      "status_de": "Live",
+      "is_live": true,
+      "is_halftime": false,
       "is_done": false,
       "minute": null,
       "score_home": 0,
