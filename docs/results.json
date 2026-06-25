@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-24T21:04:31Z",
+  "updated_at": "2026-06-25T00:18:46Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1003,6 +1003,44 @@
       "utc_date": "2026-06-24T19:00:00Z",
       "stage": "Group Stage",
       "goals": []
+    },
+    {
+      "home_code": "SCO",
+      "away_code": "BRA",
+      "home_team": "Scotland",
+      "away_team": "Brazil",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 0,
+      "score_away": 3,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-06-24T22:00:00Z",
+      "stage": "Group Stage - 3",
+      "score_source": "highlightly"
+    },
+    {
+      "home_code": "MAR",
+      "away_code": "HAI",
+      "home_team": "Morocco",
+      "away_team": "Haiti",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 4,
+      "score_away": 2,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-06-24T22:00:00Z",
+      "stage": "Group Stage - 3",
+      "score_source": "highlightly"
     }
   ]
 }

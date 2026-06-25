@@ -24483,5 +24483,896 @@
     ]
    }
   }
+ },
+ "ua_SCO_BRA_2026-06-24": {
+  "hl_id": 1267485290,
+  "fetched_at": "2026-06-25T00:18:46Z",
+  "stats": {
+   "home": {
+    "xg": 1.13,
+    "possession": 46,
+    "shots_on_target": 5,
+    "corners": 7,
+    "passes": 500,
+    "saves": 5,
+    "fouls": 10,
+    "shots": 14
+   },
+   "away": {
+    "xg": 4.46,
+    "possession": 54,
+    "shots_on_target": 9,
+    "corners": 6,
+    "passes": 607,
+    "saves": 5,
+    "fouls": 11,
+    "shots": 21
+   }
+  },
+  "events": [
+   {
+    "time": "7",
+    "type": "Goal",
+    "player": "Vinicius Junior",
+    "assist": "Rayan",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "22",
+    "type": "VAR Goal Cancelled",
+    "player": "Vinicius Junior",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "45+3",
+    "type": "Goal",
+    "player": "Vinicius Junior",
+    "assist": "Bruno Guimaraes",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "A. Robertson",
+    "assist": null,
+    "sub_in": "K. Tierney",
+    "side": "home"
+   },
+   {
+    "time": "60",
+    "type": "Goal",
+    "player": "M. Cunha",
+    "assist": "Bruno Guimaraes",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "62",
+    "type": "Yellow Card",
+    "player": "Danilo",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "65",
+    "type": "Substitution",
+    "player": "Casemiro",
+    "assist": null,
+    "sub_in": "Fabinho",
+    "side": "away"
+   },
+   {
+    "time": "66",
+    "type": "Substitution",
+    "player": "Lucas Paqueta",
+    "assist": null,
+    "sub_in": "G. Martinelli",
+    "side": "away"
+   },
+   {
+    "time": "76",
+    "type": "Substitution",
+    "player": "M. Cunha",
+    "assist": null,
+    "sub_in": "Neymar",
+    "side": "away"
+   },
+   {
+    "time": "82",
+    "type": "Substitution",
+    "player": "N. Patterson",
+    "assist": null,
+    "sub_in": "A. Ralston",
+    "side": "home"
+   },
+   {
+    "time": "82",
+    "type": "Substitution",
+    "player": "B. Gannon-Doak",
+    "assist": null,
+    "sub_in": "R. Christie",
+    "side": "home"
+   },
+   {
+    "time": "82",
+    "type": "Substitution",
+    "player": "Douglas Santos",
+    "assist": null,
+    "sub_in": "Alex Sandro",
+    "side": "away"
+   },
+   {
+    "time": "82",
+    "type": "Substitution",
+    "player": "Rayan",
+    "assist": null,
+    "sub_in": "Endrick",
+    "side": "away"
+   },
+   {
+    "time": "82",
+    "type": "Yellow Card",
+    "player": "Fabinho",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "89",
+    "type": "Yellow Card",
+    "player": "R. Christie",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "90+1",
+    "type": "Substitution",
+    "player": "L. Shankland",
+    "assist": null,
+    "sub_in": "C. Adams",
+    "side": "home"
+   },
+   {
+    "time": "90+1",
+    "type": "Substitution",
+    "player": "J. McGinn",
+    "assist": null,
+    "sub_in": "F. Curtis",
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-4-1-1",
+    "xi": [
+     {
+      "name": "Angus Gunn",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Andy Robertson",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jack Hendry",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Scott McKenna",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nathan Patterson",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "John McGinn",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Lewis Ferguson",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kenny McLean",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ben Gannon-Doak",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Scott McTominay",
+      "number": 4,
+      "pos": "Forward"
+     },
+     {
+      "name": "Lawrence Shankland",
+      "number": 20,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Liam Kelly",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Craig Gordon",
+      "number": 21,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Aaron Hickey",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Grant Hanley",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Kieran Tierney",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "John Souttar",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Dominic Hyam",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tony Ralston",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tyler Fletcher",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ryan Christie",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Findlay Curtis",
+      "number": 25,
+      "pos": "Forward"
+     },
+     {
+      "name": "Lyndon Dykes",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Che Adams",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ross Stewart",
+      "number": 14,
+      "pos": "Forward"
+     },
+     {
+      "name": "George Hirst",
+      "number": 18,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-3-3",
+    "xi": [
+     {
+      "name": "Alisson",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Douglas Santos",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gabriel Magalhães",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marquinhos",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Danilo",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Lucas Paquetá",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Casemiro",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Bruno Guimarães",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Vinícius Júnior",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Matheus Cunha",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Rayan",
+      "number": 26,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Weverton",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Ederson",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Alex Sandro",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Bremer",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Léo Pereira",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Roger Ibañez",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Éderson",
+      "number": 2,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Fabinho",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Danilo Santos",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Luiz Henrique",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "Neymar",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "Endrick",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Gabriel Martinelli",
+      "number": 22,
+      "pos": "Forward"
+     },
+     {
+      "name": "Igor Thiago",
+      "number": 25,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
+ },
+ "ua_MAR_HAI_2026-06-24": {
+  "hl_id": 1267484439,
+  "fetched_at": "2026-06-25T00:18:47Z",
+  "stats": {
+   "home": {
+    "xg": 3.26,
+    "possession": 69,
+    "shots_on_target": 11,
+    "corners": 9,
+    "passes": 542,
+    "saves": 1,
+    "fouls": 10,
+    "shots": 22
+   },
+   "away": {
+    "xg": 0.66,
+    "possession": 31,
+    "shots_on_target": 2,
+    "corners": 1,
+    "passes": 248,
+    "saves": 8,
+    "fouls": 18,
+    "shots": 9
+   }
+  },
+  "events": [
+   {
+    "time": "10",
+    "type": "Own Goal",
+    "player": "Bono",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "39",
+    "type": "Goal",
+    "player": "A. Hakimi",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "43",
+    "type": "Goal",
+    "player": "W. Isidor",
+    "assist": "J. Duverne",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "45+1",
+    "type": "Goal",
+    "player": "I. Saibari",
+    "assist": "A. Hakimi",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "67",
+    "type": "Substitution",
+    "player": "R. Providence",
+    "assist": null,
+    "sub_in": "D. Nazon",
+    "side": "away"
+   },
+   {
+    "time": "67",
+    "type": "Substitution",
+    "player": "W. Isidor",
+    "assist": null,
+    "sub_in": "L. Deedson",
+    "side": "away"
+   },
+   {
+    "time": "70",
+    "type": "Substitution",
+    "player": "B. Diaz",
+    "assist": null,
+    "sub_in": "A. Ounahi",
+    "side": "home"
+   },
+   {
+    "time": "70",
+    "type": "Substitution",
+    "player": "I. Saibari",
+    "assist": null,
+    "sub_in": "S. Rahimi",
+    "side": "home"
+   },
+   {
+    "time": "70",
+    "type": "Substitution",
+    "player": "A. El Kaabi",
+    "assist": null,
+    "sub_in": "G. Yassine",
+    "side": "home"
+   },
+   {
+    "time": "78",
+    "type": "Goal",
+    "player": "S. Rahimi",
+    "assist": "C. Riad",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "79",
+    "type": "Yellow Card",
+    "player": "D. Nazon",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "79",
+    "type": "Yellow Card",
+    "player": "J. Placide",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "80",
+    "type": "Substitution",
+    "player": "J. Duverne",
+    "assist": null,
+    "sub_in": "C. Arcus",
+    "side": "away"
+   },
+   {
+    "time": "80",
+    "type": "Substitution",
+    "player": "D. Jean Jacques",
+    "assist": null,
+    "sub_in": "D. Simon",
+    "side": "away"
+   },
+   {
+    "time": "83",
+    "type": "Substitution",
+    "player": "A. Salah-Eddine",
+    "assist": null,
+    "sub_in": "N. Mazraoui",
+    "side": "home"
+   },
+   {
+    "time": "83",
+    "type": "Substitution",
+    "player": "N. El Aynaoui",
+    "assist": null,
+    "sub_in": "S. El Mourabet",
+    "side": "home"
+   },
+   {
+    "time": "83",
+    "type": "Substitution",
+    "player": "L. Joseph",
+    "assist": null,
+    "sub_in": "F. Pierrot",
+    "side": "away"
+   },
+   {
+    "time": "89",
+    "type": "Goal",
+    "player": "G. Yassine",
+    "assist": "S. Rahimi",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "90+4",
+    "type": "Yellow Card",
+    "player": "J. Casimir",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Yassine Bounou",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Anass Salah-Eddine",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Chadi Riad",
+      "number": 18,
+      "pos": "Defender"
+     },
+     {
+      "name": "Redouane Halhal",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Achraf Hakimi",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Neil El Aynaoui",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Sofyan Amrabat",
+      "number": 4,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Bilal El Khannouss",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ismael Saibari",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Brahim Díaz",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ayoub El Kaabi",
+      "number": 20,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Munir El Kajoui",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Ahmed Reda Tagnaouti",
+      "number": 22,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Noussair Mazraoui",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marwane Saadane",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Zakaria El Ouahdi",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Issa Diop",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Youssef Belammari",
+      "number": 19,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ayyoub Bouaddi",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Chemsdine Talbi",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Azzedine Ounahi",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Samir El Mourabet",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Gessime Yassine",
+      "number": 16,
+      "pos": "Forward"
+     },
+     {
+      "name": "Amine Sbai",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Soufiane Rahimi",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ayoube Amaimouni Echghouyab",
+      "number": 21,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-4-2",
+    "xi": [
+     {
+      "name": "Johny Placide",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Martin Expérience",
+      "number": 8,
+      "pos": "Defender"
+     },
+     {
+      "name": "Hannes Delcroix",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ricardo Adé",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jean-Kévin Duverne",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ruben Providence",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jean-Ricner Bellegarde",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Danley Jean Jacques",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Josué Casimir",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Lenny Joseph",
+      "number": 16,
+      "pos": "Forward"
+     },
+     {
+      "name": "Wilson Isidor",
+      "number": 18,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Alexandre Pierre",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Josué Duverger",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Carlens Arcus",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Keeto Thermoncy",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Garven-Michee Metusala",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Duke Lacroix",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Carl Fred Sainté",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Wilguens Paugain",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Woodensky Pierre",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Dominique Simon",
+      "number": 25,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Derrick Etienne",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Frantzdy Pierrot",
+      "number": 20,
+      "pos": "Forward"
+     },
+     {
+      "name": "Louicius Don Deedson",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Yassin Fortune",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Duckens Nazon",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
