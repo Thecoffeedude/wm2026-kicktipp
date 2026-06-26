@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-26T04:00:39Z",
+  "updated_at": "2026-06-26T04:25:25Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1164,6 +1164,8 @@
       "score_source": "highlightly"
     },
     {
+      "fd_id": 537350,
+      "fd_home_id": 761,
       "home_code": "PAR",
       "away_code": "AUS",
       "home_team": "Paraguay",
@@ -1176,11 +1178,32 @@
       "minute": null,
       "score_home": 0,
       "score_away": 0,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 0,
       "utc_date": "2026-06-26T02:00:00Z",
-      "stage": "Group Stage - 3",
-      "score_source": "highlightly"
+      "stage": "Group Stage",
+      "goals": []
+    },
+    {
+      "fd_id": 537349,
+      "fd_home_id": 803,
+      "home_code": "TUR",
+      "away_code": "USA",
+      "home_team": "Türkiye",
+      "away_team": "United States",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 3,
+      "score_away": 2,
+      "halftime_home": 2,
+      "halftime_away": 1,
+      "utc_date": "2026-06-26T02:00:00Z",
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
