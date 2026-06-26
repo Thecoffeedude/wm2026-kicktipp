@@ -291,32 +291,32 @@
   },
   "NOR:FRA": {
     "tipped": true,
-    "last_tip": "1:2",
-    "updated_at": "2026-06-25T19:31:08Z"
+    "last_tip": null,
+    "updated_at": "2026-06-26T18:11:26Z"
   },
   "SEN:IRQ": {
     "tipped": true,
-    "last_tip": "2:1",
-    "updated_at": "2026-06-25T19:31:08Z"
+    "last_tip": "2:0",
+    "updated_at": "2026-06-26T18:11:26Z"
   },
   "URU:ESP": {
     "tipped": true,
-    "last_tip": "1:2",
-    "updated_at": "2026-06-25T19:31:08Z"
+    "last_tip": null,
+    "updated_at": "2026-06-26T18:11:26Z"
   },
   "CPV:KSA": {
     "tipped": true,
-    "last_tip": "1:2",
-    "updated_at": "2026-06-25T19:31:08Z"
+    "last_tip": null,
+    "updated_at": "2026-06-26T18:11:26Z"
   },
   "NZL:BEL": {
     "tipped": true,
-    "last_tip": "0:2",
-    "updated_at": "2026-06-25T19:31:08Z"
+    "last_tip": null,
+    "updated_at": "2026-06-26T18:11:26Z"
   },
   "EGY:IRN": {
     "tipped": true,
-    "last_tip": "2:1",
-    "updated_at": "2026-06-25T19:31:08Z"
+    "last_tip": null,
+    "updated_at": "2026-06-26T18:11:26Z"
   }
 }
