@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-26T21:07:28Z",
+  "updated_at": "2026-06-26T22:10:40Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1225,6 +1225,8 @@
       "goals": []
     },
     {
+      "fd_id": 537396,
+      "fd_home_id": 804,
       "home_code": "SEN",
       "away_code": "IRQ",
       "home_team": "Senegal",
@@ -1237,11 +1239,11 @@
       "minute": null,
       "score_home": 5,
       "score_away": 0,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 1,
+      "halftime_away": 0,
       "utc_date": "2026-06-26T19:00:00Z",
-      "stage": "Group Stage - 3",
-      "score_source": "highlightly"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
