@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-26T04:25:25Z",
+  "updated_at": "2026-06-26T09:28:18Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1059,8 +1059,7 @@
       "halftime_home": 0,
       "halftime_away": 0,
       "utc_date": "2026-06-25T01:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537331,
@@ -1080,8 +1079,7 @@
       "halftime_home": 0,
       "halftime_away": 0,
       "utc_date": "2026-06-25T01:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537356,
@@ -1101,8 +1099,7 @@
       "halftime_home": 0,
       "halftime_away": 1,
       "utc_date": "2026-06-25T20:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537355,
@@ -1122,10 +1119,11 @@
       "halftime_home": 1,
       "halftime_away": 1,
       "utc_date": "2026-06-25T20:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
+      "fd_id": 537361,
+      "fd_home_id": 802,
       "home_code": "TUN",
       "away_code": "NED",
       "home_team": "Tunisia",
@@ -1138,13 +1136,14 @@
       "minute": null,
       "score_home": 1,
       "score_away": 3,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 2,
       "utc_date": "2026-06-25T23:00:00Z",
-      "stage": "Group Stage - 3",
-      "score_source": "highlightly"
+      "stage": "Group Stage"
     },
     {
+      "fd_id": 537362,
+      "fd_home_id": 766,
       "home_code": "JPN",
       "away_code": "SWE",
       "home_team": "Japan",
@@ -1157,11 +1156,10 @@
       "minute": null,
       "score_home": 1,
       "score_away": 1,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 0,
       "utc_date": "2026-06-25T23:00:00Z",
-      "stage": "Group Stage - 3",
-      "score_source": "highlightly"
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537350,
@@ -1181,8 +1179,7 @@
       "halftime_home": 0,
       "halftime_away": 0,
       "utc_date": "2026-06-26T02:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     },
     {
       "fd_id": 537349,
@@ -1202,8 +1199,7 @@
       "halftime_home": 2,
       "halftime_away": 1,
       "utc_date": "2026-06-26T02:00:00Z",
-      "stage": "Group Stage",
-      "goals": []
+      "stage": "Group Stage"
     }
   ]
 }
