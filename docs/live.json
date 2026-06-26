@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-26T19:13:06Z",
+  "updated_at": "2026-06-26T20:45:14Z",
   "live": [
     {
       "fd_id": 537349,
@@ -50,18 +50,19 @@
       "away_code": "FRA",
       "home_team": "Norway",
       "away_team": "France",
-      "status": "LIVE",
-      "status_de": "LIVE",
-      "is_live": false,
+      "status": "IN_PLAY",
+      "status_de": "Live",
+      "is_live": true,
       "is_halftime": false,
       "is_done": false,
       "minute": null,
-      "score_home": 0,
-      "score_away": 1,
-      "halftime_home": null,
-      "halftime_away": null,
+      "score_home": 1,
+      "score_away": 3,
+      "halftime_home": 1,
+      "halftime_away": 3,
       "utc_date": "2026-06-26T19:00:00Z",
-      "stage": "Group Stage"
+      "stage": "Group Stage",
+      "goals": []
     },
     {
       "fd_id": 537396,
@@ -76,10 +77,10 @@
       "is_halftime": false,
       "is_done": false,
       "minute": null,
-      "score_home": 0,
+      "score_home": 4,
       "score_away": 0,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 1,
+      "halftime_away": 0,
       "utc_date": "2026-06-26T19:00:00Z",
       "stage": "Group Stage",
       "goals": []
