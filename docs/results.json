@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-27T21:51:48Z",
+  "updated_at": "2026-06-27T23:01:03Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1322,6 +1322,27 @@
       "halftime_home": 0,
       "halftime_away": 1,
       "utc_date": "2026-06-27T03:00:00Z",
+      "stage": "Group Stage",
+      "goals": []
+    },
+    {
+      "fd_id": 537413,
+      "fd_home_id": 1836,
+      "home_code": "PAN",
+      "away_code": "ENG",
+      "home_team": "Panama",
+      "away_team": "England",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 0,
+      "score_away": 2,
+      "halftime_home": 0,
+      "halftime_away": 0,
+      "utc_date": "2026-06-27T21:00:00Z",
       "stage": "Group Stage",
       "goals": []
     }
