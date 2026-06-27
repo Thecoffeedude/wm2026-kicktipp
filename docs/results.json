@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-27T04:11:34Z",
+  "updated_at": "2026-06-27T06:55:06Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1286,6 +1286,44 @@
       "utc_date": "2026-06-27T00:00:00Z",
       "stage": "Group Stage",
       "goals": []
+    },
+    {
+      "home_code": "EGY",
+      "away_code": "IRN",
+      "home_team": "Egypt",
+      "away_team": "Iran",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 1,
+      "score_away": 1,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-06-27T03:00:00Z",
+      "stage": "Group Stage - 3",
+      "score_source": "highlightly"
+    },
+    {
+      "home_code": "NZL",
+      "away_code": "BEL",
+      "home_team": "New Zealand",
+      "away_team": "Belgium",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 1,
+      "score_away": 5,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-06-27T03:00:00Z",
+      "stage": "Group Stage - 3",
+      "score_source": "highlightly"
     }
   ]
 }
