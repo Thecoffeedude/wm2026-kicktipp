@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T09:28:18Z",
+  "generated_at": "2026-06-27T08:36:40Z",
   "site": "https://thecoffeedude.github.io/wm2026-kicktipp/",
   "iso": {
     "ALG": "dz",
@@ -301,20 +301,20 @@
       2
     ],
     "CPV:KSA": [
-      1,
-      2
+      2,
+      1
     ],
     "URU:ESP": [
       0,
-      1
-    ],
-    "EGY:IRN": [
-      1,
-      0
+      2
     ],
     "NZL:BEL": [
       0,
       2
+    ],
+    "EGY:IRN": [
+      1,
+      0
     ],
     "CRO:GHA": [
       2,
@@ -324,78 +324,106 @@
       0,
       2
     ],
+    "COL:POR": [
+      1,
+      2
+    ],
     "COD:UZB": [
       2,
       1
     ],
-    "COL:POR": [
-      1,
+    "JOR:ARG": [
+      0,
       2
     ],
     "ALG:AUT": [
       1,
       2
     ],
-    "JOR:ARG": [
-      0,
+    "RSA:CAN": [
+      1,
       2
     ],
-    "RSA:CAN": [
-      0,
+    "GER:PAR": [
+      2,
+      1
+    ],
+    "BRA:JPN": [
+      2,
+      1
+    ],
+    "FRA:SWE": [
+      2,
+      1
+    ],
+    "NED:MAR": [
+      2,
+      1
+    ],
+    "CIV:NOR": [
+      1,
       2
     ],
     "USA:BIH": [
+      2,
+      1
+    ],
+    "AUS:EGY": [
+      0,
+      1
+    ],
+    "ARG:CPV": [
       2,
       0
     ]
   },
   "next": [
     {
-      "home": "Senegal",
-      "away": "Iraq",
-      "hc": "SEN",
-      "ac": "IRQ",
-      "kickoff": "2026-06-26T19:00:00Z",
+      "home": "Croatia",
+      "away": "Ghana",
+      "hc": "CRO",
+      "ac": "GHA",
+      "kickoff": "2026-06-27T21:00:00Z",
       "stage": "Group stage",
       "tip": [
         2,
-        0
+        1
       ],
       "fav": {
-        "label": "Senegal",
-        "pct": 67
+        "label": "Croatia",
+        "pct": 55
       }
     },
     {
-      "home": "Norway",
-      "away": "France",
-      "hc": "NOR",
-      "ac": "FRA",
-      "kickoff": "2026-06-26T19:00:00Z",
+      "home": "Panama",
+      "away": "England",
+      "hc": "PAN",
+      "ac": "ENG",
+      "kickoff": "2026-06-27T21:00:00Z",
+      "stage": "Group stage",
+      "tip": [
+        0,
+        2
+      ],
+      "fav": {
+        "label": "England",
+        "pct": 76
+      }
+    },
+    {
+      "home": "Colombia",
+      "away": "Portugal",
+      "hc": "COL",
+      "ac": "POR",
+      "kickoff": "2026-06-27T23:30:00Z",
       "stage": "Group stage",
       "tip": [
         1,
         2
       ],
       "fav": {
-        "label": "France",
-        "pct": 58
-      }
-    },
-    {
-      "home": "Cape Verde",
-      "away": "Saudi Arabia",
-      "hc": "CPV",
-      "ac": "KSA",
-      "kickoff": "2026-06-27T00:00:00Z",
-      "stage": "Group stage",
-      "tip": [
-        1,
-        2
-      ],
-      "fav": {
-        "label": "Saudi Arabia",
-        "pct": 38
+        "label": "Portugal",
+        "pct": 45
       }
     }
   ]
