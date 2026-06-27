@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-27T23:01:03Z",
+  "updated_at": "2026-06-27T23:04:13Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1341,6 +1341,27 @@
       "score_home": 0,
       "score_away": 2,
       "halftime_home": 0,
+      "halftime_away": 0,
+      "utc_date": "2026-06-27T21:00:00Z",
+      "stage": "Group Stage",
+      "goals": []
+    },
+    {
+      "fd_id": 537414,
+      "fd_home_id": 799,
+      "home_code": "CRO",
+      "away_code": "GHA",
+      "home_team": "Croatia",
+      "away_team": "Ghana",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 2,
+      "score_away": 1,
+      "halftime_home": 1,
       "halftime_away": 0,
       "utc_date": "2026-06-27T21:00:00Z",
       "stage": "Group Stage",
