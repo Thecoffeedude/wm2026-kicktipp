@@ -348,5 +348,50 @@
     "tipped": true,
     "last_tip": "0:2",
     "updated_at": "2026-06-26T22:54:20Z"
+  },
+  "RSA:CAN": {
+    "tipped": true,
+    "last_tip": "1:2",
+    "updated_at": "2026-06-27T20:11:58Z"
+  },
+  "BRA:JPN": {
+    "tipped": true,
+    "last_tip": "2:1",
+    "updated_at": "2026-06-27T20:11:58Z"
+  },
+  "GER:PAR": {
+    "tipped": true,
+    "last_tip": "2:1",
+    "updated_at": "2026-06-27T20:11:58Z"
+  },
+  "NED:MAR": {
+    "tipped": true,
+    "last_tip": "2:1",
+    "updated_at": "2026-06-27T20:11:58Z"
+  },
+  "CIV:NOR": {
+    "tipped": true,
+    "last_tip": "1:2",
+    "updated_at": "2026-06-27T20:11:58Z"
+  },
+  "FRA:SWE": {
+    "tipped": true,
+    "last_tip": "2:1",
+    "updated_at": "2026-06-27T20:11:58Z"
+  },
+  "USA:BIH": {
+    "tipped": true,
+    "last_tip": "2:1",
+    "updated_at": "2026-06-27T20:11:58Z"
+  },
+  "AUS:EGY": {
+    "tipped": true,
+    "last_tip": "0:1",
+    "updated_at": "2026-06-27T20:11:58Z"
+  },
+  "ARG:CPV": {
+    "tipped": true,
+    "last_tip": "2:0",
+    "updated_at": "2026-06-27T20:11:58Z"
   }
 }
