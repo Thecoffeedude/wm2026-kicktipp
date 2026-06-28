@@ -351,47 +351,82 @@
   },
   "RSA:CAN": {
     "tipped": true,
-    "last_tip": "1:2",
-    "updated_at": "2026-06-27T20:11:58Z"
+    "last_tip": null,
+    "updated_at": "2026-06-28T17:53:22Z"
   },
   "BRA:JPN": {
     "tipped": true,
-    "last_tip": "2:1",
-    "updated_at": "2026-06-27T20:11:58Z"
+    "last_tip": null,
+    "updated_at": "2026-06-28T17:53:22Z"
   },
   "GER:PAR": {
     "tipped": true,
-    "last_tip": "2:1",
-    "updated_at": "2026-06-27T20:11:58Z"
+    "last_tip": null,
+    "updated_at": "2026-06-28T17:53:22Z"
   },
   "NED:MAR": {
     "tipped": true,
-    "last_tip": "2:1",
-    "updated_at": "2026-06-27T20:11:58Z"
+    "last_tip": null,
+    "updated_at": "2026-06-28T17:53:22Z"
   },
   "CIV:NOR": {
     "tipped": true,
-    "last_tip": "1:2",
-    "updated_at": "2026-06-27T20:11:58Z"
+    "last_tip": null,
+    "updated_at": "2026-06-28T17:53:22Z"
   },
   "FRA:SWE": {
     "tipped": true,
-    "last_tip": "2:1",
-    "updated_at": "2026-06-27T20:11:58Z"
+    "last_tip": null,
+    "updated_at": "2026-06-28T17:53:22Z"
   },
   "USA:BIH": {
     "tipped": true,
-    "last_tip": "2:1",
-    "updated_at": "2026-06-27T20:11:58Z"
+    "last_tip": null,
+    "updated_at": "2026-06-28T17:53:22Z"
   },
   "AUS:EGY": {
     "tipped": true,
-    "last_tip": "0:1",
-    "updated_at": "2026-06-27T20:11:58Z"
+    "last_tip": null,
+    "updated_at": "2026-06-28T17:53:22Z"
   },
   "ARG:CPV": {
     "tipped": true,
+    "last_tip": null,
+    "updated_at": "2026-06-28T17:53:22Z"
+  },
+  "MEX:ECU": {
+    "tipped": true,
+    "last_tip": "1:0",
+    "updated_at": "2026-06-28T17:53:22Z"
+  },
+  "ENG:COD": {
+    "tipped": true,
     "last_tip": "2:0",
-    "updated_at": "2026-06-27T20:11:58Z"
+    "updated_at": "2026-06-28T17:53:22Z"
+  },
+  "BEL:SEN": {
+    "tipped": true,
+    "last_tip": "2:1",
+    "updated_at": "2026-06-28T17:53:22Z"
+  },
+  "ESP:AUT": {
+    "tipped": true,
+    "last_tip": "2:0",
+    "updated_at": "2026-06-28T17:53:22Z"
+  },
+  "POR:CRO": {
+    "tipped": true,
+    "last_tip": "2:1",
+    "updated_at": "2026-06-28T17:53:22Z"
+  },
+  "SUI:ALG": {
+    "tipped": true,
+    "last_tip": "2:1",
+    "updated_at": "2026-06-28T17:53:22Z"
+  },
+  "COL:GHA": {
+    "tipped": true,
+    "last_tip": "2:0",
+    "updated_at": "2026-06-28T17:53:22Z"
   }
 }
