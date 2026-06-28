@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-27T08:36:40Z",
+  "generated_at": "2026-06-28T08:52:29Z",
   "site": "https://thecoffeedude.github.io/wm2026-kicktipp/",
   "iso": {
     "ALG": "dz",
@@ -332,27 +332,23 @@
       2,
       1
     ],
-    "JOR:ARG": [
-      0,
-      2
-    ],
     "ALG:AUT": [
       1,
+      2
+    ],
+    "JOR:ARG": [
+      0,
       2
     ],
     "RSA:CAN": [
       1,
       2
     ],
-    "GER:PAR": [
-      2,
-      1
-    ],
     "BRA:JPN": [
       2,
       1
     ],
-    "FRA:SWE": [
+    "GER:PAR": [
       2,
       1
     ],
@@ -364,66 +360,98 @@
       1,
       2
     ],
+    "FRA:SWE": [
+      3,
+      1
+    ],
+    "MEX:ECU": [
+      1,
+      0
+    ],
+    "ENG:COD": [
+      2,
+      0
+    ],
+    "BEL:SEN": [
+      2,
+      1
+    ],
     "USA:BIH": [
+      2,
+      0
+    ],
+    "ESP:AUT": [
+      2,
+      1
+    ],
+    "POR:CRO": [
+      2,
+      1
+    ],
+    "SUI:ALG": [
       2,
       1
     ],
     "AUS:EGY": [
-      0,
-      1
+      1,
+      2
     ],
     "ARG:CPV": [
+      2,
+      0
+    ],
+    "COL:GHA": [
       2,
       0
     ]
   },
   "next": [
     {
-      "home": "Croatia",
-      "away": "Ghana",
-      "hc": "CRO",
-      "ac": "GHA",
-      "kickoff": "2026-06-27T21:00:00Z",
-      "stage": "Group stage",
-      "tip": [
-        2,
-        1
-      ],
-      "fav": {
-        "label": "Croatia",
-        "pct": 55
-      }
-    },
-    {
-      "home": "Panama",
-      "away": "England",
-      "hc": "PAN",
-      "ac": "ENG",
-      "kickoff": "2026-06-27T21:00:00Z",
-      "stage": "Group stage",
-      "tip": [
-        0,
-        2
-      ],
-      "fav": {
-        "label": "England",
-        "pct": 76
-      }
-    },
-    {
-      "home": "Colombia",
-      "away": "Portugal",
-      "hc": "COL",
-      "ac": "POR",
-      "kickoff": "2026-06-27T23:30:00Z",
-      "stage": "Group stage",
+      "home": "South Africa",
+      "away": "Canada",
+      "hc": "RSA",
+      "ac": "CAN",
+      "kickoff": "2026-06-28T19:00:00Z",
+      "stage": "Round of 32",
       "tip": [
         1,
         2
       ],
       "fav": {
-        "label": "Portugal",
-        "pct": 45
+        "label": "Canada",
+        "pct": 49
+      }
+    },
+    {
+      "home": "Brazil",
+      "away": "Japan",
+      "hc": "BRA",
+      "ac": "JPN",
+      "kickoff": "2026-06-29T17:00:00Z",
+      "stage": "Round of 32",
+      "tip": [
+        2,
+        1
+      ],
+      "fav": {
+        "label": "Brazil",
+        "pct": 53
+      }
+    },
+    {
+      "home": "Germany",
+      "away": "Paraguay",
+      "hc": "GER",
+      "ac": "PAR",
+      "kickoff": "2026-06-29T20:30:00Z",
+      "stage": "Round of 32",
+      "tip": [
+        2,
+        1
+      ],
+      "fav": {
+        "label": "Germany",
+        "pct": 63
       }
     }
   ]
