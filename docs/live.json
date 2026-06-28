@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-28T20:57:19Z",
+  "updated_at": "2026-06-28T21:02:28Z",
   "live": [
     {
       "fd_id": 537401,
@@ -50,11 +50,11 @@
       "away_code": "CAN",
       "home_team": "South Africa",
       "away_team": "Canada",
-      "status": "PAUSED",
-      "status_de": "Halbzeit",
+      "status": "FINISHED",
+      "status_de": "Beendet",
       "is_live": false,
-      "is_halftime": true,
-      "is_done": false,
+      "is_halftime": false,
+      "is_done": true,
       "minute": null,
       "score_home": 0,
       "score_away": 1,
