@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-28T16:08:05Z",
+  "updated_at": "2026-06-28T19:15:34Z",
   "live": [
     {
       "fd_id": 537401,
@@ -50,18 +50,19 @@
       "away_code": "CAN",
       "home_team": "South Africa",
       "away_team": "Canada",
-      "status": "TIMED",
-      "status_de": "Bald",
-      "is_live": false,
+      "status": "IN_PLAY",
+      "status_de": "Live",
+      "is_live": true,
       "is_halftime": false,
       "is_done": false,
       "minute": null,
-      "score_home": null,
-      "score_away": null,
+      "score_home": 0,
+      "score_away": 0,
       "halftime_home": null,
       "halftime_away": null,
       "utc_date": "2026-06-28T19:00:00Z",
-      "stage": "Last 32"
+      "stage": "Last 32",
+      "goals": []
     }
   ]
 }
