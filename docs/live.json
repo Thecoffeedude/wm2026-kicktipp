@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-28T00:28:48Z",
+  "updated_at": "2026-06-28T04:45:35Z",
   "live": [
     {
       "fd_id": 537401,
@@ -8,18 +8,19 @@
       "away_code": "ARG",
       "home_team": "Jordan",
       "away_team": "Argentina",
-      "status": "TIMED",
-      "status_de": "Bald",
+      "status": "FINISHED",
+      "status_de": "Beendet",
       "is_live": false,
       "is_halftime": false,
-      "is_done": false,
+      "is_done": true,
       "minute": null,
-      "score_home": null,
-      "score_away": null,
-      "halftime_home": null,
-      "halftime_away": null,
+      "score_home": 1,
+      "score_away": 3,
+      "halftime_home": 0,
+      "halftime_away": 2,
       "utc_date": "2026-06-28T02:00:00Z",
-      "stage": "Group Stage"
+      "stage": "Group Stage",
+      "goals": []
     },
     {
       "fd_id": 537402,
@@ -28,38 +29,19 @@
       "away_code": "AUT",
       "home_team": "Algeria",
       "away_team": "Austria",
-      "status": "TIMED",
-      "status_de": "Bald",
+      "status": "FINISHED",
+      "status_de": "Beendet",
       "is_live": false,
       "is_halftime": false,
-      "is_done": false,
+      "is_done": true,
       "minute": null,
-      "score_home": null,
-      "score_away": null,
-      "halftime_home": null,
-      "halftime_away": null,
+      "score_home": 3,
+      "score_away": 3,
+      "halftime_home": 1,
+      "halftime_away": 1,
       "utc_date": "2026-06-28T02:00:00Z",
-      "stage": "Group Stage"
-    },
-    {
-      "fd_id": 537417,
-      "fd_home_id": 774,
-      "home_code": "RSA",
-      "away_code": "CAN",
-      "home_team": "South Africa",
-      "away_team": "Canada",
-      "status": "TIMED",
-      "status_de": "Bald",
-      "is_live": false,
-      "is_halftime": false,
-      "is_done": false,
-      "minute": null,
-      "score_home": null,
-      "score_away": null,
-      "halftime_home": null,
-      "halftime_away": null,
-      "utc_date": "2026-06-28T19:00:00Z",
-      "stage": "Last 32"
+      "stage": "Group Stage",
+      "goals": []
     }
   ]
 }
