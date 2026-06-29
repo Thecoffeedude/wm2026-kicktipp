@@ -35049,5 +35049,440 @@
     ]
    }
   }
+ },
+ "ua_BRA_JPN_2026-06-29": {
+  "hl_id": 1329555528,
+  "fetched_at": "2026-06-29T19:22:17Z",
+  "stats": {
+   "home": {
+    "xg": 1.72,
+    "possession": 69,
+    "shots_on_target": 7,
+    "corners": 6,
+    "passes": 682,
+    "saves": 1,
+    "fouls": 4,
+    "shots": 19
+   },
+   "away": {
+    "xg": 0.23,
+    "possession": 31,
+    "shots_on_target": 2,
+    "corners": 2,
+    "passes": 315,
+    "saves": 4,
+    "fouls": 13,
+    "shots": 5
+   }
+  },
+  "events": [
+   {
+    "time": "12",
+    "type": "Yellow Card",
+    "player": "K. Sano",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "14",
+    "type": "Yellow Card",
+    "player": "Casemiro",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "29",
+    "type": "Goal",
+    "player": "K. Sano",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "45",
+    "type": "Yellow Card",
+    "player": "D. Kamada",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "Lucas Paqueta",
+    "assist": null,
+    "sub_in": "Endrick",
+    "side": "home"
+   },
+   {
+    "time": "48",
+    "type": "Yellow Card",
+    "player": "Danilo",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "56",
+    "type": "Goal",
+    "player": "Casemiro",
+    "assist": "Gabriel",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "66",
+    "type": "Substitution",
+    "player": "M. Cunha",
+    "assist": null,
+    "sub_in": "G. Martinelli",
+    "side": "home"
+   },
+   {
+    "time": "66",
+    "type": "Substitution",
+    "player": "R. Doan",
+    "assist": null,
+    "sub_in": "Y. Sugawara",
+    "side": "away"
+   },
+   {
+    "time": "66",
+    "type": "Substitution",
+    "player": "K. Nakamura",
+    "assist": null,
+    "sub_in": "J. Suzuki",
+    "side": "away"
+   },
+   {
+    "time": "78",
+    "type": "Substitution",
+    "player": "D. Kamada",
+    "assist": null,
+    "sub_in": "A. Tanaka",
+    "side": "away"
+   },
+   {
+    "time": "78",
+    "type": "Substitution",
+    "player": "J. Ito",
+    "assist": null,
+    "sub_in": "S. Machino",
+    "side": "away"
+   },
+   {
+    "time": "84",
+    "type": "Yellow Card",
+    "player": "J. Suzuki",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "90+2",
+    "type": "Substitution",
+    "player": "Casemiro",
+    "assist": null,
+    "sub_in": "Fabinho",
+    "side": "home"
+   },
+   {
+    "time": "90+5",
+    "type": "Goal",
+    "player": "G. Martinelli",
+    "assist": "Bruno Guimaraes",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "90+7",
+    "type": "Substitution",
+    "player": "D. Maeda",
+    "assist": null,
+    "sub_in": "K. Ogawa",
+    "side": "away"
+   },
+   {
+    "time": "90+8",
+    "type": "Substitution",
+    "player": "Bruno Guimaraes",
+    "assist": null,
+    "sub_in": "Danilo Santos",
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-3-3",
+    "xi": [
+     {
+      "name": "Alisson",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Douglas Santos",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gabriel Magalhães",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marquinhos",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Danilo",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Lucas Paquetá",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Casemiro",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Bruno Guimarães",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Vinícius Júnior",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Matheus Cunha",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Rayan",
+      "number": 26,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Ederson",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Weverton",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Alex Sandro",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Bremer",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Léo Pereira",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Roger Ibañez",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Éderson",
+      "number": 2,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Fabinho",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Luiz Henrique",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "Danilo Santos",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Endrick",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Gabriel Martinelli",
+      "number": 22,
+      "pos": "Forward"
+     },
+     {
+      "name": "Igor Thiago",
+      "number": 25,
+      "pos": "Forward"
+     },
+     {
+      "name": "Neymar",
+      "number": 10,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "3-4-2-1",
+    "xi": [
+     {
+      "name": "Zion Suzuki",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Hiroki Itō",
+      "number": 21,
+      "pos": "Defender"
+     },
+     {
+      "name": "Shogo Taniguchi",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Takehiro Tomiyasu",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Keito Nakamura",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Daichi Kamada",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kaishu Sano",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ritsu Doan",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Daizen Maeda",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Junya Ito",
+      "number": 14,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ayase Ueda",
+      "number": 18,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Keisuke Osako",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Tomoki Hayakawa",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Yukinari Sugawara",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ko Itakura",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Yuto Nagatomo",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Tsuyoshi Watanabe",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ayumu Seko",
+      "number": 20,
+      "pos": "Defender"
+     },
+     {
+      "name": "Junnosuke Suzuki",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ao Tanaka",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Yuito Suzuki",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Takefusa Kubo",
+      "number": 8,
+      "pos": "Forward"
+     },
+     {
+      "name": "Shuto Machino",
+      "number": 6,
+      "pos": "Forward"
+     },
+     {
+      "name": "Koki Ogawa",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Kento Shiogai",
+      "number": 26,
+      "pos": "Forward"
+     },
+     {
+      "name": "Keisuke Goto",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }

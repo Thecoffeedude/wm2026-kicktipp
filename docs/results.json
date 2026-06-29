@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-29T11:01:00Z",
+  "updated_at": "2026-06-29T19:22:17Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1460,6 +1460,25 @@
       "halftime_away": 0,
       "utc_date": "2026-06-28T19:00:00Z",
       "stage": "Last 32"
+    },
+    {
+      "home_code": "BRA",
+      "away_code": "JPN",
+      "home_team": "Brazil",
+      "away_team": "Japan",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 2,
+      "score_away": 1,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-06-29T17:00:00Z",
+      "stage": "Round of 32",
+      "score_source": "highlightly"
     }
   ]
 }
