@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-29T21:25:56Z",
+  "updated_at": "2026-06-29T21:44:24Z",
   "live": [
     {
       "fd_id": 537423,
@@ -29,10 +29,10 @@
       "away_code": "PAR",
       "home_team": "Germany",
       "away_team": "Paraguay",
-      "status": "PAUSED",
-      "status_de": "Halbzeit",
-      "is_live": false,
-      "is_halftime": true,
+      "status": "IN_PLAY",
+      "status_de": "Live",
+      "is_live": true,
+      "is_halftime": false,
       "is_done": false,
       "minute": null,
       "score_home": 0,
