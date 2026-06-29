@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-29T19:22:17Z",
+  "updated_at": "2026-06-29T19:53:04Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1462,6 +1462,8 @@
       "stage": "Last 32"
     },
     {
+      "fd_id": 537423,
+      "fd_home_id": 764,
       "home_code": "BRA",
       "away_code": "JPN",
       "home_team": "Brazil",
@@ -1474,11 +1476,11 @@
       "minute": null,
       "score_home": 2,
       "score_away": 1,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 1,
       "utc_date": "2026-06-29T17:00:00Z",
-      "stage": "Round of 32",
-      "score_source": "highlightly"
+      "stage": "Last 32",
+      "goals": []
     }
   ]
 }
