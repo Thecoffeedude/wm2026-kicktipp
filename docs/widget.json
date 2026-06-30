@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T11:01:00Z",
+  "generated_at": "2026-06-30T09:37:05Z",
   "site": "https://thecoffeedude.github.io/wm2026-kicktipp/",
   "iso": {
     "ALG": "dz",
@@ -365,20 +365,20 @@
       0
     ],
     "MEX:ECU": [
+      2,
+      1
+    ],
+    "ENG:COD": [
+      3,
+      1
+    ],
+    "BEL:SEN": [
       1,
       0
     ],
-    "ENG:COD": [
-      2,
-      0
-    ],
-    "BEL:SEN": [
-      2,
-      1
-    ],
     "USA:BIH": [
       2,
-      1
+      0
     ],
     "ESP:AUT": [
       2,
@@ -393,65 +393,65 @@
       1
     ],
     "AUS:EGY": [
-      0,
-      1
+      1,
+      2
     ],
     "ARG:CPV": [
-      2,
-      0
+      3,
+      1
     ],
     "COL:GHA": [
-      2,
+      1,
       0
     ]
   },
   "next": [
     {
-      "home": "Brazil",
-      "away": "Japan",
-      "hc": "BRA",
-      "ac": "JPN",
-      "kickoff": "2026-06-29T17:00:00Z",
+      "home": "Ivory Coast",
+      "away": "Norway",
+      "hc": "CIV",
+      "ac": "NOR",
+      "kickoff": "2026-06-30T17:00:00Z",
       "stage": "Round of 32",
       "tip": [
-        2,
-        1
+        1,
+        2
       ],
       "fav": {
-        "label": "Brazil",
-        "pct": 53
+        "label": "Norway",
+        "pct": 45
       }
     },
     {
-      "home": "Germany",
-      "away": "Paraguay",
-      "hc": "GER",
-      "ac": "PAR",
-      "kickoff": "2026-06-29T20:30:00Z",
+      "home": "France",
+      "away": "Sweden",
+      "hc": "FRA",
+      "ac": "SWE",
+      "kickoff": "2026-06-30T21:00:00Z",
       "stage": "Round of 32",
       "tip": [
         2,
-        1
+        0
       ],
       "fav": {
-        "label": "Germany",
-        "pct": 65
+        "label": "France",
+        "pct": 71
       }
     },
     {
-      "home": "Netherlands",
-      "away": "Morocco",
-      "hc": "NED",
-      "ac": "MAR",
-      "kickoff": "2026-06-30T01:00:00Z",
+      "home": "Mexico",
+      "away": "Ecuador",
+      "hc": "MEX",
+      "ac": "ECU",
+      "kickoff": "2026-07-01T01:00:00Z",
       "stage": "Round of 32",
       "tip": [
         2,
         1
       ],
       "fav": {
-        "label": "Netherlands",
-        "pct": 43
+        "label": "Mexico",
+        "pct": 41
       }
     }
   ]
