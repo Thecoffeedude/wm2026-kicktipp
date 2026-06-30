@@ -367,66 +367,66 @@
   "NED:MAR": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-06-28T17:53:22Z"
+    "updated_at": "2026-06-30T00:12:30Z"
   },
   "CIV:NOR": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-06-28T17:53:22Z"
+    "updated_at": "2026-06-30T00:12:30Z"
   },
   "FRA:SWE": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-06-28T17:53:22Z"
+    "updated_at": "2026-06-30T00:12:30Z"
   },
   "USA:BIH": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-06-28T17:53:22Z"
+    "updated_at": "2026-06-30T00:12:30Z"
   },
   "AUS:EGY": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-06-28T17:53:22Z"
+    "updated_at": "2026-06-30T00:12:30Z"
   },
   "ARG:CPV": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-06-28T17:53:22Z"
+    "updated_at": "2026-06-30T00:12:30Z"
   },
   "MEX:ECU": {
     "tipped": true,
-    "last_tip": "1:0",
-    "updated_at": "2026-06-28T17:53:22Z"
+    "last_tip": null,
+    "updated_at": "2026-06-30T00:12:30Z"
   },
   "ENG:COD": {
     "tipped": true,
-    "last_tip": "2:0",
-    "updated_at": "2026-06-28T17:53:22Z"
+    "last_tip": null,
+    "updated_at": "2026-06-30T00:12:30Z"
   },
   "BEL:SEN": {
     "tipped": true,
-    "last_tip": "2:1",
-    "updated_at": "2026-06-28T17:53:22Z"
+    "last_tip": null,
+    "updated_at": "2026-06-30T00:12:30Z"
   },
   "ESP:AUT": {
     "tipped": true,
-    "last_tip": "2:0",
-    "updated_at": "2026-06-28T17:53:22Z"
+    "last_tip": null,
+    "updated_at": "2026-06-30T00:12:30Z"
   },
   "POR:CRO": {
     "tipped": true,
-    "last_tip": "2:1",
-    "updated_at": "2026-06-28T17:53:22Z"
+    "last_tip": null,
+    "updated_at": "2026-06-30T00:12:30Z"
   },
   "SUI:ALG": {
     "tipped": true,
-    "last_tip": "2:1",
-    "updated_at": "2026-06-28T17:53:22Z"
+    "last_tip": null,
+    "updated_at": "2026-06-30T00:12:30Z"
   },
   "COL:GHA": {
     "tipped": true,
-    "last_tip": "2:0",
-    "updated_at": "2026-06-28T17:53:22Z"
+    "last_tip": null,
+    "updated_at": "2026-06-30T00:12:30Z"
   }
 }
