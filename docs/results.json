@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-29T19:53:04Z",
+  "updated_at": "2026-06-30T00:12:37Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1481,6 +1481,25 @@
       "utc_date": "2026-06-29T17:00:00Z",
       "stage": "Last 32",
       "goals": []
+    },
+    {
+      "home_code": "GER",
+      "away_code": "PAR",
+      "home_team": "Germany",
+      "away_team": "Paraguay",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 1,
+      "score_away": 1,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-06-29T20:30:00Z",
+      "stage": "Round of 32",
+      "score_source": "highlightly"
     }
   ]
 }

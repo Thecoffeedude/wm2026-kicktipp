@@ -35484,5 +35484,563 @@
     ]
    }
   }
+ },
+ "ua_GER_PAR_2026-06-29": {
+  "hl_id": 1331965560,
+  "fetched_at": "2026-06-30T00:12:37Z",
+  "stats": {
+   "home": {
+    "xg": 1.49,
+    "possession": 75,
+    "shots_on_target": 6,
+    "corners": 16,
+    "passes": 799,
+    "saves": 2,
+    "fouls": 18,
+    "shots": 21
+   },
+   "away": {
+    "xg": 0.42,
+    "possession": 25,
+    "shots_on_target": 3,
+    "corners": 6,
+    "passes": 257,
+    "saves": 6,
+    "fouls": 12,
+    "shots": 7
+   }
+  },
+  "events": [
+   {
+    "time": "42",
+    "type": "Goal",
+    "player": "J. Enciso",
+    "assist": "M. Galarza",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "F. Nmecha",
+    "assist": null,
+    "sub_in": "L. Goretzka",
+    "side": "home"
+   },
+   {
+    "time": "54",
+    "type": "Goal",
+    "player": "K. Havertz",
+    "assist": "F. Wirtz",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "55",
+    "type": "Substitution",
+    "player": "G. Avalos",
+    "assist": null,
+    "sub_in": "G. Caballero",
+    "side": "away"
+   },
+   {
+    "time": "57",
+    "type": "Substitution",
+    "player": "J. Enciso",
+    "assist": null,
+    "sub_in": "Mauricio",
+    "side": "away"
+   },
+   {
+    "time": "63",
+    "type": "Substitution",
+    "player": "D. Undav",
+    "assist": null,
+    "sub_in": "J. Musiala",
+    "side": "home"
+   },
+   {
+    "time": "65",
+    "type": "Yellow Card",
+    "player": "A. Cubas",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "79",
+    "type": "Substitution",
+    "player": "A. Pavlovic",
+    "assist": null,
+    "sub_in": "W. Anton",
+    "side": "home"
+   },
+   {
+    "time": "88",
+    "type": "Substitution",
+    "player": "L. Sane",
+    "assist": null,
+    "sub_in": "N. Woltemade",
+    "side": "home"
+   },
+   {
+    "time": "91",
+    "type": "Substitution",
+    "player": "M. Almiron",
+    "assist": null,
+    "sub_in": "G. Velazquez",
+    "side": "away"
+   },
+   {
+    "time": "99",
+    "type": "Substitution",
+    "player": "J. Caceres",
+    "assist": null,
+    "sub_in": "B. Ojeda",
+    "side": "away"
+   },
+   {
+    "time": "99",
+    "type": "Substitution",
+    "player": "D. Bobadilla",
+    "assist": null,
+    "sub_in": "A. Sanabria",
+    "side": "away"
+   },
+   {
+    "time": "102",
+    "type": "VAR Goal Cancelled",
+    "player": "J. Tah",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "105",
+    "type": "Yellow Card",
+    "player": "G. Alfaro",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "105+1",
+    "type": "Yellow Card",
+    "player": "J. Nagelsmann",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "106",
+    "type": "Yellow Card",
+    "player": "K. Havertz",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "110",
+    "type": "Substitution",
+    "player": "F. Wirtz",
+    "assist": null,
+    "sub_in": "N. Amiri",
+    "side": "home"
+   },
+   {
+    "time": "110",
+    "type": "Substitution",
+    "player": "A. Rudiger",
+    "assist": null,
+    "sub_in": "M. Thiaw",
+    "side": "home"
+   },
+   {
+    "time": "115",
+    "type": "Yellow Card",
+    "player": "J. Musiala",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "117",
+    "type": "Yellow Card",
+    "player": "M. Galarza",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "120+2",
+    "type": "Substitution",
+    "player": "J. Alonso",
+    "assist": null,
+    "sub_in": "Fabian Balbuena",
+    "side": "away"
+   },
+   {
+    "time": "120+1",
+    "type": "Missed Penalty",
+    "player": "K. Havertz",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "120+1",
+    "type": "Penalty",
+    "player": "Mauricio",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "120+2",
+    "type": "Penalty",
+    "player": "J. Kimmich",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "120+2",
+    "type": "Penalty",
+    "player": "G. Gomez",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "120+3",
+    "type": "Penalty",
+    "player": "J. Musiala",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "120+3",
+    "type": "Penalty",
+    "player": "M. Galarza",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "120+4",
+    "type": "Missed Penalty",
+    "player": "N. Woltemade",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "120+4",
+    "type": "Missed Penalty",
+    "player": "A. Sanabria",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "120+5",
+    "type": "Penalty",
+    "player": "N. Amiri",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "120+5",
+    "type": "Missed Penalty",
+    "player": "Fabian Balbuena",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "120+6",
+    "type": "Missed Penalty",
+    "player": "J. Tah",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "120+6",
+    "type": "Penalty",
+    "player": "J. Canale",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Manuel Neuer",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Nathaniel Brown",
+      "number": 18,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jonathan Tah",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Antonio Rüdiger",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Joshua Kimmich",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Aleksandar Pavlović",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Felix Nmecha",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Florian Wirtz",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kai Havertz",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Leroy Sané",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Deniz Undav",
+      "number": 26,
+      "pos": "Midfielder"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Alexander Nübel",
+      "number": 21,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Oliver Baumann",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "David Raum",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Waldemar Anton",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Malick Thiaw",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Pascal Groß",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Angelo Stiller",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Assan Ouédraogo",
+      "number": 25,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jamal Musiala",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jamie Leweling",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Leon Goretzka",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nadiem Amiri",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nick Woltemade",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Maximilian Beier",
+      "number": 14,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-5-1",
+    "xi": [
+     {
+      "name": "Orlando Gill",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Junior Alonso",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "José Canale",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gustavo Gómez",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Juan Cáceres",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Julio Enciso",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Matías Galarza",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Andrés Cubas",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Damián Bobadilla",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Miguel Almirón",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Gabriel Ávalos",
+      "number": 21,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Gastón Olveira",
+      "number": 22,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Roberto Fernández",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Gustavo Velázquez",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Omar Alderete",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Fabián Balbuena",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Alexandro Maidana",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mauricio",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Braian Ojeda",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Gustavo Caballero",
+      "number": 24,
+      "pos": "Forward"
+     },
+     {
+      "name": "Alejandro Romero",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ramón Sosa",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Antonio Sanabria",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Alex Arce",
+      "number": 18,
+      "pos": "Forward"
+     },
+     {
+      "name": "Isidro Pitta",
+      "number": 25,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
