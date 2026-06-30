@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-30T19:17:16Z",
+  "updated_at": "2026-06-30T22:58:46Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1540,6 +1540,27 @@
       "halftime_home": 0,
       "halftime_away": 1,
       "utc_date": "2026-06-30T17:00:00Z",
+      "stage": "Last 32",
+      "goals": []
+    },
+    {
+      "fd_id": 537416,
+      "fd_home_id": 773,
+      "home_code": "FRA",
+      "away_code": "SWE",
+      "home_team": "France",
+      "away_team": "Sweden",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 3,
+      "score_away": 0,
+      "halftime_home": 1,
+      "halftime_away": 0,
+      "utc_date": "2026-06-30T21:00:00Z",
       "stage": "Last 32",
       "goals": []
     }
