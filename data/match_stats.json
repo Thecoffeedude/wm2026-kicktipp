@@ -36042,5 +36042,501 @@
     ]
    }
   }
+ },
+ "ua_NED_MAR_2026-06-30": {
+  "hl_id": 1329556379,
+  "fetched_at": "2026-06-30T03:56:19Z",
+  "stats": {
+   "home": {
+    "xg": 0.23,
+    "possession": 30,
+    "shots_on_target": 2,
+    "corners": 5,
+    "passes": 373,
+    "saves": 5,
+    "fouls": 18,
+    "shots": 6
+   },
+   "away": {
+    "xg": 1.4,
+    "possession": 70,
+    "shots_on_target": 5,
+    "corners": 8,
+    "passes": 878,
+    "saves": 1,
+    "fouls": 15,
+    "shots": 11
+   }
+  },
+  "events": [
+   {
+    "time": "47",
+    "type": "Yellow Card",
+    "player": "I. Diop",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "N. Ake",
+    "assist": null,
+    "sub_in": "T. Koopmeiners",
+    "side": "home"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "B. Brobbey",
+    "assist": null,
+    "sub_in": "W. Weghorst",
+    "side": "home"
+   },
+   {
+    "time": "72",
+    "type": "Goal",
+    "player": "C. Gakpo",
+    "assist": "C. Summerville",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "75",
+    "type": "Substitution",
+    "player": "C. Riad",
+    "assist": null,
+    "sub_in": "A. Salah-Eddine",
+    "side": "away"
+   },
+   {
+    "time": "79",
+    "type": "Substitution",
+    "player": "B. Diaz",
+    "assist": null,
+    "sub_in": "G. Yassine",
+    "side": "away"
+   },
+   {
+    "time": "79",
+    "type": "Substitution",
+    "player": "A. Bouaddi",
+    "assist": null,
+    "sub_in": "S. El Mourabet",
+    "side": "away"
+   },
+   {
+    "time": "86",
+    "type": "Substitution",
+    "player": "A. Ounahi",
+    "assist": null,
+    "sub_in": "S. Rahimi",
+    "side": "away"
+   },
+   {
+    "time": "86",
+    "type": "Substitution",
+    "player": "M. van de Ven",
+    "assist": null,
+    "sub_in": "J. Hato",
+    "side": "home"
+   },
+   {
+    "time": "86",
+    "type": "Substitution",
+    "player": "R. Gravenberch",
+    "assist": null,
+    "sub_in": "Q. Timber",
+    "side": "home"
+   },
+   {
+    "time": "87",
+    "type": "Substitution",
+    "player": "B. El Khannouss",
+    "assist": null,
+    "sub_in": "C. Talbi",
+    "side": "away"
+   },
+   {
+    "time": "90+1",
+    "type": "Goal",
+    "player": "I. Diop",
+    "assist": "C. Talbi",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "110",
+    "type": "Substitution",
+    "player": "F. de Jong",
+    "assist": null,
+    "sub_in": "M. De Roon",
+    "side": "home"
+   },
+   {
+    "time": "113",
+    "type": "Substitution",
+    "player": "C. Gakpo",
+    "assist": null,
+    "sub_in": "J. Kluivert",
+    "side": "home"
+   },
+   {
+    "time": "120+1",
+    "type": "Penalty",
+    "player": "T. Koopmeiners",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "120+1",
+    "type": "Missed Penalty",
+    "player": "N. El Aynaoui",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "120+2",
+    "type": "Missed Penalty",
+    "player": "J. Kluivert",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "120+2",
+    "type": "Penalty",
+    "player": "S. Rahimi",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "120+3",
+    "type": "Penalty",
+    "player": "W. Weghorst",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "120+3",
+    "type": "Penalty",
+    "player": "C. Talbi",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "120+4",
+    "type": "Missed Penalty",
+    "player": "Q. Timber",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "120+4",
+    "type": "Missed Penalty",
+    "player": "A. Hakimi",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "120+5",
+    "type": "Missed Penalty",
+    "player": "C. Summerville",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "120+5",
+    "type": "Penalty",
+    "player": "I. Saibari",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "3-4-2-1",
+    "xi": [
+     {
+      "name": "Bart Verbruggen",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Nathan Aké",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Virgil van Dijk",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jan Paul van Hecke",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Micky van de Ven",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Frenkie de Jong",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ryan Gravenberch",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Denzel Dumfries",
+      "number": 22,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Cody Gakpo",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Crysencio Summerville",
+      "number": 24,
+      "pos": "Forward"
+     },
+     {
+      "name": "Brian Brobbey",
+      "number": 19,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Mark Flekken",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Robin Roefs",
+      "number": 13,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Jorrel Hato",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Lutsharel Geertruida",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mats Wieffer",
+      "number": 12,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Guus Til",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Justin Kluivert",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Marten de Roon",
+      "number": 3,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Quinten Timber",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Teun Koopmeiners",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Tijjani Reijnders",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Donyell Malen",
+      "number": 18,
+      "pos": "Forward"
+     },
+     {
+      "name": "Memphis Depay",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "Wout Weghorst",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Noa Lang",
+      "number": 17,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Yassine Bounou",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Noussair Mazraoui",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Chadi Riad",
+      "number": 18,
+      "pos": "Defender"
+     },
+     {
+      "name": "Issa Diop",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Achraf Hakimi",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ayyoub Bouaddi",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Neil El Aynaoui",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Bilal El Khannouss",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Azzedine Ounahi",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Brahim Díaz",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ismael Saibari",
+      "number": 11,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Ahmed Reda Tagnaouti",
+      "number": 22,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Munir El Kajoui",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Anass Salah-Eddine",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marwane Saadane",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Redouane Halhal",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Youssef Belammari",
+      "number": 19,
+      "pos": "Defender"
+     },
+     {
+      "name": "Zakaria El Ouahdi",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Amine Sbai",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Chemsdine Talbi",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Gessime Yassine",
+      "number": 16,
+      "pos": "Forward"
+     },
+     {
+      "name": "Samir El Mourabet",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Sofyan Amrabat",
+      "number": 4,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ayoub El Kaabi",
+      "number": 20,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ayoube Amaimouni Echghouyab",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "Soufiane Rahimi",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
