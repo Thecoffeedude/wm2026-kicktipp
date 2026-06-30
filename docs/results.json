@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-30T03:56:19Z",
+  "updated_at": "2026-06-30T04:20:23Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1502,6 +1502,8 @@
       "score_source": "highlightly"
     },
     {
+      "fd_id": 537418,
+      "fd_home_id": 8601,
       "home_code": "NED",
       "away_code": "MAR",
       "home_team": "Netherlands",
@@ -1512,13 +1514,13 @@
       "is_halftime": false,
       "is_done": true,
       "minute": null,
-      "score_home": 1,
-      "score_away": 1,
-      "halftime_home": null,
-      "halftime_away": null,
+      "score_home": 3,
+      "score_away": 4,
+      "halftime_home": 0,
+      "halftime_away": 0,
       "utc_date": "2026-06-30T01:00:00Z",
-      "stage": "Round of 32",
-      "score_source": "highlightly"
+      "stage": "Last 32",
+      "goals": []
     }
   ]
 }
