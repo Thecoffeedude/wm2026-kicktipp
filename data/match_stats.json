@@ -36538,5 +36538,405 @@
     ]
    }
   }
+ },
+ "ua_CIV_NOR_2026-06-30": {
+  "hl_id": 1331636223,
+  "fetched_at": "2026-06-30T19:22:22Z",
+  "stats": {
+   "home": {
+    "xg": 1.36,
+    "possession": 47,
+    "shots_on_target": 5,
+    "corners": 14,
+    "passes": 401,
+    "saves": 1,
+    "fouls": 6,
+    "shots": 14
+   },
+   "away": {
+    "xg": 2.02,
+    "possession": 53,
+    "shots_on_target": 4,
+    "corners": 3,
+    "passes": 473,
+    "saves": 4,
+    "fouls": 7,
+    "shots": 9
+   }
+  },
+  "events": [
+   {
+    "time": "39",
+    "type": "Goal",
+    "player": "A. Nusa",
+    "assist": "M. Odegaard",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "45+1",
+    "type": "Yellow Card",
+    "player": "A. Nusa",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "60",
+    "type": "Substitution",
+    "player": "C. Inao Oulai",
+    "assist": null,
+    "sub_in": "A. Diallo",
+    "side": "home"
+   },
+   {
+    "time": "60",
+    "type": "Substitution",
+    "player": "A. Bonny",
+    "assist": null,
+    "sub_in": "E. Wahi",
+    "side": "home"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "A. Sorloth",
+    "assist": null,
+    "sub_in": "O. Bobb",
+    "side": "away"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "A. Nusa",
+    "assist": null,
+    "sub_in": "A. Schjelderup",
+    "side": "away"
+   },
+   {
+    "time": "74",
+    "type": "Goal",
+    "player": "A. Diallo",
+    "assist": "N. Pepe",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "83",
+    "type": "Substitution",
+    "player": "M. Pedersen",
+    "assist": null,
+    "sub_in": "F. Aursnes",
+    "side": "away"
+   },
+   {
+    "time": "86",
+    "type": "Goal",
+    "player": "E. Haaland",
+    "assist": "P. Berg",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "87",
+    "type": "Substitution",
+    "player": "N. Pepe",
+    "assist": null,
+    "sub_in": "O. Diakite",
+    "side": "home"
+   },
+   {
+    "time": "90+3",
+    "type": "Substitution",
+    "player": "Y. Diomande",
+    "assist": null,
+    "sub_in": "E. Guessand",
+    "side": "home"
+   },
+   {
+    "time": "90+3",
+    "type": "Substitution",
+    "player": "G. Konan",
+    "assist": null,
+    "sub_in": "B. Toure",
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-1-4-1",
+    "xi": [
+     {
+      "name": "Yahia Fofana",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Ghislain Konan",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Emmanuel Agbadou",
+      "number": 20,
+      "pos": "Defender"
+     },
+     {
+      "name": "Odilon Kossounou",
+      "number": 7,
+      "pos": "Defender"
+     },
+     {
+      "name": "Guéla Doué",
+      "number": 17,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ibrahim Sangaré",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Yan Diomande",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Christ Inao Oulaï",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Franck Kessié",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nicolas Pépé",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ange-Yoan Bonny",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Mohamed Koné",
+      "number": 16,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Alban Lafont",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Ousmane Diomande",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Wilfried Singo",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Christopher Operi",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Evan Ndicka",
+      "number": 21,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jean Michaël Seri",
+      "number": 4,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Seko Fofana",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Parfait Guiagon",
+      "number": 25,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Simon Adingra",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "Amad Diallo",
+      "number": 15,
+      "pos": "Forward"
+     },
+     {
+      "name": "Bazoumana Touré",
+      "number": 24,
+      "pos": "Forward"
+     },
+     {
+      "name": "Elye Wahi",
+      "number": 12,
+      "pos": "Forward"
+     },
+     {
+      "name": "Oumar Diakité",
+      "number": 14,
+      "pos": "Forward"
+     },
+     {
+      "name": "Evann Guessand",
+      "number": 22,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-3-3",
+    "xi": [
+     {
+      "name": "Ørjan Nyland",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "David Møller Wolfe",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Torbjørn Heggem",
+      "number": 17,
+      "pos": "Defender"
+     },
+     {
+      "name": "Kristoffer Ajer",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marcus Pedersen",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "Patrick Berg",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Sander Berge",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Martin Ødegaard",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Antonio Nusa",
+      "number": 20,
+      "pos": "Forward"
+     },
+     {
+      "name": "Erling Haaland",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Alexander Sørloth",
+      "number": 7,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Sander Tangvik",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Egil Selvik",
+      "number": 13,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Leo Østigård",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Fredrik André Bjørkan",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Sondre Langås",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Henrik Sælebakke Falchener",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Morten Thorsby",
+      "number": 2,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Fredrik Aursnes",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kristian Thorstvedt",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Thelo Aasgaard",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Andreas Schjelderup",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "Oscar Bobb",
+      "number": 22,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Julian Ryerson",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jørgen Strand Larsen",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Jens Petter Hauge",
+      "number": 23,
+      "pos": "Midfielder"
+     }
+    ]
+   }
+  }
  }
 }
