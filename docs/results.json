@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-30T17:05:09Z",
+  "updated_at": "2026-06-30T19:17:16Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1519,6 +1519,27 @@
       "halftime_home": 0,
       "halftime_away": 0,
       "utc_date": "2026-06-30T01:00:00Z",
+      "stage": "Last 32",
+      "goals": []
+    },
+    {
+      "fd_id": 537424,
+      "fd_home_id": 1935,
+      "home_code": "CIV",
+      "away_code": "NOR",
+      "home_team": "Ivory Coast",
+      "away_team": "Norway",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 1,
+      "score_away": 2,
+      "halftime_home": 0,
+      "halftime_away": 1,
+      "utc_date": "2026-06-30T17:00:00Z",
       "stage": "Last 32",
       "goals": []
     }
