@@ -37781,5 +37781,421 @@
     ]
    }
   }
+ },
+ "ua_ENG_COD_2026-07-01": {
+  "hl_id": 1333779041,
+  "fetched_at": "2026-07-01T18:04:21Z",
+  "stats": {
+   "home": {
+    "xg": 2.04,
+    "possession": 60,
+    "shots_on_target": 7,
+    "corners": 5,
+    "passes": 517,
+    "saves": 1,
+    "fouls": 10,
+    "shots": 16
+   },
+   "away": {
+    "xg": 0.8,
+    "possession": 40,
+    "shots_on_target": 2,
+    "corners": 3,
+    "passes": 365,
+    "saves": 5,
+    "fouls": 12,
+    "shots": 7
+   }
+  },
+  "events": [
+   {
+    "time": "7",
+    "type": "Goal",
+    "player": "B. Cipenga",
+    "assist": "C. Mbemba",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "19",
+    "type": "Yellow Card",
+    "player": "J. Bellingham",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "28",
+    "type": "Yellow Card",
+    "player": "N. Sadiki",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "61",
+    "type": "Substitution",
+    "player": "M. Rashford",
+    "assist": null,
+    "sub_in": "A. Gordon",
+    "side": "home"
+   },
+   {
+    "time": "61",
+    "type": "Substitution",
+    "player": "N. Madueke",
+    "assist": null,
+    "sub_in": "B. Saka",
+    "side": "home"
+   },
+   {
+    "time": "64",
+    "type": "Substitution",
+    "player": "N. Mbuku",
+    "assist": null,
+    "sub_in": "M. Elia",
+    "side": "away"
+   },
+   {
+    "time": "70",
+    "type": "Substitution",
+    "player": "D. Spence",
+    "assist": null,
+    "sub_in": "E. Eze",
+    "side": "home"
+   },
+   {
+    "time": "75",
+    "type": "Goal",
+    "player": "H. Kane",
+    "assist": "A. Gordon",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "76",
+    "type": "Substitution",
+    "player": "N. Mukau",
+    "assist": null,
+    "sub_in": "E. Kayembe",
+    "side": "away"
+   },
+   {
+    "time": "76",
+    "type": "Substitution",
+    "player": "B. Cipenga",
+    "assist": null,
+    "sub_in": "T. Bongonda",
+    "side": "away"
+   },
+   {
+    "time": "86",
+    "type": "Goal",
+    "player": "H. Kane",
+    "assist": "A. Gordon",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "89",
+    "type": "Substitution",
+    "player": "A. Masuaku",
+    "assist": null,
+    "sub_in": "J. Kayembe",
+    "side": "away"
+   },
+   {
+    "time": "89",
+    "type": "Substitution",
+    "player": "S. Moutoussamy",
+    "assist": null,
+    "sub_in": "F. Mayele",
+    "side": "away"
+   },
+   {
+    "time": "90+1",
+    "type": "Substitution",
+    "player": "D. Rice",
+    "assist": null,
+    "sub_in": "J. Stones",
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Jordan Pickford",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Nico O'Reilly",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marc Guéhi",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ezri Konsa",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Djed Spence",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Declan Rice",
+      "number": 4,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Elliot Anderson",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Marcus Rashford",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jude Bellingham",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Noni Madueke",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Harry Kane",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "James Trafford",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Dean Henderson",
+      "number": 13,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Trevoh Chalobah",
+      "number": 12,
+      "pos": "Defender"
+     },
+     {
+      "name": "John Stones",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Dan Burn",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Reece James",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jarell Quansah",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Eberechi Eze",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jordan Henderson",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Morgan Rogers",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kobbie Mainoo",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ollie Watkins",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Anthony Gordon",
+      "number": 18,
+      "pos": "Forward"
+     },
+     {
+      "name": "Bukayo Saka",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ivan Toney",
+      "number": 22,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Lionel Mpasi Nzau",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Arthur Masuaku",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Chancel Mbemba",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Axel Tuanzebe",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Aaron Wan-Bissaka",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Noah Sadiki",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Samuel Moutoussamy",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Brian Cipenga",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ngal'ayel Mukau",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nathanaël Mbuku",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Yoane Wissa",
+      "number": 20,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Matthieu Epolo",
+      "number": 21,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Timothy Fayulu",
+      "number": 16,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Dylan Batubinsika",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gedeon Kalulu",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Joris Kayembe",
+      "number": 12,
+      "pos": "Defender"
+     },
+     {
+      "name": "Steve Kapuadi",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gaël Kakuta",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Charles Pickel",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Théo Bongonda",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Aaron Tshibola",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Edo Kayembe",
+      "number": 25,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Fiston Mayele",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Cédric Bakambu",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Simon Banza",
+      "number": 23,
+      "pos": "Forward"
+     },
+     {
+      "name": "Meschak Elia",
+      "number": 13,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }

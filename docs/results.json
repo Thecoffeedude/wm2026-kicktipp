@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-01T17:12:29Z",
+  "updated_at": "2026-07-01T18:04:21Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1581,6 +1581,25 @@
       "utc_date": "2026-07-01T01:00:00Z",
       "stage": "Last 32",
       "goals": []
+    },
+    {
+      "home_code": "ENG",
+      "away_code": "COD",
+      "home_team": "England",
+      "away_team": "Congo DR",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 2,
+      "score_away": 1,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-07-01T16:00:00Z",
+      "stage": "Round of 32",
+      "score_source": "highlightly"
     }
   ]
 }
