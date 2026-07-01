@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-01T17:31:05Z",
+  "updated_at": "2026-07-01T19:17:13Z",
   "live": [
     {
       "fd_id": 537425,
@@ -29,13 +29,13 @@
       "away_code": "COD",
       "home_team": "England",
       "away_team": "Congo DR",
-      "status": "IN_PLAY",
-      "status_de": "Live",
-      "is_live": true,
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
       "is_halftime": false,
-      "is_done": false,
+      "is_done": true,
       "minute": null,
-      "score_home": 0,
+      "score_home": 2,
       "score_away": 1,
       "halftime_home": 0,
       "halftime_away": 1,
