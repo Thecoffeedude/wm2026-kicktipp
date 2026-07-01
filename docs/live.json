@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-01T22:48:23Z",
+  "updated_at": "2026-07-01T22:55:36Z",
   "live": [
     {
       "fd_id": 537425,
@@ -50,11 +50,11 @@
       "away_code": "SEN",
       "home_team": "Belgium",
       "away_team": "Senegal",
-      "status": "PAUSED",
-      "status_de": "Halbzeit",
+      "status": "FINISHED",
+      "status_de": "Beendet",
       "is_live": false,
-      "is_halftime": true,
-      "is_done": false,
+      "is_halftime": false,
+      "is_done": true,
       "minute": null,
       "score_home": 3,
       "score_away": 2,
