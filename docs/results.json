@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-01T04:48:01Z",
+  "updated_at": "2026-07-01T09:48:07Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1519,8 +1519,7 @@
       "halftime_home": 0,
       "halftime_away": 0,
       "utc_date": "2026-06-30T01:00:00Z",
-      "stage": "Last 32",
-      "goals": []
+      "stage": "Last 32"
     },
     {
       "fd_id": 537424,
@@ -1540,8 +1539,7 @@
       "halftime_home": 0,
       "halftime_away": 1,
       "utc_date": "2026-06-30T17:00:00Z",
-      "stage": "Last 32",
-      "goals": []
+      "stage": "Last 32"
     },
     {
       "fd_id": 537416,
@@ -1561,8 +1559,7 @@
       "halftime_home": 1,
       "halftime_away": 0,
       "utc_date": "2026-06-30T21:00:00Z",
-      "stage": "Last 32",
-      "goals": []
+      "stage": "Last 32"
     },
     {
       "fd_id": 537425,
@@ -1582,8 +1579,7 @@
       "halftime_home": 2,
       "halftime_away": 0,
       "utc_date": "2026-07-01T01:00:00Z",
-      "stage": "Last 32",
-      "goals": []
+      "stage": "Last 32"
     }
   ]
 }

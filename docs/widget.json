@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T09:37:05Z",
+  "generated_at": "2026-07-01T09:48:07Z",
   "site": "https://thecoffeedude.github.io/wm2026-kicktipp/",
   "iso": {
     "ALG": "dz",
@@ -403,55 +403,67 @@
     "COL:GHA": [
       1,
       0
+    ],
+    "CAN:MAR": [
+      1,
+      2
+    ],
+    "PAR:FRA": [
+      0,
+      2
+    ],
+    "BRA:NOR": [
+      2,
+      1
     ]
   },
   "next": [
     {
-      "home": "Ivory Coast",
-      "away": "Norway",
-      "hc": "CIV",
-      "ac": "NOR",
-      "kickoff": "2026-06-30T17:00:00Z",
+      "home": "England",
+      "away": "Congo DR",
+      "hc": "ENG",
+      "ac": "COD",
+      "kickoff": "2026-07-01T16:00:00Z",
       "stage": "Round of 32",
       "tip": [
-        1,
-        2
+        3,
+        1
       ],
       "fav": {
-        "label": "Norway",
-        "pct": 45
+        "label": "England",
+        "pct": 69
       }
     },
     {
-      "home": "France",
-      "away": "Sweden",
-      "hc": "FRA",
-      "ac": "SWE",
-      "kickoff": "2026-06-30T21:00:00Z",
+      "home": "Belgium",
+      "away": "Senegal",
+      "hc": "BEL",
+      "ac": "SEN",
+      "kickoff": "2026-07-01T20:00:00Z",
+      "stage": "Round of 32",
+      "tip": [
+        1,
+        0
+      ],
+      "fav": {
+        "label": "Belgium",
+        "pct": 46
+      }
+    },
+    {
+      "home": "United States",
+      "away": "Bosnia-Herzegovina",
+      "hc": "USA",
+      "ac": "BIH",
+      "kickoff": "2026-07-02T00:00:00Z",
       "stage": "Round of 32",
       "tip": [
         2,
         0
       ],
       "fav": {
-        "label": "France",
-        "pct": 71
-      }
-    },
-    {
-      "home": "Mexico",
-      "away": "Ecuador",
-      "hc": "MEX",
-      "ac": "ECU",
-      "kickoff": "2026-07-01T01:00:00Z",
-      "stage": "Round of 32",
-      "tip": [
-        2,
-        1
-      ],
-      "fav": {
-        "label": "Mexico",
-        "pct": 41
+        "label": "United States",
+        "pct": 68
       }
     }
   ]
