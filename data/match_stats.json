@@ -36938,5 +36938,416 @@
     ]
    }
   }
+ },
+ "ua_FRA_SWE_2026-06-30": {
+  "hl_id": 1331966411,
+  "fetched_at": "2026-07-01T00:14:50Z",
+  "stats": {
+   "home": {
+    "xg": 3.17,
+    "possession": 61,
+    "shots_on_target": 12,
+    "corners": 9,
+    "passes": 551,
+    "saves": 3,
+    "fouls": 14,
+    "shots": 25
+   },
+   "away": {
+    "xg": 0.66,
+    "possession": 39,
+    "shots_on_target": 3,
+    "corners": 1,
+    "passes": 351,
+    "saves": 9,
+    "fouls": 10,
+    "shots": 8
+   }
+  },
+  "events": [
+   {
+    "time": "21",
+    "type": "VAR Goal Cancelled - Offside",
+    "player": "K. Mbappe",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "45",
+    "type": "Goal",
+    "player": "K. Mbappe",
+    "assist": "O. Dembele",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "53",
+    "type": "Goal",
+    "player": "B. Barcola",
+    "assist": "M. Olise",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "66",
+    "type": "Substitution",
+    "player": "E. Stroud",
+    "assist": null,
+    "sub_in": "T. Ali",
+    "side": "away"
+   },
+   {
+    "time": "66",
+    "type": "Substitution",
+    "player": "L. Bergvall",
+    "assist": null,
+    "sub_in": "B. Zeneli",
+    "side": "away"
+   },
+   {
+    "time": "74",
+    "type": "Goal",
+    "player": "K. Mbappe",
+    "assist": "M. Olise",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "75",
+    "type": "Substitution",
+    "player": "J. Kounde",
+    "assist": null,
+    "sub_in": "M. Gusto",
+    "side": "home"
+   },
+   {
+    "time": "75",
+    "type": "Substitution",
+    "player": "O. Dembele",
+    "assist": null,
+    "sub_in": "D. Doue",
+    "side": "home"
+   },
+   {
+    "time": "78",
+    "type": "Substitution",
+    "player": "L. Digne",
+    "assist": null,
+    "sub_in": "T. Hernandez",
+    "side": "home"
+   },
+   {
+    "time": "82",
+    "type": "Substitution",
+    "player": "D. Svensson",
+    "assist": null,
+    "sub_in": "M. Svanberg",
+    "side": "away"
+   },
+   {
+    "time": "82",
+    "type": "Substitution",
+    "player": "Y. Ayari",
+    "assist": null,
+    "sub_in": "B. Nygren",
+    "side": "away"
+   },
+   {
+    "time": "85",
+    "type": "Substitution",
+    "player": "K. Mbappe",
+    "assist": null,
+    "sub_in": "J. Mateta",
+    "side": "home"
+   },
+   {
+    "time": "85",
+    "type": "Substitution",
+    "player": "M. Olise",
+    "assist": null,
+    "sub_in": "R. Cherki",
+    "side": "home"
+   },
+   {
+    "time": "89",
+    "type": "Substitution",
+    "player": "A. Isak",
+    "assist": null,
+    "sub_in": "G. Nilsson",
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Mike Maignan",
+      "number": 16,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Lucas Digne",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "William Saliba",
+      "number": 17,
+      "pos": "Defender"
+     },
+     {
+      "name": "Dayot Upamecano",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jules Koundé",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Adrien Rabiot",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Aurélien Tchouaméni",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Bradley Barcola",
+      "number": 12,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Michael Olise",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ousmane Dembélé",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kylian Mbappé",
+      "number": 10,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Robin Risser",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Brice Samba",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Malo Gusto",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Lucas Hernández",
+      "number": 21,
+      "pos": "Defender"
+     },
+     {
+      "name": "Maxence Lacroix",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ibrahima Konaté",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Theo Hernández",
+      "number": 19,
+      "pos": "Defender"
+     },
+     {
+      "name": "Manu Koné",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Rayan Cherki",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Maghnes Akliouche",
+      "number": 25,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Warren Zaïre-Emery",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "N'Golo Kanté",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jean-Philippe Mateta",
+      "number": 22,
+      "pos": "Forward"
+     },
+     {
+      "name": "Désiré Doué",
+      "number": 20,
+      "pos": "Forward"
+     },
+     {
+      "name": "Marcus Thuram",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "3-4-2-1",
+    "xi": [
+     {
+      "name": "Jacob Widell Zetterström",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Gabriel Gudmundsson",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Victor Lindelöf",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gustaf Lagerbielke",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Elliot Stroud",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Lucas Bergvall",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Yasin Ayari",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Daniel Svensson",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Alexander Isak",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Anthony Elanga",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Viktor Gyökeres",
+      "number": 17,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Kristoffer Nordfeldt",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Viktor Johansson",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Hjalmar Ekdal",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Eric Smith",
+      "number": 20,
+      "pos": "Defender"
+     },
+     {
+      "name": "Carl Starfelt",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Besfort Zeneli",
+      "number": 22,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Herman Johansson",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ken Sema",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Taha Abdi Ali",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jesper Karlström",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mattias Svanberg",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Benjamin Nygren",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "Gustaf Nilsson",
+      "number": 25,
+      "pos": "Forward"
+     },
+     {
+      "name": "Alexander Bernhardsson",
+      "number": 21,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
