@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-01T19:17:13Z",
+  "updated_at": "2026-07-01T21:05:33Z",
   "live": [
     {
       "fd_id": 537425,
@@ -50,18 +50,19 @@
       "away_code": "SEN",
       "home_team": "Belgium",
       "away_team": "Senegal",
-      "status": "TIMED",
-      "status_de": "Bald",
+      "status": "PAUSED",
+      "status_de": "Halbzeit",
       "is_live": false,
-      "is_halftime": false,
+      "is_halftime": true,
       "is_done": false,
       "minute": null,
-      "score_home": null,
-      "score_away": null,
-      "halftime_home": null,
-      "halftime_away": null,
+      "score_home": 0,
+      "score_away": 1,
+      "halftime_home": 0,
+      "halftime_away": 1,
       "utc_date": "2026-07-01T20:00:00Z",
-      "stage": "Last 32"
+      "stage": "Last 32",
+      "goals": []
     },
     {
       "fd_id": 537421,
