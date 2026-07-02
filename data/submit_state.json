@@ -387,12 +387,12 @@
   "AUS:EGY": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-06-30T20:34:01Z"
+    "updated_at": "2026-07-02T18:21:07Z"
   },
   "ARG:CPV": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-06-30T20:34:01Z"
+    "updated_at": "2026-07-02T18:21:07Z"
   },
   "MEX:ECU": {
     "tipped": true,
@@ -412,21 +412,21 @@
   "ESP:AUT": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-06-30T20:34:01Z"
+    "updated_at": "2026-07-02T18:21:07Z"
   },
   "POR:CRO": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-06-30T20:34:01Z"
+    "updated_at": "2026-07-02T18:21:07Z"
   },
   "SUI:ALG": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-06-30T20:34:01Z"
+    "updated_at": "2026-07-02T18:21:07Z"
   },
   "COL:GHA": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-06-30T20:34:01Z"
+    "updated_at": "2026-07-02T18:21:07Z"
   }
 }
