@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-02T16:47:48Z",
+  "updated_at": "2026-07-02T20:01:23Z",
   "live": [
     {
       "fd_id": 537421,
@@ -29,18 +29,19 @@
       "away_code": "AUT",
       "home_team": "Spain",
       "away_team": "Austria",
-      "status": "TIMED",
-      "status_de": "Bald",
+      "status": "PAUSED",
+      "status_de": "Halbzeit",
       "is_live": false,
-      "is_halftime": false,
+      "is_halftime": true,
       "is_done": false,
       "minute": null,
-      "score_home": null,
-      "score_away": null,
-      "halftime_home": null,
-      "halftime_away": null,
+      "score_home": 1,
+      "score_away": 0,
+      "halftime_home": 1,
+      "halftime_away": 0,
       "utc_date": "2026-07-02T19:00:00Z",
-      "stage": "Last 32"
+      "stage": "Last 32",
+      "goals": []
     },
     {
       "fd_id": 537419,
