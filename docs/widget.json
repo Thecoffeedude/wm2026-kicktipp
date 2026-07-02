@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T09:48:07Z",
+  "generated_at": "2026-07-02T08:57:14Z",
   "site": "https://thecoffeedude.github.io/wm2026-kicktipp/",
   "iso": {
     "ALG": "dz",
@@ -393,15 +393,15 @@
       1
     ],
     "AUS:EGY": [
-      1,
-      2
-    ],
-    "ARG:CPV": [
-      3,
+      0,
       1
     ],
+    "ARG:CPV": [
+      2,
+      0
+    ],
     "COL:GHA": [
-      1,
+      2,
       0
     ],
     "CAN:MAR": [
@@ -415,55 +415,63 @@
     "BRA:NOR": [
       2,
       1
+    ],
+    "MEX:ENG": [
+      1,
+      2
+    ],
+    "USA:BEL": [
+      1,
+      2
     ]
   },
   "next": [
     {
-      "home": "England",
-      "away": "Congo DR",
-      "hc": "ENG",
-      "ac": "COD",
-      "kickoff": "2026-07-01T16:00:00Z",
-      "stage": "Round of 32",
-      "tip": [
-        3,
-        1
-      ],
-      "fav": {
-        "label": "England",
-        "pct": 69
-      }
-    },
-    {
-      "home": "Belgium",
-      "away": "Senegal",
-      "hc": "BEL",
-      "ac": "SEN",
-      "kickoff": "2026-07-01T20:00:00Z",
-      "stage": "Round of 32",
-      "tip": [
-        1,
-        0
-      ],
-      "fav": {
-        "label": "Belgium",
-        "pct": 46
-      }
-    },
-    {
-      "home": "United States",
-      "away": "Bosnia-Herzegovina",
-      "hc": "USA",
-      "ac": "BIH",
-      "kickoff": "2026-07-02T00:00:00Z",
+      "home": "Spain",
+      "away": "Austria",
+      "hc": "ESP",
+      "ac": "AUT",
+      "kickoff": "2026-07-02T19:00:00Z",
       "stage": "Round of 32",
       "tip": [
         2,
         0
       ],
       "fav": {
-        "label": "United States",
-        "pct": 68
+        "label": "Spain",
+        "pct": 69
+      }
+    },
+    {
+      "home": "Portugal",
+      "away": "Croatia",
+      "hc": "POR",
+      "ac": "CRO",
+      "kickoff": "2026-07-02T23:00:00Z",
+      "stage": "Round of 32",
+      "tip": [
+        2,
+        1
+      ],
+      "fav": {
+        "label": "Portugal",
+        "pct": 54
+      }
+    },
+    {
+      "home": "Switzerland",
+      "away": "Algeria",
+      "hc": "SUI",
+      "ac": "ALG",
+      "kickoff": "2026-07-03T03:00:00Z",
+      "stage": "Round of 32",
+      "tip": [
+        2,
+        1
+      ],
+      "fav": {
+        "label": "Switzerland",
+        "pct": 48
       }
     }
   ]
