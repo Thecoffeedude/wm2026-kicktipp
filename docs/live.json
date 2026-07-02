@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-02T00:06:29Z",
+  "updated_at": "2026-07-02T04:15:39Z",
   "live": [
     {
       "fd_id": 537421,
@@ -8,16 +8,16 @@
       "away_code": "BIH",
       "home_team": "United States",
       "away_team": "Bosnia-Herzegovina",
-      "status": "IN_PLAY",
-      "status_de": "Live",
-      "is_live": true,
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
       "is_halftime": false,
-      "is_done": false,
+      "is_done": true,
       "minute": null,
-      "score_home": 0,
+      "score_home": 2,
       "score_away": 0,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 1,
+      "halftime_away": 0,
       "utc_date": "2026-07-02T00:00:00Z",
       "stage": "Last 32",
       "goals": []

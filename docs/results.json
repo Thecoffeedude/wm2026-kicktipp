@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-02T03:52:01Z",
+  "updated_at": "2026-07-02T04:15:39Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1625,10 +1625,12 @@
       "goals": []
     },
     {
+      "fd_id": 537421,
+      "fd_home_id": 771,
       "home_code": "USA",
       "away_code": "BIH",
-      "home_team": "USA",
-      "away_team": "Bosnia & Herzegovina",
+      "home_team": "United States",
+      "away_team": "Bosnia-Herzegovina",
       "status": "FINISHED",
       "status_de": "Beendet",
       "is_live": false,
@@ -1637,11 +1639,11 @@
       "minute": null,
       "score_home": 2,
       "score_away": 0,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 1,
+      "halftime_away": 0,
       "utc_date": "2026-07-02T00:00:00Z",
-      "stage": "Round of 32",
-      "score_source": "highlightly"
+      "stage": "Last 32",
+      "goals": []
     }
   ]
 }
