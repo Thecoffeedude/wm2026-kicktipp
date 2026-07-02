@@ -39049,5 +39049,421 @@
     ]
    }
   }
+ },
+ "ua_ESP_AUT_2026-07-02": {
+  "hl_id": 1333782445,
+  "fetched_at": "2026-07-02T21:46:36Z",
+  "stats": {
+   "home": {
+    "xg": 2.84,
+    "possession": 64,
+    "shots_on_target": 10,
+    "corners": 9,
+    "passes": 629,
+    "saves": 0,
+    "fouls": 8,
+    "shots": 23
+   },
+   "away": {
+    "xg": 0.32,
+    "possession": 36,
+    "shots_on_target": 0,
+    "corners": 0,
+    "passes": 346,
+    "saves": 6,
+    "fouls": 15,
+    "shots": 5
+   }
+  },
+  "events": [
+   {
+    "time": "36",
+    "type": "Goal",
+    "player": "M. Oyarzabal",
+    "assist": "M. Cucurella",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "N. Seiwald",
+    "assist": null,
+    "sub_in": "C. Chukwuemeka",
+    "side": "away"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "X. Schlager",
+    "assist": null,
+    "sub_in": "F. Grillitsch",
+    "side": "away"
+   },
+   {
+    "time": "60",
+    "type": "Substitution",
+    "player": "M. Gregoritsch",
+    "assist": null,
+    "sub_in": "M. Arnautovic",
+    "side": "away"
+   },
+   {
+    "time": "60",
+    "type": "Substitution",
+    "player": "R. Schmid",
+    "assist": null,
+    "sub_in": "S. Kalajdzic",
+    "side": "away"
+   },
+   {
+    "time": "66",
+    "type": "Goal",
+    "player": "P. Porro",
+    "assist": "A. Baena",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "A. Baena",
+    "assist": null,
+    "sub_in": "F. Torres",
+    "side": "home"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "D. Olmo",
+    "assist": null,
+    "sub_in": "M. Merino",
+    "side": "home"
+   },
+   {
+    "time": "83",
+    "type": "Yellow Card",
+    "player": "S. Posch",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "85",
+    "type": "Substitution",
+    "player": "Lamine Yamal",
+    "assist": null,
+    "sub_in": "Gavi",
+    "side": "home"
+   },
+   {
+    "time": "85",
+    "type": "Substitution",
+    "player": "S. Posch",
+    "assist": null,
+    "sub_in": "A. Prass",
+    "side": "away"
+   },
+   {
+    "time": "89",
+    "type": "Goal",
+    "player": "M. Oyarzabal",
+    "assist": "M. Cucurella",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "90+3",
+    "type": "Substitution",
+    "player": "Pedri",
+    "assist": null,
+    "sub_in": "F. Ruiz",
+    "side": "home"
+   },
+   {
+    "time": "90+3",
+    "type": "Substitution",
+    "player": "A. Laporte",
+    "assist": null,
+    "sub_in": "M. Pubill",
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-1-2-3",
+    "xi": [
+     {
+      "name": "Unai Simón",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Marc Cucurella",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Aymeric Laporte",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Pau Cubarsí Paredes",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Pedro Porro",
+      "number": 12,
+      "pos": "Defender"
+     },
+     {
+      "name": "Rodri",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Pedri",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Dani Olmo",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Álex Baena",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mikel Oyarzabal",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "Lamine Yamal",
+      "number": 19,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "David Raya",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Marcos Llorente",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Álex Grimaldo",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mikel Merino",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Víctor Muñoz",
+      "number": 25,
+      "pos": "Forward"
+     },
+     {
+      "name": "Fabián Ruiz",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Borja Iglesias",
+      "number": 26,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ferran Torres",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Eric García",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Martín Zubimendi",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Yeremy Pino",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Joan García",
+      "number": 13,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Nico Williams",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Gavi",
+      "number": 9,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Marc Pubill",
+      "number": 2,
+      "pos": "Defender"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "A. Schlager",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "K. Laimer",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "D. Alaba",
+      "number": 8,
+      "pos": "Defender"
+     },
+     {
+      "name": "K. Danso",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "S. Posch",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "X. Schlager",
+      "number": 4,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "N. Seiwald",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "M. Sabitzer",
+      "number": 9,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "P. Wanner",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "R. Schmid",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "M. Gregoritsch",
+      "number": 11,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "C. Chukwuemeka",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "D. Affengruber",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "P. Wimmer",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "A. Prass",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "F. Wiegele",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "M. Svoboda",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "S. Kalajdzic",
+      "number": 14,
+      "pos": "Forward"
+     },
+     {
+      "name": "D. Ljubičić",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "M. Friedl",
+      "number": 23,
+      "pos": "Defender"
+     },
+     {
+      "name": "P. Pentz",
+      "number": 13,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "P. Lienhart",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "F. Grillitsch",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "A. Schöpf",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "P. Mwene",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "M. Arnautović",
+      "number": 7,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
