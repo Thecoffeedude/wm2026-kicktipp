@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-02T21:14:49Z",
+  "updated_at": "2026-07-03T01:11:22Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1662,6 +1662,25 @@
       "utc_date": "2026-07-02T19:00:00Z",
       "stage": "Last 32",
       "goals": []
+    },
+    {
+      "home_code": "POR",
+      "away_code": "CRO",
+      "home_team": "Portugal",
+      "away_team": "Croatia",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 2,
+      "score_away": 1,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-07-02T23:00:00Z",
+      "stage": "Round of 32",
+      "score_source": "highlightly"
     }
   ]
 }
