@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-03T18:18:42Z",
+  "updated_at": "2026-07-03T19:16:29Z",
   "live": [
     {
       "fd_id": 537429,
@@ -37,8 +37,8 @@
       "minute": null,
       "score_home": 0,
       "score_away": 1,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 1,
       "utc_date": "2026-07-03T18:00:00Z",
       "stage": "Last 32",
       "goals": []
