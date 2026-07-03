@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-03T16:22:57Z",
+  "updated_at": "2026-07-03T20:48:41Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1699,6 +1699,27 @@
       "halftime_home": 1,
       "halftime_away": 0,
       "utc_date": "2026-07-03T03:00:00Z",
+      "stage": "Last 32",
+      "goals": []
+    },
+    {
+      "fd_id": 537428,
+      "fd_home_id": 779,
+      "home_code": "AUS",
+      "away_code": "EGY",
+      "home_team": "Australia",
+      "away_team": "Egypt",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 1,
+      "score_away": 1,
+      "halftime_home": 0,
+      "halftime_away": 1,
+      "utc_date": "2026-07-03T18:00:00Z",
       "stage": "Last 32",
       "goals": []
     }

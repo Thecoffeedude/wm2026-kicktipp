@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-03T20:37:24Z",
+  "updated_at": "2026-07-03T20:48:41Z",
   "live": [
     {
       "fd_id": 537429,
@@ -29,11 +29,11 @@
       "away_code": "EGY",
       "home_team": "Australia",
       "away_team": "Egypt",
-      "status": "PAUSED",
-      "status_de": "Halbzeit",
+      "status": "FINISHED",
+      "status_de": "Beendet",
       "is_live": false,
-      "is_halftime": true,
-      "is_done": false,
+      "is_halftime": false,
+      "is_done": true,
       "minute": null,
       "score_home": 1,
       "score_away": 1,
