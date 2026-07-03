@@ -428,5 +428,35 @@
     "tipped": true,
     "last_tip": null,
     "updated_at": "2026-07-02T18:21:07Z"
+  },
+  "CAN:MAR": {
+    "tipped": true,
+    "last_tip": "1:2",
+    "updated_at": "2026-07-03T21:12:58Z"
+  },
+  "PAR:FRA": {
+    "tipped": true,
+    "last_tip": "0:2",
+    "updated_at": "2026-07-03T21:12:58Z"
+  },
+  "BRA:NOR": {
+    "tipped": true,
+    "last_tip": "2:1",
+    "updated_at": "2026-07-03T21:12:58Z"
+  },
+  "MEX:ENG": {
+    "tipped": true,
+    "last_tip": "1:2",
+    "updated_at": "2026-07-03T21:12:58Z"
+  },
+  "POR:ESP": {
+    "tipped": true,
+    "last_tip": "1:2",
+    "updated_at": "2026-07-03T21:12:58Z"
+  },
+  "USA:BEL": {
+    "tipped": true,
+    "last_tip": "1:2",
+    "updated_at": "2026-07-03T21:12:58Z"
   }
 }
