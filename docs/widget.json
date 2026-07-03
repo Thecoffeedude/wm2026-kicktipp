@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T08:57:14Z",
+  "generated_at": "2026-07-03T09:18:39Z",
   "site": "https://thecoffeedude.github.io/wm2026-kicktipp/",
   "iso": {
     "ALG": "dz",
@@ -420,6 +420,10 @@
       1,
       2
     ],
+    "POR:ESP": [
+      1,
+      2
+    ],
     "USA:BEL": [
       1,
       2
@@ -427,51 +431,51 @@
   },
   "next": [
     {
-      "home": "Spain",
-      "away": "Austria",
-      "hc": "ESP",
-      "ac": "AUT",
-      "kickoff": "2026-07-02T19:00:00Z",
+      "home": "Australia",
+      "away": "Egypt",
+      "hc": "AUS",
+      "ac": "EGY",
+      "kickoff": "2026-07-03T18:00:00Z",
+      "stage": "Round of 32",
+      "tip": [
+        0,
+        1
+      ],
+      "fav": {
+        "label": "Egypt",
+        "pct": 39
+      }
+    },
+    {
+      "home": "Argentina",
+      "away": "Cape Verde",
+      "hc": "ARG",
+      "ac": "CPV",
+      "kickoff": "2026-07-03T22:00:00Z",
       "stage": "Round of 32",
       "tip": [
         2,
         0
       ],
       "fav": {
-        "label": "Spain",
-        "pct": 69
+        "label": "Argentina",
+        "pct": 78
       }
     },
     {
-      "home": "Portugal",
-      "away": "Croatia",
-      "hc": "POR",
-      "ac": "CRO",
-      "kickoff": "2026-07-02T23:00:00Z",
+      "home": "Colombia",
+      "away": "Ghana",
+      "hc": "COL",
+      "ac": "GHA",
+      "kickoff": "2026-07-04T01:30:00Z",
       "stage": "Round of 32",
       "tip": [
         2,
-        1
+        0
       ],
       "fav": {
-        "label": "Portugal",
-        "pct": 54
-      }
-    },
-    {
-      "home": "Switzerland",
-      "away": "Algeria",
-      "hc": "SUI",
-      "ac": "ALG",
-      "kickoff": "2026-07-03T03:00:00Z",
-      "stage": "Round of 32",
-      "tip": [
-        2,
-        1
-      ],
-      "fav": {
-        "label": "Switzerland",
-        "pct": 48
+        "label": "Colombia",
+        "pct": 65
       }
     }
   ]
