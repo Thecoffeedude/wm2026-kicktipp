@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-04T03:55:45Z",
+  "updated_at": "2026-07-04T08:37:31Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1699,8 +1699,7 @@
       "halftime_home": 1,
       "halftime_away": 0,
       "utc_date": "2026-07-03T03:00:00Z",
-      "stage": "Last 32",
-      "goals": []
+      "stage": "Last 32"
     },
     {
       "fd_id": 537428,
@@ -1720,10 +1719,11 @@
       "halftime_home": 0,
       "halftime_away": 1,
       "utc_date": "2026-07-03T18:00:00Z",
-      "stage": "Last 32",
-      "goals": []
+      "stage": "Last 32"
     },
     {
+      "fd_id": 537427,
+      "fd_home_id": 762,
       "home_code": "ARG",
       "away_code": "CPV",
       "home_team": "Argentina",
@@ -1736,11 +1736,10 @@
       "minute": null,
       "score_home": 3,
       "score_away": 2,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 1,
+      "halftime_away": 0,
       "utc_date": "2026-07-03T22:00:00Z",
-      "stage": "Round of 32",
-      "score_source": "highlightly"
+      "stage": "Last 32"
     },
     {
       "fd_id": 537430,
@@ -1760,8 +1759,7 @@
       "halftime_home": 1,
       "halftime_away": 0,
       "utc_date": "2026-07-04T01:30:00Z",
-      "stage": "Last 32",
-      "goals": []
+      "stage": "Last 32"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T09:18:39Z",
+  "generated_at": "2026-07-04T08:37:31Z",
   "site": "https://thecoffeedude.github.io/wm2026-kicktipp/",
   "iso": {
     "ALG": "dz",
@@ -427,55 +427,63 @@
     "USA:BEL": [
       1,
       2
+    ],
+    "ARG:EGY": [
+      2,
+      0
+    ],
+    "SUI:COL": [
+      1,
+      2
     ]
   },
   "next": [
     {
-      "home": "Australia",
-      "away": "Egypt",
-      "hc": "AUS",
-      "ac": "EGY",
-      "kickoff": "2026-07-03T18:00:00Z",
-      "stage": "Round of 32",
+      "home": "Canada",
+      "away": "Morocco",
+      "hc": "CAN",
+      "ac": "MAR",
+      "kickoff": "2026-07-04T17:00:00Z",
+      "stage": "Round of 16",
+      "tip": [
+        1,
+        2
+      ],
+      "fav": {
+        "label": "Morocco",
+        "pct": 49
+      }
+    },
+    {
+      "home": "Paraguay",
+      "away": "France",
+      "hc": "PAR",
+      "ac": "FRA",
+      "kickoff": "2026-07-04T21:00:00Z",
+      "stage": "Round of 16",
       "tip": [
         0,
+        2
+      ],
+      "fav": {
+        "label": "France",
+        "pct": 72
+      }
+    },
+    {
+      "home": "Brazil",
+      "away": "Norway",
+      "hc": "BRA",
+      "ac": "NOR",
+      "kickoff": "2026-07-05T20:00:00Z",
+      "stage": "Round of 16",
+      "tip": [
+        2,
         1
       ],
       "fav": {
-        "label": "Egypt",
-        "pct": 39
-      }
-    },
-    {
-      "home": "Argentina",
-      "away": "Cape Verde",
-      "hc": "ARG",
-      "ac": "CPV",
-      "kickoff": "2026-07-03T22:00:00Z",
-      "stage": "Round of 32",
-      "tip": [
-        2,
-        0
-      ],
-      "fav": {
-        "label": "Argentina",
-        "pct": 78
-      }
-    },
-    {
-      "home": "Colombia",
-      "away": "Ghana",
-      "hc": "COL",
-      "ac": "GHA",
-      "kickoff": "2026-07-04T01:30:00Z",
-      "stage": "Round of 32",
-      "tip": [
-        2,
-        0
-      ],
-      "fav": {
-        "label": "Colombia",
-        "pct": 65
+        "label": "Brazil",
+        "pct": 52
       }
     }
   ]
