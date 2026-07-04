@@ -40777,5 +40777,453 @@
     ]
    }
   }
+ },
+ "ua_ARG_CPV_2026-07-03": {
+  "hl_id": 1331968113,
+  "fetched_at": "2026-07-04T03:26:36Z",
+  "stats": {
+   "home": {
+    "xg": 2.16,
+    "possession": 64,
+    "shots_on_target": 10,
+    "corners": 8,
+    "passes": 850,
+    "saves": 3,
+    "fouls": 13,
+    "shots": 22
+   },
+   "away": {
+    "xg": 0.45,
+    "possession": 36,
+    "shots_on_target": 5,
+    "corners": 8,
+    "passes": 475,
+    "saves": 8,
+    "fouls": 12,
+    "shots": 16
+   }
+  },
+  "events": [
+   {
+    "time": "29",
+    "type": "Goal",
+    "player": "L. Messi",
+    "assist": "L. Martinez",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "59",
+    "type": "Goal",
+    "player": "D. Duarte",
+    "assist": "R. Mendes",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "63",
+    "type": "Substitution",
+    "player": "L. Martinez",
+    "assist": null,
+    "sub_in": "J. Alvarez",
+    "side": "home"
+   },
+   {
+    "time": "64",
+    "type": "Substitution",
+    "player": "T. Almada",
+    "assist": null,
+    "sub_in": "N. Gonzalez",
+    "side": "home"
+   },
+   {
+    "time": "67",
+    "type": "Substitution",
+    "player": "L. Duarte",
+    "assist": null,
+    "sub_in": "J. Monteiro",
+    "side": "away"
+   },
+   {
+    "time": "67",
+    "type": "Substitution",
+    "player": "N. Da Costa",
+    "assist": null,
+    "sub_in": "D. Livramento",
+    "side": "away"
+   },
+   {
+    "time": "68",
+    "type": "Yellow Card",
+    "player": "K. Lenini",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "80",
+    "type": "Substitution",
+    "player": "R. Mendes",
+    "assist": null,
+    "sub_in": "W. Semedo",
+    "side": "away"
+   },
+   {
+    "time": "80",
+    "type": "Substitution",
+    "player": "J. Cabral",
+    "assist": null,
+    "sub_in": "H. Varela",
+    "side": "away"
+   },
+   {
+    "time": "84",
+    "type": "Substitution",
+    "player": "R. de Paul",
+    "assist": null,
+    "sub_in": "L. Paredes",
+    "side": "home"
+   },
+   {
+    "time": "86",
+    "type": "Substitution",
+    "player": "F. Medina",
+    "assist": null,
+    "sub_in": "N. Tagliafico",
+    "side": "home"
+   },
+   {
+    "time": "92",
+    "type": "Goal",
+    "player": "L. Martinez",
+    "assist": "A. Mac Allister",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "100",
+    "type": "Substitution",
+    "player": "D. Duarte",
+    "assist": null,
+    "sub_in": "Y. Semedo",
+    "side": "away"
+   },
+   {
+    "time": "100",
+    "type": "Substitution",
+    "player": "K. Lenini",
+    "assist": null,
+    "sub_in": "Benchimol",
+    "side": "away"
+   },
+   {
+    "time": "103",
+    "type": "Goal",
+    "player": "S. Lopes Cabral",
+    "assist": "Y. Semedo",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "104",
+    "type": "Substitution",
+    "player": "N. Molina",
+    "assist": null,
+    "sub_in": "G. Montiel",
+    "side": "home"
+   },
+   {
+    "time": "111",
+    "type": "Own Goal",
+    "player": "D. Borges",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "115",
+    "type": "Yellow Card",
+    "player": "G. Montiel",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-4-2",
+    "xi": [
+     {
+      "name": "Emiliano Martínez",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Facundo Medina",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Lisandro Martínez",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Cristian Romero",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nahuel Molina",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Thiago Almada",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Enzo Fernández",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Alexis Mac Allister",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Rodrigo De Paul",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Lautaro Martínez",
+      "number": 22,
+      "pos": "Forward"
+     },
+     {
+      "name": "Lionel Messi",
+      "number": 10,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Gerónimo Rulli",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Juan Musso",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Gonzalo Montiel",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marcos Senesi",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nicolás Tagliafico",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nicolás Otamendi",
+      "number": 19,
+      "pos": "Defender"
+     },
+     {
+      "name": "Exequiel Palacios",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Giovani Lo Celso",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Giuliano Simeone",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Leandro Paredes",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nico Paz",
+      "number": 18,
+      "pos": "Forward"
+     },
+     {
+      "name": "Nicolás González",
+      "number": 15,
+      "pos": "Forward"
+     },
+     {
+      "name": "Valentín Barco",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Julián Alvarez",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "José Manuel López",
+      "number": 21,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-1-4-1",
+    "xi": [
+     {
+      "name": "Vozinha",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Sidny Lopes Cabral",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Diney Borges",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Pico",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Steven Moreira",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Kevin Lenini",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jovane Cabral",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Deroy Duarte",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Laros Duarte",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ryan Mendes",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nuno Da Costa",
+      "number": 21,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "CJ Dos Santos",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Márcio Rosa",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Logan Costa",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Kelvin Pires",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Stopira",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Wagner Pina",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Garry Rodrigues",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Hélio Varela",
+      "number": 26,
+      "pos": "Forward"
+     },
+     {
+      "name": "Jamiro Monteiro",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "João Paulo",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Willy Semedo",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Yannick Semedo",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Telmo Arcanjo",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Dailon Rocha Livramento",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Gilson Tavares",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
