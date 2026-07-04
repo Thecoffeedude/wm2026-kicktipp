@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-04T15:59:53Z",
+  "updated_at": "2026-07-04T19:46:03Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1760,6 +1760,27 @@
       "halftime_away": 0,
       "utc_date": "2026-07-04T01:30:00Z",
       "stage": "Last 32",
+      "goals": []
+    },
+    {
+      "fd_id": 537376,
+      "fd_home_id": 828,
+      "home_code": "CAN",
+      "away_code": "MAR",
+      "home_team": "Canada",
+      "away_team": "Morocco",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 0,
+      "score_away": 3,
+      "halftime_home": 0,
+      "halftime_away": 0,
+      "utc_date": "2026-07-04T17:00:00Z",
+      "stage": "Last 16",
       "goals": []
     }
   ]
