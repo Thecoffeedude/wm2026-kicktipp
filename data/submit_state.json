@@ -431,32 +431,42 @@
   },
   "CAN:MAR": {
     "tipped": true,
-    "last_tip": "1:2",
-    "updated_at": "2026-07-03T21:12:58Z"
+    "last_tip": null,
+    "updated_at": "2026-07-04T16:07:40Z"
   },
   "PAR:FRA": {
     "tipped": true,
-    "last_tip": "0:2",
-    "updated_at": "2026-07-03T21:12:58Z"
+    "last_tip": null,
+    "updated_at": "2026-07-04T16:07:40Z"
   },
   "BRA:NOR": {
     "tipped": true,
-    "last_tip": "2:1",
-    "updated_at": "2026-07-03T21:12:58Z"
+    "last_tip": null,
+    "updated_at": "2026-07-04T16:07:40Z"
   },
   "MEX:ENG": {
     "tipped": true,
-    "last_tip": "1:2",
-    "updated_at": "2026-07-03T21:12:58Z"
+    "last_tip": null,
+    "updated_at": "2026-07-04T16:07:40Z"
   },
   "POR:ESP": {
     "tipped": true,
-    "last_tip": "1:2",
-    "updated_at": "2026-07-03T21:12:58Z"
+    "last_tip": null,
+    "updated_at": "2026-07-04T16:07:40Z"
   },
   "USA:BEL": {
     "tipped": true,
+    "last_tip": null,
+    "updated_at": "2026-07-04T16:07:40Z"
+  },
+  "ARG:EGY": {
+    "tipped": true,
+    "last_tip": "2:0",
+    "updated_at": "2026-07-04T16:07:40Z"
+  },
+  "SUI:COL": {
+    "tipped": true,
     "last_tip": "1:2",
-    "updated_at": "2026-07-03T21:12:58Z"
+    "updated_at": "2026-07-04T16:07:40Z"
   }
 }
