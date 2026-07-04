@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-04T03:26:36Z",
+  "updated_at": "2026-07-04T03:55:45Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1741,6 +1741,27 @@
       "utc_date": "2026-07-03T22:00:00Z",
       "stage": "Round of 32",
       "score_source": "highlightly"
+    },
+    {
+      "fd_id": 537430,
+      "fd_home_id": 818,
+      "home_code": "COL",
+      "away_code": "GHA",
+      "home_team": "Colombia",
+      "away_team": "Ghana",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 1,
+      "score_away": 0,
+      "halftime_home": 1,
+      "halftime_away": 0,
+      "utc_date": "2026-07-04T01:30:00Z",
+      "stage": "Last 32",
+      "goals": []
     }
   ]
 }
