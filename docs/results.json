@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-04T19:46:03Z",
+  "updated_at": "2026-07-04T23:10:17Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1780,6 +1780,27 @@
       "halftime_home": 0,
       "halftime_away": 0,
       "utc_date": "2026-07-04T17:00:00Z",
+      "stage": "Last 16",
+      "goals": []
+    },
+    {
+      "fd_id": 537375,
+      "fd_home_id": 761,
+      "home_code": "PAR",
+      "away_code": "FRA",
+      "home_team": "Paraguay",
+      "away_team": "France",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 0,
+      "score_away": 1,
+      "halftime_home": 0,
+      "halftime_away": 0,
+      "utc_date": "2026-07-04T21:00:00Z",
       "stage": "Last 16",
       "goals": []
     }
