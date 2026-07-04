@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-04T19:46:03Z",
+  "updated_at": "2026-07-04T21:07:04Z",
   "live": [
     {
       "fd_id": 537430,
@@ -50,18 +50,19 @@
       "away_code": "FRA",
       "home_team": "Paraguay",
       "away_team": "France",
-      "status": "TIMED",
-      "status_de": "Bald",
-      "is_live": false,
+      "status": "IN_PLAY",
+      "status_de": "Live",
+      "is_live": true,
       "is_halftime": false,
       "is_done": false,
       "minute": null,
-      "score_home": null,
-      "score_away": null,
+      "score_home": 0,
+      "score_away": 0,
       "halftime_home": null,
       "halftime_away": null,
       "utc_date": "2026-07-04T21:00:00Z",
-      "stage": "Last 16"
+      "stage": "Last 16",
+      "goals": []
     }
   ]
 }
