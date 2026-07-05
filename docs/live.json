@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-05T08:53:04Z",
+  "updated_at": "2026-07-05T16:05:38Z",
   "live": [
     {
       "fd_id": 537377,
@@ -19,6 +19,26 @@
       "halftime_home": null,
       "halftime_away": null,
       "utc_date": "2026-07-05T20:00:00Z",
+      "stage": "Last 16"
+    },
+    {
+      "fd_id": 537378,
+      "fd_home_id": 769,
+      "home_code": "MEX",
+      "away_code": "ENG",
+      "home_team": "Mexico",
+      "away_team": "England",
+      "status": "TIMED",
+      "status_de": "Bald",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": false,
+      "minute": null,
+      "score_home": null,
+      "score_away": null,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-07-06T00:00:00Z",
       "stage": "Last 16"
     }
   ]
