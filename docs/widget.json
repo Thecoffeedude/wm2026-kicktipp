@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T08:37:31Z",
+  "generated_at": "2026-07-05T08:53:04Z",
   "site": "https://thecoffeedude.github.io/wm2026-kicktipp/",
   "iso": {
     "ALG": "dz",
@@ -409,7 +409,7 @@
       2
     ],
     "PAR:FRA": [
-      0,
+      1,
       2
     ],
     "BRA:NOR": [
@@ -435,41 +435,13 @@
     "SUI:COL": [
       1,
       2
+    ],
+    "FRA:MAR": [
+      2,
+      0
     ]
   },
   "next": [
-    {
-      "home": "Canada",
-      "away": "Morocco",
-      "hc": "CAN",
-      "ac": "MAR",
-      "kickoff": "2026-07-04T17:00:00Z",
-      "stage": "Round of 16",
-      "tip": [
-        1,
-        2
-      ],
-      "fav": {
-        "label": "Morocco",
-        "pct": 49
-      }
-    },
-    {
-      "home": "Paraguay",
-      "away": "France",
-      "hc": "PAR",
-      "ac": "FRA",
-      "kickoff": "2026-07-04T21:00:00Z",
-      "stage": "Round of 16",
-      "tip": [
-        0,
-        2
-      ],
-      "fav": {
-        "label": "France",
-        "pct": 72
-      }
-    },
     {
       "home": "Brazil",
       "away": "Norway",
@@ -484,6 +456,38 @@
       "fav": {
         "label": "Brazil",
         "pct": 52
+      }
+    },
+    {
+      "home": "Mexico",
+      "away": "England",
+      "hc": "MEX",
+      "ac": "ENG",
+      "kickoff": "2026-07-06T00:00:00Z",
+      "stage": "Round of 16",
+      "tip": [
+        1,
+        2
+      ],
+      "fav": {
+        "label": "England",
+        "pct": 39
+      }
+    },
+    {
+      "home": "Portugal",
+      "away": "Spain",
+      "hc": "POR",
+      "ac": "ESP",
+      "kickoff": "2026-07-06T19:00:00Z",
+      "stage": "Round of 16",
+      "tip": [
+        1,
+        2
+      ],
+      "fav": {
+        "label": "Spain",
+        "pct": 48
       }
     }
   ]
