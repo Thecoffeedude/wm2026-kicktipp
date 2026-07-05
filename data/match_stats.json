@@ -42124,5 +42124,389 @@
     ]
    }
   }
+ },
+ "ua_PAR_FRA_2026-07-04": {
+  "hl_id": 1335960154,
+  "fetched_at": "2026-07-05T00:06:36Z",
+  "stats": {
+   "home": {
+    "xg": 0.15,
+    "possession": 24,
+    "shots_on_target": 0,
+    "corners": 2,
+    "passes": 183,
+    "saves": 4,
+    "fouls": 13,
+    "shots": 5
+   },
+   "away": {
+    "xg": 1.36,
+    "possession": 76,
+    "shots_on_target": 5,
+    "corners": 12,
+    "passes": 568,
+    "saves": 0,
+    "fouls": 11,
+    "shots": 15
+   }
+  },
+  "events": [
+   {
+    "time": "19",
+    "type": "Yellow Card",
+    "player": "B. Barcola",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "58",
+    "type": "Substitution",
+    "player": "O. Alderete",
+    "assist": null,
+    "sub_in": "J. Canale",
+    "side": "home"
+   },
+   {
+    "time": "61",
+    "type": "Substitution",
+    "player": "J. Enciso",
+    "assist": null,
+    "sub_in": "G. Caballero",
+    "side": "home"
+   },
+   {
+    "time": "61",
+    "type": "Substitution",
+    "player": "B. Barcola",
+    "assist": null,
+    "sub_in": "D. Doue",
+    "side": "away"
+   },
+   {
+    "time": "70",
+    "type": "Penalty",
+    "player": "K. Mbappe",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "G. Gomez",
+    "assist": null,
+    "sub_in": "Mauricio",
+    "side": "home"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "M. Almiron",
+    "assist": null,
+    "sub_in": "G. Avalos",
+    "side": "home"
+   },
+   {
+    "time": "81",
+    "type": "Yellow Card",
+    "player": "M. Kone",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "84",
+    "type": "Substitution",
+    "player": "O. Dembele",
+    "assist": null,
+    "sub_in": "R. Cherki",
+    "side": "away"
+   },
+   {
+    "time": "90+7",
+    "type": "Yellow Card",
+    "player": "M. Olise",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "5-4-1",
+    "xi": [
+     {
+      "name": "Orlando Gill",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Junior Alonso",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Omar Alderete",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gustavo Gómez",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gustavo Velázquez",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Juan Cáceres",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Miguel Almirón",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Matías Galarza",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Andrés Cubas",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Diego Gómez",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Julio Enciso",
+      "number": 19,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Gastón Olveira",
+      "number": 22,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Roberto Fernández",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Fabián Balbuena",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "José Canale",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Alexandro Maidana",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mauricio",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Damián Bobadilla",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Braian Ojeda",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Gustavo Caballero",
+      "number": 24,
+      "pos": "Forward"
+     },
+     {
+      "name": "Alejandro Romero",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ramón Sosa",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Antonio Sanabria",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Alex Arce",
+      "number": 18,
+      "pos": "Forward"
+     },
+     {
+      "name": "Gabriel Ávalos",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "Isidro Pitta",
+      "number": 25,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Mike Maignan",
+      "number": 16,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Lucas Digne",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "William Saliba",
+      "number": 17,
+      "pos": "Defender"
+     },
+     {
+      "name": "Dayot Upamecano",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Jules Koundé",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Adrien Rabiot",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Manu Koné",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Bradley Barcola",
+      "number": 12,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Michael Olise",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Ousmane Dembélé",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kylian Mbappé",
+      "number": 10,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Robin Risser",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Brice Samba",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Malo Gusto",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ibrahima Konaté",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Theo Hernández",
+      "number": 19,
+      "pos": "Defender"
+     },
+     {
+      "name": "Lucas Hernández",
+      "number": 21,
+      "pos": "Defender"
+     },
+     {
+      "name": "Maxence Lacroix",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Aurélien Tchouaméni",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "N'Golo Kanté",
+      "number": 13,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Warren Zaïre-Emery",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Rayan Cherki",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Maghnes Akliouche",
+      "number": 25,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Marcus Thuram",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Désiré Doué",
+      "number": 20,
+      "pos": "Forward"
+     },
+     {
+      "name": "Jean-Philippe Mateta",
+      "number": 22,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
