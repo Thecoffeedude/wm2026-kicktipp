@@ -42508,5 +42508,403 @@
     ]
    }
   }
+ },
+ "ua_BRA_NOR_2026-07-05": {
+  "hl_id": 1334453884,
+  "fetched_at": "2026-07-05T22:33:09Z",
+  "stats": {
+   "home": {
+    "xg": 2.73,
+    "possession": 34,
+    "shots_on_target": 4,
+    "corners": 5,
+    "passes": 329,
+    "saves": 3,
+    "fouls": 7,
+    "shots": 14
+   },
+   "away": {
+    "xg": 0.84,
+    "possession": 66,
+    "shots_on_target": 5,
+    "corners": 5,
+    "passes": 680,
+    "saves": 4,
+    "fouls": 6,
+    "shots": 9
+   }
+  },
+  "events": [
+   {
+    "time": "14",
+    "type": "Missed Penalty",
+    "player": "Bruno Guimaraes",
+    "assist": "Bruno Guimaraes",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "A. Sorloth",
+    "assist": null,
+    "sub_in": "O. Bobb",
+    "side": "away"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "A. Nusa",
+    "assist": null,
+    "sub_in": "A. Schjelderup",
+    "side": "away"
+   },
+   {
+    "time": "58",
+    "type": "Substitution",
+    "player": "M. Cunha",
+    "assist": null,
+    "sub_in": "Endrick",
+    "side": "home"
+   },
+   {
+    "time": "63",
+    "type": "Substitution",
+    "player": "J. Ryerson",
+    "assist": null,
+    "sub_in": "F. Aursnes",
+    "side": "away"
+   },
+   {
+    "time": "67",
+    "type": "Substitution",
+    "player": "G. Martinelli",
+    "assist": null,
+    "sub_in": "Neymar",
+    "side": "home"
+   },
+   {
+    "time": "67",
+    "type": "Substitution",
+    "player": "Rayan",
+    "assist": null,
+    "sub_in": "Danilo Santos",
+    "side": "home"
+   },
+   {
+    "time": "79",
+    "type": "Substitution",
+    "player": "Bruno Guimaraes",
+    "assist": null,
+    "sub_in": "Ederson",
+    "side": "home"
+   },
+   {
+    "time": "79",
+    "type": "Goal",
+    "player": "E. Haaland",
+    "assist": "A. Schjelderup",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "90",
+    "type": "Goal",
+    "player": "E. Haaland",
+    "assist": "A. Schjelderup",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "90+5",
+    "type": "Substitution",
+    "player": "D. Wolfe",
+    "assist": null,
+    "sub_in": "L. Ostigard",
+    "side": "away"
+   },
+   {
+    "time": "90+6",
+    "type": "Yellow Card",
+    "player": "Neymar",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "90+10",
+    "type": "Penalty",
+    "player": "Neymar",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-4-2",
+    "xi": [
+     {
+      "name": "Alisson",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Douglas Santos",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gabriel Magalhães",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marquinhos",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Danilo",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gabriel Martinelli",
+      "number": 22,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Casemiro",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Bruno Guimarães",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Rayan",
+      "number": 26,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Vinícius Júnior",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Matheus Cunha",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Weverton",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Ederson",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Alex Sandro",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Bremer",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Léo Pereira",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Roger Ibañez",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Éderson",
+      "number": 2,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Fabinho",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Danilo Santos",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Raphinha",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Luiz Henrique",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "Neymar",
+      "number": 10,
+      "pos": "Forward"
+     },
+     {
+      "name": "Endrick",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Igor Thiago",
+      "number": 25,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-3-3",
+    "xi": [
+     {
+      "name": "Ørjan Nyland",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "David Møller Wolfe",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Torbjørn Heggem",
+      "number": 17,
+      "pos": "Defender"
+     },
+     {
+      "name": "Kristoffer Ajer",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Julian Ryerson",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Patrick Berg",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Sander Berge",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Martin Ødegaard",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Antonio Nusa",
+      "number": 20,
+      "pos": "Forward"
+     },
+     {
+      "name": "Erling Haaland",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Alexander Sørloth",
+      "number": 7,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Sander Tangvik",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Egil Selvik",
+      "number": 13,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Leo Østigård",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Fredrik André Bjørkan",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Sondre Langås",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Henrik Sælebakke Falchener",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Morten Thorsby",
+      "number": 2,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Fredrik Aursnes",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kristian Thorstvedt",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Thelo Aasgaard",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Andreas Schjelderup",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "Oscar Bobb",
+      "number": 22,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jens Petter Hauge",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jørgen Strand Larsen",
+      "number": 11,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
