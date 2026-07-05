@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-05T22:08:10Z",
+  "updated_at": "2026-07-05T22:10:13Z",
   "live": [
     {
       "fd_id": 537377,
@@ -8,18 +8,19 @@
       "away_code": "NOR",
       "home_team": "Brazil",
       "away_team": "Norway",
-      "status": "LIVE",
-      "status_de": "LIVE",
+      "status": "FINISHED",
+      "status_de": "Beendet",
       "is_live": false,
       "is_halftime": false,
-      "is_done": false,
+      "is_done": true,
       "minute": null,
       "score_home": 1,
       "score_away": 2,
       "halftime_home": 0,
       "halftime_away": 0,
       "utc_date": "2026-07-05T20:00:00Z",
-      "stage": "Last 16"
+      "stage": "Last 16",
+      "goals": []
     },
     {
       "fd_id": 537378,

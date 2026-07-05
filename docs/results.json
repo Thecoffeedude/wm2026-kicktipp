@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-05T08:53:04Z",
+  "updated_at": "2026-07-05T22:10:13Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1800,6 +1800,27 @@
       "halftime_away": 0,
       "utc_date": "2026-07-04T21:00:00Z",
       "stage": "Last 16"
+    },
+    {
+      "fd_id": 537377,
+      "fd_home_id": 764,
+      "home_code": "BRA",
+      "away_code": "NOR",
+      "home_team": "Brazil",
+      "away_team": "Norway",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 1,
+      "score_away": 2,
+      "halftime_home": 0,
+      "halftime_away": 0,
+      "utc_date": "2026-07-05T20:00:00Z",
+      "stage": "Last 16",
+      "goals": []
     }
   ]
 }
