@@ -457,16 +457,16 @@
   "USA:BEL": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-07-04T19:57:45Z"
+    "updated_at": "2026-07-06T22:43:25Z"
   },
   "ARG:EGY": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-07-04T19:57:45Z"
+    "updated_at": "2026-07-06T22:43:25Z"
   },
   "SUI:COL": {
     "tipped": true,
     "last_tip": null,
-    "updated_at": "2026-07-04T19:57:45Z"
+    "updated_at": "2026-07-06T22:43:25Z"
   }
 }
