@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-06T19:52:02Z",
+  "updated_at": "2026-07-06T19:57:08Z",
   "live": [
     {
       "fd_id": 537378,
@@ -29,18 +29,19 @@
       "away_code": "ESP",
       "home_team": "Portugal",
       "away_team": "Spain",
-      "status": "LIVE",
-      "status_de": "LIVE",
+      "status": "PAUSED",
+      "status_de": "Halbzeit",
       "is_live": false,
-      "is_halftime": false,
+      "is_halftime": true,
       "is_done": false,
       "minute": null,
       "score_home": 0,
       "score_away": 0,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 0,
       "utc_date": "2026-07-06T19:00:00Z",
-      "stage": "Last 16"
+      "stage": "Last 16",
+      "goals": []
     },
     {
       "fd_id": 537380,
