@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-06T00:08:16Z",
+  "updated_at": "2026-07-06T04:22:38Z",
   "live": [
     {
       "fd_id": 537378,
@@ -8,18 +8,19 @@
       "away_code": "ENG",
       "home_team": "Mexico",
       "away_team": "England",
-      "status": "2026-07-06 01:00:00Z",
-      "status_de": "2026-07-06 01:00:00Z",
+      "status": "FINISHED",
+      "status_de": "Beendet",
       "is_live": false,
       "is_halftime": false,
-      "is_done": false,
+      "is_done": true,
       "minute": null,
-      "score_home": null,
-      "score_away": null,
-      "halftime_home": null,
-      "halftime_away": null,
+      "score_home": 2,
+      "score_away": 3,
+      "halftime_home": 1,
+      "halftime_away": 2,
       "utc_date": "2026-07-06T01:00:00Z",
-      "stage": "Last 16"
+      "stage": "Last 16",
+      "goals": []
     },
     {
       "fd_id": 537379,
