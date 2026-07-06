@@ -43850,5 +43850,413 @@
     ]
    }
   }
+ },
+ "ua_POR_ESP_2026-07-06": {
+  "hl_id": 1341820140,
+  "fetched_at": "2026-07-06T21:15:28Z",
+  "stats": {
+   "home": {
+    "xg": 0.6,
+    "possession": 44,
+    "shots_on_target": 2,
+    "corners": 3,
+    "passes": 426,
+    "saves": 5,
+    "fouls": 9,
+    "shots": 10
+   },
+   "away": {
+    "xg": 1.77,
+    "possession": 56,
+    "shots_on_target": 6,
+    "corners": 7,
+    "passes": 531,
+    "saves": 2,
+    "fouls": 13,
+    "shots": 15
+   }
+  },
+  "events": [
+   {
+    "time": "56",
+    "type": "Substitution",
+    "player": "N. Mendes",
+    "assist": null,
+    "sub_in": "N. Semedo",
+    "side": "home"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "Joao Felix",
+    "assist": null,
+    "sub_in": "R. Leao",
+    "side": "home"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "J. Cancelo",
+    "assist": null,
+    "sub_in": "D. Dalot",
+    "side": "home"
+   },
+   {
+    "time": "75",
+    "type": "Substitution",
+    "player": "A. Baena",
+    "assist": null,
+    "sub_in": "F. Torres",
+    "side": "away"
+   },
+   {
+    "time": "83",
+    "type": "Substitution",
+    "player": "P. Neto",
+    "assist": null,
+    "sub_in": "F. Conceicao",
+    "side": "home"
+   },
+   {
+    "time": "83",
+    "type": "Substitution",
+    "player": "Vitinha",
+    "assist": null,
+    "sub_in": "B. Silva",
+    "side": "home"
+   },
+   {
+    "time": "85",
+    "type": "Substitution",
+    "player": "Pedri",
+    "assist": null,
+    "sub_in": "F. Ruiz",
+    "side": "away"
+   },
+   {
+    "time": "85",
+    "type": "Substitution",
+    "player": "D. Olmo",
+    "assist": null,
+    "sub_in": "M. Merino",
+    "side": "away"
+   },
+   {
+    "time": "89",
+    "type": "Yellow Card",
+    "player": "B. Silva",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "90+1",
+    "type": "Goal",
+    "player": "M. Merino",
+    "assist": "F. Torres",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "90+4",
+    "type": "Yellow Card",
+    "player": "R. Veiga",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "90+7",
+    "type": "Substitution",
+    "player": "M. Oyarzabal",
+    "assist": null,
+    "sub_in": "B. Iglesias",
+    "side": "away"
+   },
+   {
+    "time": "90+8",
+    "type": "Yellow Card",
+    "player": "F. Torres",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Diogo Costa",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Nuno Mendes",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Renato Veiga",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Rúben Dias",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "João Cancelo",
+      "number": 20,
+      "pos": "Defender"
+     },
+     {
+      "name": "Vitinha",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "João Neves",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "João Félix",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Bruno Fernandes",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Pedro Neto",
+      "number": 18,
+      "pos": "Forward"
+     },
+     {
+      "name": "Cristiano Ronaldo",
+      "number": 7,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Nélson Semedo",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "José Sá",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Gonçalo Ramos",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Rui Silva",
+      "number": 22,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Rúben Neves",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Samú Costa",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Gonçalo Guedes",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Bernardo Silva",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Tomás Araújo",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Trincão",
+      "number": 16,
+      "pos": "Forward"
+     },
+     {
+      "name": "Matheus Nunes",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Diogo Dalot",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gonçalo Inácio",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Francisco Conceição",
+      "number": 26,
+      "pos": "Forward"
+     },
+     {
+      "name": "Rafael Leão",
+      "number": 17,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-1-2-3",
+    "xi": [
+     {
+      "name": "Unai Simón",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Marc Cucurella",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Aymeric Laporte",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Pau Cubarsí Paredes",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Pedro Porro",
+      "number": 12,
+      "pos": "Defender"
+     },
+     {
+      "name": "Rodri",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Pedri",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Dani Olmo",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Álex Baena",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mikel Oyarzabal",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "Lamine Yamal",
+      "number": 19,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Marc Pubill",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gavi",
+      "number": 9,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nico Williams",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Joan García",
+      "number": 13,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Yeremy Pino",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Martín Zubimendi",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Eric García",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ferran Torres",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Borja Iglesias",
+      "number": 26,
+      "pos": "Forward"
+     },
+     {
+      "name": "Fabián Ruiz",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mikel Merino",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "David Raya",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Marcos Llorente",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Álex Grimaldo",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Víctor Muñoz",
+      "number": 25,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
