@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-06T21:15:28Z",
+  "updated_at": "2026-07-06T21:27:05Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1843,6 +1843,8 @@
       "goals": []
     },
     {
+      "fd_id": 537379,
+      "fd_home_id": 765,
       "home_code": "POR",
       "away_code": "ESP",
       "home_team": "Portugal",
@@ -1855,11 +1857,11 @@
       "minute": null,
       "score_home": 0,
       "score_away": 1,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 0,
       "utc_date": "2026-07-06T19:00:00Z",
-      "stage": "Round of 16",
-      "score_source": "highlightly"
+      "stage": "Last 16",
+      "goals": []
     }
   ]
 }
