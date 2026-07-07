@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-07T17:11:40Z",
+  "updated_at": "2026-07-07T18:06:19Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1881,6 +1881,25 @@
       "utc_date": "2026-07-07T00:00:00Z",
       "stage": "Last 16",
       "goals": []
+    },
+    {
+      "home_code": "ARG",
+      "away_code": "EGY",
+      "home_team": "Argentina",
+      "away_team": "Egypt",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 3,
+      "score_away": 2,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-07-07T16:00:00Z",
+      "stage": "Round of 16",
+      "score_source": "highlightly"
     }
   ]
 }

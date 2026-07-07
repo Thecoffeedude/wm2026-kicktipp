@@ -44693,5 +44693,459 @@
     ]
    }
   }
+ },
+ "ua_ARG_EGY_2026-07-07": {
+  "hl_id": 1341860988,
+  "fetched_at": "2026-07-07T18:06:19Z",
+  "stats": {
+   "home": {
+    "xg": 2.9,
+    "possession": 64,
+    "shots_on_target": 7,
+    "corners": 6,
+    "passes": 595,
+    "saves": 0,
+    "fouls": 13,
+    "shots": 19
+   },
+   "away": {
+    "xg": 0.97,
+    "possession": 36,
+    "shots_on_target": 2,
+    "corners": 1,
+    "passes": 340,
+    "saves": 4,
+    "fouls": 11,
+    "shots": 5
+   }
+  },
+  "events": [
+   {
+    "time": "15",
+    "type": "Goal",
+    "player": "Y. Ibrahim",
+    "assist": "M. Attia",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "21",
+    "type": "Missed Penalty",
+    "player": "L. Messi",
+    "assist": "L. Messi",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "46",
+    "type": "Substitution",
+    "player": "E. Ashour",
+    "assist": null,
+    "sub_in": "H. Fathy",
+    "side": "away"
+   },
+   {
+    "time": "58",
+    "type": "VAR Goal Cancelled",
+    "player": "M. Ziko",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "66",
+    "type": "Substitution",
+    "player": "N. Tagliafico",
+    "assist": null,
+    "sub_in": "N. Gonzalez",
+    "side": "home"
+   },
+   {
+    "time": "66",
+    "type": "Substitution",
+    "player": "R. de Paul",
+    "assist": null,
+    "sub_in": "L. Martinez",
+    "side": "home"
+   },
+   {
+    "time": "67",
+    "type": "Goal",
+    "player": "M. Ziko",
+    "assist": "H. Hassan",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "73",
+    "type": "Substitution",
+    "player": "N. Molina",
+    "assist": null,
+    "sub_in": "G. Montiel",
+    "side": "home"
+   },
+   {
+    "time": "73",
+    "type": "Substitution",
+    "player": "H. Hassan",
+    "assist": null,
+    "sub_in": "Trezeguet",
+    "side": "away"
+   },
+   {
+    "time": "79",
+    "type": "Goal",
+    "player": "C. Romero",
+    "assist": "L. Messi",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "80",
+    "type": "Substitution",
+    "player": "M. Ziko",
+    "assist": null,
+    "sub_in": "O. Marmoush",
+    "side": "away"
+   },
+   {
+    "time": "83",
+    "type": "Goal",
+    "player": "L. Messi",
+    "assist": "G. Montiel",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "90+2",
+    "type": "Goal",
+    "player": "E. Fernandez",
+    "assist": "L. Martinez",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "90+3",
+    "type": "Yellow Card",
+    "player": "M. Shobeir",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "90+4",
+    "type": "Yellow Card",
+    "player": "H. Fathy",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "90+5",
+    "type": "Substitution",
+    "player": "C. Romero",
+    "assist": null,
+    "sub_in": "N. Otamendi",
+    "side": "home"
+   },
+   {
+    "time": "90+5",
+    "type": "Substitution",
+    "player": "J. Alvarez",
+    "assist": null,
+    "sub_in": "F. Medina",
+    "side": "home"
+   },
+   {
+    "time": "90+6",
+    "type": "Substitution",
+    "player": "M. Lasheen",
+    "assist": null,
+    "sub_in": "Zizo",
+    "side": "away"
+   },
+   {
+    "time": "90+8",
+    "type": "Yellow Card",
+    "player": "M. Attia",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "90+9",
+    "type": "Yellow Card",
+    "player": "H. Hassan",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-4-2",
+    "xi": [
+     {
+      "name": "Emiliano Martínez",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Nicolás Tagliafico",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Lisandro Martínez",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Cristian Romero",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nahuel Molina",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Enzo Fernández",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Leandro Paredes",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Alexis Mac Allister",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Rodrigo De Paul",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Julián Alvarez",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Lionel Messi",
+      "number": 10,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Gerónimo Rulli",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Juan Musso",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Marcos Senesi",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gonzalo Montiel",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nicolás Otamendi",
+      "number": 19,
+      "pos": "Defender"
+     },
+     {
+      "name": "Facundo Medina",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Valentín Barco",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Giovani Lo Celso",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Exequiel Palacios",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nicolás González",
+      "number": 15,
+      "pos": "Forward"
+     },
+     {
+      "name": "Thiago Almada",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Giuliano Simeone",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Nico Paz",
+      "number": 18,
+      "pos": "Forward"
+     },
+     {
+      "name": "José Manuel López",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "Lautaro Martínez",
+      "number": 22,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-4-2",
+    "xi": [
+     {
+      "name": "Mostafa Shobeir",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Karim Hafez",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Rami Rabia",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Yasser Ibrahim",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mohamed Hany",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Haissem Hassan",
+      "number": 12,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mohanad Lasheen",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Marwan Attia",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Emam Ashour",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mostafa Ziko",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Mohamed Salah",
+      "number": 10,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Mohamed El-Shenawy",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Mohamed Alaa",
+      "number": 26,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Mahdi Soliman",
+      "number": 16,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Tarek Alaa",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Hossam Abdelmaguid",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Zizo",
+      "number": 25,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ibrahim Adel",
+      "number": 20,
+      "pos": "Forward"
+     },
+     {
+      "name": "Mahmoud Trézéguet",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Mahmoud Saber",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Hamdy Fathy",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nabil Donga",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Omar Marmoush",
+      "number": 22,
+      "pos": "Forward"
+     },
+     {
+      "name": "Hamza Abdelkarim",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
