@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-07T22:40:55Z",
+  "updated_at": "2026-07-07T22:46:05Z",
   "live": [
     {
       "fd_id": 537380,
@@ -50,11 +50,11 @@
       "away_code": "COL",
       "home_team": "Switzerland",
       "away_team": "Colombia",
-      "status": "PAUSED",
-      "status_de": "Halbzeit",
+      "status": "FINISHED",
+      "status_de": "Beendet",
       "is_live": false,
-      "is_halftime": true,
-      "is_done": false,
+      "is_halftime": false,
+      "is_done": true,
       "minute": null,
       "score_home": 0,
       "score_away": 0,

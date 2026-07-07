@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-07T19:19:52Z",
+  "updated_at": "2026-07-07T22:46:05Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1900,6 +1900,27 @@
       "halftime_home": 0,
       "halftime_away": 1,
       "utc_date": "2026-07-07T16:00:00Z",
+      "stage": "Last 16",
+      "goals": []
+    },
+    {
+      "fd_id": 537382,
+      "fd_home_id": 788,
+      "home_code": "SUI",
+      "away_code": "COL",
+      "home_team": "Switzerland",
+      "away_team": "Colombia",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 0,
+      "score_away": 0,
+      "halftime_home": 0,
+      "halftime_away": 0,
+      "utc_date": "2026-07-07T20:00:00Z",
       "stage": "Last 16",
       "goals": []
     }
