@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-07T09:41:47Z",
+  "updated_at": "2026-07-07T17:11:40Z",
   "live": [
     {
       "fd_id": 537380,
@@ -19,7 +19,8 @@
       "halftime_home": 1,
       "halftime_away": 2,
       "utc_date": "2026-07-07T00:00:00Z",
-      "stage": "Last 16"
+      "stage": "Last 16",
+      "goals": []
     },
     {
       "fd_id": 537381,
@@ -28,18 +29,19 @@
       "away_code": "EGY",
       "home_team": "Argentina",
       "away_team": "Egypt",
-      "status": "TIMED",
-      "status_de": "Bald",
+      "status": "PAUSED",
+      "status_de": "Halbzeit",
       "is_live": false,
-      "is_halftime": false,
+      "is_halftime": true,
       "is_done": false,
       "minute": null,
-      "score_home": null,
-      "score_away": null,
-      "halftime_home": null,
-      "halftime_away": null,
+      "score_home": 0,
+      "score_away": 1,
+      "halftime_home": 0,
+      "halftime_away": 1,
       "utc_date": "2026-07-07T16:00:00Z",
-      "stage": "Last 16"
+      "stage": "Last 16",
+      "goals": []
     },
     {
       "fd_id": 537382,
