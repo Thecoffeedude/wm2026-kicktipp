@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-07T09:41:47Z",
+  "generated_at": "2026-07-08T08:29:02Z",
   "site": "https://thecoffeedude.github.io/wm2026-kicktipp/",
   "iso": {
     "ALG": "dz",
@@ -451,38 +451,6 @@
   },
   "next": [
     {
-      "home": "Argentina",
-      "away": "Egypt",
-      "hc": "ARG",
-      "ac": "EGY",
-      "kickoff": "2026-07-07T16:00:00Z",
-      "stage": "Round of 16",
-      "tip": [
-        2,
-        0
-      ],
-      "fav": {
-        "label": "Argentina",
-        "pct": 67
-      }
-    },
-    {
-      "home": "Switzerland",
-      "away": "Colombia",
-      "hc": "SUI",
-      "ac": "COL",
-      "kickoff": "2026-07-07T20:00:00Z",
-      "stage": "Round of 16",
-      "tip": [
-        1,
-        2
-      ],
-      "fav": {
-        "label": "Colombia",
-        "pct": 47
-      }
-    },
-    {
       "home": "France",
       "away": "Morocco",
       "hc": "FRA",
@@ -495,7 +463,39 @@
       ],
       "fav": {
         "label": "France",
-        "pct": 59
+        "pct": 60
+      }
+    },
+    {
+      "home": "Spain",
+      "away": "Belgium",
+      "hc": "ESP",
+      "ac": "BEL",
+      "kickoff": "2026-07-10T19:00:00Z",
+      "stage": "Quarterfinals",
+      "tip": [
+        2,
+        1
+      ],
+      "fav": {
+        "label": "Spain",
+        "pct": 55
+      }
+    },
+    {
+      "home": "Norway",
+      "away": "England",
+      "hc": "NOR",
+      "ac": "ENG",
+      "kickoff": "2026-07-11T21:00:00Z",
+      "stage": "Quarterfinals",
+      "tip": [
+        1,
+        2
+      ],
+      "fav": {
+        "label": "England",
+        "pct": 52
       }
     }
   ]
