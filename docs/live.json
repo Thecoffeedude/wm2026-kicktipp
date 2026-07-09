@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-09T21:29:45Z",
+  "updated_at": "2026-07-09T22:38:32Z",
   "live": [
     {
       "fd_id": 537383,
@@ -8,13 +8,13 @@
       "away_code": "MAR",
       "home_team": "France",
       "away_team": "Morocco",
-      "status": "IN_PLAY",
-      "status_de": "Live",
-      "is_live": true,
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
       "is_halftime": false,
-      "is_done": false,
+      "is_done": true,
       "minute": null,
-      "score_home": 1,
+      "score_home": 2,
       "score_away": 0,
       "halftime_home": 0,
       "halftime_away": 0,

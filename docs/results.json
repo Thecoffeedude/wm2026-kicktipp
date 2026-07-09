@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-09T22:03:42Z",
+  "updated_at": "2026-07-09T22:38:32Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1922,6 +1922,8 @@
       "stage": "Last 16"
     },
     {
+      "fd_id": 537383,
+      "fd_home_id": 773,
       "home_code": "FRA",
       "away_code": "MAR",
       "home_team": "France",
@@ -1934,11 +1936,11 @@
       "minute": null,
       "score_home": 2,
       "score_away": 0,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 0,
       "utc_date": "2026-07-09T20:00:00Z",
-      "stage": "Quarter-finals",
-      "score_source": "highlightly"
+      "stage": "Quarter Finals",
+      "goals": []
     }
   ]
 }
