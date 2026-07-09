@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-08T08:29:02Z",
+  "updated_at": "2026-07-09T22:03:42Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1920,6 +1920,25 @@
       "halftime_away": 0,
       "utc_date": "2026-07-07T20:00:00Z",
       "stage": "Last 16"
+    },
+    {
+      "home_code": "FRA",
+      "away_code": "MAR",
+      "home_team": "France",
+      "away_team": "Morocco",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 2,
+      "score_away": 0,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-07-09T20:00:00Z",
+      "stage": "Quarter-finals",
+      "score_source": "highlightly"
     }
   ]
 }
