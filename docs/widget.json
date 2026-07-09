@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T08:29:02Z",
+  "generated_at": "2026-07-09T09:39:55Z",
   "site": "https://thecoffeedude.github.io/wm2026-kicktipp/",
   "iso": {
     "ALG": "dz",
@@ -447,6 +447,10 @@
     "NOR:ENG": [
       1,
       2
+    ],
+    "ARG:SUI": [
+      2,
+      1
     ]
   },
   "next": [
@@ -495,7 +499,7 @@
       ],
       "fav": {
         "label": "England",
-        "pct": 52
+        "pct": 53
       }
     }
   ]
