@@ -476,17 +476,17 @@
   },
   "ESP:BEL": {
     "tipped": true,
-    "last_tip": "2:1",
-    "updated_at": "2026-07-09T08:15:52Z"
+    "last_tip": null,
+    "updated_at": "2026-07-10T18:25:54Z"
   },
   "NOR:ENG": {
     "tipped": true,
-    "last_tip": "1:2",
-    "updated_at": "2026-07-09T08:15:52Z"
+    "last_tip": null,
+    "updated_at": "2026-07-10T18:25:54Z"
   },
   "ARG:SUI": {
     "tipped": true,
-    "last_tip": "2:1",
-    "updated_at": "2026-07-09T08:15:52Z"
+    "last_tip": null,
+    "updated_at": "2026-07-10T18:25:54Z"
   }
 }
