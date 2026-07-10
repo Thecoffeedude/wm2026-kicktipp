@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-10T09:35:47Z",
+  "updated_at": "2026-07-10T21:05:48Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1940,6 +1940,27 @@
       "halftime_away": 0,
       "utc_date": "2026-07-09T20:00:00Z",
       "stage": "Quarter Finals"
+    },
+    {
+      "fd_id": 537384,
+      "fd_home_id": 760,
+      "home_code": "ESP",
+      "away_code": "BEL",
+      "home_team": "Spain",
+      "away_team": "Belgium",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 2,
+      "score_away": 1,
+      "halftime_home": 1,
+      "halftime_away": 1,
+      "utc_date": "2026-07-10T19:00:00Z",
+      "stage": "Quarter Finals",
+      "goals": []
     }
   ]
 }
