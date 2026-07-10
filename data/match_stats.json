@@ -46052,5 +46052,427 @@
     ]
    }
   }
+ },
+ "ua_ESP_BEL_2026-07-10": {
+  "hl_id": 1346130455,
+  "fetched_at": "2026-07-10T22:11:03Z",
+  "stats": {
+   "home": {
+    "xg": 2.1,
+    "possession": 68,
+    "shots_on_target": 8,
+    "corners": 5,
+    "passes": 665,
+    "saves": 1,
+    "fouls": 13,
+    "shots": 17
+   },
+   "away": {
+    "xg": 0.37,
+    "possession": 32,
+    "shots_on_target": 2,
+    "corners": 1,
+    "passes": 314,
+    "saves": 6,
+    "fouls": 18,
+    "shots": 5
+   }
+  },
+  "events": [
+   {
+    "time": "30",
+    "type": "Goal",
+    "player": "F. Ruiz",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "41",
+    "type": "Goal",
+    "player": "C. De Ketelaere",
+    "assist": "T. Castagne",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "43",
+    "type": "Yellow Card",
+    "player": "P. Cubarsi",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "55",
+    "type": "Substitution",
+    "player": "A. Baena",
+    "assist": null,
+    "sub_in": "F. Torres",
+    "side": "home"
+   },
+   {
+    "time": "55",
+    "type": "Substitution",
+    "player": "F. Ruiz",
+    "assist": null,
+    "sub_in": "Pedri",
+    "side": "home"
+   },
+   {
+    "time": "60",
+    "type": "Substitution",
+    "player": "L. Trossard",
+    "assist": null,
+    "sub_in": "A. Witsel",
+    "side": "away"
+   },
+   {
+    "time": "60",
+    "type": "Substitution",
+    "player": "H. Vanaken",
+    "assist": null,
+    "sub_in": "R. Lukaku",
+    "side": "away"
+   },
+   {
+    "time": "61",
+    "type": "Substitution",
+    "player": "M. De Cuyper",
+    "assist": null,
+    "sub_in": "J. Seys",
+    "side": "away"
+   },
+   {
+    "time": "71",
+    "type": "Substitution",
+    "player": "T. Courtois",
+    "assist": null,
+    "sub_in": "S. Lammens",
+    "side": "away"
+   },
+   {
+    "time": "79",
+    "type": "Substitution",
+    "player": "M. Oyarzabal",
+    "assist": null,
+    "sub_in": "N. Williams",
+    "side": "home"
+   },
+   {
+    "time": "85",
+    "type": "Yellow Card",
+    "player": "K. De Bruyne",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "86",
+    "type": "Substitution",
+    "player": "K. De Bruyne",
+    "assist": null,
+    "sub_in": "A. Saelemaekers",
+    "side": "away"
+   },
+   {
+    "time": "86",
+    "type": "Substitution",
+    "player": "D. Olmo",
+    "assist": null,
+    "sub_in": "M. Merino",
+    "side": "home"
+   },
+   {
+    "time": "88",
+    "type": "Goal",
+    "player": "M. Merino",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "90+3",
+    "type": "Yellow Card",
+    "player": "A. Laporte",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "90+5",
+    "type": "Yellow Card",
+    "player": "A. Witsel",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Unai Simón",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Marc Cucurella",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Aymeric Laporte",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Pau Cubarsí",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Pedro Porro",
+      "number": 12,
+      "pos": "Defender"
+     },
+     {
+      "name": "Fabián Ruiz",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Rodri",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Alex Baena",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Dani Olmo",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Lamine Yamal",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mikel Oyarzabal",
+      "number": 21,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "David Raya",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Joan García",
+      "number": 13,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Marc Pubill",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Eric García",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marcos Llorente",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Alejandro Grimaldo",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Mikel Merino",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Pablo Gavi",
+      "number": 9,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Martín Zubimendi",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Pedri",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nico Williams",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ferran Torres",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Yéremy Pino",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Víctor Muñoz",
+      "number": 25,
+      "pos": "Forward"
+     },
+     {
+      "name": "Borja Iglesias",
+      "number": 26,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Thibaut Courtois",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Maxim De Cuyper",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Brandon Mechele",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nathan Ngoy",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Timothy Castagne",
+      "number": 21,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nicolas Raskin",
+      "number": 23,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Youri Tielemans",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jérémy Doku",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kevin De Bruyne",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Leandro Trossard",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Charles De Ketelaere",
+      "number": 17,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Senne Lammens",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Mike Penders",
+      "number": 13,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Arthur Theate",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Thomas Meunier",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Koni De Winter",
+      "number": 16,
+      "pos": "Defender"
+     },
+     {
+      "name": "Joaquin Seys",
+      "number": 18,
+      "pos": "Defender"
+     },
+     {
+      "name": "Diego Moreira",
+      "number": 19,
+      "pos": "Forward"
+     },
+     {
+      "name": "Hans Vanaken",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Alexis Saelemaekers",
+      "number": 22,
+      "pos": "Forward"
+     },
+     {
+      "name": "Dodi Lukebakio",
+      "number": 14,
+      "pos": "Forward"
+     },
+     {
+      "name": "Axel Witsel",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Romelu Lukaku",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Matías Fernández-Pardo",
+      "number": 26,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
