@@ -1,26 +1,25 @@
 {
-  "updated_at": "2026-07-09T22:38:32Z",
+  "updated_at": "2026-07-10T00:02:05Z",
   "live": [
     {
-      "fd_id": 537383,
-      "fd_home_id": 773,
-      "home_code": "FRA",
-      "away_code": "MAR",
-      "home_team": "France",
-      "away_team": "Morocco",
-      "status": "FINISHED",
-      "status_de": "Beendet",
+      "fd_id": 537384,
+      "fd_home_id": 760,
+      "home_code": "ESP",
+      "away_code": "BEL",
+      "home_team": "Spain",
+      "away_team": "Belgium",
+      "status": "TIMED",
+      "status_de": "Bald",
       "is_live": false,
       "is_halftime": false,
-      "is_done": true,
+      "is_done": false,
       "minute": null,
-      "score_home": 2,
-      "score_away": 0,
-      "halftime_home": 0,
-      "halftime_away": 0,
-      "utc_date": "2026-07-09T20:00:00Z",
-      "stage": "Quarter Finals",
-      "goals": []
+      "score_home": null,
+      "score_away": null,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-07-10T19:00:00Z",
+      "stage": "Quarter Finals"
     }
   ]
 }
