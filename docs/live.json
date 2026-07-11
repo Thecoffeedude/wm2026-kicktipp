@@ -1,26 +1,25 @@
 {
-  "updated_at": "2026-07-10T21:05:48Z",
+  "updated_at": "2026-07-11T00:58:34Z",
   "live": [
     {
-      "fd_id": 537384,
-      "fd_home_id": 760,
-      "home_code": "ESP",
-      "away_code": "BEL",
-      "home_team": "Spain",
-      "away_team": "Belgium",
-      "status": "FINISHED",
-      "status_de": "Beendet",
+      "fd_id": 537385,
+      "fd_home_id": 8872,
+      "home_code": "NOR",
+      "away_code": "ENG",
+      "home_team": "Norway",
+      "away_team": "England",
+      "status": "TIMED",
+      "status_de": "Bald",
       "is_live": false,
       "is_halftime": false,
-      "is_done": true,
+      "is_done": false,
       "minute": null,
-      "score_home": 2,
-      "score_away": 1,
-      "halftime_home": 1,
-      "halftime_away": 1,
-      "utc_date": "2026-07-10T19:00:00Z",
-      "stage": "Quarter Finals",
-      "goals": []
+      "score_home": null,
+      "score_away": null,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-07-11T21:00:00Z",
+      "stage": "Quarter Finals"
     }
   ]
 }
