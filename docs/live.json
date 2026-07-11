@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-11T23:32:15Z",
+  "updated_at": "2026-07-11T23:53:38Z",
   "live": [
     {
       "fd_id": 537385,
@@ -8,11 +8,11 @@
       "away_code": "ENG",
       "home_team": "Norway",
       "away_team": "England",
-      "status": "PAUSED",
-      "status_de": "Halbzeit",
+      "status": "FINISHED",
+      "status_de": "Beendet",
       "is_live": false,
-      "is_halftime": true,
-      "is_done": false,
+      "is_halftime": false,
+      "is_done": true,
       "minute": null,
       "score_home": 1,
       "score_away": 2,

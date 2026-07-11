@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-11T07:56:18Z",
+  "updated_at": "2026-07-11T23:53:38Z",
   "results": [
     {
       "fd_id": 537327,
@@ -1960,6 +1960,27 @@
       "halftime_away": 1,
       "utc_date": "2026-07-10T19:00:00Z",
       "stage": "Quarter Finals"
+    },
+    {
+      "fd_id": 537385,
+      "fd_home_id": 8872,
+      "home_code": "NOR",
+      "away_code": "ENG",
+      "home_team": "Norway",
+      "away_team": "England",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 1,
+      "score_away": 2,
+      "halftime_home": 1,
+      "halftime_away": 1,
+      "utc_date": "2026-07-11T21:00:00Z",
+      "stage": "Quarter Finals",
+      "goals": []
     }
   ]
 }
