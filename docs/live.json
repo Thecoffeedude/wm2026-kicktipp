@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-12T01:02:36Z",
+  "updated_at": "2026-07-12T01:06:39Z",
   "live": [
     {
       "fd_id": 537386,
@@ -8,18 +8,19 @@
       "away_code": "SUI",
       "home_team": "Argentina",
       "away_team": "Switzerland",
-      "status": "TIMED",
-      "status_de": "Bald",
-      "is_live": false,
+      "status": "IN_PLAY",
+      "status_de": "Live",
+      "is_live": true,
       "is_halftime": false,
       "is_done": false,
       "minute": null,
-      "score_home": null,
-      "score_away": null,
+      "score_home": 0,
+      "score_away": 0,
       "halftime_home": null,
       "halftime_away": null,
       "utc_date": "2026-07-12T01:00:00Z",
-      "stage": "Quarter Finals"
+      "stage": "Quarter Finals",
+      "goals": []
     }
   ]
 }
