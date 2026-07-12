@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-11T07:56:18Z",
+  "generated_at": "2026-07-12T08:18:26Z",
   "site": "https://thecoffeedude.github.io/wm2026-kicktipp/",
   "iso": {
     "ALG": "dz",
@@ -445,45 +445,33 @@
       1
     ],
     "NOR:ENG": [
-      1,
+      0,
       2
     ],
     "ARG:SUI": [
+      2,
+      1
+    ],
+    "FRA:ESP": [
       2,
       1
     ]
   },
   "next": [
     {
-      "home": "Norway",
-      "away": "England",
-      "hc": "NOR",
-      "ac": "ENG",
-      "kickoff": "2026-07-11T21:00:00Z",
-      "stage": "Quarterfinals",
-      "tip": [
-        1,
-        2
-      ],
-      "fav": {
-        "label": "England",
-        "pct": 52
-      }
-    },
-    {
-      "home": "Argentina",
-      "away": "Switzerland",
-      "hc": "ARG",
-      "ac": "SUI",
-      "kickoff": "2026-07-12T01:00:00Z",
-      "stage": "Quarterfinals",
+      "home": "France",
+      "away": "Spain",
+      "hc": "FRA",
+      "ac": "ESP",
+      "kickoff": "2026-07-14T19:00:00Z",
+      "stage": "Semifinals",
       "tip": [
         2,
         1
       ],
       "fav": {
-        "label": "Argentina",
-        "pct": 56
+        "label": "France",
+        "pct": 43
       }
     }
   ]
