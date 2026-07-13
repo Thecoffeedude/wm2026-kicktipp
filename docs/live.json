@@ -1,26 +1,4 @@
 {
-  "updated_at": "2026-07-12T15:57:04Z",
-  "live": [
-    {
-      "fd_id": 537386,
-      "fd_home_id": 762,
-      "home_code": "ARG",
-      "away_code": "SUI",
-      "home_team": "Argentina",
-      "away_team": "Switzerland",
-      "status": "FINISHED",
-      "status_de": "Beendet",
-      "is_live": false,
-      "is_halftime": false,
-      "is_done": true,
-      "minute": null,
-      "score_home": 3,
-      "score_away": 1,
-      "halftime_home": 1,
-      "halftime_away": 0,
-      "utc_date": "2026-07-12T01:00:00Z",
-      "stage": "Quarter Finals",
-      "goals": []
-    }
-  ]
+  "updated_at": "2026-07-13T01:02:45Z",
+  "live": []
 }
