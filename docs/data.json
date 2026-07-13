@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2026-07-12T08:18:26Z",
-    "live_updated_at": "2026-07-12T08:18:26Z",
+    "generated_at": "2026-07-13T09:27:43Z",
+    "live_updated_at": "2026-07-13T09:27:43Z",
     "source_primary": "uanalyse/world-cup-2026-predictions (CC BY 4.0)",
     "source_secondary": "the-odds-api",
     "source_live": "football-data.org (CC BY)",
@@ -53719,26 +53719,5 @@
       "badge_small": "https://r2.thesportsdb.com/images/media/team/badge/gyfn811591973155.png/small"
     }
   },
-  "live": [
-    {
-      "fd_id": 537386,
-      "fd_home_id": 762,
-      "home_code": "ARG",
-      "away_code": "SUI",
-      "home_team": "Argentina",
-      "away_team": "Switzerland",
-      "status": "FINISHED",
-      "status_de": "Beendet",
-      "is_live": false,
-      "is_halftime": false,
-      "is_done": true,
-      "minute": null,
-      "score_home": 3,
-      "score_away": 1,
-      "halftime_home": 1,
-      "halftime_away": 0,
-      "utc_date": "2026-07-12T01:00:00Z",
-      "stage": "Quarter Finals"
-    }
-  ]
+  "live": []
 }
