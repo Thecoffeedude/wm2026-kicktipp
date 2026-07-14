@@ -488,5 +488,15 @@
     "tipped": true,
     "last_tip": null,
     "updated_at": "2026-07-12T00:04:49Z"
+  },
+  "FRA:ESP": {
+    "tipped": true,
+    "last_tip": "2:1",
+    "updated_at": "2026-07-14T08:23:55Z"
+  },
+  "ENG:ARG": {
+    "tipped": true,
+    "last_tip": "2:1",
+    "updated_at": "2026-07-14T08:23:55Z"
   }
 }
