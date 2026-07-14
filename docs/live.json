@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-14T20:37:07Z",
+  "updated_at": "2026-07-14T21:04:33Z",
   "live": [
     {
       "fd_id": 537387,
@@ -8,11 +8,11 @@
       "away_code": "ESP",
       "home_team": "France",
       "away_team": "Spain",
-      "status": "IN_PLAY",
-      "status_de": "Live",
-      "is_live": true,
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
       "is_halftime": false,
-      "is_done": false,
+      "is_done": true,
       "minute": null,
       "score_home": 0,
       "score_away": 2,

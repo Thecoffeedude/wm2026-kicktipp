@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-13T09:27:43Z",
+  "updated_at": "2026-07-14T21:04:33Z",
   "results": [
     {
       "fd_id": 537327,
@@ -2000,6 +2000,27 @@
       "halftime_away": 0,
       "utc_date": "2026-07-12T01:00:00Z",
       "stage": "Quarter Finals"
+    },
+    {
+      "fd_id": 537387,
+      "fd_home_id": 773,
+      "home_code": "FRA",
+      "away_code": "ESP",
+      "home_team": "France",
+      "away_team": "Spain",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 0,
+      "score_away": 2,
+      "halftime_home": 0,
+      "halftime_away": 1,
+      "utc_date": "2026-07-14T19:00:00Z",
+      "stage": "Semi Finals",
+      "goals": []
     }
   ]
 }
