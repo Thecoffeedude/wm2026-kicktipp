@@ -1,4 +1,25 @@
 {
-  "updated_at": "2026-07-13T01:02:45Z",
-  "live": []
+  "updated_at": "2026-07-14T00:51:52Z",
+  "live": [
+    {
+      "fd_id": 537387,
+      "fd_home_id": 773,
+      "home_code": "FRA",
+      "away_code": "ESP",
+      "home_team": "France",
+      "away_team": "Spain",
+      "status": "TIMED",
+      "status_de": "Bald",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": false,
+      "minute": null,
+      "score_home": null,
+      "score_away": null,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-07-14T19:00:00Z",
+      "stage": "Semi Finals"
+    }
+  ]
 }
