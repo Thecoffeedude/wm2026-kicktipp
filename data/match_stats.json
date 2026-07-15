@@ -48243,5 +48243,440 @@
     ]
    }
   }
+ },
+ "ua_ENG_ARG_2026-07-15": {
+  "hl_id": 1349752311,
+  "fetched_at": "2026-07-15T23:02:58Z",
+  "stats": {
+   "home": {
+    "xg": 0.53,
+    "possession": 36,
+    "shots_on_target": 2,
+    "corners": 1,
+    "passes": 325,
+    "saves": 3,
+    "fouls": 11,
+    "shots": 5
+   },
+   "away": {
+    "xg": 1.84,
+    "possession": 64,
+    "shots_on_target": 5,
+    "corners": 6,
+    "passes": 590,
+    "saves": 1,
+    "fouls": 15,
+    "shots": 15
+   }
+  },
+  "events": [
+   {
+    "time": "37",
+    "type": "Yellow Card",
+    "player": "E. Anderson",
+    "assist": null,
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "42",
+    "type": "Yellow Card",
+    "player": "L. Martinez",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "51",
+    "type": "Yellow Card",
+    "player": "C. Romero",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "55",
+    "type": "Goal",
+    "player": "A. Gordon",
+    "assist": "M. Rogers",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "64",
+    "type": "Substitution",
+    "player": "L. Paredes",
+    "assist": null,
+    "sub_in": "N. Gonzalez",
+    "side": "away"
+   },
+   {
+    "time": "72",
+    "type": "Substitution",
+    "player": "A. Gordon",
+    "assist": null,
+    "sub_in": "E. Konsa",
+    "side": "home"
+   },
+   {
+    "time": "72",
+    "type": "Substitution",
+    "player": "G. Simeone",
+    "assist": null,
+    "sub_in": "R. de Paul",
+    "side": "away"
+   },
+   {
+    "time": "72",
+    "type": "Substitution",
+    "player": "N. Molina",
+    "assist": null,
+    "sub_in": "G. Montiel",
+    "side": "away"
+   },
+   {
+    "time": "72",
+    "type": "Substitution",
+    "player": "L. Martinez",
+    "assist": null,
+    "sub_in": "N. Otamendi",
+    "side": "away"
+   },
+   {
+    "time": "81",
+    "type": "Substitution",
+    "player": "N. Tagliafico",
+    "assist": null,
+    "sub_in": "L. Martinez",
+    "side": "away"
+   },
+   {
+    "time": "82",
+    "type": "Substitution",
+    "player": "R. James",
+    "assist": null,
+    "sub_in": "D. Burn",
+    "side": "home"
+   },
+   {
+    "time": "82",
+    "type": "Substitution",
+    "player": "D. Rice",
+    "assist": null,
+    "sub_in": "N. O'Reilly",
+    "side": "home"
+   },
+   {
+    "time": "85",
+    "type": "Goal",
+    "player": "E. Fernandez",
+    "assist": "L. Messi",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "90+2",
+    "type": "Goal",
+    "player": "L. Martinez",
+    "assist": "L. Messi",
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "90+4",
+    "type": "Yellow Card",
+    "player": "R. de Paul",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "90+6",
+    "type": "Substitution",
+    "player": "J. Stones",
+    "assist": null,
+    "sub_in": "I. Toney",
+    "side": "home"
+   },
+   {
+    "time": "90+6",
+    "type": "Substitution",
+    "player": "D. Spence",
+    "assist": null,
+    "sub_in": "M. Rashford",
+    "side": "home"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Jordan Pickford",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Djed Spence",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marc Guéhi",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "John Stones",
+      "number": 5,
+      "pos": "Defender"
+     },
+     {
+      "name": "Reece James",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Elliot Anderson",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Declan Rice",
+      "number": 4,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Anthony Gordon",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jude Bellingham",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Morgan Rogers",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Harry Kane",
+      "number": 9,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "James Trafford",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Dean Henderson",
+      "number": 13,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Nico O'Reilly",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Ezri Konsa",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Dan Burn",
+      "number": 15,
+      "pos": "Defender"
+     },
+     {
+      "name": "Trevoh Chalobah",
+      "number": 12,
+      "pos": "Defender"
+     },
+     {
+      "name": "Eberechi Eze",
+      "number": 21,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Jordan Henderson",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Kobbie Mainoo",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Bukayo Saka",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Noni Madueke",
+      "number": 20,
+      "pos": "Forward"
+     },
+     {
+      "name": "Marcus Rashford",
+      "number": 11,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ivan Toney",
+      "number": 22,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ollie Watkins",
+      "number": 19,
+      "pos": "Forward"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-4-2",
+    "xi": [
+     {
+      "name": "Emiliano Martínez",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Nicolás Tagliafico",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Lisandro Martínez",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Cristian Romero",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nahuel Molina",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Enzo Fernández",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Alexis Mac Allister",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Leandro Paredes",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Giuliano Simeone",
+      "number": 17,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Julián Alvarez",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Lionel Messi",
+      "number": 10,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Juan Musso",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Gerónimo Rulli",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Facundo Medina",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nicolás Otamendi",
+      "number": 19,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gonzalo Montiel",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marcos Senesi",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nicolás González",
+      "number": 15,
+      "pos": "Forward"
+     },
+     {
+      "name": "Thiago Almada",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Rodrigo De Paul",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Giovani Lo Celso",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Exequiel Palacios",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nico Paz",
+      "number": 18,
+      "pos": "Forward"
+     },
+     {
+      "name": "Valentín Barco",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Lautaro Martínez",
+      "number": 22,
+      "pos": "Forward"
+     },
+     {
+      "name": "José Manuel López",
+      "number": 21,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
