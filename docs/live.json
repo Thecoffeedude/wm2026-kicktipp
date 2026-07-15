@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-15T19:06:25Z",
+  "updated_at": "2026-07-15T20:31:55Z",
   "live": [
     {
       "fd_id": 537388,
@@ -14,10 +14,10 @@
       "is_halftime": false,
       "is_done": false,
       "minute": null,
-      "score_home": 0,
+      "score_home": 1,
       "score_away": 0,
-      "halftime_home": null,
-      "halftime_away": null,
+      "halftime_home": 0,
+      "halftime_away": 0,
       "utc_date": "2026-07-15T19:00:00Z",
       "stage": "Semi Finals",
       "goals": []
