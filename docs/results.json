@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-15T21:31:00Z",
+  "updated_at": "2026-07-16T08:13:32Z",
   "results": [
     {
       "fd_id": 537327,
@@ -2039,8 +2039,7 @@
       "halftime_home": 0,
       "halftime_away": 0,
       "utc_date": "2026-07-15T19:00:00Z",
-      "stage": "Semi Finals",
-      "goals": []
+      "stage": "Semi Finals"
     }
   ]
 }

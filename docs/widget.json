@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T08:10:26Z",
+  "generated_at": "2026-07-16T08:13:32Z",
   "site": "https://thecoffeedude.github.io/wm2026-kicktipp/",
   "iso": {
     "ALG": "dz",
@@ -461,22 +461,5 @@
       0
     ]
   },
-  "next": [
-    {
-      "home": "England",
-      "away": "Argentina",
-      "hc": "ENG",
-      "ac": "ARG",
-      "kickoff": "2026-07-15T19:00:00Z",
-      "stage": "Semifinals",
-      "tip": [
-        0,
-        0
-      ],
-      "fav": {
-        "label": "England",
-        "pct": 37
-      }
-    }
-  ]
+  "next": []
 }
