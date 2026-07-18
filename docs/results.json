@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-16T08:13:32Z",
+  "updated_at": "2026-07-18T23:24:57Z",
   "results": [
     {
       "fd_id": 537327,
@@ -2040,6 +2040,27 @@
       "halftime_away": 0,
       "utc_date": "2026-07-15T19:00:00Z",
       "stage": "Semi Finals"
+    },
+    {
+      "fd_id": 537389,
+      "fd_home_id": 773,
+      "home_code": "FRA",
+      "away_code": "ENG",
+      "home_team": "France",
+      "away_team": "England",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 4,
+      "score_away": 6,
+      "halftime_home": 0,
+      "halftime_away": 4,
+      "utc_date": "2026-07-18T21:00:00Z",
+      "stage": "Third Place",
+      "goals": []
     }
   ]
 }

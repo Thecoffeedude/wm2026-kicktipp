@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-18T22:35:17Z",
+  "updated_at": "2026-07-18T23:24:57Z",
   "live": [
     {
       "fd_id": 537389,
@@ -8,14 +8,14 @@
       "away_code": "ENG",
       "home_team": "France",
       "away_team": "England",
-      "status": "IN_PLAY",
-      "status_de": "Live",
-      "is_live": true,
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
       "is_halftime": false,
-      "is_done": false,
+      "is_done": true,
       "minute": null,
-      "score_home": 3,
-      "score_away": 4,
+      "score_home": 4,
+      "score_away": 6,
       "halftime_home": 0,
       "halftime_away": 4,
       "utc_date": "2026-07-18T21:00:00Z",
