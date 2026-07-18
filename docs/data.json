@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2026-07-17T08:10:03Z",
-    "live_updated_at": "2026-07-17T08:10:03Z",
+    "generated_at": "2026-07-18T07:50:20Z",
+    "live_updated_at": "2026-07-18T07:50:20Z",
     "source_primary": "uanalyse/world-cup-2026-predictions (CC BY 4.0)",
     "source_secondary": "the-odds-api",
     "source_live": "football-data.org (CC BY)",
@@ -54552,5 +54552,26 @@
       "badge_small": "https://r2.thesportsdb.com/images/media/team/badge/gyfn811591973155.png/small"
     }
   },
-  "live": []
+  "live": [
+    {
+      "fd_id": 537389,
+      "fd_home_id": 773,
+      "home_code": "FRA",
+      "away_code": "ENG",
+      "home_team": "France",
+      "away_team": "England",
+      "status": "TIMED",
+      "status_de": "Bald",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": false,
+      "minute": null,
+      "score_home": null,
+      "score_away": null,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-07-18T21:00:00Z",
+      "stage": "Third Place"
+    }
+  ]
 }
