@@ -1,26 +1,25 @@
 {
-  "updated_at": "2026-07-18T23:24:57Z",
+  "updated_at": "2026-07-19T00:59:35Z",
   "live": [
     {
-      "fd_id": 537389,
-      "fd_home_id": 773,
-      "home_code": "FRA",
-      "away_code": "ENG",
-      "home_team": "France",
-      "away_team": "England",
-      "status": "FINISHED",
-      "status_de": "Beendet",
+      "fd_id": 537390,
+      "fd_home_id": 760,
+      "home_code": "ESP",
+      "away_code": "ARG",
+      "home_team": "Spain",
+      "away_team": "Argentina",
+      "status": "TIMED",
+      "status_de": "Bald",
       "is_live": false,
       "is_halftime": false,
-      "is_done": true,
+      "is_done": false,
       "minute": null,
-      "score_home": 4,
-      "score_away": 6,
-      "halftime_home": 0,
-      "halftime_away": 4,
-      "utc_date": "2026-07-18T21:00:00Z",
-      "stage": "Third Place",
-      "goals": []
+      "score_home": null,
+      "score_away": null,
+      "halftime_home": null,
+      "halftime_away": null,
+      "utc_date": "2026-07-19T19:00:00Z",
+      "stage": "Final"
     }
   ]
 }
