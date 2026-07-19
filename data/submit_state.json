@@ -498,5 +498,10 @@
     "tipped": true,
     "last_tip": "2:1",
     "updated_at": "2026-07-14T08:23:55Z"
+  },
+  "ESP:ARG": {
+    "tipped": true,
+    "last_tip": null,
+    "updated_at": "2026-07-19T08:55:29Z"
   }
 }
