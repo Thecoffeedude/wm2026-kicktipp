@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2026-07-18T07:50:20Z",
-    "live_updated_at": "2026-07-18T07:50:20Z",
+    "generated_at": "2026-07-19T08:18:56Z",
+    "live_updated_at": "2026-07-19T08:18:56Z",
     "source_primary": "uanalyse/world-cup-2026-predictions (CC BY 4.0)",
     "source_secondary": "the-odds-api",
     "source_live": "football-data.org (CC BY)",
@@ -26,8 +26,8 @@
         "exact": 4
       }
     },
-    "match_count": 144,
-    "uanalyse_count": 0,
+    "match_count": 145,
+    "uanalyse_count": 1,
     "odds_count": 1,
     "weighting": {
       "regime": "performance",
@@ -53754,6 +53754,55 @@
         "probability": 0.1724
       },
       "carried_forward": true
+    },
+    {
+      "id": "ua_ESP_ARG_2026-07-19",
+      "commence_time": "2026-07-19T19:00:00Z",
+      "home_team": "Spain",
+      "away_team": "Argentina",
+      "home_code": "ESP",
+      "away_code": "ARG",
+      "stage": "Final",
+      "sources": {
+        "uanalyse": {
+          "lambda": {
+            "home": 1.369,
+            "away": 1.24
+          },
+          "p": {
+            "home": 0.3886,
+            "draw": 0.233,
+            "away": 0.3784
+          }
+        }
+      },
+      "agreement": {
+        "same_tendency": null,
+        "note": "no odds data"
+      },
+      "bookmakers": [],
+      "divergence": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "totals_line": null,
+      "totals_over_prob": null,
+      "expected_goals": {
+        "home": 1.4846,
+        "away": 1.4597
+      },
+      "recommended_tip": {
+        "home": 2,
+        "away": 1,
+        "expected_points": 1.02,
+        "based_on": "uanalyse"
+      },
+      "modal_scoreline": {
+        "home": 1,
+        "away": 1,
+        "probability": 0.1255
+      }
     }
   ],
   "tournament": {
@@ -54554,12 +54603,12 @@
   },
   "live": [
     {
-      "fd_id": 537389,
-      "fd_home_id": 773,
-      "home_code": "FRA",
-      "away_code": "ENG",
-      "home_team": "France",
-      "away_team": "England",
+      "fd_id": 537390,
+      "fd_home_id": 760,
+      "home_code": "ESP",
+      "away_code": "ARG",
+      "home_team": "Spain",
+      "away_team": "Argentina",
       "status": "TIMED",
       "status_de": "Bald",
       "is_live": false,
@@ -54570,8 +54619,8 @@
       "score_away": null,
       "halftime_home": null,
       "halftime_away": null,
-      "utc_date": "2026-07-18T21:00:00Z",
-      "stage": "Third Place"
+      "utc_date": "2026-07-19T19:00:00Z",
+      "stage": "Final"
     }
   ]
 }
