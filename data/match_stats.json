@@ -48678,5 +48678,461 @@
     ]
    }
   }
+ },
+ "ua_ESP_ARG_2026-07-19": {
+  "hl_id": 1354678750,
+  "fetched_at": "2026-07-19T22:02:52Z",
+  "stats": {
+   "home": {
+    "xg": 1.94,
+    "possession": 65,
+    "shots_on_target": 12,
+    "corners": 9,
+    "passes": 841,
+    "saves": 0,
+    "fouls": 19,
+    "shots": 20
+   },
+   "away": {
+    "xg": 0.22,
+    "possession": 35,
+    "shots_on_target": 0,
+    "corners": 4,
+    "passes": 451,
+    "saves": 11,
+    "fouls": 24,
+    "shots": 2
+   }
+  },
+  "events": [
+   {
+    "time": "41",
+    "type": "Yellow Card",
+    "player": "Lisandro Martínez",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "44",
+    "type": "Substitution",
+    "player": "Lisandro Martínez",
+    "assist": null,
+    "sub_in": "Nicolás Otamendi",
+    "side": "away"
+   },
+   {
+    "time": "45",
+    "type": "Substitution",
+    "player": "Nicolás Iván Gonzalez",
+    "assist": null,
+    "sub_in": "Leandro Paredes",
+    "side": "away"
+   },
+   {
+    "time": "52",
+    "type": "Yellow Card",
+    "player": "Leandro Paredes",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "58",
+    "type": "Substitution",
+    "player": "Gonzalo Montiel",
+    "assist": null,
+    "sub_in": "Nahuel Molina",
+    "side": "away"
+   },
+   {
+    "time": "62",
+    "type": "Substitution",
+    "player": "Mikel Oyarzabal",
+    "assist": null,
+    "sub_in": "Ferrán Torres",
+    "side": "home"
+   },
+   {
+    "time": "62",
+    "type": "Substitution",
+    "player": "Fabián Ruiz",
+    "assist": null,
+    "sub_in": "Pedri",
+    "side": "home"
+   },
+   {
+    "time": "70",
+    "type": "Substitution",
+    "player": "Cristian Romero",
+    "assist": null,
+    "sub_in": "Facundo Medina",
+    "side": "away"
+   },
+   {
+    "time": "70",
+    "type": "Substitution",
+    "player": "Rodrigo De Paul",
+    "assist": null,
+    "sub_in": "Giuliano Simeone Baldini",
+    "side": "away"
+   },
+   {
+    "time": "75",
+    "type": "Substitution",
+    "player": "Alejandro Baena Rodríguez",
+    "assist": null,
+    "sub_in": "Nico Williams",
+    "side": "home"
+   },
+   {
+    "time": "75",
+    "type": "Substitution",
+    "player": "Daniel Olmo Carvajal",
+    "assist": null,
+    "sub_in": "Mikel Merino",
+    "side": "home"
+   },
+   {
+    "time": "82",
+    "type": "Yellow Card",
+    "player": "Enzo Fernández",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "90+2",
+    "type": "Yellow Card",
+    "player": "Cristian Romero",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "99",
+    "type": "Substitution",
+    "player": "Rodrigo Hernandez Cascante",
+    "assist": null,
+    "sub_in": "Martín Zubimendi",
+    "side": "home"
+   },
+   {
+    "time": "99",
+    "type": "Substitution",
+    "player": "Aymeric Laporte",
+    "assist": null,
+    "sub_in": "Eric García",
+    "side": "home"
+   },
+   {
+    "time": "102",
+    "type": "Substitution",
+    "player": "Julián Álvarez",
+    "assist": null,
+    "sub_in": "Marcos Senesi",
+    "side": "away"
+   },
+   {
+    "time": "104",
+    "type": "Yellow Card",
+    "player": "Lionel Sebastián Scaloni",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   },
+   {
+    "time": "106",
+    "type": "Goal",
+    "player": "Ferrán Torres",
+    "assist": "Nico Williams",
+    "sub_in": null,
+    "side": "home"
+   },
+   {
+    "time": "111",
+    "type": "Yellow Card",
+    "player": "Alexis Mac Allister",
+    "assist": null,
+    "sub_in": null,
+    "side": "away"
+   }
+  ],
+  "lineups": {
+   "home": {
+    "formation": "4-2-3-1",
+    "xi": [
+     {
+      "name": "Unai Simón",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Marc Cucurella",
+      "number": 24,
+      "pos": "Defender"
+     },
+     {
+      "name": "Aymeric Laporte",
+      "number": 14,
+      "pos": "Defender"
+     },
+     {
+      "name": "Pau Cubarsí",
+      "number": 22,
+      "pos": "Defender"
+     },
+     {
+      "name": "Pedro Porro",
+      "number": 12,
+      "pos": "Defender"
+     },
+     {
+      "name": "Fabián Ruiz",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Rodri",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Alex Baena",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Dani Olmo",
+      "number": 10,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Lamine Yamal",
+      "number": 19,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mikel Oyarzabal",
+      "number": 21,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "David Raya",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Joan García",
+      "number": 13,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Eric García",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marc Pubill",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marcos Llorente",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Alejandro Grimaldo",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Martín Zubimendi",
+      "number": 18,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Mikel Merino",
+      "number": 6,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nico Williams",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Pablo Gavi",
+      "number": 9,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Pedri",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Borja Iglesias",
+      "number": 26,
+      "pos": "Forward"
+     },
+     {
+      "name": "Ferran Torres",
+      "number": 7,
+      "pos": "Forward"
+     },
+     {
+      "name": "Víctor Muñoz",
+      "number": 25,
+      "pos": "Forward"
+     },
+     {
+      "name": "Yéremy Pino",
+      "number": 11,
+      "pos": "Midfielder"
+     }
+    ]
+   },
+   "away": {
+    "formation": "4-4-2",
+    "xi": [
+     {
+      "name": "Emiliano Martínez",
+      "number": 23,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Nicolás Tagliafico",
+      "number": 3,
+      "pos": "Defender"
+     },
+     {
+      "name": "Lisandro Martínez",
+      "number": 6,
+      "pos": "Defender"
+     },
+     {
+      "name": "Cristian Romero",
+      "number": 13,
+      "pos": "Defender"
+     },
+     {
+      "name": "Gonzalo Montiel",
+      "number": 4,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nicolás González",
+      "number": 15,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Enzo Fernández",
+      "number": 24,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Alexis Mac Allister",
+      "number": 20,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Rodrigo De Paul",
+      "number": 7,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Julián Alvarez",
+      "number": 9,
+      "pos": "Forward"
+     },
+     {
+      "name": "Lionel Messi",
+      "number": 10,
+      "pos": "Forward"
+     }
+    ],
+    "bench": [
+     {
+      "name": "Gerónimo Rulli",
+      "number": 12,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Juan Musso",
+      "number": 1,
+      "pos": "Goalkeeper"
+     },
+     {
+      "name": "Facundo Medina",
+      "number": 25,
+      "pos": "Defender"
+     },
+     {
+      "name": "Marcos Senesi",
+      "number": 2,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nicolás Otamendi",
+      "number": 19,
+      "pos": "Defender"
+     },
+     {
+      "name": "Nahuel Molina",
+      "number": 26,
+      "pos": "Defender"
+     },
+     {
+      "name": "Exequiel Palacios",
+      "number": 14,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Thiago Almada",
+      "number": 16,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Valentín Barco",
+      "number": 8,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Nico Paz",
+      "number": 18,
+      "pos": "Forward"
+     },
+     {
+      "name": "Giuliano Simeone",
+      "number": 17,
+      "pos": "Forward"
+     },
+     {
+      "name": "Giovani Lo Celso",
+      "number": 11,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "Leandro Paredes",
+      "number": 5,
+      "pos": "Midfielder"
+     },
+     {
+      "name": "José Manuel López",
+      "number": 21,
+      "pos": "Forward"
+     },
+     {
+      "name": "Lautaro Martínez",
+      "number": 22,
+      "pos": "Forward"
+     }
+    ]
+   }
+  }
  }
 }
