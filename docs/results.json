@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-19T08:18:56Z",
+  "updated_at": "2026-07-19T21:22:53Z",
   "results": [
     {
       "fd_id": 537327,
@@ -2060,6 +2060,27 @@
       "halftime_away": 4,
       "utc_date": "2026-07-18T21:00:00Z",
       "stage": "Third Place"
+    },
+    {
+      "fd_id": 537390,
+      "fd_home_id": 760,
+      "home_code": "ESP",
+      "away_code": "ARG",
+      "home_team": "Spain",
+      "away_team": "Argentina",
+      "status": "FINISHED",
+      "status_de": "Beendet",
+      "is_live": false,
+      "is_halftime": false,
+      "is_done": true,
+      "minute": null,
+      "score_home": 0,
+      "score_away": 0,
+      "halftime_home": 0,
+      "halftime_away": 0,
+      "utc_date": "2026-07-19T19:00:00Z",
+      "stage": "Final",
+      "goals": []
     }
   ]
 }
