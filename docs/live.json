@@ -1,26 +1,4 @@
 {
-  "updated_at": "2026-07-19T22:25:11Z",
-  "live": [
-    {
-      "fd_id": 537390,
-      "fd_home_id": 760,
-      "home_code": "ESP",
-      "away_code": "ARG",
-      "home_team": "Spain",
-      "away_team": "Argentina",
-      "status": "FINISHED",
-      "status_de": "Beendet",
-      "is_live": false,
-      "is_halftime": false,
-      "is_done": true,
-      "minute": null,
-      "score_home": 1,
-      "score_away": 0,
-      "halftime_home": 0,
-      "halftime_away": 0,
-      "utc_date": "2026-07-19T19:00:00Z",
-      "stage": "Final",
-      "goals": []
-    }
-  ]
+  "updated_at": "2026-07-20T02:29:12Z",
+  "live": []
 }
