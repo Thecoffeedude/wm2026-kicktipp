@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2026-07-19T08:18:56Z",
-    "live_updated_at": "2026-07-19T08:18:56Z",
+    "generated_at": "2026-07-20T08:58:27Z",
+    "live_updated_at": "2026-07-20T08:58:27Z",
     "source_primary": "uanalyse/world-cup-2026-predictions (CC BY 4.0)",
     "source_secondary": "the-odds-api",
     "source_live": "football-data.org (CC BY)",
@@ -37,49 +37,59 @@
       "book_keys": [
         "betanysports",
         "betclic_fr",
+        "betfair_ex_eu",
         "betonlineag",
         "betsson",
         "codere_it",
         "coolbet",
         "everygame",
         "gtbets",
+        "leovegas_se",
+        "marathonbet",
+        "matchbook",
         "mybookieag",
         "nordicbet",
+        "onexbet",
         "pinnacle",
+        "pmu_fr",
+        "sport888",
         "tipico_de",
+        "unibet_fr",
+        "unibet_nl",
+        "unibet_se",
         "williamhill",
         "winamax_de",
         "winamax_fr"
       ],
       "weights": {
-        "market": 0.5182,
-        "uanalyse": 0.4818
+        "market": 0.5223,
+        "uanalyse": 0.4777
       },
       "performance": {
         "market": {
-          "n": 94,
-          "brier": 0.4571,
-          "log_loss": 0.7883,
-          "hit_rate": 0.6915
+          "n": 95,
+          "brier": 0.4598,
+          "log_loss": 0.7921,
+          "hit_rate": 0.6842
         },
         "uanalyse": {
-          "n": 34,
-          "brier": 0.4916,
-          "log_loss": 0.8485,
-          "hit_rate": 0.6471
+          "n": 35,
+          "brier": 0.5028,
+          "log_loss": 0.8659,
+          "hit_rate": 0.6286
         }
       },
-      "n_settled": 94
+      "n_settled": 95
     },
     "calibration": {
       "kappa": {
         "base": 1.15,
         "adaptive": true,
-        "empirical_ratio": 1.0963,
-        "n_matches": 45,
+        "empirical_ratio": 1.0786,
+        "n_matches": 46,
         "rho": -0.1,
         "variance_aggression": 0.75,
-        "effective": 1.1285
+        "effective": 1.1214
       },
       "dixon_coles_rho": -0.1,
       "variance_aggression": 0.75
@@ -53250,7 +53260,8 @@
         "home": 0,
         "away": 0,
         "probability": 0.1592
-      }
+      },
+      "carried_forward": true
     },
     {
       "id": "ua_ENG_ARG_2026-07-15",
@@ -53774,34 +53785,487 @@
             "draw": 0.233,
             "away": 0.3784
           }
+        },
+        "odds_consensus": {
+          "p": {
+            "home": 0.4195,
+            "draw": 0.3163,
+            "away": 0.2642
+          }
+        },
+        "blend": {
+          "p": {
+            "home": 0.4079,
+            "draw": 0.2757,
+            "away": 0.3164
+          },
+          "lambda": {
+            "home": 1.012,
+            "away": 0.825
+          },
+          "lambda_raw": {
+            "home": 0.9024,
+            "away": 0.7357
+          },
+          "weights": {
+            "market": 0.5223,
+            "uanalyse": 0.4777
+          },
+          "regime": "performance"
         }
       },
       "agreement": {
-        "same_tendency": null,
-        "note": "no odds data"
+        "same_tendency": true,
+        "note": ""
       },
-      "bookmakers": [],
+      "bookmakers": [
+        {
+          "key": "betfair_ex_eu",
+          "title": "Betfair",
+          "last_update": "2026-07-19T18:29:50Z",
+          "weight": 2.5,
+          "raw_odds": {
+            "away": 3.9,
+            "home": 2.34,
+            "draw": 3.1
+          },
+          "overround": 0.0063,
+          "probabilities": {
+            "away": 0.2548,
+            "home": 0.4247,
+            "draw": 0.3205
+          }
+        },
+        {
+          "key": "tipico_de",
+          "title": "Tipico",
+          "last_update": "2026-07-19T18:29:22Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.7,
+            "home": 2.25,
+            "draw": 3.0
+          },
+          "overround": 0.048,
+          "probabilities": {
+            "away": 0.2579,
+            "home": 0.4241,
+            "draw": 0.3181
+          }
+        },
+        {
+          "key": "betonlineag",
+          "title": "BetOnline.ag",
+          "last_update": "2026-07-19T18:29:41Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.77,
+            "home": 2.28,
+            "draw": 3.07
+          },
+          "overround": 0.0296,
+          "probabilities": {
+            "away": 0.2576,
+            "home": 0.426,
+            "draw": 0.3164
+          }
+        },
+        {
+          "key": "pmu_fr",
+          "title": "PMU (FR)",
+          "last_update": "2026-07-19T18:29:50Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.45,
+            "home": 2.33,
+            "draw": 3.1
+          },
+          "overround": 0.0416,
+          "probabilities": {
+            "away": 0.2783,
+            "home": 0.412,
+            "draw": 0.3097
+          }
+        },
+        {
+          "key": "unibet_se",
+          "title": "Unibet (SE)",
+          "last_update": "2026-07-19T18:29:50Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.65,
+            "home": 2.33,
+            "draw": 3.1
+          },
+          "overround": 0.0257,
+          "probabilities": {
+            "away": 0.2671,
+            "home": 0.4184,
+            "draw": 0.3145
+          }
+        },
+        {
+          "key": "leovegas_se",
+          "title": "LeoVegas (SE)",
+          "last_update": "2026-07-19T18:29:31Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.55,
+            "home": 2.28,
+            "draw": 3.0
+          },
+          "overround": 0.0536,
+          "probabilities": {
+            "away": 0.2674,
+            "home": 0.4163,
+            "draw": 0.3164
+          }
+        },
+        {
+          "key": "unibet_nl",
+          "title": "Unibet (NL)",
+          "last_update": "2026-07-19T18:29:12Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.65,
+            "home": 2.33,
+            "draw": 3.1
+          },
+          "overround": 0.0257,
+          "probabilities": {
+            "away": 0.2671,
+            "home": 0.4184,
+            "draw": 0.3145
+          }
+        },
+        {
+          "key": "winamax_fr",
+          "title": "Winamax (FR)",
+          "last_update": "2026-07-19T18:28:38Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.6,
+            "home": 2.25,
+            "draw": 3.05
+          },
+          "overround": 0.0501,
+          "probabilities": {
+            "away": 0.2645,
+            "home": 0.4232,
+            "draw": 0.3122
+          }
+        },
+        {
+          "key": "marathonbet",
+          "title": "Marathon Bet",
+          "last_update": "2026-07-19T18:29:50Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.45,
+            "home": 2.38,
+            "draw": 2.96
+          },
+          "overround": 0.0479,
+          "probabilities": {
+            "away": 0.2766,
+            "home": 0.401,
+            "draw": 0.3224
+          }
+        },
+        {
+          "key": "unibet_fr",
+          "title": "Unibet (FR)",
+          "last_update": "2026-07-19T18:29:13Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.55,
+            "home": 2.35,
+            "draw": 3.15
+          },
+          "overround": 0.0247,
+          "probabilities": {
+            "away": 0.2749,
+            "home": 0.4153,
+            "draw": 0.3098
+          }
+        },
+        {
+          "key": "betclic_fr",
+          "title": "Betclic (FR)",
+          "last_update": "2026-07-19T18:27:24Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.6,
+            "home": 2.35,
+            "draw": 3.1
+          },
+          "overround": 0.0259,
+          "probabilities": {
+            "away": 0.2708,
+            "home": 0.4148,
+            "draw": 0.3144
+          }
+        },
+        {
+          "key": "codere_it",
+          "title": "Codere (IT)",
+          "last_update": "2026-07-19T18:29:40Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.55,
+            "home": 2.29,
+            "draw": 3.0
+          },
+          "overround": 0.0517,
+          "probabilities": {
+            "away": 0.2678,
+            "home": 0.4152,
+            "draw": 0.3169
+          }
+        },
+        {
+          "key": "pinnacle",
+          "title": "Pinnacle",
+          "last_update": "2026-07-19T18:29:50Z",
+          "weight": 3.0,
+          "raw_odds": {
+            "away": 3.77,
+            "home": 2.31,
+            "draw": 3.06
+          },
+          "overround": 0.0249,
+          "probabilities": {
+            "away": 0.2588,
+            "home": 0.4224,
+            "draw": 0.3188
+          }
+        },
+        {
+          "key": "sport888",
+          "title": "888sport",
+          "last_update": "2026-07-19T18:29:13Z",
+          "weight": 1.5,
+          "raw_odds": {
+            "away": 3.4,
+            "home": 2.2,
+            "draw": 3.0
+          },
+          "overround": 0.082,
+          "probabilities": {
+            "away": 0.2718,
+            "home": 0.4201,
+            "draw": 0.3081
+          }
+        },
+        {
+          "key": "williamhill",
+          "title": "William Hill",
+          "last_update": "2026-07-19T18:29:22Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.4,
+            "home": 2.2,
+            "draw": 3.1
+          },
+          "overround": 0.0712,
+          "probabilities": {
+            "away": 0.2746,
+            "home": 0.4243,
+            "draw": 0.3011
+          }
+        },
+        {
+          "key": "mybookieag",
+          "title": "MyBookie.ag",
+          "last_update": "2026-07-19T18:29:12Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.6,
+            "home": 2.2,
+            "draw": 3.06
+          },
+          "overround": 0.0591,
+          "probabilities": {
+            "away": 0.2623,
+            "home": 0.4292,
+            "draw": 0.3086
+          }
+        },
+        {
+          "key": "gtbets",
+          "title": "GTbets",
+          "last_update": "2026-07-19T18:29:50Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.62,
+            "home": 2.33,
+            "draw": 2.96
+          },
+          "overround": 0.0433,
+          "probabilities": {
+            "away": 0.2648,
+            "home": 0.4114,
+            "draw": 0.3238
+          }
+        },
+        {
+          "key": "matchbook",
+          "title": "Matchbook",
+          "last_update": "2026-07-19T18:29:50Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.9,
+            "home": 2.36,
+            "draw": 3.1
+          },
+          "overround": 0.0027,
+          "probabilities": {
+            "away": 0.2557,
+            "home": 0.4226,
+            "draw": 0.3217
+          }
+        },
+        {
+          "key": "onexbet",
+          "title": "1xBet",
+          "last_update": "2026-07-19T18:29:22Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.85,
+            "home": 2.35,
+            "draw": 3.04
+          },
+          "overround": 0.0142,
+          "probabilities": {
+            "away": 0.2561,
+            "home": 0.4196,
+            "draw": 0.3243
+          }
+        },
+        {
+          "key": "coolbet",
+          "title": "Coolbet",
+          "last_update": "2026-07-19T18:29:13Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.75,
+            "home": 2.33,
+            "draw": 3.06
+          },
+          "overround": 0.0226,
+          "probabilities": {
+            "away": 0.2608,
+            "home": 0.4197,
+            "draw": 0.3196
+          }
+        },
+        {
+          "key": "nordicbet",
+          "title": "Nordic Bet",
+          "last_update": "2026-07-19T18:29:33Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.65,
+            "home": 2.35,
+            "draw": 3.05
+          },
+          "overround": 0.0274,
+          "probabilities": {
+            "away": 0.2667,
+            "home": 0.4142,
+            "draw": 0.3191
+          }
+        },
+        {
+          "key": "betsson",
+          "title": "Betsson",
+          "last_update": "2026-07-19T18:29:43Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.65,
+            "home": 2.35,
+            "draw": 3.05
+          },
+          "overround": 0.0274,
+          "probabilities": {
+            "away": 0.2667,
+            "home": 0.4142,
+            "draw": 0.3191
+          }
+        },
+        {
+          "key": "everygame",
+          "title": "Everygame",
+          "last_update": "2026-07-19T18:29:04Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.65,
+            "home": 2.3,
+            "draw": 2.95
+          },
+          "overround": 0.0477,
+          "probabilities": {
+            "away": 0.2615,
+            "home": 0.415,
+            "draw": 0.3235
+          }
+        },
+        {
+          "key": "winamax_de",
+          "title": "Winamax (DE)",
+          "last_update": "2026-07-19T18:29:14Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.6,
+            "home": 2.25,
+            "draw": 3.05
+          },
+          "overround": 0.0501,
+          "probabilities": {
+            "away": 0.2645,
+            "home": 0.4232,
+            "draw": 0.3122
+          }
+        },
+        {
+          "key": "betanysports",
+          "title": "BetAnything",
+          "last_update": "2026-07-19T18:29:41Z",
+          "weight": 1.0,
+          "raw_odds": {
+            "away": 3.75,
+            "home": 2.25,
+            "draw": 3.05
+          },
+          "overround": 0.039,
+          "probabilities": {
+            "away": 0.2567,
+            "home": 0.4278,
+            "draw": 0.3156
+          }
+        }
+      ],
       "divergence": {
-        "home": 0.0,
-        "draw": 0.0,
-        "away": 0.0
+        "home": 0.0061,
+        "draw": 0.0056,
+        "away": 0.0067
       },
-      "totals_line": null,
-      "totals_over_prob": null,
+      "totals_line": 1.5,
+      "totals_over_prob": 0.4873,
       "expected_goals": {
-        "home": 1.4846,
-        "away": 1.4597
+        "home": 1.012,
+        "away": 0.825
       },
       "recommended_tip": {
-        "home": 2,
-        "away": 1,
-        "expected_points": 1.02,
-        "based_on": "uanalyse"
+        "home": 1,
+        "away": 0,
+        "expected_points": 1.12,
+        "based_on": "blend"
       },
       "modal_scoreline": {
-        "home": 1,
-        "away": 1,
-        "probability": 0.1255
+        "home": 0,
+        "away": 0,
+        "probability": 0.1726
       }
     }
   ],
@@ -54601,26 +55065,5 @@
       "badge_small": "https://r2.thesportsdb.com/images/media/team/badge/gyfn811591973155.png/small"
     }
   },
-  "live": [
-    {
-      "fd_id": 537390,
-      "fd_home_id": 760,
-      "home_code": "ESP",
-      "away_code": "ARG",
-      "home_team": "Spain",
-      "away_team": "Argentina",
-      "status": "TIMED",
-      "status_de": "Bald",
-      "is_live": false,
-      "is_halftime": false,
-      "is_done": false,
-      "minute": null,
-      "score_home": null,
-      "score_away": null,
-      "halftime_home": null,
-      "halftime_away": null,
-      "utc_date": "2026-07-19T19:00:00Z",
-      "stage": "Final"
-    }
-  ]
+  "live": []
 }

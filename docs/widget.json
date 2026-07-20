@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T08:18:56Z",
+  "generated_at": "2026-07-20T08:58:27Z",
   "site": "https://thecoffeedude.github.io/wm2026-kicktipp/",
   "iso": {
     "ALG": "dz",
@@ -461,26 +461,9 @@
       0
     ],
     "ESP:ARG": [
-      2,
-      1
+      1,
+      0
     ]
   },
-  "next": [
-    {
-      "home": "Spain",
-      "away": "Argentina",
-      "hc": "ESP",
-      "ac": "ARG",
-      "kickoff": "2026-07-19T19:00:00Z",
-      "stage": "Final",
-      "tip": [
-        2,
-        1
-      ],
-      "fav": {
-        "label": "Spain",
-        "pct": 39
-      }
-    }
-  ]
+  "next": []
 }
